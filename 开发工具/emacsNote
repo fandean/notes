@@ -1,0 +1,73 @@
+			快速简单的使用 emacs 
+emacs 中使用 fcitx 方法：
+http://blog.csdn.net/pcliuguangtao/article/details/6264832
+
+
+www.cbi.pku.edu.cn/chinese/documents/csdoc/emacs/
+
+ 
+
+
+快捷键：
+=======
+掌握emacs的快捷键是基本功， Emacs的快捷键都是绑定于 Ctrl和alt(或称meta)上的。
+在表述时
+c			    代表ctrl
+m			    代表alt
+
+
+帮助：
+------
+c-h r			打开emacs手册
+c-h f			查找一个函数的用法
+c-h k			查找快捷键的用途
+c-h a			查找匹配的命令
+c-h ?			显示帮助的帮助，说明帮助的用法
+
+
+文件操作：
+---------
+c-x c-f			打开一个文件
+c-x c-v			打开一个文件取代当前缓冲区
+c-x c-s			保存文件
+c-x c-w			存为新文件
+c-x i			插入文件
+c-x c-q			切换为只读或者读写模式
+c-x c-c			退出emacs，另见shell模式，此即为Bash下的C-z
+
+
+编辑操作：
+---------
+C-f			前进一个字符
+C-b			后退一个字符
+C-p			后退一行
+C-n			前进一行
+
+M-f			前进一个单词
+M-b			后退一个单词
+
+C-a			移动到行首
+C-e			移动到行尾
+M-a			移动到句首
+M-e			移动到句尾
+
+
+C-v 			向下翻页
+M-v			向上翻页
+
+
+M-x goto-line		跳到指定行
+
+
+
+C-d			删除一个字符     delete
+M-d			删除一个单词
+C-k			删除一行         kill
+M-k			删除一句
+C-y			粘贴删除的内容
+C-w			删除标记区域
+.....
+
+
+
+

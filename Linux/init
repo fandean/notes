@@ -1,0 +1,51 @@
+# 设置Grub开机等待时间
+
+ubuntu：编辑： /etc/default/grub ；设置GRUB_TIMEOUT的值；然后运行 sudo update-grub
+
+centos 7 中编辑： /boot/grub2/gurb.cfg；设置(第一个)timeout的值，就可以了。或建议更改的是 /etc/default/grub文件
+
+
+
+
+# 各系统开机进入字符界面的方法
+
+	Ubuntu 无 /etc/inittab 文件的原因另行查找
+
+修改Ubuntu默认运行级别，启动字符界面：
+	转载： ://blog.csdn.net/heqiyu34/article/details/18793885
+
+	第一种方法：(内核级别的)
+
+	Sudo vi /etc/default/grub
+	修改GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
+	为：GRUB_CMDLINE_LINUX_DEFAULT=” text”
+	然后运行下sudo update-grub就可了
+------------
+xxx	此法在我的电脑上重启后不行
+xxx	另参考：
+------------
+	出现这种情况的原因是修改文件后没有执行 : sudo update-grub
+	不像其它配置重启后就可以生效，必须执行该命令
+
+
+##################################################
+
+开机进入字符界面后 
+使用命令 startx			进入图形界面
+在ubuntu 14.04 中 startx 进入后可能没有侧边栏和顶栏，可试试 sudo start lightdm
+需要先修改 ~/.Xauthority 的权限，
+或者 sudo mv .Xauthority .Xauthority.backup 即将其备份后删除;
+
+
+
+
+
+###   xxx	修改文件 /boot/default/grub/grup.cfg
+
+	问题是我修改后没有运行 sudo update-grub 
+
+
+
+## Fedora 开机进入字符界面
+进入字符界面： systemctl set-default multi-user.target
+进入桌面环境： systemctl set-default graphical.target

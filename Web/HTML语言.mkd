@@ -1,0 +1,652 @@
+
+ HTML语言 
+========================
+
+ 已更正
+
+`<a name="dingbu"> </a>`
+
+1.HTML的语法
+--------------------
+
+###1. 什么是HTML 标记语言  
+     表示网页信息的符号标记语言  
+     
+特点	
+
+1. 可以设置文本的格式；比如标题、字号、文本颜色、段落等
+2. 可以创建列表
+3. 可以插入图像和媒体
+4. 可以建立表格
+5. 超链接，可以使用鼠标点击超链接来实现页面之间的跳转
+            
+                    
+###2. HTML的标记和它的属性  
+	
+**标记**
+
+1. HTML文档的保存格式
+	.html  
+	.htm  
+	.xhtml  
+
+2. 标记和被标记的内容构建出HTML文档  
+	格式		
+		<标记>
+		内容	
+		</标记>
+
+3. 标记的属性  
+	
+	标记的属性，就是用来控制我们的内容（图像、文本等）如何显示
+	
+	格式  
+			
+		<标记  属性1=属性值  属性2="属性值" ... ...> 内容 </标记>
+		例如<body bgcolor=red>内容</body>
+              
+3. 语法不区分字母大小写
+
+	相同
+
+4. 文档注释 
+
+	注释一段内容使用  <!-- 开始以 -->结束
+
+5. 代码格式
+	
+	空格键和回车键在网页中都不会起到任何作用，为了让代码清晰易读，可以使用回车键和空格进行编辑	
+	注意：缩进是保持严格的规则，以 Tab 键进行缩进
+
+6. 字符实体
+
+	1. 什么是字符实体？	
+	    如我们想在网页上显示一个 < 小于符号，但是在HTML中它们是文档标记的开始，所以用实体名称代替
+	    
+	2. 常见的字符实体 	
+<center>![](file:///home/fan/FreeMind/HTML实体字符.png)</center>
+   
+    不要忘记 分号      
+    还有很多
+    
+   
+
+                
+                
+                
+2.html的基本结构
+-------------------------
+
+1. `<html> 内容 </html>`
+
+    解释：HTML文档的文档标记，也称为HTML开始标记		
+    功能：分别位于最前和最后，表示网页开始和结束
+    
+2. `<head>内容</head>`
+
+    解释：HTML文件头标记		
+    功能：包含文件的基本信息，如网页标题、关键字；
+    
+3. `<tiltle>内容</title>`
+
+     解释：HTML文件标题标记
+
+4. `<body>内容</body>`
+	
+	解释：HTML文档的主体标记	
+	
+	body标记的常见属性	 
+
+    1. bgcolor 		
+        设置背景色
+    2. text		
+        设置文本颜色
+    3. link 		
+        设置连接颜色
+    4.vlink 		
+        已经访问的链接颜色
+    5.alink 	
+        正在被点击的链接颜色
+
+5. `<meta>`
+
+    网页的元信息（meta-information)
+    
+    功能：提供有关页面的元信息，比如针对搜索引擎和更新频度的描述和关键字
+    
+    - 必须的属性	
+        content		
+            值：some_teext	
+                定义name属性相关的元信息	
+                
+    - 常见的属性	
+        常见的name属性	
+           -  author		
+           -  keywords		
+           - description		
+           - others		
+            
+    注意：meta标记必须放在head元素里面，		
+            如：		
+            解决乱码问题： `<meta charset="UTF-8">`
+    
+
+
+
+            
+3.文档设置标记
+---------------------
+
+###1.格式标记
+
+1. `<br>`
+
+	强制换行标记
+	
+2. `<p> </p>`
+
+     换段落标记，可嵌套
+     
+3. `<center> </center>`
+
+    居中对齐标记
+            
+4. `<pre> </pre>`
+
+    预格式化标记
+    
+    保留预先编辑好的格式
+       ` <pre>`  <pre>保留原有格式，如             中间多个空格。</pre>
+ 
+5. `<li> </li>`
+    列表项目标记  
+     每一个列表使用一个`<li>`标记
+
+6. `<ul></ul>`
+
+    无序列表标记
+
+7. `<ol> </ol>`  有序列表标记  ,可以显示特定的顺序
+
+	1. 格式
+			           <ol type="符号类型">   
+			           <li type="符号类型"></li>   
+			           <li type="符号类型"></li>   
+			           </ol>  
+
+	2. 有序列表的type属性值
+	
+		        1	
+		            阿拉伯数字（默认）
+		        A
+		            大小写字母
+		        Ⅰ
+		            大小写罗马数字
+		            
+	3.  value 指定一个新的序列数字起始值
+	        
+    4. 列表可以进行嵌套
+	        
+8. `<dl> <dt> <dd>`
+
+    定义型列表
+
+    使用场合: 对列表条目进行简洁的说明
+         
+    格式:     
+	    
+					<dl>     
+					<dt>软件说明：</dt>     
+					<dd>简单介绍软件的功能及基本应用</dd>   
+					<dt>软件界面</dt>    
+					</dl>  
+                     
+9. `<hr> `水平分割线标记
+        
+10.  `<div> `分区显示标记，也称之为层标记        
+
+            
+            
+
+
+
+
+###2.文本标记
+
+使用方式 `  <some> 内容 </some>`
+
+1. hn        标题标记
+
+    * n共有1～6级别
+   
+2. font 字体设置标记  
+
+    三个常用属性：
+    
+    * size 字体大小：范围1～7 。  <font size=1>1</font><font size=2>2</font><font size=3>3</font><font size=4>4</font>
+    <font size=5>5</font> <font size=6>6</font>  <font size=7>7</font>
+        
+    * color<font color=red> 颜色</font>
+    * face 字体 <font face=幼圆 color=red> 幼圆 red</font>
+    
+3. b  粗体标记
+
+4. i   斜体标记
+
+5. sub  <sub>文字下标字体标记</sub>
+
+6. sup  <sup>文字上标字体标记</sup>
+
+7. tt  <tt> 打印机字体标记</tt>
+
+8. cite     <cite>引用方式的字体，通常为斜体</cite>
+
+9. em   <em>表示强调，通常为斜体</em>
+
+10.  strong <strong> 表示强调，通常显示为粗体</strong>
+
+11.  small  <small> 小型字体标记  <small>可嵌套使用</small></small>
+
+12. big <big>大型字体标记</big>
+
+13.   u   <u>下划线字体标记 </u>
+
+
+
+
+
+4.图像标记`<img>`
+----------------------------
+
+1. 使用方法：
+    
+    `<img src=“路径/文件”  width=“属性值“ height=”属性值“ border=”属性值“ alt=”属性值“>`
+    
+2. 注意：
+    
+    *  `<img>`为单标记
+    
+3. ` <img>`标记的属性
+    
+    1. src   指定图片路径、名称
+    
+    2. width  制定图片的宽度，单位 px 、em、cm、mm
+    
+    3. height    指定图片高度
+    
+    4. border   指定图片的边框宽度
+    
+    5. alt      
+        * 当网页上的图片被加载完成后，鼠标移到图片上会显示图片指定的属性文字
+        * 如果图像没有下载或者加载失败，会用文字来代替图像显示
+        * 搜索引擎可以通过这个属性的文字来抓取图片
+        
+        
+
+5.超链接的使用
+----------------------
+
+1. 基本语法
+
+     `<a href="address" target="打开方式" name="页面锚点名称"> `链接文字或<font color=red>**图片**</font>` </a>`
+     
+      
+2. href属性
+
+    链接的地址可以是一个网页、视频、图片、音乐等。
+    
+3. target 属性 
+
+    定义超链接的打开方式。
+    
+    属性值有：
+    
+    * _blank 在一个新的窗口中打开链接
+    * _seif  （默认）   在当前窗口中打开链接
+    * _parent   在父窗口中打开页面（框架中使用较多）
+    * _top     在顶层窗口中打开文件（框架中使用较多）
+    
+4. name 属性
+
+    指定页面的锚点名称.
+    
+    用法：  先在某处设置锚点，再在另一处引用锚点。  
+    
+     `<a href="#dingbu"> 顶部</a>  `  
+     
+    注意：引用时锚点前需加上#号
+    
+    
+
+
+6.表格
+--------------    
+    
+表格的基本结构：
+
+
+1. **`<table>` 标记  **  
+
+     1. 基本格式
+    
+        `<table 属性1=“属性值1” ... ... > `表格内容 (由2、3、4标记组成)`</table>`
+        
+     2. table 标记的属性
+     
+        1. width属性：表格宽度，值可以用px(像素)或百分比%
+        2. height属性：表格高度，值类似width
+        3. border 属性：表格边框的宽度
+        4. align 属性：表格的显示位置。值为：lift（默认） 、center、right
+        5. cellspacing属性：单元格之间的间距，默认2px
+        6. cellpadding 属性：单元格内容与单元格边框的显示距离，单位px
+        7. frame 属性：控制表格边框最外层的四条线框。属性值：
+            * void （默认）：表示无边框
+            * above ：顶部有边框
+            * below ：底部有边框
+            * hsides ：顶部和底部有边框
+            * lhs ：左边有边框
+            * rhs ：右侧边框
+            * vsides ：左右都有边框
+            * box ：包含全部四个边框
+            * border ：包含全部四个边框
+        8. rules 属性：控制是否显示以及如何显示单元格之间的分割线。属性值：
+            * none(默认)：表示无分割线
+            * all ：包括所有分割线
+            * rows ：仅有行分割线
+            * clos ：仅有列分割线
+            * groups ：仅在行组和列组之间有分割线
+                
+2.  **`<caption>`标记**
+
+    * 作用：为表格添加标题。
+    * 用法：插入`<table>`之后，`<tr>`表格行之前。
+    * align属性（标题位置）：
+        1. top：顶部
+        2. bottom：底部
+        3. left：左边
+        4. right：右边
+
+3.  **`<tr>`标记**
+
+    * 定义一行表格，每行可嵌套多个`<td>`或`<th>`标记
+    * 可选属性：
+        1. bgcolor属性：背景颜色 bgcolor="color"
+        2. align属性：设置垂直方向对齐方式
+            * bottom值
+            * top值
+            * middle值
+        3. valign属性：设置水平方向对齐方式
+            * left值
+            * right值
+            * center值
+    
+4.  **`<td>和<th>`**
+
+    1.  `<td>和<th>`都是单元格的标记，必须嵌套在`<tr>`内成对出现
+    2.  两者区别：
+        *  `<th>是表头标记，通常位于首行或者首列；<th>中的文字会被加粗，而<td>不会`
+        *  `<td>是数据标记，表示该单元格的具体数据`
+        
+    3.  共同之处 ：两者的标记属性都是一样的
+    4. 属性
+        * bgcolor：背景颜色
+        * align：单元格对齐方式
+        * valign：单元格垂直对齐方式
+        * width：单元格宽度
+        * height：单元格高度
+        * rowspan：单元格所占格数
+        * colspan：单元格所占列数
+        
+
+
+###简单网页布局：
+
+```
+<html>
+<head>
+    <title>简单网页布局</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+</body>
+</html>
+
+<table border="1" width="900" align=center>
+		<tr height="90" bgcolor=red> <td>网页的头部</td> </tr>
+		<tr height="500" > <td>网页的左部分和右部分</td> </tr>
+		<tr height="90" > <td>网页的底部</td> </tr>
+</table>
+```
+
+
+
+7.HTML框架
+-----------------------
+
+框架将浏览器划分成不同的部分，每一部分加载不同的网页，实现在一个浏览器窗口中加载多个页面的效果
+
+###1. 语法格式
+	`<frameset>  </frameset>`
+
+###2. 属性
+
+1. cols
+	* 使用像素数和%分割**左右**窗口，* 表示剩余部分。如：cols=90,*,90 （左右各占90个像素，中间占用剩下部分）
+	*  \*,\* 表示框架平均分成2个。 如：cols=`*,*`左右均分2个
+	*  \*,\*,\* 表示框架平均分成3个
+
+2. rows
+	* 使用像素和%分割**上下**窗口，*表示剩余部分
+	
+3. frameborder
+	*  指定是否显示边框，0不显示，1显示
+	
+4. border
+	设置边框的大小，默认值5像素
+	
+
+###3. `<frame>`子窗口标记
+
+	`<frame>`标记是单标记，必须放在`<frameset>`中使用；`<frameset>`中设置了几个窗口（通过属性cols或rows设置），
+	对应必须使用几个`<frame>`框架，使用src属性指定一个网页
+	
+**属性**
+
+1. src
+	* 加载网页文件的URL地址
+	
+2. name
+	* 框架名称，是链接标记的target所要参数
+	
+3. noresize
+	* 表示不能调整框架大小
+	
+4. scrolling 是否需要滚动条, 属性值：
+	* auto自动出现
+	* yes
+	* no
+
+5. frameborder
+	* 是否需要边框
+	* 1显示，0不显示
+	
+
+
+
+8. 表单设计
+----------------------
+
+###8.1表单标记
+
+	`<form> </form>`
+	定义表单的开始位置和结束位置，表单提交是的内容就是`<form>`表单中的内容
+	
+####基本格式
+
+	`<form action="服务器端地址（接受表单内容的地址）"  name="表单名称"> </form>`
+	
+####常用属性
+
+1. name  表单名称
+
+2. method 传送数据的方式
+
+	* get属性值：get提交时，会将表单的内容附加在URL地址的后面，所以限制了提交的内容长度不超过8192个字符
+		且不具备保密属性
+	* post属性值：post提交时，将表单中的数据一并包好在表单主体中，一起传送到服务器中处理，没有数据大小限制
+	
+3. action 表单数据的处理程序的URL地址，如果为空则使用当前文档的URL地址，如果表单中不需使用action属性也要
+	指定其值为 no
+
+4. enctype   设置表单的资料的编码方式
+
+5. target  和超链接的属性类似，用来指定目标窗口
+
+
+###8.2 文本域和密码
+	`<input>`标记 ：`<input>`标记没有结束标记
+
+####基本语法
+
+	`<input type="" name="" value="" size="" maxlength="" >`
+	
+####属性介绍
+
+1. type属性
+	* text值：表示也个文本输入域
+	* password值：表示一个密码输入域
+	
+2. name属性
+	* 定义控件的名称
+	
+3. value属性
+	* 初始化值，打开浏览器时文本框中的内容
+	
+4. size属性
+	* 设置控件的长度
+	
+5. maxlength属性
+	 * 输入框中最大允许输入的字符数
+	
+
+
+
+###8.3 提交、重置、普通按钮
+
+1. 提交按钮
+	
+	`当<input type="submit">时`
+	
+2. 重置按钮
+	
+	`当<input type="reset">时`
+	
+3. 普通按钮
+	
+	`当<input type="button">时`
+
+
+
+###8.4 单选框和复选框
+
+单选框（不可更改）和复选框都可以使用 checkbox 属性来设置默认选中项
+
+1. 单选按钮
+
+	`<input type="radio">`
+	
+	性别：`<input type="radio" name="sex">男<input type="radio" name="sex">女`通过定义两者的name相同，
+	来让它只能在"男""女"两者之间选择其一。
+	
+2. 复选框
+
+	`<input type="checkbox">`
+
+###8.5 隐藏域
+
+`<input type="hidden">`
+	
+	
+###8.6 多行文本域
+
+使用`<textarea>`标记实现一个能够输入多行文本的区域
+
+语法格式：`<textarea name="" rows="" cols="" value="" > `说明` </textarea>`
+	
+rows属性和cols属性分别用来指定，显示的行数和列数，单位是字符个数。
+	
+	
+
+###8.7 菜单下拉列表域
+
+**标记：`<select>`**
+
+1. 语法格式  
+```
+	<select name="" size="" value="" multiple>
+	<option value="" selected> 选项1</option>
+					<option value="">选项2</option>
+					<option value="">选项3</option>
+					... ...
+					</secect>					
+```
+2. 属性
+	属性multiple 表示可通过ctrl键同时选择多个选项
+	... ...
+
+3. option标记
+	* 作用：用来指定列表中的一个选项
+	* value 属性：给选项赋值，指定传送到服务器上的值
+	* selected属性：指定默认的值
+
+
+
+###8.8 举例
+
+```
+<form >
+			帐号：<input type="text" value="请输入用户名" maxlength="15" name="zhanghao">
+			<br>
+			<br>
+			密码：<input type="password" value="" maxlength="16" name="mima">
+			<br>
+			<br>
+			<input type="submit"  value="提交">
+			<br>
+			<br>
+			性别：<input type="radio" name="sex">男<input type="radio" name="sex">
+			<br>
+			爱好：<input type="checkbox" name=tiyu>体育<input type="checkbox" name=meisu>美术
+			<br>
+			<br>
+			自我介绍：<textarea name="ziwojieshao" rows="10" cols="30"  >填写介绍内容</textarea>
+			<br>
+			<br>
+			地址：<select name=dizhi>
+			<option value=sichuan >四川 </option>
+			<option value=beijing >北京 </option>		
+			<option value=shanghai >上海</option>
+			</select>
+
+</form>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

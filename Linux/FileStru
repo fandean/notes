@@ -1,0 +1,110 @@
+             Ubuntu文件系统和目录结构
+
+主要目录结构：
+
+/						 根目录
+|
+|——boot/		 启动文件
+|    ˪ grub/		Grub引导器相关的文件
+|
+|——dev/			设备文件
+|——proc/		内核与进程镜像
+|
+|——mnt/			临时挂载	
+|——media/		挂载媒体设备
+|
+|——root/		root用户的$HOME目录
+|——home/
+|    ˪ user/
+|    ˪.../
+|
+|——bin/			系统程序
+|——sbin/		管理员系统程序
+|——lib/			系统程序库文件
+|——etc/			系统程序和大部分应用程序的全局配置文件
+|    ˪ init.d/		System V 风格的启动脚本
+|    ˪ rcx.d/			启动脚本的链接，定义运行级别
+|    ˪ network/		网络配置文件
+|    |— x11/			图形界面配置文件
+|
+|——usr/			
+|    ˪ bin/				应用程序
+|    ˪ sbin/			管理员应用程序
+|    ˪ lib/				应用程序库文件
+|    ˪ share/			应用程序资源文件
+|    ˪ src/				应用程序源代码
+|    ˪ local/			
+|    |    ˪ bin/			本地自行编译安装的程序
+|    |    ˪ .../			通常使用单独文件夹
+|    |— X11R6/		图形界面系统
+| 
+|——var/			动态数据
+|
+|——temp/		临时文件
+|——lost+found/ 磁盘修复文件
+|
+|--opt/			详见markdown文件
+
+######################################################################
+启动流程：
+		Linux系统主要通过以下步骤启动：
+
+		1. 读取MBR的信息，启动Boot Manager
+				Windows使用NTLDR作为Boot Manager；
+				Linux使用GRUB作为Boot Manager
+		2. 加载系统内核，启动init进程
+		3. init进程读取 /etc/inittab 文件，进入预设运行级别，按顺序运行级别对应
+				文件夹下的脚本。脚本通常以"start"参数启动，并指向系统中的程序。
+
+未完
+######################################################################
+
+全局配置文件：
+-----------------
+系统初始化：
+	/etc/inittab									运行级别、控制台数量
+	/etc/timezone									时区
+  /etc/inetd.conf								超级进程
+
+文件系统：
+  /etc/fstab										开机时挂载的文件系统
+	/etc/mtab											当前挂载的文件系统
+
+用户系统：
+  /etc/passwd					用户信息
+  /etc/shadow					用户密码
+  /etc/group					群组信息
+	/etc/gshadow				群组密码
+	/etc/sudoers				Sudoer列表（用visudo命令修改）
+
+shell:
+	/etc/shell					可用shell列表
+	/etc/inputrc				ReadLine控件设置
+	/etc/profile				用户首选项
+	/etc/bash.bashrc		bash配置文件
+
+系统环境：
+	/etc/environment		环境变量
+	/etc/updatedb.conf	文件检索数据库配置信息
+	/etc/issue					发行信息
+	/etc/issue.net
+	/etc/screenrc				屏幕设定
+	
+网络设定：
+	/etc/iftab					网卡MAC地址绑定
+	/etc/hosts					主机列表
+	/etc/hostname				主机名
+	/etc/resolv.conf		域名解析服务器地址
+	/etc/network/interfaces		网卡配置文件
+
+用户配置文件：
+	/etc/目录下的所有文件，应用软件的全局配置文件，只有root用户有权修改。
+	用户配置文件通常为全局配置文件的同名隐藏文件，位于$HOME下
+	如：
+	.inputrc
+	.vim/vimrc
+	少数例外，常为系统程序：
+	/etc/bash.bashrc			/home/user/.bashrc
+
+
+

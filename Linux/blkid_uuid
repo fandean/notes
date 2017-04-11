@@ -1,0 +1,18 @@
+UUID : 通用唯一识别码 Universally Unique Identifiler
+		是一种软件建构的标准。
+		目的：是让分散式系统中的所有元素都能有唯一的辨识信息，而不需要通过中央控制端来做识别信息的指定。
+		应用：微软的 全局唯一标识符 GUID 、 Linux的ext3等文件系统、GNOME等
+				格式有所不同，有长有短。
+		随机UUID的重复率非常非常低
+
+----------------------------------------------------------------------
+命令blkid
+		
+blkid		打印块设备属性的命令行工具
+语法：
+blkid  -L  label_name 		查询此label的设备信息
+blkid  -U	uuid			类似上
+blkid -o  <full | value | list> 	使用指定格式来显示输出
+				list 输出格式对用户最友好
+				full 默认格式
+				value 对用户不友好
