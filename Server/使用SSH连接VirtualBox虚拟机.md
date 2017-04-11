@@ -7,13 +7,6 @@
 [TOC]
 
 
-强烈建议学习的几篇SSH文章：  
-阮一峰  
-[SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)   
-[SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)   
-Asrchlinux wiki  
-[Secure Shell (简体中文)](https://wiki.archlinux.org/index.php/Secure_Shell_(简体中文))   
-[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_(简体中文))  
 
 **步骤：**
 
@@ -26,8 +19,7 @@ Asrchlinux wiki
 - 导入远程主机公钥至服务器(无密登录)
 
 
-1. 配置虚拟机网络，添加端口转发规则
------------------------------------------
+## 1. 配置虚拟机网络，添加端口转发规则
 
 ### 1.1 桥接模式
 
@@ -150,7 +142,9 @@ ftp连接：
 
 此时在远程客户端进行连接测试，如果可行
 
-Linux 上安装 ssh (Ubuntu & RedHat) : <http://blog.csdn.net/zxs9999/article/details/6930736>   
+[Linux 上安装 ssh (Ubuntu & RedHat)](http://blog.csdn.net/zxs9999/article/details/6930736)  
+
+
 
 ## 5. 配置服务器防火墙
 
@@ -231,8 +225,22 @@ Linux 上安装 ssh (Ubuntu & RedHat) : <http://blog.csdn.net/zxs9999/article/de
 
 
 
+
+
 # SSH key的生成与使用
-如果要详细了解请认真参考：[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)
+如果要详细了解请认真参考：[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)  
+[实战：Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)  
+
+强烈建议学习的几篇SSH文章：  
+阮一峰  
+[SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)   
+[SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)   
+Asrchlinux wiki:   
+[Secure Shell (简体中文)](https://wiki.archlinux.org/index.php/Secure_Shell_(简体中文))   
+[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_(简体中文))  
+
+
+
 
 ## 6. 远程主机生成密钥对
 
@@ -243,7 +251,8 @@ Linux 上安装 ssh (Ubuntu & RedHat) : <http://blog.csdn.net/zxs9999/article/de
 
 	ssh-keygen -t rsa
 
-生成密钥对时，有一个选项要求你设置密码passphrase，该密码是用来保护你的私钥的密码。如果设置了则在使用私钥时会要求你输入这个密码；**一般不设置，记不住**【之后还可更改此密码】。  
+生成密钥对时，有一个选项要求你设置密码passphrase，该密码是用来保护你的私钥的密码。如果设置了则在使用私钥时会要求你输入这个密码；**一般不设置，记不住**【之后还可更改此密码，使用ssh-keygen -p】。  
+
 
 生成后最好将私钥进行备份。另还有` -C `选项，用于为指定注释**通常使用自己的邮件名作为注释**。  
 
@@ -344,6 +353,12 @@ IdentityFile ~/.ssh/config/private-key-filename
 **对于GitLab等：** Public SSH keys need to be unique（唯一的）, as they will bind to your account. Your SSH key is the only identifier you'll have when pushing code via SSH. That's why it needs to uniquely map to a single user (这就是为什么它需要唯一地映射到一个用户).
 
 
+**GitHub使用非默认密钥对:**  
+```
+Host github.com
+RSAAuthentication yes
+IdentityFile ~/.ssh/FDGitHub_rsa.pub
+```
 
 
 ### SSH agent
@@ -357,6 +372,8 @@ SSH agent 一般会设置成在登录会话的时候自动启动，并在整个�
 -  GnuPG agent也许想要 GnuPG 来缓存您的私钥。当然咯，有些用户比较喜欢在 GnuPG 对话框来输入 PIN 码，这样子管理密码短语也是不错的选择。
 -  Keychain 是一个用来方便管理 SSH 密钥对的程序，它能尽最大努力去减少对用户的打扰。
 
+
+[Pro Git: 7.14 Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8) Git自带有一个独立的凭证辅助工具。
 
 
 ## 7. 导入远程主机公钥至服务器，并进行配置(无密登录)

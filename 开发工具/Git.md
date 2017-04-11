@@ -12,8 +12,9 @@
 ## Git学习
 可参考：
 
+网上教程：       
 - 阮一峰的github上的git相关文章
-- 廖雪峰的Git教程
+- [廖雪峰的Git教程](http://www.liaoxuefeng.com/)  
 - 《Pro Git》、《GitHub入门与实践》、《Git权威指南》
 - [Learn Git Branching](http://learngitbranching.js.org/)非常好的在线练习网站，可选择中文版。以此网站为基础进行学习。
 
@@ -32,6 +33,9 @@
 对于小的提交，可以一步完成git add和git commit，利用-a选项即可，比如：
 ```
 git commit -am "一次add加commit"
+
+# 签署提交(使用gpg key) 使用 -S 选项
+git commit -S -m 'signed commit签署提交'
 ```
 
 修改上一次提交信息：  
@@ -350,6 +354,19 @@ HEAD -> master -> C1
 
 ## git安装记录和配置问题
 
+### Git安装后的配置
+- 配置ssh key、gpg key见相关文章  
+
+gitignore:  
+ gitignore文件的配置，见.gitignore_global配置文件。
+
+If you already have a file checked in, and you want to ignore it, Git will not ignore the file if you add a rule later. In those cases, you must untrack the file first, by running the following command in your terminal:
+```
+$ git rm --cached FileName
+```
+
+
+
 > 现在升级到ubuntu 16.04，不必在编译安装了
 
 
@@ -485,11 +502,6 @@ git version 2.9.1.275.g75676c8
 
 
 
-git2
-============
-网上教程：       
-<http://blog.jobbole.com/78960/>    
-<http://www.liaoxuefeng.com/>
 
 
 
