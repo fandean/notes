@@ -118,7 +118,7 @@ android.util.Log类能够发送日志信息到**系统级别的共享日志中�
 
 
 ### 创建水平模式布局
-在Project视图中，右键 res目录 --> New --> Android resource directory； 从资源类型(Resource type)中选择layout，选择Orientation，点击 ">>" 按钮，最后选中Screen Orientation下拉列表中的Landscape(横向)选项。
+在Project视图中，右键 res目录 --> New --> Android resource directory； 从资源类型(Resource type)中选择layout；在可用的限定符列表中，选择Orientation，点击 ">>" 按钮，最后选中Screen Orientation下拉列表中的Landscape(横向)选项。
 
 ![Android Studio创建水平布局1](https://i.imgur.com/W7cBLNO.png)
 ![Android Studio创建水平布局2](https://i.imgur.com/TfBsYam.gif)
@@ -126,6 +126,18 @@ android.util.Log类能够发送日志信息到**系统级别的共享日志中�
 此时目录名会自动添加一个`-land`后缀名；可以在网站上查看Android的配置修饰符列表以及其代表的设备配置信息。
 
 将`res/layout`目录下的activity_**.xml文件复制到`res/layout-land`目录下，并修改其内容。
+
+
+
+> 创建styles-v21.xml文件：  
+> 创建用于 Android 5.0（API 级别 21）的文件
+> Right click on res folder, choose New --> `Android resource file`(直接是文件), set **the same name** for the new file **"styles"**, in Available qualifiers: choose the last item "Version" and finally set "Platform API level" 21.  
+> 之后应该会直接会创建values-v21目录和该目录下的styles-v21.xml文件。
+
+
+
+
+
 
 
 ### FrameLayout 帧布局

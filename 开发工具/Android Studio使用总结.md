@@ -4,6 +4,9 @@
 
 ---
 
+[视频地址](http://www.maiziedu.com/course/68/)
+
+
 Android Studio安装/学习可参考 [CodePath Android Cliffnotes](http://guides.codepath.com/android)  
 
 安装部分包含：  
@@ -103,7 +106,16 @@ Android Studio安装/学习可参考 [CodePath Android Cliffnotes](http://guides
 Android Studio也可在AndroidDevTools下载。
 
 
+### 手动导入jar包
+将视图切换到Project视图，将jar包拖入到`app/libs`中，再点击sync图标进行同步。
 
+
+
+## 友盟
+
+## 小米推送
+
+## 极光推送
 
 ### 使用建议
 参考：[Using Suggestion List](https://www.jetbrains.com/help/idea/2016.1/using-suggestion-list.html#sort_order)
@@ -279,8 +291,7 @@ warning: #FB3
 
 
 
-getter和setter
------------------------------
+## getter和setter
 
 自动插入的快捷键：
 
@@ -301,8 +312,7 @@ Go to File->Settings and expand Code Style, selectJava, and add your prefixes/su
 
 
 
-遇到的问题
---------------------
+## 遇到的问题
 
 ### 运行时无法找到设备
 在没有安装genymotion之前是没有问题的，安装之后就无法找到设备（不管是虚拟设备还是真机）
@@ -327,7 +337,7 @@ Go to File->Settings and expand Code Style, selectJava, and add your prefixes/su
 
 1. [CodeGlance](http://plugins.jetbrains.com/plugin/7275?pr=androidstudio "在右边预览代码，实现快速定位")  
 2. [findBugs-IDEA](http://plugins.jetbrains.com/plugin/3847?pr=androidstudio "查找bug的插件，Android Studio也提供了代码审查的功能（Analyze-Inspect Code…）")
-3. [Android Drawable Importer](http://plugins.jetbrains.com/plugin/7658?pr=androidstudio "未安装，太大")
+3. [Android Drawable Importer](http://plugins.jetbrains.com/plugin/7658?pr=androidstudio "未安装，太大")，非常强大的图片导入插件，批量/多源导入。
 4. [Material Theme UI](https://plugins.jetbrains.com/plugin/8006?pr= "网站被墙, 主题")
 5. [CheckStyle-IDEA](https://plugins.jetbrains.com/plugin/1065?pr= "检查编码风格")
 6. [TranslationPlugin](https://github.com/YiiGuxing/TranslationPlugin "翻译")
@@ -350,6 +360,16 @@ Go to File->Settings and expand Code Style, selectJava, and add your prefixes/su
 
 
 
+**Vysor:**  
+Vysor是一个Chrome插件, 他可以把android手机屏幕投影到电脑上方便操作，免费版需要USB连接线，付费版可以直接通过WiFi连接控制。  
+这里只讲一下一些配置问题：要Vysor能够操作手机，需要在开发者模型下开启“USB调试（安全设置）”。另可以调节显示画面的清晰度。
+
+
+
+
+
+
+
 
 
 ## Git with Android Studio 
@@ -362,9 +382,47 @@ Android Studio中文件的颜色代表的含义：
 
 
 
+## 图片导入
 
-英语单词解释
--------------------------------------
+1. 导入如下文件夹中的图片：  
+```
+drawable-hdpi
+drawable-mdpi
+drawable-xhdpi
+drawable-xxhdpi
+drawable-xxxhdpi
+```
+直接复制这些文件夹，然后在AS项目中的res目录下粘贴即可。
+2. 利用Android Drawable Importer插件的scale功能，将一张或一套图片快速生成不同尺寸的图片资源。
+用法：右击res文件夹 --> New --> Multisource-Drawable
+
+
+
+
+> Android Drawable Importer 该插件它支持：
+> Icon Pack Drawable Importer（图标包导入） 和 Vector Drawable Importer（矢量图导入） 构成第一个特征，Batch Drawable Import（批处理图导入） 作为第二特征，Multisource-Drawable（多源图导入） 作为第三特征。
+
+> 另还有个Android Material Design Icon Generator Plugin插件，用于Material Design Icon.
+
+
+
+
+## 将某开源库设置为Library Project
+You can also clone the Volley repository and set it as a library project:
+
+Git clone the repository by typing the following at the command line:
+```
+git clone https://github.com/google/volley
+```
+
+Import the downloaded source into your app project as an Android library module as described in [Create an Android Library](https://developer.android.com/studio/projects/android-library.html).
+
+
+
+
+
+
+## 英语单词解释
 
 |   English				|   中文        	|
 | --------------------- | ------------- |

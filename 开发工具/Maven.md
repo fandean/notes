@@ -4,15 +4,15 @@
 
 ---
 
-在看完《Maven实战》第3章后再看下面两篇文章。
-[Apache Maven 入门篇(上)](http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-1-406235-zhs.html)
-[**Apache Maven 入门篇(下)**](http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-2-405568-zhs.html "推荐")
+在看完《Maven实战》第3章后再看下面两篇文章。  
+[Apache Maven 入门篇(上)](http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-1-406235-zhs.html)  
+[**Apache Maven 入门篇(下)**](http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-2-405568-zhs.html "推荐")  
 
 
 [极客学院： Maven 教程](http://wiki.jikexueyuan.com/project/maven/)
 
-Maven镜像(更改`vim ~/.m2/settings.xml`文件)：
-> maven默认的远程库(<http://repo1.maven.org/maven2>) 
+Maven镜像(更改`vim ~/.m2/settings.xml`文件)：  
+> maven默认的远程库(<http://repo1.maven.org/maven2>)  
 
 - Maven阿里云中央仓库(国内快)： 
 ```

@@ -1,19 +1,18 @@
-疯狂Android讲义-笔记
-============================
+# 疯狂Android讲义-笔记
 
-第一章：Android应用和开发环境
---------------------------------
-###1.1 Android发展和简介
+## 第一章：Android应用和开发环境
+
+### 1.1 Android发展和简介
 
 Android系统主要由5部分组成。
 
-####1.应用程序层
+#### 1.应用程序层
 系统自带或编写的Android应用程序。
 
-####2.应用程序框架
+#### 2.应用程序框架
 开发Android应用程序时，就是面向底层的应用程序框架进行的。应用程序框架提供了大量API供开发者使用。
 
-####3.函数库
+#### 3.函数库
 Android包含一套被不同组件所使用的C/C++库的集合。一般应用开发者不能直接调用这套函数库，但可以间接通过应用程序框架来调用这些库。   
 这些核心库包含：   
 
@@ -26,16 +25,16 @@ Android包含一套被不同组件所使用的C/C++库的集合。一般应用�
 - Free Type
 - SQLite
 
-####4.Android运行时
+#### 4.Android运行时
 它由两部分组成：Android核心库和ART。  
 其中核心库提供了Java语言核心库所能使用的绝大部分功能，而虚拟机则负责运行Android应用程序。   
 Android 5.0以前的Android运行时由Dalvik虚拟机和Android核心库组成，但由于Dalvik虚拟机采用JIT（Just-in-time）的解释器进行动态编译并执行，因此导致Android App运行时比较慢；而ART模式则是在用户安装App时进行动态编译（Ahead-of-time，简称AOT），将原本在程序运行时的编译动作提前到应用安装时，这样使得程序在运行时可以减少动态编译的开销，从而提升Android App的运行效率。
 反过来，由于ART需要在安装App时进行AOT处理，因此ART需要占用更多的存储空间，应用安装和系统启动时间较长。
 
-####5.Linux内核
+#### 5.Linux内核
 Android系统建立在Linux 2.6之上。Linux内核提供了...等系统服务。 ...  
 
-###1.2搭建Android开发环境
+### 1.2搭建Android开发环境
 Android Studio不再基于Eclipse，而是基于IntelliJ IDEA的开发环境。  
 
 Android Studio中Project的概念与Eclipse的Project概念不同，它相当于Eclipse中的Workspace；Android Studio的Module（模块）才相当于Eclipse的Project。  
@@ -43,13 +42,13 @@ Android Studio中Project的概念与Eclipse的Project概念不同，它相当于
 Android Studio的项目相当于一个工作空间，一个工作空间可以包含多个模块，每个模块对应一个Android项目。   
 Android Studio的项目可以包含多个Android项目（模块）。  
 
-####Android SDK
+#### Android SDK
 虽然Android Studio已经附带了Android SDk，但它附带的并不是最新版，因此可能还需要下载最新版Android SDK。
 
 **中间略过部分重要内容**
 
 
-###1.4开始第一个Android应用
+### 1.4开始第一个Android应用
 Android Studio会为我们自动完成许多工作。使用其开发应用的大致步骤如下：  
 
 1. 创建一个Android项目或Android模块。  
@@ -64,7 +63,7 @@ Android Studio会为我们自动完成许多工作。使用其开发应用的大
  android:layout_width: 指定该界面组件的宽度。如果属性值为match_parent,则该组件与其父容器具有相同宽度；属性值若为wrap_content，则说明该组件的宽度取决于它的内容。
 
 
-###1.5Android应用结构分析
+### 1.5Android应用结构分析
 脱离IDE，使用命令行生成的工程；命令如下：
 `android create project -n HelloWorld -t android-21 -p HelloWorld -k com.fandean.helloworld -a HelloWorld`
 ```
@@ -107,7 +106,7 @@ Android Studio会为我们自动完成许多工作。使用其开发应用的大
 R是Android项目自动生成的一个java类。   
 `public final class R{...}`
 
-####1.5.2自动生成的R.java
+#### 1.5.2自动生成的R.java
 R.java文件是由AAPT工具根据应用中的资源文件自动生成，因此可以把R.java理解成Android应用的资源宝典。
 
 AAPT生成R.java文件的规则主要是如下两条：   
@@ -115,7 +114,7 @@ AAPT生成R.java文件的规则主要是如下两条：
 - 每类资源都对应于R类的一个内部类。比如所有界面布局资源对应于layout内部类；所有标识符资源对应于id内部类。
 - 每个具体的资源项都对应于内部类的一个public static final int类型的Field。
 
-####1.5.3 res目录说明
+#### 1.5.3 res目录说明
 按照约定将不同资源放在不同的文件夹内，这样可以方便的让AAPT工具来扫描这些资源，并为其生成对应的资源清单类：R.java。   
 以/res/value/strings.xml文件来说，它定义了一个个的字符串常量，如下：   
 ```xml
@@ -152,7 +151,7 @@ public static final class string{
 在其它XML文件中获取该组件，可以通过资源引用的方法，语法如下：  
 `@id/<标识符代号>`  
 
-####1.5.4Android应用的清单文件：AndroidManifest.xml
+#### 1.5.4Android应用的清单文件：AndroidManifest.xml
 >manifest：清单  
 
 清单文件是每个Android项目所必需的。它通常包含如下信息：  
@@ -163,7 +162,7 @@ public static final class string{
 - 应用程序使用系统所需的权限声明。  
 - 其它程序访问该程序所需的权限声明。  
 
-####1.5.6应用程序权限说明
+#### 1.5.6应用程序权限说明
 **1.声明运行该应用本身所需要的权限（调用Android系统功能）**   
 通过为`<manifest .../>`元素添加`<uses-permission .../>`子元素即可为程序本身声明权限。  
 `<uses-permission android:name="android.permission.CALL_PHONE"/>`  
@@ -175,11 +174,11 @@ public static final class string{
 
 
 
-###1.6 Android应用的基本组件介绍
+### 1.6 Android应用的基本组件介绍
 Android应用通常由一个或多个基本组件组成。  
 四大基本组件：  Activity、Service、BroadcastReceiver、ContentProvider
 
-####1.6.1 Activity和View
+#### 1.6.1 Activity和View
 Activity是android应用中负责与用户交互的组件。Activity只能通过setContentView(View)来显示指定组件。  
 
 View组件是所有UI控件、容器控件的**基类**，View组件就是Android应用中用户实实在在看到的部分。但View组件
@@ -191,23 +190,23 @@ Activity为Android应用提供了可视化用户界面，如果该Android应用�
 Activity包含setTheme(int resid)方法来设置其窗口的风格。  
 
 
-####1.6.2 Service
+#### 1.6.2 Service
 Service组件通常用于为其他组件提供后台服务或监控其他组件的运行状态。  
 
 。。。
 
-####1.6.3 BroadcastReceiver
+#### 1.6.3 BroadcastReceiver
 它代表广播消息接收器。从代码实现角度来看，它类似于事件监听器。而BoradcastReceiver监听的事件源是Android应用中的其他组件。  
 
 
-####1.6.4 ContentProvider
+#### 1.6.4 ContentProvider
 >provider:提供者
  content:内容  
 
 用于Android应用之间的实时数据交换、多应用程序之间进行数据交换。如读取联系人。  
 
 
-####1.6.5 Intent和IntentFilter
+#### 1.6.5 Intent和IntentFilter
 Intent并非应用组件，它是**应用内部不同组件**之间通信的载体。
 
 Activity、Service、BroadcastReceiver三种组件之间的通信都是以Intent作为载体，只是不同组件使用Intent的机制略有区别。  
@@ -220,7 +219,7 @@ Intent封装了当前组件需要启动或触发的目标组件的信息。
 系统判断组件是否满足隐式Intent需要靠IntentFilter来实现。  
 
 
-###1.7 签名Android应用程序
+### 1.7 签名Android应用程序
 **Android项目**以它的包名作为唯一标识。如果在同一台手机上安装两个包名相同的应用，后面安装的应用就可以覆盖前面安装的应用。为避免此事发生，Android要求对作为**产品发布**的应用进行签名。
 
 签名主要作用：  
@@ -237,12 +236,11 @@ apk包： ...
 
 
 
-第2章：Android应用的界面编程
---------------------------------------------------
+## 第2章：Android应用的界面编程
 
-###2.1 界面编程与视图(View)组件
+### 2.1 界面编程与视图(View)组件
 
-####2.1.1视图组件与容器组件
+#### 2.1.1视图组件与容器组件
 绝大部分UI组件都位于 android.widget 包及其子包、android.view包及其子包中。   
 所有UI组件都继承了View类，View组件代表一个空白的矩形区域。  
 
@@ -279,7 +277,7 @@ ViewGroup容器控制其子组件的分布依赖于ViewGroup.LayouParams、ViewG
 ViewGroup.MarginLayoutParams用于控制子组件周围的页边距(Margin)，它支持的XML属性见书P63页。
 
 
-####2.1.3 在代码中控制UI界面
+#### 2.1.3 在代码中控制UI界面
 Android允许开发者向开发Swing应用一样，完全在Java代码中控制UI界面。此时所有的UI组件都将通过new创建。但不建议。  
 
 查看书中代码，对于理解UI有一定帮助。
@@ -291,89 +289,89 @@ Context本身是一个抽象类，Activity、Service都继承了Context，因此
 **略过若干页 。。**
 
 
-###2.2第一组UI组件：布局管理器
+### 2.2第一组UI组件：布局管理器
 
 布局管理器本身就是一个UI组件，类图见书或dia图
 
-####2.2.1 线性布局 LinearLayout
+#### 2.2.1 线性布局 LinearLayout
 它们将容器里的组件一个挨着一个排列起来（横向/纵向）
 
-####2.2.2 表格布局TableLayout
+#### 2.2.2 表格布局TableLayout
 TableLayout继承了LinearLayout。表格布局采用行列的形式来管理UI组件。通过添加TableRow、其它组件来控制表格的行数和列数。TableRow也是一个容器，它代表一个表格行，向TableRow内每添加一个子组件表格就增加一列。
 如果直接在TableLayout中添加组件，则每一个组件直接占用一行。  
 
-####2.2.3帧布局FrameLayout
+#### 2.2.3帧布局FrameLayout
 类似于AWT中的卡片布局，但是它没有将底部的帧向上移动的方法。
 
 
-####2.2.4相对布局RelativeLayout
+#### 2.2.4相对布局RelativeLayout
 相对布局容器中的子组件的位置总是相对兄弟组件、父容器来决定。
 
-####2.2.5网格布局GridLayout
+#### 2.2.5网格布局GridLayout
 Android4.0新增。它把整个容器划分成rows × columns个网格，每个网格可以放置一个组件，一个组件也可占用多个网格。
 
-####2.2.6绝对布局AbsoluteLayout
+#### 2.2.6绝对布局AbsoluteLayout
 。。。
 
-###2.3第2组UI组件：TextView及其子类
+### 2.3第2组UI组件：TextView及其子类
 
-####2.3.1文本框(TextView)与编辑框(EditText)的功能和用法
+#### 2.3.1文本框(TextView)与编辑框(EditText)的功能和用法
 TextView直接继承了View，同时它还是EditText和Button两个UI组件的父类。TextView作用就是在界面上显示文本，从功能上看，它是一个文本编辑器(Android关闭了它的文字编辑功能)。
 
 
 略
 
-###2.4第3组UI组件：ImageView及其子类
+### 2.4第3组UI组件：ImageView及其子类
 ImageView继承自View组件，主要功能是显示Drawable对象（包括图片）
 
 
-###2.5第4组UI组件：AdapterView及其子类
+### 2.5第4组UI组件：AdapterView及其子类
 AdapterView本身是一个抽象类，它继承自ViewGroup；需使用其子类。Adapter（适配器）。  
 
 
-###2.6第5组UI组件：ProgreessBar及其子类
+### 2.6第5组UI组件：ProgreessBar及其子类
 ProgressBar本身代表进度条组件。
 
 
-###2.7第6组UI组件：ViewAnimator及其子类
+### 2.7第6组UI组件：ViewAnimator及其子类
 
 
-###2.8各种杂项组件
+### 2.8各种杂项组件
 
-####2.8.1使用Toast显示提示信息框
-
-
-####2.8.2日历视图（CalendarView）组件的功能和用法
+#### 2.8.1使用Toast显示提示信息框
 
 
-####2.8.3日期、时间选择器（DatePicker和TimePicker）的功能和用法
+#### 2.8.2日历视图（CalendarView）组件的功能和用法
 
 
-####2.8.4数值选择器（NumberPicker）的功能与用法
+#### 2.8.3日期、时间选择器（DatePicker和TimePicker）的功能和用法
 
 
-####2.8.5搜索框（SearchView）的功能与用法
+#### 2.8.4数值选择器（NumberPicker）的功能与用法
 
 
-####2.8.6选项卡（TabHost）的功能与用法
+#### 2.8.5搜索框（SearchView）的功能与用法
+
+
+#### 2.8.6选项卡（TabHost）的功能与用法
 
 
 
-####2.8.7滚动视图（Scrollview）的功能与用法
+#### 2.8.7滚动视图（Scrollview）的功能与用法
 
 
-####2.8.8 Notification的功能与用法
+#### 2.8.8 Notification的功能与用法
 Notification是显示在手机状态栏的通知（手机状态栏位于手机屏幕的最上方）
 
 
 
-第3章 android的事件处理
---------------------------------------------------
+## 第3章 android的事件处理
+
 2016.6.19  
 
 Adroid提供了两种方式的事件处理：基于回调的事件处理和基于监听的事件处理。
 
-###3.1 Android事件处理概述
+### 3.1 Android事件处理概述
 对于Android基于监听的事件处理而言，主要做法是为Android界面组件绑定特定的事件监听器。  
 
 >Android还允许在界面布局文件中为组件的`android:onClic`属性指定事件监听方法，通过这种方式指定事件
@@ -386,8 +384,11 @@ Android为绝大部分界面组件提供了事件响应的回调方法，开发�
 一般来说，基于回调的事件处理可用于处理一些具有通用性的事件，基于回调的事件处理代码会显得比较简洁。
 但对于某些特定的事件，无法使用基于回调的事件处理，只能采用基于监听的事件处理。
 
-###3.2基于监听的事件处理
-####3.2.1监听的处理模型
+
+
+
+### 3.2基于监听的事件处理
+#### 3.2.1监听的处理模型
 主要涉及如下三类对象：  
 
 - Event Source（事件源）：事件发生的场所，通常就是各个组件。  
@@ -398,7 +399,7 @@ Android为绝大部分界面组件提供了事件响应的回调方法，开发�
 事件监听器的核心就是它所包含的方法——这些方法也被称为事件处理器（Event Handler）。
 
 
-####3.2.2 事件和事件监听器
+#### 3.2.2 事件和事件监听器
 当外部动作在Android组件上执行操作时，系统会自动生成事件对象，这个事件对象会作为参数传给事件源上注册的事件监听器。事件的产生无需程序员关心，它是系统自动产生的。  
 （书中有一个示例）在上面的程序中，我们并未发现事件的踪迹。原因是Android对事件监听模型做了进一步简化：如果事件源触发的事件足够简单，事件里封装的信息比较有限，那就无须封装事件对象，将事件对象传入事件监听器。  
 但对于键盘事件、触摸屏事件等，此时程序需要获取事件发生的详细信息。对于这种包含更多信息的事件，Android同样会将事件信息封装成XxxEvent对象，并把该对象作为参数传入事件处理器（由程序员分析事件对象包含的信息并做出相应的处理）  
@@ -429,7 +430,7 @@ new 实现接口() | 父类构造器（实参列表）
 `new 监听器接口`  或  `new 事件适配器`的形式...   
 
 
-####3.2.7 直接绑定到标签
+#### 3.2.7 直接绑定到标签
 Android还有一种更简单的绑定事件监听器的方式，那就是直接在界面布局文件中为指定标签(XML中)绑定**事件处理方法**。
 
 对于很多Android界面组件标签而言，它们都支持onClick属性，该属性的值就是一个形如`xxx(View source)`方法的方法名。例如：   
@@ -449,11 +450,13 @@ Android还有一种更简单的绑定事件监听器的方式，那就是直接�
 
 这段代码用于在界面布局文件中为Button按钮绑定一个事件处理方法：`clickHandler`，此需在该界面布局对应的Activity中定义一个`void clickHandler(View source)`方法，这个方法会负责处理该按钮上的单击事件。部分代码示例如下：  
 ```java
-略
-public void onCreate(Bundle savedInstanceState)
-{
-	//略
-	
+public class MainActivity extends Activity{
+
+	public void onCreate(Bundle savedInstanceState)
+	{
+		//略
+	}
+
 	//定义一个事件处理方法
 	//其中source参数代表事件源
 	public void clickHandler(View source)
@@ -465,8 +468,10 @@ public void onCreate(Bundle savedInstanceState)
 ```
 
 
-###3.3基于回调的事件处理
+### 3.3基于回调的事件处理
 从代码实现的角度看，基于回调的事件处理模型更加简单。  
+
+对于基于回调的事件处理模型来说，事件源与事件监听器是统一的，或者说事件监听器完全消失了。当用户在GUI组件上激发某个事件时，组件自己特定的方法将会负责处理该事件。
 
 >《疯狂Java讲义》**闭包（Closure）和回调**：   
 闭包是一种能被调用的对象，它保存了创建它的作用域的信息。  
@@ -478,9 +483,8 @@ Java并不能显示的支持闭包，但对于非静态内部类而言，它不�
 >详见书中代码（必看）
 
 
-####3.3.1回调机制与监听机制
-对于基于回调的事件处理模型来说，事件源与事件监听器是统一的，或者说事件监听器完全消失了。当用户在GUI组件
-上激发某个事件时，组件自己特定的方法将会负责处理该事件(类似，事件源和事件监听器是统一的)。   
+#### 3.3.1回调机制与监听机制
+
 为了使用回调机制类处理GUI组件上所发生的事件，我们需要为该组件提供对应的事件处理方法——然而Java又是一种静态语言，我们无法为某个对象动态的添加方法，因此只能继承GUI组件类，并重写该类的事件处理方法来实现。  
 
 为了实现回调机制的事件处理，Android为所有GUI组件都提供了一些事件处理的回调方法，以View为例，该类包含如下方法：  
@@ -493,32 +497,146 @@ Java并不能显示的支持闭包，但对于非静态内部类而言，它不�
 - boolean onTrackballEvent(MotionEvent event): ... 触发轨迹球事件时...  
 
 
-示例代码略：
-部分没有看懂，但感觉很重要。
 
-####3.3.2 基于回调的事件传播
+基于回调的事件处理机制可以通过自定义View来实现，自定义View时重写该View的事件处理方法即可。
+
+示例代码:
+
+```java
+public class MyButton extends Button{
+	public MyButton(Context context, AttributeSet set){
+		super(context, set);
+	}
+
+	//在实际运行时却没有反应??? 而覆盖onTouchEvent方法可以打印Log
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event){
+		super.onKeyDown(keyCode, event);
+		Log.v("-crazyit.org", "the oKeyDown in MyButton");
+		//返回true，表面该事件不会再向外扩张（表明已经消费了该事件）
+		return true;
+		//在下一个示例中，将其改为false；这里不再重复代码。
+	}
+}
+```
+
+然后在某布局文件中加入如下标签：  
+
+```xml
+<package.MyButton
+	android:layout_width="match_parent"
+	android:layout_beight="wrap_content"
+	android:text="单击我" />
+```
+
+接下来在java程序中无须为该按钮绑定事件监听器；因为该按钮自己重写了onKeyDown()方法，这意味着它自己处理相应事件。
+
+```
+基于监听的事件模型  --->   事件交给监听器处理。  
+基于回调的事件模型 ---->   事件源和事件监听器是统一的，事件由事件源自己处理。
+```
+
+
+> **所以：**基于回调的事件模型只在实现该事件源时进行覆盖。而基于事件监听器的模型可以在其他类中为其实现事件处理器。
+
+
+
+
+#### 3.3.2 基于回调的事件传播
+
+> 原来Android中的事件传递机制针对的是基于回调的事件模型。  
+> 更详细的事件传递机制见《Android群英传》
+
+
 几乎所有基于回调的事件处理方法都有一个boolean类型的返回值，该返回值用于标识该处理方法是否能完全处理该事件。  
+
 - 如果处理事件的回调方法返回true，表明该处理方法已经完全处理该事件，该事件不会传播出去。   
 - 如果返回false，表明该处理方法并未完全处理该事件，该事件会传播出去。  
 
+
+
 对于基于回调的事件传播而言，某组件上所发生的事件不仅会激发该组件上的回调方法，**也会触发该组件所在Activity的回调方法——只要事件能传播到该Activity**。
 
+
+
 示例代码,同时使用事件监听和回调，略
+
+```java
+public class MainActivity extends Activity{
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		Button bn = (Button)findViewById(R.id.my_button);
+
+		//为自定义的button绑定事件监听器
+		bn.setOnkeyListener(new OnKeListener()
+			@Override
+			public boolean onKey(View source, int keyCode, keyEvent event){
+				//只处理按下键的事件
+				if(event.getAction() == KeyEvent.ACTION_DOWN){
+					Log.d("-Listener-", "the onKeyDown in Listener");
+				}
+				//返回false,表明让事件继续向外传播
+				return false;
+			});
+	}
+
+	//重写Activity的onKeyDown方法,该方法可以监听它所包含的所有组件的按键被按下事件
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event){
+		super.onKeyDown(keyCode, event);
+		Log.d("-Activity-","the onKeyDown in Activity");
+		//返回false,表明让事件继续向外传播
+		return false;
+	}
+}
+```
+
+同时更改MyButton中的onKeyDown方法，让其返回false。  
+
+正常情况下，其打印的Log顺序如下：
+```
+the onKeyDown in Listener
+the oKeyDown in MyButton
+the onKeyDown in Activity
+```
+
+当组件上发生某个按键被按下的事件时，Android系统最先触发的应该是该按键上绑定的事件监听器，然后才触发该组件提供的事件回调方法，最后还会传播到该组件在的Activity。
+
+
+> 重写onTouchEvent方法响应触摸屏幕事件
+
 
 对比Android提供的两种事件处理模型，不难发现基于监听的事件处理模型具有更大的优势。   
 
 - 基于监听的事件处理模型分工明确，事件源、事件监听器由两个类分开实现，因此具有更好的可维护性。  
 - android的事件处理机制保证基于监听的事件监听器会被优先触发。
 
+另通过为View提供事件处理的回调方法，可以很好的把事件处方法封装在该View内部，从而提高程序的内聚性，即更适合应付那种事件处理逻辑比较固定的View。
+
+
+
+### 3.4 响应系统设置的事件
+
+让程序监听系统设置的更改。
+
+#### 3.4.1 Configuration类简介
+
+Configuration类用于描述手机设备上的配置信息，这些配置信息既包括用户特定的配置项，也包括系统的动态设备配置。
+
+调用Activity的如下方法可以获取到系统的Configuration对象：  
+
+```java
+Configuration cfg = getResources().getConfiguration();
+```
+
+
+#### 3.4.2 重写onConfigurationChanged方法响应系统设置更改
+
+如果要监听系统设置的更改，则可以考虑重写**Activity**的onConfigurationChanged(Configuration newConfig)方法(一个基于回调的方法)。
 
 
 
 
-
-|事件处理机制|事件处理机制|
-| --------- | -------- |
-|事件处理机制|事件处理机制|
-|事件处理机制|事件处理机制|
-|事件处理机制|事件处理机制|
-|事件处理机制|事件处理机制|
 

@@ -355,7 +355,8 @@ HEAD -> master -> C1
 ## git安装记录和配置问题
 
 ### Git安装后的配置
-- 配置ssh key、gpg key见相关文章  
+- 配置ssh key、gpg key见相关笔记  
+- [多个GitHub账号的SSH KEY切换](http://stormzhang.com/other/2013/10/16/github-multiply-ssh-key/)
 
 gitignore:  
  gitignore文件的配置，见.gitignore_global配置文件。

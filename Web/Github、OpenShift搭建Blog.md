@@ -4,32 +4,34 @@
 
 ---
 
+[搭建个人博客，你需要知道这些](http://www.jianshu.com/p/0c3663c4f0ef)  
+
 FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.io等  
-[各种轻博客程序，点击此处](https://www.zhihu.com/question/21981094)
+[各种轻博客程序，点击此处](https://www.zhihu.com/question/21981094)  
 
 
-[站长之家](http://www.chinaz.com/)
-[如何拥有一个完全免费的博客？](https://www.zhihu.com/question/20688782)
+[站长之家](http://www.chinaz.com/)  
+[如何拥有一个完全免费的博客？](https://www.zhihu.com/question/20688782)  
 
 ## 域名
-![](https://img1.wsimg.com/pc/img/1/trademark/nonregistered/godaddy-logo.png)
+![](https://img1.wsimg.com/pc/img/1/trademark/nonregistered/godaddy-logo.png)  
 
-[GoDaddy](https://hk.godaddy.com/ "币种选择CNY")
+[GoDaddy](https://hk.godaddy.com/ "币种选择CNY")  
 支持支付宝付款，一般的域名：第一年每年 ¥5.86，兩年以上每年 ¥101.00
 
-[DNSPod-免费智能DNS解析服务商](https://www.dnspod.cn/)
+[DNSPod-免费智能DNS解析服务商](https://www.dnspod.cn/)  
 .com	
-首年注册（元/年）：49	 
-续费（元/年）：55		
-转入（元/年）：55
+首年注册（元/年）：49	  
+续费（元/年）：55		  
+转入（元/年）：55  
 
 [阿里云：万网](https://wanwang.aliyun.com/domain/)
 新注价格	        
-1年	3年	5年	10年
-55	175	295	595	
-续费价格
-1年	3年	5年	10年
-60	180	300	600
+1年	3年	5年	10年  
+55	175	295	595	  
+续费价格  
+1年	3年	5年	10年  
+60	180	300	600  
 
 
 以上费用都是指**changchuanfan.com域名的价格**
@@ -72,11 +74,20 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 服务器：              免费的就用openshift吧，贼叼了，各种好啦。(其他免费的有的没得)              收费较便宜的就SAE吧    
 域名：              免费的就<http://freenom.com> 后缀是tk，ml，ga，cf。谷歌收录正常，好好写呗，百度就算了。
 
-因为你很可能在国内，所以考虑一下CDN。
-免费的CDN有的是；效果是很明显的。而且节省流量。
+因为你很可能在国内，所以考虑一下CDN。  
+免费的CDN有的是；效果是很明显的。而且节省流量。  
 
 
 >一个搭建在openshift上的使用freenom.com上的.tk免费域名的blog <http://www.superwbd3.tk/>
+
+
+
+服务器提供商，相对来说会比较稳定靠谱，国内的UCloud、阿里云、腾讯云、七牛云，国外的有亚马逊。七牛云也可以作为Web服务器？？
+
+
+图床服务器：  
+将网页和多媒体资源分开存储，可以让Web服务器的访问宽带不至于很快被占用完。七牛云存储的免费用户拥有10G的存储空间，和每月10W次的put/delete请求，100万次get请求。另还可以考虑其他免费图床服务(考虑其是否靠谱)。
+
 
 
 

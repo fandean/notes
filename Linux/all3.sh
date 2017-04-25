@@ -248,6 +248,10 @@ sudo apt-get install kchmviewer -y
 # Redshift 屏幕亮度调节，护眼。另还有f.lux
 # sudo apt-get install redshift -y
 
+# Asciinema 记录和分享你的终端会话操作，（录制终端）；`asciinema rec`进行录制，按 Ctrl + D 或者 exit退出
+# 版本太低，使用ppa安装
+# sudo apt-get install asciinema -y
+
 
 ##################################################
 #
@@ -292,6 +296,8 @@ sudo add-apt-repository ppa:nathan-renniewaldock/flux
 # 9. CopyQ高级剪切板管理工具(对于XUbuntu可考虑xfce4-clipman)<https://linux.cn/article-7329-1.html>
 sudo add-apt-repository ppa:hluk/copyq
 
+# 10. asciinema 录制终端
+sudo add-apt-repository ppa:zanchey/asciinema
 
 #############统一在在此更新############################
 sudo apt-get update  -qq
@@ -326,3 +332,7 @@ sudo apt-get install fluxgui -y
 
 # 9. CopyQ
 sudo apt-get install copyq -y
+
+# 10. asciinema
+sudo apt-get install asciinema -y
+
