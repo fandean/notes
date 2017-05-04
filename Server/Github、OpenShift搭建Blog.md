@@ -13,6 +13,11 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 [站长之家](http://www.chinaz.com/)  
 [如何拥有一个完全免费的博客？](https://www.zhihu.com/question/20688782)  
 
+
+[有哪些便宜稳定，速度也不错的Linux VPS 推荐？](https://www.zhihu.com/question/20800554)
+
+
+
 ## 域名
 ![](https://img1.wsimg.com/pc/img/1/trademark/nonregistered/godaddy-logo.png)  
 
@@ -88,6 +93,9 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 图床服务器：  
 将网页和多媒体资源分开存储，可以让Web服务器的访问宽带不至于很快被占用完。七牛云存储的免费用户拥有10G的存储空间，和每月10W次的put/delete请求，100万次get请求。另还可以考虑其他免费图床服务(考虑其是否靠谱)。
 
+
+
+**购买VPS吧，便宜好用；见另一篇关于VPS的文章**
 
 
 

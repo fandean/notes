@@ -26,39 +26,44 @@ Android Studio安装/学习可参考 [CodePath Android Cliffnotes](http://guides
 
 >Android Studio  默认的 Keymap (即 **Default for XWin** 的快捷键定义方式)
 
-| 	   快捷键			|		说明			|
-| ------------------|------------------------|
-|Ctrl + J| 用于在忘记时，调出Live Template(列表) |
-|Ctrl + Q | 快速查看方法... 对应的 doc|
-|Ctrl + space  |自动补全代码，显示输入建议|
-|Ctrl + shift + Enter  |自动填充表达式如if,while,for,switch等|
-|Ctrl + F12  |浏览当前类的成员函数与成员变量|
-|Ctrl + H  |	显示当前类的继承层次	|
-|Ctrl + D|	复制光标所在行到下一行 |
-|Ctrl + Y|	删除光标所在行			|
-|Ctrl + X| 剪切光标所在行		|
-| Ctrl + Delete/Backspace|  删除单词至词尾/词首|
-|Ctrl + /| 	使用`//`注释所选行或光标所在行 |
-|Ctrl + Shift + / | 使用`/* */`注释所选行或为当前行添加注释 |
-|ctrl + shift + v| 从剪贴板中选择要粘贴的内容 |
-|Alt + `insert`| 根据代码风格设置选择自动为类创建getter/setter、构造器等 |
-| Alt + Enter | Issue quick fix |
-|Ctrl + P | 参数提示。显示方法参数信息(类型) |
-|`Ctrl + Shift + I`| 以弹出式窗口的形式显示光标处类/方法的定义|
-| Ctrl + B | 跳转到光标所在类或方法的定义处 |
-|` Ctrl + 鼠标悬浮 / 鼠标点击` | 显示光标下元素信息 / 跳转到其定义处|
-|**Ctrl + W** | 选中代码，连续按可选择不同区域（常用于选中当前单词）要会用 |
-|Ctrl + N | 弹出用于查找类的搜索框，搜索到之后可打开该类文件 |
-|Ctrl + E | 查看最近打开的文档 |
-|Ctrl + O | 选择要 `@Override`的方法, 另一个技巧见下文 |
-| Ctrl + Shift + ↑ 或 ↓ | 将当前选中行的代码直接上下移动位置 | 
-|Ctrl + Alt + L | 矫正代码格式 |
-| 双击Shift | 弹出搜索框 |
-| Alt + Q | 查看上下文。按一次可以查看当前光标所在方法，按两次...所在类 | 
-| CTRL + B | Go to declaration 声明处 |
-| CTRL + ALT + B | Go to implementation |
-| F4 | Go to source |
-| CTRL + U | Go to super Class |
+| 快捷键                        | 说明                                                        |
+|-------------------------------|-------------------------------------------------------------|
+| Ctrl + J                      | 用于在忘记时，调出Live Template(列表)                       |
+| Ctrl + Q                      | 快速查看方法... 对应的 doc                                  |
+| Ctrl + space                  | 自动补全代码，显示输入建议                                  |
+| Ctrl + shift + Enter          | 自动填充表达式如if,while,for,switch等                       |
+| Ctrl + F12                    | 浏览当前类的成员函数与成员变量                              |
+| Ctrl + H                      | 显示当前类的继承层次                                        |
+| Ctrl + D                      | 复制光标所在行到下一行                                      |
+| Ctrl + Y                      | 删除光标所在行                                              |
+| Ctrl + X                      | 剪切光标所在行                                              |
+| Ctrl + Delete/Backspace       | 删除单词至词尾/词首                                         |
+| Ctrl + /                      | 使用`//`注释所选行或光标所在行                              |
+| Ctrl + Shift + /              | 使用`/* */`注释所选行或为当前行添加注释                     |
+| ctrl + shift + V              | 从剪贴板中选择要粘贴的内容                                  |
+| Alt + `insert`                | 根据代码风格设置选择自动为类创建getter/setter、构造器等     |
+| Alt + Enter                   | Issue quick fix                                             |
+| Ctrl + P                      | 参数提示。显示方法参数信息(类型)                            |
+| `Ctrl + Shift + I`            | 以弹出式窗口的形式显示光标处类/方法的定义                   |
+| Ctrl + B                      | 跳转到光标所在类或方法的定义处                              |
+| ` Ctrl + 鼠标悬浮 / 鼠标点击` | 显示光标下元素信息 / 跳转到其定义处                         |
+| **Ctrl + W**                  | 选中代码，连续按可选择不同区域（常用于选中当前单词）要会用  |
+| Ctrl + N                      | 弹出用于查找类的搜索框，搜索到之后可打开该类文件            |
+| Ctrl + E                      | 查看最近打开的文档                                          |
+| Ctrl + O                      | 选择要 `@Override`的方法, 另一个技巧见下文                  |
+| Ctrl + Shift + ↑ 或 ↓         | 将当前选中行的代码直接上下移动位置                          |
+| 双击Shift                     | 弹出搜索框                                                  |
+| Alt + Q                       | 查看上下文。按一次可以查看当前光标所在方法，按两次...所在类 |
+| CTRL + B                      | Go to declaration 声明处                                    |
+| CTRL + ALT + B                | Go to implementation                                        |
+| F4                            | Go to source                                                |
+| CTRL + U                      | Go to super Class                                           |
+| Ctrl + Alt + V                | 提取局部变量                                                |
+| Ctrl + Alt + F                | 提取全局变量                                                |
+| Ctrl + Alt + M                | 提取方法                                                    |
+| Ctrl + Alt + L                | 格式化代码                                                  |
+
+
 
 > Live Template中有大量的模板，比如输入fbc回车生成`() findViewById(R.id.);`。设置路径: Setting --> Editor --> Live Templates。
 关于自定义Live Template参见；[Android 项目代码质量保证实践](https://www.zybuluo.com/zyl06/note/618862)
