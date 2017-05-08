@@ -145,6 +145,11 @@ Hexo：
 
 
 
+### 站内搜索
+开源免费的中文搜索引擎 xunsearch 迅搜，SegmentFault网站也是使用此搜索引擎。  
+
+[xunsearch](http://www.xunsearch.com/)  
+
 
 
 

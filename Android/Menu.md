@@ -16,6 +16,7 @@
 >选项菜单(Option Menu)
 >Android 3.0之前，按"Menu"键会显示选项菜单；而在它之后手机没有了这个按键，所以建议使用ActionBar来代替菜单。
 
+《疯狂Android讲义》1-3部分
 
 ## 1.选项菜单和子菜单
 
@@ -92,7 +93,31 @@ MenuInflater对象的inflate方法加载指定资源对应的菜单即可。
 ### 4.1 创建步骤
 
 1. 调用new PopupMenu(Context context, View anchor)创建下拉菜单，anchor代表要激发该弹出菜单的组件。
-2. 调用MenuInflater的inflate()方法将菜单资源填充奥PupupMenu中。
+2. 调用MenuInflater的inflate()方法将菜单资源填充到PupupMenu中。
 3. 调用PopupMenu的show()方法显示弹出式菜单。
+
+
+
+## onPrepareOptionsMenu 和onCreateOptionsMenu 的区别
+[onPrepareOptionsMenu 和onCreateOptionsMenu 的区别](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1101/1887.html)  
+
+在android中创建菜单menu时需要重写Activity的onCreateOptionsMenu(Menumenu)方法，这个方法只在第一次创建的时候调用一次，所以如果之后想对menu进行动态的修改，那么就不能再对onCreateOptionsMenu做什么手脚,就要用到onPrepareOptionsMenu(Menumenu)方法了。
+
+onPrepareOptionsMenu与onCreateOptionsMenu不同的是，他在每次按下menu硬键之前会被调用，所以可以在这里动态的改变menu。
+
+注意：在onPrepareOptionsMenu(Menumenu)函数中，首先需要调用：
+
+super.onPrepareOptionsMenu(menu);
+
+menu.clear();
+
+如果没有clear而直接add的话，那么菜单中菜单项是会“追加”的，这样随着你不停的点menu键，菜单项就不停的增加。
+
+
+
+## Activity的invalidateOptionsMenu()方法
+Declare that the options menu has changed, so should be recreated. The onCreateOptionsMenu(Menu) method will be called the next time it needs to be displayed.
+
+声明选项菜单已更改，因此应重新创建。 onCreateOptionsMenu（Menu）方法将在下次菜单需要显示时被调用。
 
 

@@ -116,11 +116,6 @@ Android Studio也可在AndroidDevTools下载。
 
 
 
-## 友盟
-
-## 小米推送
-
-## 极光推送
 
 ### 使用建议
 参考：[Using Suggestion List](https://www.jetbrains.com/help/idea/2016.1/using-suggestion-list.html#sort_order)
@@ -423,6 +418,9 @@ git clone https://github.com/google/volley
 Import the downloaded source into your app project as an Android library module as described in [Create an Android Library](https://developer.android.com/studio/projects/android-library.html).
 
 
+
+## Android Studio添加Assets目录
+右键 "app" --> New --> Folder --> Assets Folder
 
 
 

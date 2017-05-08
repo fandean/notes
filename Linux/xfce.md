@@ -69,3 +69,10 @@ widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
 ## 添加全局菜单插件
 (指示器插件默认有此功能),但还可以下载其它插件。  
 xfce4-topmenu** 该全局菜单只支持gtk，而不支持QT，还有一个缺点是背景是黑色，所以系统主题最好用黑色主题来搭配。安装见另一个md。
+
+
+## 参考文章
+[My Xubuntu Customization Guide](https://smdavis.us/2017/05/05/my-xubuntu-customization-guide/)   
+
+参考自己的另一篇文章。
+

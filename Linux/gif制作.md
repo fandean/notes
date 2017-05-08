@@ -3,29 +3,83 @@
 > [8 BEST SCREEN RECORDERS FOR LINUX IN 2017](https://itsfoss.com/best-linux-screen-recorders/)
 
 
+
 ## 使用ImageMagick的如下命令
 
 1. 执行如下命令將单帧图片压缩成 gif 图片:
-`convert -delay 120 -loop 0 *.png  out.gif`
+```
+convert -delay 120 -loop 0 *.png  out.gif
+```
 
 2. 执行如下命令將 gif 图片进行压缩:
-`convert out.gif -fuzz 10% -layers Optimize optimized.gif`
+```
+convert out.gif -fuzz 10% -layers Optimize optimized.gif
+```
 
-3. 一个复制一点的命令
-`convert -delay 50 frame1.gif -delay 100 frame1.gif -delay 150 frame1.gif -loop 0 -pause 200 animated.gif`
+3. 一个复杂一点的命令
+```
+convert -delay 50 frame1.gif -delay 100 frame1.gif -delay 150 frame1.gif -loop 0 -pause 200 animated.gif
+```
+
+
+
+
+
+## 利用ffmpeg将mp4转换为gif
+
+参考：
+
+- [使用 ffmpeg 实现 MP4 与 GIF 的互转](http://note.rpsh.net/posts/2015/04/21/mac-osx-ffmpeg-mp4-gif-convert/)  
+- [Convert video (.mp4 or other) to high quality animated gif](http://www.alecjacobson.com/weblog/?p=2102)  
+
+
+方法一： 直接将视频转换为gif
+
+```
+# 将整个small.mpr转换为gif
+ffmpeg -i small.mp4 small.gif
+
+# 从视频第2秒开始，截取3秒片段为gif
+ffmpeg -t 3 -ss 00:00:02 -i small.webm small-clip.gif
+
+# 转换为高质量的gif
+ffmpeg -i small.mp4 -b 2048k small.gif
+```
+
+方法二： 先转换为图片，再利用convert转换为gif
+
+```
+# 每10帧每秒
+ffmpeg -i input.mp4 -r 10 output%05d.png
+
+# 在利用Imagemagick的convert工具转换为gif
+convert output*.png output.gif
+```
+
+在第一步时指定目录： 
+```
+mkdir /tmp/gif/
+
+ffmpeg -i input.mp4 -r 10 /tmp/gif/output%04d.png
+```
 
 
 ## 在GitHub上找到的几个shell工具
+
 都依赖于ffmpeg； makes creating high-quality gifs from video files
+
 ### gifgen
+
 <https://github.com/lukechilds/gifgen>
 
 ### make-gif
+
 <https://github.com/shmibs/make-gif>
 
 
 
 ## 安装Peek
+
 Peek是一个gif记录工具。缺点：录制后不能进行调整；优点：安装方便
 
 ```
@@ -37,6 +91,7 @@ sudo apt update && sudo apt install peek
 
 
 ## 安装Gifine
+
 Gifine可以录制简短的Gifs或者videos。优点：录制后能进行调整；缺点：安装麻烦，
 
 
