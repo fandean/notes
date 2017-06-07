@@ -44,7 +44,8 @@ Activity实例和Service实例的Context对象：创建Activity和Service组件�
 
 
 
---- 
+
+
 
 - View.getContext(): Returns the context the view is currently running in. **Usually the currently active Activity.**
 - Activity.getApplicationContext(): Returns the context for the entire application (the process all the Activities are running inside of). Use this instead of the current Activity context if you need a context tied to the lifecycle of the entire application, not just the current Activity.

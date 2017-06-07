@@ -4,10 +4,11 @@
 
 ---
 
-> 参考：《深入理解Java虚拟机：JVM高级特性与最佳实践》、《Java虚拟机规范》、Java虚拟机规范英文版 [Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)
-[Java虚拟机是什么](http://blog.csdn.net/zhangjg_blog/article/details/20380971)
-[深入理解Java Class文件格式（一）](http://blog.csdn.net/zhangjg_blog/article/details/21486985)
-[]()
+> 参考：《深入理解Java虚拟机：JVM高级特性与最佳实践》、《Java虚拟机规范》、  
+> Java虚拟机规范英文版  [Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)  
+>[Java虚拟机是什么](http://blog.csdn.net/zhangjg_blog/article/details/20380971)  
+>[深入理解Java Class文件格式（一）](http://blog.csdn.net/zhangjg_blog/article/details/21486985)  
+[]()  
 []()
 []()
 
@@ -25,8 +26,9 @@ Java技术体系包括以下组成部分：
 - 第三方Java类库
 
 
-**JDK**是最小开发环境 =  Java程序设计语言 + Java虚拟机 + Java API类库
-**JRE**是支持Java程序运行的标准环境 = Java SE API子集  + Java虚拟机
+**JDK**是最小开发环境 `=`  Java程序设计语言 `+` Java虚拟机 `+` Java API类库  
+
+**JRE**是支持Java程序运行的标准环境 `=` Java SE API子集  `+` Java虚拟机
 
 
 
@@ -47,15 +49,17 @@ Java虚拟机：
 - 2009.4，Oracle以74亿美元收购Sun。此时Oracle取得了当前三大商业虚拟机中的两个JRockit和HotSpot；并最终打算将其合二为一，该项目叫做**HotRoekit**。
 
 
-商用高性能虚拟机：  Sun HotSpot、 BEA JRockit、 IBM J9
-其他虚拟机： Sun Classic、Sun Exact、Apache Harmony（间接催生了Android的 Dalvik）
-嵌入式虚拟机： Dalvik、 ...
+商用高性能虚拟机：  Sun HotSpot、 BEA JRockit、 IBM J9  
+其他虚拟机： Sun Classic、Sun Exact、Apache Harmony（间接催生了Android的 Dalvik）  
+嵌入式虚拟机： Dalvik、 ...  
 
 
 Java技术未来：
 
 - 模块化
-- 混合语言：![](http://www.2cto.com/uploadfile/2013/0619/20130619082840959.jpg)除了催生大量新的基于JVM的语言外，许多已有语言也出现了基于JVM实现的版本。
+- 混合语言：  
+![](http://www.2cto.com/uploadfile/2013/0619/20130619082840959.jpg)  
+除了催生大量新的基于JVM的语言外，许多已有语言也出现了基于JVM实现的版本。  
 - 多核并行
 
 
@@ -68,15 +72,14 @@ Java虚拟机管理的内存包括以下几个运行时数据区：
 
 ![Java虚拟机.jpg](https://ooo.0o0.ooo/2017/03/22/58d296f4f3047.jpg "https://sm.ms/api/delete/xmofdhJWHkQA6bI")
 
-另一个图：
+另一个图：  
 ![](http://img.blog.csdn.net/20160430235004007)
-![]()
-![]()
+
 
 #### 程序计数器
 每个线程私有。字节码解释器工作时就是通过改变程序计数器的值来选取下一条需要执行的字节码指令。分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完成。
 
-由于**Java虚拟机的多线程**是通过线程轮流切换并分配处理器执行事件的方式来实现，在某个时刻，一个处理器之后执行一条线程中的指令；**因此为了**线程切换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器。
+由于**Java虚拟机的多线程**是通过线程轮流切换并分配处理器执行事件的方式来实现，在某个时刻，一个处理器之后执行一条线程中的指令；**因此为了**线程换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器。
 
 
 #### Java虚拟机栈（方法调用栈）

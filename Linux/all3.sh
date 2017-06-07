@@ -134,6 +134,9 @@ sudo apt-get install gimp -y
 # kazam Ubuntu上一款简易的桌面屏幕录制工具， 带截图功能.
  sudo apt-get install kazam -y
 
+# simplescreenrecorder另一个录屏软件，在Ubuntu 17.04中可以直接安装
+
+
 # 无法得知此软件是干啥的   sudo apt-get install anoise -y
 
 
@@ -227,8 +230,14 @@ sudo apt-get install openvpn -y
 # "注意"：安装后关闭屏幕等配置可能就要在这个软件中配置.
 sudo apt-get install tlp -y
 
-# Remarkable，Linux下的Markdown编辑器
+# Remarkable，Linux下的Markdown编辑器，
 
+# Typora，Markdown编辑器也很不错，只是现在还没有正式版发行，能够导出PDF，HTML...等各种格式
+# 能够直接在实时预览界面直接编辑，也可切换到源码模式进行编辑，能通过自动生成的目录进行跳转
+# 能够切换5种主题或自定义主题，能够保存历史文件的文件夹位置。
+# 安装教程见官网：https://www.typora.io/#linux
+# 安装时需先导入公钥，即下面的命令，添加仓库和安装软件在后面集体安装
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE 
 
 # lolcat它能通过类似cat命令的方式将某个命令的默认屏幕出错颜色，彩虹效果。示例：ls -l | lolcat -as 25
 sudo apt-get install lolcat -y
@@ -251,6 +260,16 @@ sudo apt-get install kchmviewer -y
 # Asciinema 记录和分享你的终端会话操作，（录制终端）；`asciinema rec`进行录制，按 Ctrl + D 或者 exit退出
 # 版本太低，使用ppa安装
 # sudo apt-get install asciinema -y
+
+
+# autojump高级的目录跳转命令；配置见相关笔记。通过记录cd过的目录来实现快速跳转。该命令的简写是 j
+# 还有个bd命令用来快速返回某级父目录，其安装方法请自行搜索
+sudo apt-get install autojump -y
+
+
+# colordiff，把原本diff的输出加上颜色，使其更易于阅读，可以单独使用也可结合diff使用
+# colordiff file1 file2					或   diff -u file1 file2 | colordiff
+sudo apt-get install colordiff -y
 
 
 ##################################################
@@ -299,6 +318,10 @@ sudo add-apt-repository ppa:hluk/copyq
 # 10. asciinema 录制终端
 sudo add-apt-repository ppa:zanchey/asciinema
 
+
+# 11.  typora，介绍见上文
+sudo add-apt-repository 'deb https://typora.io ./linux/'
+
 #############统一在在此更新############################
 sudo apt-get update  -qq
 
@@ -336,3 +359,5 @@ sudo apt-get install copyq -y
 # 10. asciinema
 sudo apt-get install asciinema -y
 
+# 11. typora
+sudo apt-get install typora -y

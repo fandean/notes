@@ -181,8 +181,8 @@ if(savedInstanceState != null){
 日志过滤
 
 ### 异常与跟踪栈
-见图片: LogCat中的异常与栈追踪.png
 
+![LogCat中的异常与追踪栈](https://c1.staticflickr.com/3/2847/33622493420_0da5f215a2_b.jpg)
 
 
 #### 诊断应用异常
