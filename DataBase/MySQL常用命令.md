@@ -1,4 +1,4 @@
-﻿# MySQL
+# MySQL
 
 标签（空格分隔）： DataBase
 
@@ -8,96 +8,7 @@
 
 [MySQL Documentation](http://docs.oracle.com/cd/E17952_01/index.html "或见MySQL官网的DOC，更好") 
 
-
-### 1.无法进入MySQL
-
-(斌斌)centos 6.7安装mysql 5.7后
-启动服务后，直接输入mysql：出现如下错误：
-
-```
-ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
-```
-
-解决方案参考：<http://www.cnblogs.com/kerrycode/p/3861719.html>
-此处mysql 5.7修改密码已经改变，参考此处：<http://blog.csdn.net/u010603691/article/details/50379282> (或参考第2节)如果使用原来的方式会出现如下错误：  
-
-**MySQL5.7更改密码时出现:**  
-
-```
-ERROR 1054 (42S22): Unknown column 'password' in 'field list'
-```
-
-
-### 2.Mysql5.7忘记root密码及mysql5.7修改root密码的方法
-
-参考：<http://www.jb51.net/article/77858.htm>
-（可能此方法也可解决第1节遇到的问题）
-
-
-另参考vbox中fedora 23中的笔记。  
-
-
->mysql 5.7.6由于密码过期，而更改密码的方法是：ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass'; 
->这也是常用的更改密码的方式。
-
-
-
-### MySQL 密码验证插件
-该插件要求密码至少8个字符；至少一个大写字母，一个小写字母，一个数字，一个特殊字符。
-
-更多密码详情见CentOS 7 中 inMySQL.md。
-
-比如root用户的初始密码如何查找。
-
-
-### MySQL乱码问题
-[原理](http://cenalulu.github.io/mysql/mysql-mojibake/)
-如果在创建数据库和表时没有指定字符集而出现乱码，解决办法就只有，如上链接中说的方法是正确的，乱码的原因有3个方面，必须同时解决。
-
-### 创建数据库,表，时提前指定字符集
-
-	mysql>CREATE DATABASE IF NOT EXISTS my_db default charset utf8 COLLATE utf8_general_ci;
-
-注意后面这句话 "COLLATE utf8_general_ci",大致意思是在排序时根据utf8校验集来排序
-那么在这个数据库下创建的所有数据表的默认字符集都会是utf8了
-
-
-	mysql>create table my_table (name varchar(20) not null default '')default charset=utf8;
-
-这句话就是创建一个表了,制定默认字符集为utf8
-
-
-在客户端使用：  set names utf8;
-该语句同时设置了：
-set character_set_client='utf8'
-set character_set_connection='utf8'
-set character_set_results='utf8'
-
-
-在.my.cnf文件中配置。
-最后只有server端字符集不对，后来在 /etc/my.cnf文件中也进行了配置后就好了。
-
-
-比如在客户端的~/.my.cnf文件中的设置：
-```
-[client]
-host = 127.0.0.1
-port = 3306						#前面两项可以不设置
-default-character-set=utf8
-```
-
-在服务器端的~/.my.cnf文件中的设置(我也不知到它是不是有用)
-
-
-在服务器端的/etc/my.cnf中的设置(有作用)：
-
-
-
-
-
-### 数据库系统概念 6 
-该书教学用到的数据库创建文件下载：[地址](http://codex.cs.yale.edu/avi/db-book/db6/lab-dir/sample_tables-dir/index.html)
-
+见[数据库使用中的一些问题.md](./数据库使用中的一些问题.md)
 
 
 
@@ -2059,10 +1970,10 @@ analyze table orders;
 -- #######################################################
 -- # 
 -- #######################################################
-
 ```
 
 ## MySQL进阶
+
 ```sql
 -- 麦子学院：MySQL 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -2706,5 +2617,4 @@ insert into booksales(title, copies)
 select last_insert_id();
 
 select * from booksales;
-
 ```
