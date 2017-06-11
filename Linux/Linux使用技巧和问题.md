@@ -128,9 +128,9 @@ http://itsfoss.com/how-to-install-themes-in-ubuntu-13-10/
 
 
 ### 18. 修改默认程序    
-右击该文件，选择"属性" --> "打开方式" , 即可进行更改。  
+右击该文件，选择"属性" --> "打开方式" , 即可进行更改。     
 
-
+或使用update-alternatives命令，见相关笔记。
 
 ### 19. apt-get build-dep 选项
 
@@ -144,7 +144,7 @@ http://itsfoss.com/how-to-install-themes-in-ubuntu-13-10/
 
 ### 20 boot空间旧内核清理 
 
-Ubuntu 16.04中直接使用`sudo apt-get autoremove`即可移除不需要的内核软件包。
+Ubuntu 16.04中直接使用`sudo apt-get autoremove`即可移除不需要的内核软件包（在你boot分区足够大的时候）。
 
 
 旧内核占用/boot太多空间，以至于无法更新，新内核。    
@@ -345,7 +345,7 @@ convmv --notest -f cp936 -t utf8 -r MY_目录
 
 alsamixer 软件可以对声音进行调整。
 
-> 问题解决过程已经忘记，尝试过许多网上的方法都没有用，后来怎么好的忘了。
+> 问题解决过程已经忘记，尝试过许多网上的方法都没有用，后来怎么好的忘了。未删除之前的文字在第6次git提交之前仍有保留。
 
 ### rm删除文件
 《Linux shell 脚本攻略》 

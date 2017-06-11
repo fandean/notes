@@ -4,15 +4,15 @@
 
 ---
 
-gitbook版[Thinking in Java (Java 编程思想)](https://java.quanke.name/)
+gitbook版[Thinking in Java (Java 编程思想)](https://java.quanke.name/)  
 
-> 进阶：
-[WEB请求处理一：浏览器请求发起处理](http://www.jianshu.com/p/558455228c43)
-[WEB请求处理二：Nginx请求反向代理](http://www.jianshu.com/p/bed000e1830b)
-[WEB请求处理三：Servlet容器请求处理](http://www.jianshu.com/p/571c474279af)
-[WEB请求处理四：Tomcat配置实践](http://www.jianshu.com/p/b5a3c269cae3)
-[WEB请求处理五：MVC框架请求处理](http://www.jianshu.com/p/6462e69ce241)
-[WEB请求处理六：浏览器HTTP协议漫谈](https://my.oschina.net/xianggao/blog/715041)
+> 进阶：  
+[WEB请求处理一：浏览器请求发起处理](http://www.jianshu.com/p/558455228c43)  
+[WEB请求处理二：Nginx请求反向代理](http://www.jianshu.com/p/bed000e1830b)  
+[WEB请求处理三：Servlet容器请求处理](http://www.jianshu.com/p/571c474279af)  
+[WEB请求处理四：Tomcat配置实践](http://www.jianshu.com/p/b5a3c269cae3)  
+[WEB请求处理五：MVC框架请求处理](http://www.jianshu.com/p/6462e69ce241)  
+[WEB请求处理六：浏览器HTTP协议漫谈](https://my.oschina.net/xianggao/blog/715041)  
 
 
 ## Tomcat服务器
@@ -24,9 +24,9 @@ tomcat 支持全部JSP以及Servlet规范。
 
 jboss 服务器
 
-tomcat的配置见，《轻量级Java EE...》还有
-tomcat是使用Java写成，需要java运行环境。
-tomcat服务器：Linux中的开启与关闭，可通过已经自定义的脚本tomcatStart和tomcatShut来控制。tomcat控制台用户与密码在tomcat的conf/tomcat-users.xml文件来配置。该密码非常重要，不要透露。
+tomcat的配置见，《轻量级Java EE...》还有  
+tomcat是使用Java写成，需要java运行环境。  
+tomcat服务器：Linux中的开启与关闭，可通过已经自定义的脚本tomcatStart和tomcatShut来控制。tomcat控制台用户与密码在tomcat的conf/tomcat-users.xml文件来配置。该密码非常重要，不要透露。  
 
 用户和密码：manager
 
@@ -42,9 +42,9 @@ tomcat配置数据源的两种方式：
 都需要将JDBC驱动复制到tomcat的lib目录下。
 
 
-http://www.sina.com/      表示url地址
-sina.com        是域名
-www.sina.com    是主机名
+http://www.sina.com/      表示url地址  
+sina.com        是域名  
+www.sina.com    是主机名  
 
 
 #### Web应用和虚拟目录的映射
@@ -104,10 +104,10 @@ eclips中的一个项目中会有一个WebContent
 
 Tomcat Server启动，再启动一个service，再启动多个连接器（不同连接器处理不同请求，比如需要使tomcat和apache集成就需要使用第三个连接器），连接器收到客户端时会启动引擎，引擎会寻找主机（多个网站），主机收到请求找web应用，再找web资源。【可以在server.xml中配置，直接看该文件也可进行理解】
 
->理解：（此处的服务器应该是指安装了tomcat的那台主机）
->http://www.sina.com:8080中的www.sina.com的作用，1.获得服务器的IP地址；2.在http请求头中告诉服务器(服务程序)我需要访问的主机是哪一台。
+>理解：（此处的服务器应该是指安装了tomcat的那台主机）  
+>http://www.sina.com:8080中的www.sina.com的作用，1.获得服务器的IP地址；2.在http请求头中告诉服务器(服务程序)我需要访问的主机是哪一台。  
 
->而如果直接使用http://192.168.1.1:8080时服务器(服务程序)不知道你需要访问我的哪一台主机，此时就会使用在配置文件中配置的默认主机（一般为localhost主机）
+>而如果直接使用http://192.168.1.1:8080时服务器(服务程序)不知道你需要访问我的哪一台主机，此时就会使用在配置文件中配置的默认主机（一般为localhost主机）  
 
 
 
@@ -162,7 +162,7 @@ tomcat本身也是用Java写成的开源Servlet容器。
 
 tomcat作为运行Servlet的容器，其基本功能是负责接收和解析来自客户的请求，同时把客户的请求传送给相应的Servlet，并把Servlet的响应结果返回给客户。
 
-![enter image description here](https://i.imgur.com/Bz1hgpM.png)
+![enter image description here](https://i.imgur.com/Bz1hgpM.png)  
 图：Servlet容器响应客户请求访问特定Servlet的时序图（**重要**）
 
 
@@ -217,7 +217,14 @@ Servlet规范规定，JavaWeb应用必须采用固定的目录结构。
 
 
 
-浏览器插件httpwatch
+> IE 浏览器插件httpwatch
+
+
+> Chrome开发者工具的简单使用：  
+直接在Chrome浏览器中打开开发者工具，切换到"Network"选项卡，然后按F5刷新页面，在该选项卡中就会列出
+此次刷新请求的具体资源的详细信息，并会统计进行了多少次请求(在Name栏的底部)。"Name"栏中列出了所有请求资源的名称，点击具体资源会出现几个标签页，点击"Headers"可查看其对应的请求头，点击"Preview"可预览资源...
+
+
 
 
 ### http请求
@@ -240,34 +247,69 @@ username=Tom&password=1234&sublmit=submit   # Post方式的请求正文
 用户如果没有设置，默认情况下浏览器向服务器发送的都是get请求，例如在浏览器直接输入地址访问，点击超链接等。
 如果想使用post请求方式，方法是在表单form标签中指定使用post。
 
+(**可以这样理解吗？** 首先在浏览器输入网址使用get请求一个页面包含表单的网页，然后我填写好表单后点击提交按钮，并且该表单的源代码中指定了使用post，那么就会使用post提交表单请求)   
+
+这样理解最好：  
+在浏览器中输入一个网址，回车后，此时浏览器向发送了一个Get请求(用于获取页面的源代码？？)，而浏览器为了加载页面中的脚本和图片等(解析源代码？？)又会自行发起请求。比如打开一个Github上的仓库，共发起了100次请求。  
+
+
+
 > 发现老师讲的很好。有些东西如果自己摸索会话费很多时间，而且不一定能达到那种程度的理解。要自己快速的动手去实施...来提高速度。可能前提是自己对这方面已经有了些理解。
 今天发现多与人交流是可以锻炼自己的思维的。
 
 
-get 提交的数据有长度限制（数据在请求头的第一行）
-post 无限制（在请求头空行下方）
+get 提交的数据有长度限制（数据在请求头的第一行）  
+post 无限制（在请求头空行下方）  
 
 
 如果要在用户点击超链接时提交数据给服务器，则可直接在超链接的地址后添加`?usernaem=fan`的这种get方式。
 
-请求行： GET ...
-请求头：
+```
+请求行： GET ...  
+请求头：    
 
-Accept: */*             -- 可接收的文件类型
-Referer: http://localhost:8080/myhome/index.html       -- 从哪个网址进入此页面；可用于设置防盗链
-User-Aget: ...                                          -- 客户机软件环境（比如系统，浏览器版本）
-Range: 头指示服务器只传输部分Web资源。这个头可以用来实现断点续传功能。
-
-
-Range:字段可以通过3种格式设置要传输的字节范围
-Range: bytes=1000-2000      #
-Range: bytes=1000-          #1000以后的所有内容
-Range: bytes=1000           #传输最后1000个字节
+Accept: */*             -- 可接收的文件类型  
+Referer: http://localhost:8080/myhome/index.html       -- 从哪个网址进入此页面；可用于设置防盗链  
+User-Aget: ...                                          -- 客户机软件环境（比如系统，浏览器版本）  
+Range: 头指示服务器只传输部分Web资源。这个头可以用来实现断点续传功能。  
 
 
+Range:字段可以通过3种格式设置要传输的字节范围  
+Range: bytes=1000-2000      #  
+Range: bytes=1000-          #1000以后的所有内容  
+Range: bytes=1000           #传输最后1000个字节  
+```
 
 
+**get请求示例：**  
 
+
+一般不包含请求正文，因为没有意义。见此处的讨论[HTTP GET with request body](https://stackoverflow.com/questions/978061/http-get-with-request-body)  
+
+```
+GET /hello.htm HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+Host: www.tutorialspoint.com
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: Keep-Alive
+```
+
+**post请求示例：**  
+包含请求正文  
+
+```
+POST /cgi-bin/process.cgi HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+Host: www.tutorialspoint.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: Keep-Alive
+
+licenseID=string&content=string&/paramsXML=string
+```
 
 
 
@@ -292,9 +334,9 @@ Cache-control: private
 ```
 
 
-**状态行：**
+**状态行：**   
 格式：HTTP版本号，状态码  
-状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为5类：
+状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为5类：  
 
 | 状态码 |  含义  |
 |---------|---------|
@@ -305,17 +347,17 @@ Cache-control: private
 |500~599|服务器端出现错误，常用500|
 
 
-**响应头：**
-Location: 配合302状态码使用，用于告诉客户端去找谁（实现重定向，通过地址的改变判断是否进行了重定向）。
-Content-Encoding: 服务器通过这个头，指示数据的压缩格式
-Content-Length: 
-Content-Type:
-Last-Modified: 当前资源的缓存时间。
-Refresh: 告诉浏览器隔多长时间刷新一次。（重要，聊天时获取最新数据，刷新实时图表）
-Content-Disposition: 告诉浏览器以下载方式打开数据
-Expires: 缓存的保存时间，-1和0表示不缓存。
-Cache-Control: no-cache     -- 控制浏览器不要缓存
-Pragma: no-cache        -- 控制浏览器不要缓存。  3个都设置缓存（适用不同浏览器）
+**响应头：**  
+Location: 配合302状态码使用，用于告诉客户端去找谁（实现重定向，通过地址的改变判断是否进行了重定向）。  
+Content-Encoding: 服务器通过这个头，指示数据的压缩格式  
+Content-Length:   
+Content-Type:  
+Last-Modified: 当前资源的缓存时间。  
+Refresh: 告诉浏览器隔多长时间刷新一次。（重要，聊天时获取最新数据，刷新实时图表）  
+Content-Disposition: 告诉浏览器以下载方式打开数据  
+Expires: 缓存的保存时间，-1和0表示不缓存。  
+Cache-Control: no-cache     -- 控制浏览器不要缓存  
+Pragma: no-cache        -- 控制浏览器不要缓存。  3个都设置缓存（适用不同浏览器）  
 
 
 >压缩数据：
@@ -323,9 +365,9 @@ Pragma: no-cache        -- 控制浏览器不要缓存。  3个都设置缓存�
 1. 提高浏览
 2. 节省费用；对于网络公司，SIP通过出口的流量向其收费。
 
-压缩API：
-GZIPOutputSeream流的Write(byte[] buf, int off,int len)方法将字节数组写入压缩输出流，只要将数据给它就可以进行自动压缩。
-GZIPOutputSeream为包装流，包装流一般都有缓冲，在缓冲区没有满时是不会将数据写入底层流的，所以才会有下面的gout.close()语句，或使用gout.flush()进行刷新。
+压缩API：  
+GZIPOutputSeream流的Write(byte[] buf, int off,int len)方法将字节数组写入压缩输出流，只要将数据给它就可以进行自动压缩。  
+GZIPOutputSeream为包装流，包装流一般都有缓冲，在缓冲区没有满时是不会将数据写入底层流的，所以才会有下面的gout.close()语句，或使用gout.flush()进行刷新。  
 ```
 ByteArrayOutputStream bout = new ByteArrayOutputStream();
 
@@ -342,17 +384,17 @@ response.getOutputStream().write(gzip);
 
 
 刷新数据间隔：
-
+```
     response.setHeader("refresh","3");//每隔3秒刷新一次
     response.setHeader("refresh","3;url='http://www.sina.com'"); //每隔3秒刷新到新浪网
-
+```
 
 
 **缓存介绍**：服务器针对Web中的每个资源都会根据其内容生成一个随机Tag，当客户端第二次访问服务器的同一资源时，会带上这之前获得的tag给服务器，服务器根据该tag来判断是**让客户端**使用缓存还是重新发送新数据给客户端。
 
-其它缓存相关的头，只能做到秒一级的控制。当服务器端数据已经更新但第二次访问与前一次访问时间差小于1秒，如果没有设置ETag缓存头，则服务器会让浏览器使用缓存数据。
+其它缓存相关的头，只能做到秒一级的控制。当服务器端数据已经更新但第二次访问与前一次访问时间差小于1秒，如果没有设置ETag缓存头，则服务器会让浏览器使用缓存数据。  
 
-ETag：可以进行实时更新。不常用。
+ETag：可以进行实时更新。不常用。  
 
 
 
@@ -360,19 +402,19 @@ ETag：可以进行实时更新。不常用。
 
 Range可以自行写程序来从服务器进行断点下载，而不使用IE，但需要服务器支持Range。
 
-**请求头：**
-Range: 头指示服务器只传输部分Web资源。这个头可以用来实现断点续传功能。
+**请求头：**  
+Range: 头指示服务器只传输部分Web资源。这个头可以用来实现断点续传功能。  
 
 
-Range:字段可以通过3种格式设置要传输的字节范围
-Range: bytes=1000-2000      #
-Range: bytes=1000-          #1000以后的所有内容
-Range: bytes=1000           #传输最后1000个字节
+Range:字段可以通过3种格式设置要传输的字节范围  
+Range: bytes=1000-2000      #  
+Range: bytes=1000-          #1000以后的所有内容  
+Range: bytes=1000           #传输最后1000个字节  
 
 
-**响应头：**
-Accept-Ranges: 说明Web服务器是否支持Range
-Content-Ranges: 指定了返回的Web资源的字节范围。
+**响应头：**   
+Accept-Ranges: 说明Web服务器是否支持Range   
+Content-Ranges: 指定了返回的Web资源的字节范围。   
 
 
 
@@ -381,6 +423,7 @@ Content-Ranges: 指定了返回的Web资源的字节范围。
 >以下内容来自《Tomcat与Java Web开发技术详解》
 
 ### 正文部分的MIME类型
+
 HTTP请求及响应的正文部分可以是任意格式的数据，如何**保证接收方能看懂**发送方发送的正文数据？HTTP协议采用MIME协议来规范正文的数据格式。
 
 MIME（Multipurpose Internet Mail Extension）是指多用在网络上传输的数据。因此，HTTP协议中的请求正文和响应正文也可以看做是邮件。MIME规定了邮件的标准数据格式，从而是的接收方能看得懂发送方发送的邮件。
@@ -435,15 +478,15 @@ ___________         ------------->      ________      2.调用Web服务
                 3.返回Web服务的响应结果 
 ```
 
-Web服务架构采用SOAP（Simple Object Access Protocol，简单对象访问协议）作为通信协议。SOAP协议规定客户与服务器之间一律采用XML语言进行通信。
-SOAP协议规定了客户端向服务器端发送的Web服务请求的具体数据格式，以及服务器端向客户端发送的Web服务响应结果的具体数据格式。
+Web服务架构采用SOAP（Simple Object Access Protocol，简单对象访问协议）作为通信协议。SOAP协议规定客户与服务器之间一律采用XML语言进行通信。  
+SOAP协议规定了客户端向服务器端发送的Web服务请求的具体数据格式，以及服务器端向客户端发送的Web服务响应结果的具体数据格式。  
 
 
-要实现Web服务架构，就意味着必须创建基于SOAP协议，负责发布和调用Web服务，以及负责**发送Web服务响应结果的服务器**，还要创建基于SOAP协议的负责请求**访问Web服务的客户程序**。
-如果**Web服务**能够坐上**Web**这辆顺风车，就能轻易在网络上流传起来。
+要实现Web服务架构，就意味着必须创建基于SOAP协议，负责发布和调用Web服务，以及负责**发送Web服务响应结果的服务器**，还要创建基于SOAP协议的负责请求**访问Web服务的客户程序**。  
+如果**Web服务**能够坐上**Web**这辆顺风车，就能轻易在网络上流传起来。  
 
-假定Web服务（对应getTime()方法）能返回当前的系统时间，客户端请求访问这个Web服务：
-![2017.02.14](https://i.imgur.com/w1cHFhP.png)
+假定Web服务（对应getTime()方法）能返回当前的系统时间，客户端请求访问这个Web服务：  
+![2017.02.14](https://i.imgur.com/w1cHFhP.png)  
 
 
 Web服务实际上是借助Web服务器来发布到网络上的。这样就不必创建专门的基于SOAP协议的服务器程序了。
@@ -456,11 +499,11 @@ SOAP响应 ----包装为----> HTTP响应  ----发送给客户端----> 客户端�
 
 ```
 
-> **Web的基本功能：**提供客户程序与服务器之间的数据传输。
-**Web服务的基本功能：**是客户程序远程调用服务器端的方法。
-由于在进行远程方法调用时，客户端与服务器之间也涉及到数据的交换，因此Web服务可以借助Web来传输双方的通信数据。
+> **Web的基本功能：**提供客户程序与服务器之间的数据传输。  
+**Web服务的基本功能：**是客户程序远程调用服务器端的方法。   
+由于在进行远程方法调用时，客户端与服务器之间也涉及到数据的交换，因此Web服务可以借助Web来传输双方的通信数据。  
 
-客户端协议解析器、客户端协议连接器组件，以及服务器端的协议解析器组件可以由第三方软件厂商提供。AXIS就是一个实现了这些组件的开放源代码软件，它相当于为发布和访问Web服务提供了基本的框架。
+客户端协议解析器、客户端协议连接器组件，以及服务器端的协议解析器组件可以由第三方软件厂商提供。AXIS就是一个实现了这些组件的开放源代码软件，它相当于为发布和访问Web服务提供了基本的框架。  
 
 
 
@@ -492,7 +535,7 @@ HTTP请求和响应的正文部分可以是任意类型的数据
 ```
 
 
-示例中HTTP请求的正文部分为**复合类型**，它包含两个**子部分**：**文件部分**和**提交按钮部分**。IE浏览器随机产生一个字符串形式的边界（boundary)，在HTTP请求头中，以下代码设定了边界的取值：
+示例中HTTP请求的正文部分为**复合类型**，它包含两个**子部分**：**文件部分**和**提交按钮部分**。IE浏览器随机产生一个字符串形式的边界（boundary)，在HTTP请求头中，以下代码设定了边界的取值：  
 ```
 Content-Type:multipart/form-data;boundary=-------------------------7d82d920188
 
@@ -502,8 +545,8 @@ Content-Type:multipart/form-data;boundary=-------------------------7d82d920188
  `-------------------------7d82d920188`为随机产生的**边界值**。
 
 
-**注意：**
-HTTP请求的正文部分的**各个子部分之间**用边界来进行分隔。**每个子部分由头和正文部分组成，头和正文部分之间用空行分隔**。
+**注意：**  
+HTTP请求的正文部分的**各个子部分之间**用边界来进行分隔。**每个子部分由头和正文部分组成，头和正文部分之间用空行分隔**。  
 
 
 具体请求信息见书
@@ -521,7 +564,8 @@ HTTP请求的正文部分的**各个子部分之间**用边界来进行分隔。
 ## 传智播客JavaEE阶段学习内容：
 
 ### 第一阶段：Java基础
-课程配置：计算机基础知识、编程基础、面向对象、常用类、
+```
+课程配置：计算机基础知识、编程基础、面向对象、常用类、  
 集合、IO、多线程、GUI、网络编程
 
 掌握技能：
@@ -535,9 +579,11 @@ HTTP请求的正文部分的**各个子部分之间**用边界来进行分隔。
 
 具备JavaSE本地应用开发能力，能够在本机开发一些应用软件。
 例如：压缩软件、下载软件、聊天软件、模拟DOS系统、综合信息管理软件
-
+```
 
 ### 第二阶段：JavaWeb + SSH框架
+
+```
 课程配置：前端技术、Mysql数据库+JDBC开发、JavaWeb开
 发核心内容、阶段案例、Struts2框架、Spring框架、
 Hibernate框架
@@ -553,9 +599,11 @@ Hibernate框架
 
 具备简单网站的开发能力，并结合阿里云，具备了真实环境的项目部署能力，
 已经能够在企业担任JavaEE工程师开发岗位
-
+```
 
 ### 第三阶段：综合项目实战，阶段一
+
+```
 课程配置：CRM项目实战、Oracle数据库、WebService、
 软件项目管理、Maven
 掌握技能：
@@ -570,10 +618,12 @@ Hibernate框架
 
 完整的贯穿了之前学习的内容，并引入权限、报表、接口、支付、缓存、消息
 队列等诸多主流就业元素，凭借此项目学员可斩获万元薪资岗位。
-
+```
 
 
 ### 第三阶段：综合项目实战，阶段二
+
+```
 课程配置：MyBatis框架、Spring MVC框架、Lucene/Solr、
 Linux、Redis、IO、多线程、GUI、网络编程
 掌握技能：
@@ -626,7 +676,7 @@ ERP管理系统是根据业务需求发展需要，建立的企业内部使用�
 项目简介：
 
 项目特色：
-
+```
 
 
 
