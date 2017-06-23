@@ -17,6 +17,8 @@
 5. [MODEL VIEW PRESENTER (MVP) IN ANDROID, PART 2](http://www.tinmegali.com/en/model-view-presenter-mvp-in-android-part-2/)  
 6. [MVP for Android: how to organize the presentation layer](https://antonioleiva.com/mvp-android/)  
 7. [Model-View-Presenter: Android guidelines](https://medium.com/@cervonefrancesco/model-view-presenter-android-guidelines-94970b430ddf)
+8. [一步一步实现Android的MVP框架](https://dev.qq.com/topic/5799d7844bef22a823b3ad44)   
+9. [Android MVP模式 简单易懂的介绍方式](https://segmentfault.com/a/1190000003927200)  
 
 
 

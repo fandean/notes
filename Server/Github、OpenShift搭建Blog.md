@@ -150,6 +150,15 @@ Hexo：
 
 
 
+
+### Jekyll
+[使用Jekyll搭建博客](https://blog.saymagic.tech/2015/09/30/learn-jekyll.html)  
+
+托管到国内某平台，有相关平台吗？
+
+
+
+
 ## 博客工具
 
 ### 站内搜索

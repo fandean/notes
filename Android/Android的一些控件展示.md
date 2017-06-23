@@ -5,6 +5,9 @@
 各控件的介绍见[Material Design](https://material.io/) --> [MATERIAL COMPONENTS](https://material.io/components/) --> [Material Design guidelines](https://material.io/guidelines/) --> 打开Web页面的抽屉，选择"Components"，即可看到各控件。
 
 
+[Android Design Support Library使用](http://wuxiaolong.me/2015/11/06/DesignSupportLibrary/ "Android Design Support Library使用")
+
+
 
 先来介绍3个顶级导航控件。抽屉、底栏、
 
@@ -34,7 +37,9 @@ Toolbar是在 Android 5.0 开始推出的一个 Material Design 风格的导航�
 ![Toolbar展示](http://upload-images.jianshu.io/upload_images/912181-0f2cde151fdc03db.jpg?imageMogr2/auto-orient/strip)  
 [最详细的 Toolbar 开发实践总结](http://www.jianshu.com/p/79604c3ddcae)  
 
+添加ActionBarDrawerToggle 的效果：
 
+![ActionBarDrawerToggle](http://upload-images.jianshu.io/upload_images/912181-2689a6c8af1b82ee.jpg?imageMogr2/auto-orient/strip)
 
 
 
@@ -84,3 +89,11 @@ Material Design中加入了Launch Screen； 对于启动屏的讨论[不支持�
 [做正确的 Floating Action Button](https://zhuanlan.zhihu.com/p/20123119)  
 效果展示：  
 ![FAB效果展示](http://pic2.zhimg.com/547c3fa90803569b3a98c6aebc468cdd_b.jpg)  
+
+
+
+## Staggered Grid LayoutManager
+图片需翻墙
+![](http://2.bp.blogspot.com/-7hGYFpZwDKU/Vi-5RkEDbnI/AAAAAAAA184/0hJlyZ5QyBs/s1600/0052.jpg)
+
+

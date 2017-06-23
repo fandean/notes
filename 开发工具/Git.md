@@ -1,4 +1,4 @@
-﻿# Git
+# Git
 
 标签（空格分隔）： 开发工具
 
@@ -45,6 +45,10 @@ git commit --amend
 使用--amend参数后，会打开配置文件中设置的文本编辑器，让你修改提交信息。
 
 
+在Android Studio中使用GPG对提交进行签名，见 PGP加密与GPG软件，或 [Signed commits · Wiki · akwizgran / briar · GitLab](https://code.briarproject.org/akwizgran/briar/wikis/signed-commits "Signed commits · Wiki · akwizgran / briar · GitLab")
+
+
+该方法是对某工程设置 Signed commits，在该工程中的所有提交都使用GPG签名的方法。也可尝试在git的全局配置文件中进行配置，以用于所有提交。
 
 
 
@@ -236,7 +240,6 @@ Git有三种状态，你的(已跟踪的)文件可能处于其中之一：
 
 
 
-
 ---
 
 Git
@@ -347,7 +350,6 @@ HEAD -> master -> C1
 
 
 
-
 -------------------------------------
 
 
@@ -397,7 +399,6 @@ sudo prefix=/usr install install-doc install-html install-info
 
 
 
-
 -------------------------------------------------
 
 ## 编译安装 git 2.9  记录：  
@@ -427,7 +428,7 @@ $ sudo make install install-doc install-html install-info
 ```
 
 >另可参照下载的git目录中的INSTALL文档中介绍的使用如下命令安装： 
-(注意第二个是使用root身份)If you want to do a global install, you can do
+>(注意第二个是使用root身份)If you want to do a global install, you can do
 
 	$ make prefix=/usr all doc info ;# as yourself
 	# make prefix=/usr install install-doc install-html install-info ;# as root

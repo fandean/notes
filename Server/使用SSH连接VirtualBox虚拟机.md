@@ -1,4 +1,4 @@
-﻿# 使用SSH连接VirtualBox虚拟机
+# 使用SSH连接VirtualBox虚拟机
 
 标签（空格分隔）： 安全 Server
 
@@ -43,28 +43,28 @@ NAT模式即虚拟机的网络是完全依赖于物理主机的网络。此时�
 
 示例：  
 
-| 名称   | 协议 | 主机IP    | 主机端口 | 子系统IP  | 子系统端口 |
-|--------|------|-----------|----------|-----------|------------|
-| ftp    | TCP  |           | 2121     |           | 21         |
-| ssh    | TCP  |           | 2222     |           | 22         |
-| http   | TCP  |           | 8080     |           | 80         |
-| mysql  | TCP  | 127.0.0.1 | 3306     | 10.0.2.15 | 3306       |
-| oracle | TCP  |           | 1521     |           | 1521       |
+| 名称     | 协议   | 主机IP      | 主机端口 | 子系统IP     | 子系统端口 |
+| ------ | ---- | --------- | ---- | --------- | ----- |
+| ftp    | TCP  |           | 2121 |           | 21    |
+| ssh    | TCP  |           | 2222 |           | 22    |
+| http   | TCP  |           | 8080 |           | 80    |
+| mysql  | TCP  | 127.0.0.1 | 3306 | 10.0.2.15 | 3306  |
+| oracle | TCP  |           | 1521 |           | 1521  |
 
 
 >参考： 
-<http://reverland.bitbucket.org/VirtualBox_net.html>         
-<http://www.myhack58.com/Article/48/66/2014/46228.htm>         
-设置两个网卡，一个NAT，一个桥接 <http://my.oschina.net/dmdgeeker/blog/229044>     
-[centos7 虚拟机相互访问的网卡设置](https://www.zybuluo.com/flyily/note/544688)  
-[VirtualBox下虚拟机和主机内网互通+虚拟机静态IP的网络配置](http://xintq.net/2014/09/05/virtualbox/)   
-[VirtualBox虚拟机网络环境解析和搭建-NAT、桥接、Host-Only、Internal、端口映射](http://blog.csdn.net/yxc135/article/details/8458939)    
-[A short guide to networking in Virtual Box with Oracle Linux inside](https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/)
+><http://reverland.bitbucket.org/VirtualBox_net.html>         
+><http://www.myhack58.com/Article/48/66/2014/46228.htm>         
+>设置两个网卡，一个NAT，一个桥接 <http://my.oschina.net/dmdgeeker/blog/229044>     
+>[centos7 虚拟机相互访问的网卡设置](https://www.zybuluo.com/flyily/note/544688)  
+>[VirtualBox下虚拟机和主机内网互通+虚拟机静态IP的网络配置](http://xintq.net/2014/09/05/virtualbox/)   
+>[VirtualBox虚拟机网络环境解析和搭建-NAT、桥接、Host-Only、Internal、端口映射](http://blog.csdn.net/yxc135/article/details/8458939)    
+>[A short guide to networking in Virtual Box with Oracle Linux inside](https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/)
 
 
 
 >**详细介绍**
-<http://www.cnblogs.com/adforce/archive/2013/10/11/3363373.html>
+><http://www.cnblogs.com/adforce/archive/2013/10/11/3363373.html>
 
 
 
@@ -100,7 +100,7 @@ NAT模式即虚拟机的网络是完全依赖于物理主机的网络。此时�
 
 
 >**由于SSH是使用非对称密钥来进行安全认证，所以在第一次与某主机通信时会提示你，连接的主机是不是可靠的。**
-所谓"公钥登录"，原理很简单，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录 shell，不再要求密码。
+>所谓"公钥登录"，原理很简单，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录 shell，不再要求密码。
 
 
 ftp连接：  
@@ -109,7 +109,7 @@ ftp连接：
 	或 
 	$ ftp
 	ftp> open host-name [port] 
-	
+
 可能并不成功，不知是不是防火墙的问题，使用sftp就好了，更安全。 
 
 
@@ -227,17 +227,13 @@ ftp连接：
 
 
 
-# SSH key的生成与使用
-如果要详细了解请认真参考：[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)  
-[实战：Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)  
+# 生成SSH key
 
-强烈建议学习的几篇SSH文章：  
-阮一峰  
-[SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)   
-[SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)   
+[SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)     
+[SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)     
 Asrchlinux wiki:   
-[Secure Shell (简体中文)](https://wiki.archlinux.org/index.php/Secure_Shell_(简体中文))   
-[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_(简体中文))  
+[Secure Shell (简体中文)](https://wiki.archlinux.org/index.php/Secure_Shell_(简体中文))     
+[SSH keys (简体中文)](https://wiki.archlinux.org/index.php/SSH_keys_(简体中文))    
 
 
 
@@ -282,7 +278,7 @@ ssh-rsa "公钥内容" your_email@example.com
 [fan 16:10:57]~$ ssh-keygen -t rsa -C "Fan@outlook.com" -b 4096
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/fan/.ssh/id_rsa): /home/fan/.ssh/FDGitHub_rsa
-Enter passphrase (empty for no passphrase): 
+Enter passphrase (empty for no passphrase):  （不要密码直接回车）
 Enter same passphrase again: 
 Your identification has been saved in /home/fan/.ssh/FDGitHub_rsa.
 Your public key has been saved in /home/fan/.ssh/FDGitHub_rsa.pub.
@@ -294,8 +290,6 @@ The key's randomart image is:
 |   +o.  o        |
 | o.. oo..        |
 |+o.   +*.o       |
-|+..  E.=So .     |
-|..    o== =      |
 |     .=..+oo     |
 |       +=o+= .   |
 |      .++=.o*    |
@@ -303,11 +297,6 @@ The key's randomart image is:
 ```
 
 
-
-公钥加密指纹fingerprint有两种形式：  
-
-- 之前的十六进制形式：`16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48`
-- 现在使用sha256哈希值并且使用base64进行格式：`SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8`
 
 
 指纹的用处之一是在使用SSH第一连接到某主机时，会返回该主机使用的公钥的指纹让你识别。示例：  
@@ -325,55 +314,7 @@ Are you sure you want to continue connecting (yes/no)?
 > 必须保证使用你的公钥的人明确知道这个公钥一定是你的。你可以在网站或通过其它方式公布你的公钥，以便他人进行对照确认。由于公钥很长，所以有了对应的指纹(指纹更易辨别，位数更少)，可以通过指纹进行对照(公布指纹)。
 
 
-
-### 如何创建多个ssh key而不是覆盖默认文件
-
-在创建ssh key时自行输入路径和文件名称，而非使用默认路径和文件名即可。
-
-
-### 使用非默认的密钥对 
-[Working with non-default SSH key pair paths](https://docs.gitlab.com/ce/ssh/README.html#working-with-non-default-ssh-key-pair-paths)
-
-比如：你在GitLab上粘贴的公钥(Public SSH keys)不是默认的密钥对；此时要想让你的ssh client正常与安装了GitLab的服务器通信，必须对ssh client进行配置，当通信对象为安装了GitLab的服务器主机时，使用哪个私钥(SSH private key)。
-
-For `OpenSSH clients` this is configured in the `~/.ssh/config` file. Below are two example host configurations using their own key:
-
-```
-# GitLab.com server
-Host gitlab.com
-RSAAuthentication yes
-IdentityFile ~/.ssh/config/private-key-filename-01
-
-# Private GitLab server
-Host gitlab.company.com
-RSAAuthentication yes
-IdentityFile ~/.ssh/config/private-key-filename
-```
-
-**对于GitLab等：** Public SSH keys need to be unique（唯一的）, as they will bind to your account. Your SSH key is the only identifier you'll have when pushing code via SSH. That's why it needs to uniquely map to a single user (这就是为什么它需要唯一地映射到一个用户).
-
-
-**GitHub使用非默认密钥对:**  
-```
-Host github.com
-RSAAuthentication yes
-IdentityFile ~/.ssh/FDGitHub_rsa.pub
-```
-
-
-### SSH agent
-
-**如果您的私钥使用密码短语来加密了的话，每一次使用 SSH 密钥对进行登录的时候，您都必须输入正确的密码短语。**
-而 SSH agent 程序能够将您的已解密的私钥缓存起来，在需要的时候提供给您的 SSH 客户端。这样子，您就只需要将私钥加入 SSH agent 缓存的时候输入一次密码短语就可以了。这为您经常使用 SSH 连接提供了不少便利。
-SSH agent 一般会设置成在登录会话的时候自动启动，并在整个会话中保持运行。有不少的 SSH agent 供您选择，我们将为您介绍几种常用的 SSH agent，您可以根据您的需要进行选择。
-
-
-- ssh-agent 是 OpenSSH 自带的一个 SSH agent
--  GnuPG agent也许想要 GnuPG 来缓存您的私钥。当然咯，有些用户比较喜欢在 GnuPG 对话框来输入 PIN 码，这样子管理密码短语也是不错的选择。
--  Keychain 是一个用来方便管理 SSH 密钥对的程序，它能尽最大努力去减少对用户的打扰。
-
-
-[Pro Git: 7.14 Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8) Git自带有一个独立的凭证辅助工具。
+> 如需进一步了解SSH Key的更多用法见《SSH key的生成与使用.md》
 
 
 ## 7. 导入远程主机公钥至服务器，并进行配置(无密登录)
@@ -435,7 +376,7 @@ sshd的配置文件位于: `/etc/ssh/sshd_config`
 在文件中添加: 
 
 	SELINUX=permissive	
-	
+
 重启系统 或 使用root账户运行：`setenforce Permissive`
 
 **服务器端重启ssh服务:**
@@ -476,7 +417,7 @@ ECDSA key fingerprint(指纹) is SHA256:JE63mxnefTg1Hc/x5BhF+rdWmkFN6FiOBRoye56o
 Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently(永久的) added '[127.0.0.1]:2222' (ECDSA) to the list of known hosts.
 root@127.0.0.1's password:
-```	
+```
 这段提示用于提示你是否信任该主机(这里指服务器)，如果输入yes则信任该主机并且将该服务器的公钥追加到 .ssh/known_hosts文件中。
 
 

@@ -1,4 +1,4 @@
-﻿# Android Studio使用总结
+# Android Studio使用总结
 
 标签（空格分隔）： 开发工具
 
@@ -26,47 +26,47 @@ Android Studio安装/学习可参考 [CodePath Android Cliffnotes](http://guides
 
 >Android Studio  默认的 Keymap (即 **Default for XWin** 的快捷键定义方式)
 
-| 快捷键                        | 说明                                                        |
-|-------------------------------|-------------------------------------------------------------|
-| Ctrl + J                      | 用于在忘记时，调出Live Template(列表)                       |
-| Ctrl + Q                      | 快速查看方法... 对应的 doc                                  |
-| Ctrl + space                  | 自动补全代码，显示输入建议                                  |
-| Ctrl + shift + Enter          | 自动填充表达式如if,while,for,switch等                       |
-| Ctrl + F12                    | 浏览当前类的成员函数与成员变量                              |
-| Ctrl + H                      | 显示当前类的继承层次                                        |
-| Ctrl + D                      | 复制光标所在行到下一行                                      |
-| Ctrl + Y                      | 删除光标所在行                                              |
-| Ctrl + X                      | 剪切光标所在行                                              |
-| Ctrl + Delete/Backspace       | 删除单词至词尾/词首                                         |
-| Ctrl + /                      | 使用`//`注释所选行或光标所在行                              |
-| Ctrl + Shift + /              | 使用`/* */`注释所选行或为当前行添加注释                     |
-| ctrl + shift + V              | 从剪贴板中选择要粘贴的内容                                  |
-| Alt + `insert`                | 根据代码风格设置选择自动为类创建getter/setter、构造器等     |
-| Alt + Enter                   | Issue quick fix                                             |
-| Ctrl + P                      | 参数提示。显示方法参数信息(类型)                            |
-| `Ctrl + Shift + I`            | 以弹出式窗口的形式显示光标处类/方法的定义                   |
-| Ctrl + B                      | 跳转到光标所在类或方法的定义处                              |
-| ` Ctrl + 鼠标悬浮 / 鼠标点击` | 显示光标下元素信息 / 跳转到其定义处                         |
-| **Ctrl + W**                  | 选中代码，连续按可选择不同区域（常用于选中当前单词）要会用  |
-| Ctrl + N                      | 弹出用于查找类的搜索框，搜索到之后可打开该类文件            |
-| Ctrl + E                      | 查看最近打开的文档                                          |
-| Ctrl + O                      | 选择要 `@Override`的方法, 另一个技巧见下文                  |
-| Ctrl + Shift + ↑ 或 ↓         | 将当前选中行的代码直接上下移动位置                          |
-| 双击Shift                     | 弹出搜索框                                                  |
-| Alt + Q                       | 查看上下文。按一次可以查看当前光标所在方法，按两次...所在类 |
-| CTRL + B                      | Go to declaration 声明处                                    |
-| CTRL + ALT + B                | Go to implementation                                        |
-| F4                            | Go to source                                                |
-| CTRL + U                      | Go to super Class                                           |
-| Ctrl + Alt + V                | 提取局部变量                                                |
-| Ctrl + Alt + F                | 提取全局变量                                                |
-| Ctrl + Alt + M                | 提取方法                                                    |
-| Ctrl + Alt + L                | 格式化代码                                                  |
+| 快捷键                     | 说明                                 |
+| ----------------------- | ---------------------------------- |
+| Ctrl + J                | 用于在忘记时，调出Live Template(列表)         |
+| Ctrl + Q                | 快速查看方法... 对应的 doc                  |
+| Ctrl + space            | 自动补全代码，显示输入建议                      |
+| Ctrl + shift + Enter    | 自动填充表达式如if,while,for,switch等       |
+| Ctrl + F12              | 浏览当前类的成员函数与成员变量                    |
+| Ctrl + H                | 显示当前类的继承层次                         |
+| Ctrl + D                | 复制光标所在行到下一行                        |
+| Ctrl + Y                | 删除光标所在行                            |
+| Ctrl + X                | 剪切光标所在行                            |
+| Ctrl + Delete/Backspace | 删除单词至词尾/词首                         |
+| Ctrl + /                | 使用`//`注释所选行或光标所在行                  |
+| Ctrl + Shift + /        | 使用`/* */`注释所选行或为当前行添加注释            |
+| ctrl + shift + V        | 从剪贴板中选择要粘贴的内容                      |
+| Alt + `insert`          | 根据代码风格设置选择自动为类创建getter/setter、构造器等 |
+| Alt + Enter             | Issue quick fix                    |
+| Ctrl + P                | 参数提示。显示方法参数信息(类型)                  |
+| `Ctrl + Shift + I`      | 以弹出式窗口的形式显示光标处类/方法的定义              |
+| Ctrl + B                | 跳转到光标所在类或方法的定义处                    |
+| ` Ctrl + 鼠标悬浮 / 鼠标点击`   | 显示光标下元素信息 / 跳转到其定义处                |
+| **Ctrl + W**            | 选中代码，连续按可选择不同区域（常用于选中当前单词）要会用      |
+| Ctrl + N                | 弹出用于查找类的搜索框，搜索到之后可打开该类文件           |
+| Ctrl + E                | 查看最近打开的文档                          |
+| Ctrl + O                | 选择要 `@Override`的方法, 另一个技巧见下文       |
+| Ctrl + Shift + ↑ 或 ↓    | 将当前选中行的代码直接上下移动位置                  |
+| 双击Shift                 | 弹出搜索框                              |
+| Alt + Q                 | 查看上下文。按一次可以查看当前光标所在方法，按两次...所在类    |
+| CTRL + B                | Go to declaration 声明处              |
+| CTRL + ALT + B          | Go to implementation               |
+| F4                      | Go to source                       |
+| CTRL + U                | Go to super Class                  |
+| Ctrl + Alt + V          | 提取局部变量                             |
+| Ctrl + Alt + F          | 提取全局变量                             |
+| Ctrl + Alt + M          | 提取方法                               |
+| Ctrl + Alt + L          | 格式化代码                              |
 
 
 
 > Live Template中有大量的模板，比如输入fbc回车生成`() findViewById(R.id.);`。设置路径: Setting --> Editor --> Live Templates。
-关于自定义Live Template参见；[Android 项目代码质量保证实践](https://www.zybuluo.com/zyl06/note/618862)
+> 关于自定义Live Template参见；[Android 项目代码质量保证实践](https://www.zybuluo.com/zyl06/note/618862)
 
 
 
@@ -153,7 +153,6 @@ Android Studio也可在AndroidDevTools下载。
 #### 重启Android Studio
 
     File --> Invalidata Caches/Restart...  --> Just Restart
-
 _________________________________________________
 
 
@@ -170,7 +169,7 @@ _________________________________________________
 >**默认是不可改变字体的，要想自定义字体需另存一份Scheme（方案）**，点击`Sava As`然后就可在此基础上修改字体（其它一些自定义设置与此类似）。  其中 Show only monospaced fonts 表示只列出等宽字体；Secondary font表示备用字体，可通过它来设置代码中中文的显示字体。
 
 2. 设置AS程序界面字体   
-`Setting --> Appearance & Behavior --> Appearance --> UI Options` 勾选 `Override default fonts by...` 然后即可设置字体。(建议字体 "Arial Unicode MS" Size:12)
+  `Setting --> Appearance & Behavior --> Appearance --> UI Options` 勾选 `Override default fonts by...` 然后即可设置字体。(建议字体 "Arial Unicode MS" Size:12)
 
 
 Android Studio整体主题的设置:  
@@ -178,10 +177,10 @@ Android Studio整体主题的设置:
 
 
 
-| AS主题 | Editor主题|
-|--------|---------|
-| Darcula | 对应放Editor的暗色主题 |
-| IntelliJ |对应放Editor的浅色主题|
+| AS主题     | Editor主题       |
+| -------- | -------------- |
+| Darcula  | 对应放Editor的暗色主题 |
+| IntelliJ | 对应放Editor的浅色主题 |
 
 
 
@@ -200,8 +199,8 @@ Android Studio整体主题的设置:
 ### Editor的主题
 
  >**接下来主要指配置Editor的主题 （就是导入 Editor 的颜色配置方案）**  
- 下载的主题文件一般都是 `.jar`包，配置的方式是通过导入设置来进行的即 `import settings --> 再选择 .jar包`
- 
+ > 下载的主题文件一般都是 `.jar`包，配置的方式是通过导入设置来进行的即 `import settings --> 再选择 .jar包`
+
 #### 安装 Solarized 主题
 
 >感觉这家伙的配置不太纯正，不建议导入，还是在 [此处找一个](http://color-themes.com/?view=index) Solarized主题安装
@@ -283,10 +282,10 @@ warning: #FB3
 高亮匹配的各种配对符号的设置路径：  
 
 `Setting --> Editor --> Colors & Fonts --> General --> Code --> Matched brace`
-    
+​    
 推荐勾选 Effects --> Bordered 效果， 一个矩形框框，再为其选择一个颜色。还有就是设置背景色，也可不弄，自己摸索。
 >我的一个设置是 : 
-勾选Bold；勾选Foreground，颜色为 #ffef28；勾选Effects，颜色为 #b39613，通过下拉选项选择效果为 Bordered。
+>勾选Bold；勾选Foreground，颜色为 #ffef28；勾选Effects，颜色为 #b39613，通过下拉选项选择效果为 Bordered。
 
 
 
@@ -342,16 +341,17 @@ Go to File->Settings and expand Code Style, selectJava, and add your prefixes/su
 5. [CheckStyle-IDEA](https://plugins.jetbrains.com/plugin/1065?pr= "检查编码风格")
 6. [TranslationPlugin](https://github.com/YiiGuxing/TranslationPlugin "翻译")
 7. [jimu Mirror](http://www.codeceo.com/article/8-android-studio-plugins.html "动态预览布局")
-8. GsonFormat 快速将json字符串转换成一个Java Bean
-9. Key promoter 提示你这个功能快捷键是什么
-10. Save Actions保存修改的时候自动导入、格式化代码
-11. LiveEdit 更新浏览器里的网页
+8. **GsonFormat** 快速将json字符串转换成一个Java Bean
+9. **Key promoter** 提示你这个功能快捷键是什么
+10. **Save Actions**保存修改的时候自动导入、格式化代码
+11. **LiveEdit** 更新浏览器里的网页
 12. [Android Parcelable code generator](https://plugins.jetbrains.com/plugin/7332-android-parcelable-code-generator) JavaBean序列化，快速实现Parcelable接口
-13. Markdown Navigator：用于支持markdown。该插件的增强版(Enhanced)需要付费，使用基础版(Basic)即可。与其它markdown插件一同启用可能会导致该插件出现错误，比如AsciiDoc插件。（尝试过的最好的Markdown插件） 
-14. ADB WIFI： 使用wifi无线调试你的app，无需root权限。使用方法：先连上数据线，再在`Tools->android->ADB WiFi`处，先重启ADB Wifi，再选择另个一。
-15. LayoutFormatter：格式化 XML 布局文件，使其更加优雅
-16. ADB-idea： 可以一键清理缓存并重启APP
-17. idea-vim：[IdeaVim插件使用技巧](http://kidneyball.iteye.com/blog/1828427)，[IdezVim Reference Manual](http://ideavim.sourceforge.net/vim/index.html)；为了避免冲突，可以考虑将IdeaVim的开关键设置为 Ctrl + ;。手动关闭IdeaVim：在菜单`Tools --> Vim Emulator`
+13. **Markdown Navigator：**用于支持markdown。该插件的增强版(Enhanced)需要付费，使用基础版(Basic)即可。与其它markdown插件一同启用可能会导致该插件出现错误，比如AsciiDoc插件。（尝试过的最好的Markdown插件） 
+14. **ADB WIFI：** 使用wifi无线调试你的app，无需root权限。使用方法：先连上数据线，再在`Tools->android->ADB WiFi`处，先重启ADB Wifi，再选择另个一。
+15. **LayoutFormatter：**格式化 XML 布局文件，使其更加优雅
+16. **ADB-idea：** 可以一键清理缓存并重启APP
+17. **idea-vim：**[IdeaVim插件使用技巧](http://kidneyball.iteye.com/blog/1828427)，[IdezVim Reference Manual](http://ideavim.sourceforge.net/vim/index.html)；为了避免冲突，可以考虑将IdeaVim的开关键设置为 Ctrl + ;。手动关闭IdeaVim：在菜单`Tools --> Vim Emulator`
+18. **.ignore :**  用法见
 
 
 
@@ -374,11 +374,50 @@ Vysor是一个Chrome插件, 他可以把android手机屏幕投影到电脑上方
 
 ## Git with Android Studio 
 
+
+
+在Android Studio中使用GPG对提交进行签名，见 [Signed commits · Wiki · akwizgran / briar · GitLab](https://code.briarproject.org/akwizgran/briar/wikis/signed-commits "Signed commits · Wiki · akwizgran / briar · GitLab")
+
+
+
 Android Studio中文件的颜色代表的含义：
 
 - Red – File is not added to git
 - Green – File is added but not committed yet
 - Blue – New changes is added to a file that is committed to git already
+
+
+
+
+Unversioned Files：指该项目已修改但还未添加到Git 仓库的文件，即“UNversioned Files”.
+
+
+
+.ignore 插件的用法:   
+
+这里介绍了如何通过该插件新建一个.ignore文件（在project视图下）。  
+
+![.ignore support plugin for IntelliJ IDEA](https://camo.githubusercontent.com/c6c6d625729d8d33b34ffbe8c907ebfb38944515/687474703a2f2f67697469676e6f72652e68737a2e6d6f62692f75736167652d312e676966)
+
+
+
+直接在Android Studio外部为项目添加版本控制，在AS的Event Log中会有如下信息，来提示你需在设置中进行注册：  
+
+```
+Unregistered VCS root detected
+					The directory /home/fan/workspace/AndroidStudioProjects/Test/ZhihuDaily is under Git, but is not registered in the Settings.
+					Add root  Configure  Ignore
+```
+
+
+
+> [开发准备--Android Studio中的版本管理git - 简书](http://www.jianshu.com/p/53d02cf04694 "开发准备--Android Studio中的版本管理git - 简书")
+
+
+
+
+
+
 
 
 
@@ -394,7 +433,7 @@ drawable-xxxhdpi
 ```
 直接复制这些文件夹，然后在AS项目中的res目录下粘贴即可。
 2. 利用Android Drawable Importer插件的scale功能，将一张或一套图片快速生成不同尺寸的图片资源。
-用法：右击res文件夹 --> New --> Multisource-Drawable
+  用法：右击res文件夹 --> New --> Multisource-Drawable
 
 
 
@@ -427,13 +466,13 @@ Import the downloaded source into your app project as an Android library module 
 
 ## 英语单词解释
 
-|   English				|   中文        	|
-| --------------------- | ------------- |
-| Code Completion		| 	代码补全 		|
-| Autopopup				|	自动弹出		|
-| lookup list			| 	查找列表		|
-|  pop-up window		|	弹出窗口	    |
-| Scheme                |   方案            |
+| English         | 中文   |
+| --------------- | ---- |
+| Code Completion | 代码补全 |
+| Autopopup       | 自动弹出 |
+| lookup list     | 查找列表 |
+| pop-up window   | 弹出窗口 |
+| Scheme          | 方案   |
 
 
 

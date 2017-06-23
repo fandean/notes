@@ -68,6 +68,32 @@ ia64和x86_64就说明这台机器是64位的
 
 > 情况：在将磁盘换到另一部电脑后无法连接网络，无线和有线都不行。
 
+在“程序和更新”界面，选择“附加驱动”标签页，发现有相关无线网卡驱动可供选择。但是没有网无法下载。    
+在ubs上的Live中测试是可以用有线连到网的，无线连启用wifi都看不到；这个可以使用如下的命令
+
+```
+sudo apt-get install linux-headers-generic build-essential dkms  
+sudo apt-get install linux-source  
+sudo apt-get install --reinstall bcmwl-kernel-source  
+sudo modprobe wl
+```
+> 吐槽：上面的命令是我直接搜索："ThinkPad E431 Linux 安装无线网卡驱动"得到的。
+
+> 使用apt-get只下载二进制包，而不安装的命令是：`sudo apt-get install -d 软件名称`，不过要注意，像bcmwl-kernel-source这种软件是自动根据你的内核版本来下载的。
+
+
+
+使用了上面的命令之后，可以看到"启用wifi"选项，可以搜索到附近的wifi信号，但是还是连不上。
+
+> 在此之前，看了下面的一个教程，将有线网卡的驱动换了，并且型号看起来并不是很匹配。
+> 现在至少可以确定，重装系统还是可以联网的。
+
+现在考虑是不是配置也有问题，可按理来说我是全盘克隆过来的配置上应该没问题。
+
+
+
+---
+
 [Ubuntu更换网卡驱动](http://www.linuxdiyf.com/linux/16286.html)  
 ifconfig-a：查看所有网卡名，找到指定网卡；其中eth0是有线网卡，wlan0是无线网卡，lo是localhost
 

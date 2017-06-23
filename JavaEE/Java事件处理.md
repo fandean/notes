@@ -1,4 +1,4 @@
-﻿# Java事件处理
+# Java事件处理
 
 
 标签（空格分隔）： JavaEE
@@ -90,10 +90,10 @@ inner Class：是定义在另一个类范围内的类。
 - 使用可见性修饰符定义内部类时，遵从和应用与在类成员上一样的可见性规则
 - 可以将内部类定义为`static`。一个static内部类可以使用外部类的名字访问。一个static类是不能访问外部类的非静态成员的
 - 内部类的对象经常在外部类中创建。也可从另一个类中创建一个内部类的对象。
-- - 如果该内部类是非静态的，就必须先创建一个外部类的实例，然后使用下面的语法创建一个内部类的对象：
-`OuterClass.InnerClass innerObject = outerObject.new InnerClass();`
-- - 如果内部类是静态的，那么使用下面的语法为他创建一个对象：
-`OuterClass.InnerClass innerObject = new OuterClass.InnerClass();`
+  - 如果该内部类是非静态的，就必须先创建一个外部类的实例，然后使用下面的语法创建一个内部类的对象：
+    `OuterClass.InnerClass innerObject = outerObject.new InnerClass();`
+  - 如果内部类是静态的，那么使用下面的语法为他创建一个对象：
+    `OuterClass.InnerClass innerObject = new OuterClass.InnerClass();`
 
 
 > 对于内部类另可参考：《Java面向对象编程-第一版》 第12章：内部类
@@ -116,7 +116,7 @@ ActionListener等事件监听器接口只包含一个抽象方法，这种接口
 ## JavaBeans和bean事件
 
 >《Java语言程序设计-进阶篇(原书第8版)》
-第32章：JavaBeans和bean事件
+>第32章：JavaBeans和bean事件
 
 本章中将学习如何创建自定义事件以及开发自己的可触发事件的源组件。每个Java用户界面类都是一个JavaBeans组件。
 
