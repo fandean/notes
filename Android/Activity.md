@@ -1,4 +1,4 @@
-﻿# Activity
+# Activity
 
 标签（空格分隔）： Android 抄袭
 
@@ -9,6 +9,17 @@
 必看的参考页面：  
 [Activities](http://www.android-doc.com/guide/components/activities.html)  
 [android面试题-关于Activity](http://www.iwfu.me/2016/07/17/%E5%AE%89%E5%8D%93%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A1-%E5%85%B3%E4%BA%8Eactivity/)
+
+
+
+Android为关闭Activity准备了如下两个方法：
+
+
+
+- finish()：介绍当前Activity
+- finishActivity(int requestCode)：结束以startActivityForResult(Intent i, int requestCode)方法启动的Activity。
+
+
 
 ## Activity生命周期
 
@@ -35,3 +46,5 @@ onSaveInstanceState在onStop之前调用，但不一定在onPause之前或者之
 
 
 
+如果Activity是由用户关闭的（按下Back按钮），或是通过在代码中调用finish关闭，那么下次创建Activity时，实例状态Bundle不会被传递给onCreate或
+onRestoreInstanceState。应该使用 Shared Preference存储应在用户会话之间持久化的数据。《Android 4 高级编程》第7章

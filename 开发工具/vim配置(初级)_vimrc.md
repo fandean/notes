@@ -236,9 +236,6 @@ set guioptions-=T							"隐藏工具栏
 
 "开启关闭行号  set nu  ;  set nonu
 
-
-
-
 ```
 
 

@@ -3,6 +3,36 @@
 > [8 BEST SCREEN RECORDERS FOR LINUX IN 2017](https://itsfoss.com/best-linux-screen-recorders/)
 
 
+## 图片转换命令convert
+convert 命令是由 ImageMagick 包提供。
+
+> 选择转换为jpg图片会比转换为png图片小很多。 jpg 图片比 png小。
+
+缩放：
+```
+convert -sample 80x60 input.jpg output.jpg
+```
+缩放后图像保持原来的长宽比例(也可同时转换格式，好用法)： 
+```sh
+convert -sample 25%x25% input.jpg output.jpg
+```
+类型转换
+```
+convert 1.jpg 1.png
+```
+特殊效果
+```
+convert -charcoal 2 input.jpg output.jpg   #炭笔
+convert -colorize 255 input.jpg output.jpg   #着色 可以指定三种颜色 red/green/blue
+convert -implode 4 input.jpg output.jpg   #内爆效果
+convert -solarize 42 input.jpg output.jpg   #曝光，模拟胶片曝光
+convert -spread 5 input.jpg output.jpg     #随机移动，参数是位移大小
+```
+加边框
+```
+convert -raise 5x5 input.jpg output.jpg
+convert +raise 5x5 input.jpg output.jpg
+```
 
 ## 使用ImageMagick的如下命令
 
@@ -110,12 +140,20 @@ Gifine可以录制简短的Gifs或者videos。优点：录制后能进行调整�
 
 > **每一帧，对应一张图片**
 
-
 ### Gifine使用说明
+
+
+
+> 使用技巧：录制前先将要录制的界面**缩小**，帧率设置为4，录制后删除效果不佳的帧；这样会大大减小最后生成的gif的大小。
+
+
+
 **录制前：**  
 打开Gifine后，你可以进行两种操作：录制视频帧或者加载视频帧。
 
-设置帧率"Framerate"为5或10  
+设置帧率"Framerate"为5或10；设置成2也行
+
+
 
 
 **录制后：**  
@@ -171,28 +209,28 @@ This has been tested on a fresh install of Ubuntu 16.04 LTS.
 Install git:
 
     $ sudo apt install git
-    
+
 Next, install all of the `gifine`'s dependencies and sub-dependencies:
 
     $ sudo apt install -y \
     ffmpeg \
     graphicsmagick \
-	gifsicle \
-	luarocks \
-	libxext-dev \
-	libimlib2-dev \
-	mesa-utils \
-	libxrender-dev \
-	glew-utils \
-	libglm-dev \
-	cmake \
-	compiz \
-	gengetopt \
-	libglu1-mesa-dev \
-	libglew-dev \
-	libxrandr-dev \
-	libgirepository1.0-dev
-    
+    gifsicle \
+    luarocks \
+    libxext-dev \
+    libimlib2-dev \
+    mesa-utils \
+    libxrender-dev \
+    glew-utils \
+    libglm-dev \
+    cmake \
+    compiz \
+    gengetopt \
+    libglu1-mesa-dev \
+    libglew-dev \
+    libxrandr-dev \
+    libgirepository1.0-dev
+
 Install `slop` using the instructions in the `slop` [README.md](https://github.com/naelstrof/slop) file.
 或参考下文介绍的通过添加ppa安装slop的方法。
 

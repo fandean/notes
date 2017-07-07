@@ -1453,15 +1453,15 @@ Emacs有一个图形模式（picture mode），它允许使用键盘字符绘制
 
 
 
-###LISP模式
+### LISP模式
 
 
 
-###FORTRAN模式
+### FORTRAN模式
 
 
 
-###对程序进行编译
+### 对程序进行编译
 
 
 

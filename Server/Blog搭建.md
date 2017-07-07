@@ -93,9 +93,35 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 
 服务器提供商，相对来说会比较稳定靠谱，国内的UCloud、阿里云、腾讯云、七牛云，国外的有亚马逊。七牛云也可以作为Web服务器？？
 
-
 图床服务器：    
-将网页和多媒体资源分开存储，可以让Web服务器的访问宽带不至于很快被占用完。七牛云存储的免费用户拥有10G的存储空间，和每月10W次的put/delete请求，100万次get请求。另还可以考虑其他免费图床服务(考虑其是否靠谱)。  
+将网页和多媒体资源分开存储，可以让Web服务器的访问宽带不至于很快被占用完。
+
+七牛云存储的免费用户拥有10G的存储空间，和每月10W次的put/delete请求，100万次get请求。
+
+立即注册成为七牛云用户，并完成实名认证，即可成为标准用户。成为标准用户您将获得：10 GB 永久免费空间，每月 10 GB 下载流量等诸多免费额度。
+
+
+
+| 存储空间（北美）           | 第 0 GB 至 10 GB                | 免费  （这就是免费的10GB空间） |
+| ------------------ | ----------------------------- | ------------------ |
+| 第 10 GB 至 50 TB    | 0.165 元/GB/月                  |                    |
+| 第 50 TB 至 500 TB   | 0.162 元/GB/月                  |                    |
+| 第 500 TB 至 5120 TB | 0.159 元/GB/月                  |                    |
+| 第 5120 TB 以上       | 0.156 元/GB/月                  |                    |
+|                    |                               |                    |
+| 上传流量               | 无限制                           | 免费                 |
+|                    |                               |                    |
+| PUT / DELETE 请求    | 第 0 千次至 10 万次                 | 免费  （有次数要求）        |
+| 第 10 万次以上          | 0.001 元/千次（2017-01-01 起生效此价格） |                    |
+|                    |                               |                    |
+| GET 请求             | 第 0 千次至 100 万次                | 免费  （有次数要求）        |
+| 第 100 万次以上         | 0.001 元/千次                    |                    |
+
+[如何使用七牛云做为图床？ - 简书](http://www.jianshu.com/p/6dce6094bf61 "如何使用七牛云做为图床？ - 简书")
+
+
+
+另还可以考虑其他免费图床服务(考虑其是否靠谱)。  
 
 
 
@@ -137,6 +163,50 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 
 Github+jekyll略显geek
 
+**操作步骤：**
+
+在GitHub上新建项目 `jekyll-demo`，然后我们为这个项目创建Github Pages，（这里不是为用户）
+
+[安装 - Jekyll • 简单静态博客网站生成器](http://jekyllcn.com/docs/installation/ "安装 - Jekyll • 简单静态博客网站生成器")   参考这里，安装4个软件。   
+
+打包下载主题： <https://github.com/streetturtle/jekyll-clean-dark.git> ，更多主题见 [Jekyll Themes](http://jekyllthemes.org/ "Jekyll Themes")
+
+更改该主题的配置文件： `_config.yml`
+```
+url: http//faner.gitlab.io
+# 下面的路径该为你的项目路径
+baseurl: `/jekyll-demo`
+# GitHub 图标指向自己
+github: fandean
+```
+
+进入主题文件夹：`git init`初始化git仓库，
+
+创建分支： `git branch gh-pages`；该项目的github pages文件需位于gh-pages分支中  
+`git add .`  
+`git commit -m "my jekyll"`    
+
+`git remote add origin https://github.com/FanDean/fandean.github.io.git`    
+
+`git push origin gh-pages`      
+
+在浏览器输入`fandean.github.io/jekyll-demo` 即可打开网站。
+
+之后的博客文章在`_post`文件夹中更新、添加即可。
+
+```
+---
+layout: post
+title: "Installation"
+date: 2015-11-01 16:25:06
+description: Here you'll find out how to install this theme
+tags: 
+ - installation
+---
+```
+
+
+
 ### Hexo
 Hexo：   
 它的一个NexT主题感觉很好    
@@ -149,12 +219,80 @@ Hexo：
 ### Ghost
 
 
-
-
 ### Jekyll
-[使用Jekyll搭建博客](https://blog.saymagic.tech/2015/09/30/learn-jekyll.html)  
+见另一篇文章：《Jekyll》
 
-托管到国内某平台，有相关平台吗？
+
+
+## GitLab Pages
+
+国内GItLab可以正常访问。
+
+GitLab的优点和缺点见：  
+[From GitHub Pages to GitLab Pages - Eight Portions](https://eightportions.com/2016-08-21-Migrate-blog-to-GitLab-pages/ "From GitHub Pages to GitLab Pages - Eight Portions")   
+该网站使用的主题为[Beautiful Jekyll](http://deanattali.com/beautiful-jekyll/ "Beautiful Jekyll") 看起来还不错。
+
+GitLab Pages文档的格式与GitHub Pages文档不一样，我希望以下说明可以帮助您浏览设置过程。
+
+
+
+
+
+[Hosting on GitLab.com with GitLab Pages | GitLab](https://about.gitlab.com/2016/04/07/gitlab-pages-setup/ "Hosting on GitLab.com with GitLab Pages | GitLab")    
+
+
+
+[Getting started with GitLab CI - GitLab Documentation](https://docs.gitlab.com/ee/ci/quick_start/README.html "Getting started with GitLab CI - GitLab Documentation")
+
+
+
+此处介绍的步骤：[pages / jekyll · GitLab](https://gitlab.com/pages/jekyll "pages / jekyll · GitLab")
+
+Start from a local Jekyll project
+
+- Install Jekyll.
+- Use `jekyll new` to create a new Jekyll Project.
+- Add this`.gitlab-ci.yml` to the root of your project.
+- Push your repository and changes to GitLab.
+
+## 码云 Pages
+
+
+
+
+
+## Coding Pages
+
+Coding Pages 是一个免费的静态网页托管和演示服务。您可以使用 Coding Pages 托管博客、项目官网等静态网页，还可以绑定自定义域名。
+
+案例：设计师吴彦祖：<http://liangjingkanji.coding.me/>
+
+[Coding Pages 介绍](https://coding.net/help/doc/pages/index.html "Coding Pages 介绍")
+
+
+资源限制：
+
+- Coding Pages 部署来源的大小不超过 100M。
+- 每小时最多可部署 10 次。
+
+Jekyll 支援： 
+
+Coding Pages 可自动构建 Jekyll 网站，目前支持 Jekyll 3.0。
+
+
+
+
+
+## 让博客Docker化
+
+[在本地搭建你的Ghost博客](http://www.jianshu.com/p/08c7db751430)
+
+能否通过Docker镜像在OpenShift上部署博客。
+
+[让博客Docker化](http://dockone.io/article/961)     
+[Docker免费空间申请-DaoCloud使用教程安装WordPress部署Docker镜像](https://www.freehao123.com/docker-daocloud/)        
+
+
 
 
 
@@ -185,15 +323,26 @@ Hexo：
 上面两个的应用见[此处](http://talentprince.github.io/blog/2015/01/04/android-yu-inject-yi-lai-zhu-ru-de-bu-jie-zhi-yuan/)   
 
 
+不知诚通网盘能否应用：
+
+免费用户基本功能
+
+- 400GB续期空间
+- 网页外链分享
+- 多线上传下载
+- webdav高速批量上传
+- 数据统计分析
+- 个性公告栏
+- 个性域名
+- 数据多点备份
+- 数据分发
 
 
-## 让博客Docker化
+访问用户位置分析：  
 
-[在本地搭建你的Ghost博客](http://www.jianshu.com/p/08c7db751430)
+[Welcome to RevolverMaps | RevolverMaps - Free 3D Visitor Maps](https://www.revolvermaps.com/ "Welcome to RevolverMaps | RevolverMaps - Free 3D Visitor Maps")
 
-能否通过Docker镜像在OpenShift上部署博客。
 
-[让博客Docker化](http://dockone.io/article/961)     
-[Docker免费空间申请-DaoCloud使用教程安装WordPress部署Docker镜像](https://www.freehao123.com/docker-daocloud/)        
+
 
 

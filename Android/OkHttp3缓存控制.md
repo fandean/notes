@@ -10,6 +10,8 @@ baseUrl + EndPoint(端点) = 组合成 url  ？？？
 [浏览器 HTTP 协议缓存机制详解](http://blog.csdn.net/stven_king/article/details/51899865)     
 [你应该了解的 一些web缓存相关的概念. - Franky - 博客园](http://www.cnblogs.com/_franky/archive/2011/11/23/2260109.html "你应该了解的 一些web缓存相关的概念. - Franky - 博客园")    
 
+[高效地配置OkHttp | 开发技术前线](http://www.devtf.cn/?p=1264 "高效地配置OkHttp | 开发技术前线")  
+
 浏览器缓存控制机制有两种：**HTML Meta标签** vs. **HTTP头信息**  
 浏览器缓存机制，其实主要就是HTTP协议定义的缓存机制（如： `Expires`； `Cache-control`等）。但是也有非HTTP协议定义的缓存机制，如使用HTML Meta 标签，Web开发者可以在HTML页面的`<head>`节点中加入`<meta>`标签，但只有部分浏览器可以支持。
 
@@ -63,9 +65,9 @@ Etag/If-None-Match也要配合Cache-Control使用
 
 ## 基本思路
 
-1. 配置Okhttp的Cache
-2. 配置**请求头中**的`cache-control`或者统一处理所有请求的请求头
-3. 云端配合设置响应头或者自己写拦截器修改响应头中`cache-control`
+1. 配置Okhttp的Cache，设置最大容量和缓存路径。当缓存的大小超过最大容量时，OKHttp会根据LRU算法对缓存数据进行清理。
+2. 配置**请求头中**的`cache-control`或者统一处理所有请求的请求头。
+3. 云端配合设置响应头或者自己写拦截器修改响应头中`cache-control`。
 
 4. 我们所用的接口服务不支持缓存，所以我不能只修改头信息而让服务端返回的response响应体去实现数据本地缓存。当然在没有网络的情况下我们可以尝试去读取缓存。
 5. 因为服务端没有提供response响应体的缓存，所以我们清除response响应体的Pragma、Cache-Control信息，**然后根据自己设定的request请求体中的Cache信息去修改response响应体的Cache信息从而达到数据可以缓存**。
@@ -94,16 +96,6 @@ REWRITE_CACHE_CONTROL_INTERCEPTOR拦截器需要同时设置networkInterceptors�
 
 
 
-
-
-
-
-
-
-
-
-
-
 ## 补充
 
 
@@ -114,9 +106,7 @@ REWRITE_CACHE_CONTROL_INTERCEPTOR拦截器需要同时设置networkInterceptors�
 
 [Android 缓存目录 Context.getExternalFilesDir()和Context.getExternalCacheDir()方法 - 赵彦军 - 博客园](http://www.cnblogs.com/zhaoyanjun/p/4530155.html "Android 缓存目录 Context.getExternalFilesDir()和Context.getExternalCacheDir()方法 - 赵彦军 - 博客园")
 
-
-
-缓存：
+Jesse Wilson大神推荐，我们把缓存的数据存放在 `context.getCacheDir()`的子目录中。
 
 ```
 String cachePath1 =  context.getExternalCacheDir().getPath();
@@ -158,7 +148,20 @@ cachePath2--/data/user/0/com.zyj.app/cache
 
 注意：  
 
-由于context.getExternalCacheDir() 的目录存在外部SD卡上的，所以在使用这个方法的时候要判断外部SD卡的状态是否可用。（现在应该都有吧）
+由于context.getExternalCacheDir() 的目录存在外部SD卡上的，所以在使用这个方法的时候要判断外部SD卡的状态是否可用。
+
+由于Android 版本的升级，该方法可能无法正常检测，请上网搜索最新的相关文章。
+
+
+
+为了使您的代码更加健壮并且能够兼容以后的[android](http://lib.csdn.net/base/android)版本和新的设备，请通过Environment.getExternalStorageDirectory().getPath()来获取sdcard路径。
+
+通用的获取语句
+
+```
+Environment.getExternalStorageDirectory().getPath()  
+```
+当外置sd卡不存在的情况下，这条语句是获取的内置sd卡的路径。外置sd卡存在，获取是外置sd卡。获取出来的值是`/storage/sdcard0`
 
 ```
 /**

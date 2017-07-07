@@ -105,6 +105,13 @@ Are you sure you want to continue connecting (yes/no)?
 
 在创建ssh key时自行输入路径和文件名称，而非使用默认路径和文件名即可。
 
+```shell
+# 比如输入
+/home/fan/.ssh/gitlab_rsa
+```
+
+
+
 
 ## 使用非默认的密钥对 
 [Working with non-default SSH key pair paths](https://docs.gitlab.com/ce/ssh/README.html#working-with-non-default-ssh-key-pair-paths)

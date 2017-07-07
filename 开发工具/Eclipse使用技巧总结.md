@@ -125,21 +125,18 @@ Ctrl + Shift + T ： 打开搜索框进行搜索。
 
 
 ## 添加源码
-[Eclipse中导入开源jar包的src包以便查看源码](http://www.blogjava.net/aprilyun/archive/2012/07/13/383024.html)
-[Eclipse 中导入 JDK 源码](http://blog.csdn.net/evolly/article/details/18403321)
-[Eclipse导入Tomcat源码](https://my.oschina.net/psuyun/blog/228643)
-[]()
-[]()
-[]()
-[]()
+[Eclipse中导入开源jar包的src包以便查看源码](http://www.blogjava.net/aprilyun/archive/2012/07/13/383024.html)   
+[Eclipse 中导入 JDK 源码](http://blog.csdn.net/evolly/article/details/18403321)  
+[Eclipse导入Tomcat源码](https://my.oschina.net/psuyun/blog/228643)   
+
 
 
 Eclipse导入Tomcat源码：(来自传智播客视频教程:03-使用eclipse开发servlet.avi)按Ctrl + 鼠标左键 在弹出的页面中点击"Attach Source..."按钮，可以导入.zip包文件或者解压后的文件夹(顶级目录)
 
 
 ## Eclipse中的Web项目自动部署到Tomcat
-[Eclipse中的Web项目自动部署到Tomcat](http://blog.csdn.net/qh_java/article/details/46844567)
-[Eclipse中web项目部署至Tomcat步骤](http://www.cnblogs.com/cxtczzy/archive/2013/03/30/2991096.html)
+[Eclipse中的Web项目自动部署到Tomcat](http://blog.csdn.net/qh_java/article/details/46844567)   
+[Eclipse中web项目部署至Tomcat步骤](http://www.cnblogs.com/cxtczzy/archive/2013/03/30/2991096.html)   
 
 
 ###  Alt + 左/右 方向键

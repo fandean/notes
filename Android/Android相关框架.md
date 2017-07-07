@@ -54,10 +54,77 @@ Glide也支持webp图片。
 Glide缓存相关介绍，见一个项目笔记Readme.md。
 
 #### Glide使用
+详细介绍：      
+[Glide入门教程——9. 缩略图 - 简书](http://www.jianshu.com/p/db30bb036b89 "Glide入门教程——9. 缩略图 - 简书")   
+网上有系列教程。比如[Glide最全解析](http://blog.csdn.net/column/details/15318.html)     
 
-网上有系列教程。比如[Glide最全解析](http://blog.csdn.net/column/details/15318.html)  
+最终总结：       
+[Glide的一些用法（一）（写了一下午，其实几乎涵盖完了，欢迎收藏） - 简书](http://www.jianshu.com/p/c9efd313e79e "Glide的一些用法（一）（写了一下午，其实几乎涵盖完了，欢迎收藏） - 简书")
+
+
 
 提示：注意一个事实，对于相同的 URL ，如果你的初始请求没调用 .skipMemoryCache(true) 方法，你后来又调用了 .skipMemoryCache(true) 这个方法，这个资源将会在内存中获取缓存。当你想要去调整缓存行为时，确保对同一个资源调用的一致性。
+
+#### Glide注意点
+提高用户体验的方法：
+
+缓存：
+
+
+
+
+
+优先级：
+
+
+
+
+
+略缩图：        
+
+必须理解
+
+.thumbnail()方法的目的就是让用户先看到一个低解析度的图，点开后，再加载一个高解析度的图。
+Thumbnails跟我们之前讲的占位符还不太一样，占位符在app里面是指定好的某些资源文件。Thumbnails的话则是一个动态的占位符，它也可以从网络上加载得来。
+Thumbnails会在实际的请求和处理之前显示出来，不管什么原因，如果Thumbnails在原图加载后才出现，它会自动消失而不会替换原图。
+
+为了更加时更加流畅，另一个非常好的方式是用一种颜色来替换占位符的背景色，这个颜色是从目标图里提取出来的，可以看看我们写的一个[文档](https://futurestud.io/tutorials/how-to-get-dominant-color-code-for-picture-with-nodejs "文档")。   
+
+Glide提供了两种不同的缩略图：
+
+第一种比较简单，就是在加载原图的时候显示一张更小尺寸的图片。这种方式尤其适用于ListView和详情页面的组合当中。 如果你早已经在ListView中加载了图片，就像我们刚才假设的，250x250像素的图片，在进入其详情页面的时候，需要一张更大尺寸的图。然而，对于用户而言。他们早早就已经看到一张图片（小图）了，为什么还会出现先显示占位符，过了几秒后显示大图的情况？
+
+对于这种情况，我们更应该在详情页面继续显示那张250x250的图片，然后在后台加载所需要的大图。Glide使用.thumbnail()就可以做到，这是传入的参数是一个浮点数，它代表尺寸的倍数。
+
+第二种：高级略缩图（原图与略缩图完全不同）    
+
+为.thumbnail()传入一个浮点类型的参数，非常简单有效，但并不是总是有意义。如果缩略图需要从网络加载同样全分辨率图片，可能根本都不快。这样，Glide提供了另一个方法去加载和显示缩略图。
+
+```
+private void loadImageThumbnailRequest() {  
+    // setup Glide request without the into() method
+    DrawableRequestBuilder<String> thumbnailRequest = Glide
+        .with( context )
+        .load( eatFoodyImages[2] );
+
+    // pass the request as a a parameter to the thumbnail request
+    Glide
+        .with( context )
+        .load( UsageExampleGifAndVideos.gifUrl )
+        .thumbnail( thumbnailRequest )
+        .into( imageView3 );
+}
+```
+区别在于第一个缩略图请求是完全独立于第二个原始请求的。缩略图可以来自不同资源或者图片URL，你可以在它上面应用不同的变换。
+
+
+
+
+
+
+
+
+
 
 
 ### Fresco
@@ -396,7 +463,7 @@ Android推出了LruCache这个内存缓存类。Android提供的类。
 
 [Android视频框架--Vitamio](http://blog.csdn.net/hao54216/article/details/52437252)  
 
-
+[Android 如何直播RTMP流 | 开发技术前线](http://www.devtf.cn/?p=405 "Android 如何直播RTMP流 | 开发技术前线")
 
 
 

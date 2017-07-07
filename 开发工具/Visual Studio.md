@@ -8,17 +8,15 @@
 
 
 ## Mono
-[Mono for Linux is available for various distributions](http://www.mono-project.com/download/)
-**[Download](http://www.monodevelop.com/download/)**
-[Install MonoDevelop preview via FlatPak](http://www.monodevelop.com/download/linux/)
-[Flatpak](http://flatpak.org/)
-[]()
-[]()
-[]()
+[Mono for Linux is available for various distributions](http://www.mono-project.com/download/)    
+**[Download](http://www.monodevelop.com/download/)**     
+[Install MonoDevelop preview via FlatPak](http://www.monodevelop.com/download/linux/)    
+[Flatpak](http://flatpak.org/)   
 
 
-1.安装Flatpak
-On Ubuntu, Flatpak is available through a PPA. To install it, run:
+
+1.安装Flatpak   
+On Ubuntu, Flatpak is available through a PPA. To install it, run:   
 
 ```
 $ sudo add-apt-repository ppa:alexlarsson/flatpak
@@ -40,14 +38,14 @@ $ sudo apt install flatpak
 [Accessing data in Visual Studio](https://msdn.microsoft.com/en-us/library/wzabh8c4\(v=vs.140\).aspx)
 
 ### Visual Studio快捷键
-[微软官方文档：Visual Studio 中的默认键盘快捷键](https://msdn.microsoft.com/zh-cn/library/da5kh0wa.aspx)
-[19 个必须知道的 Visual Studio 快捷键](http://www.codeceo.com/article/19-visual-studio-shortcuts.html)
+[微软官方文档：Visual Studio 中的默认键盘快捷键](https://msdn.microsoft.com/zh-cn/library/da5kh0wa.aspx)   
+[19 个必须知道的 Visual Studio 快捷键](http://www.codeceo.com/article/19-visual-studio-shortcuts.html)   
 
 
 
 ### Visual Studio 技巧
 
-- 导航控件树： 
+- 导航控件树：  
 更方便的方法：**ESC键**。选中一个控件，然后敲ESC键就会顺着这个控件层次不断的上溯。 
 选中一个控件，然后点击**右键**，还会出现 Select …的菜单，可以选中该控件的某个父控件
 
@@ -129,7 +127,7 @@ Solution Explorer窗口中查看解决方案。
 
 ### 项目的浏览和编码
 
-如果某个窗口在屏幕上不可见，就可以进入View菜单，选择合适的窗口名称。
+如果某个窗口在屏幕上不可见，就可以进入View菜单，选择合适的窗口名称。   
 要显示设计视图和代码编辑器，可以在Solution Explorer窗口中右击文件名，然后从弹出的上下文菜单中选择View Designer或View Code命令，也可从
 
 
@@ -225,7 +223,7 @@ VS在读取低版本项目时对其进行升级的迁移报告“UpgradeLog.XML�
 
 
 
-#[MSDN Visual Studio 2015](https://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
+# [MSDN Visual Studio 2015](https://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 
 来源：`MSDN Library > 开发工具和语言 > Visual Studio 2015 > `
 

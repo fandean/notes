@@ -21,10 +21,14 @@
 - [手把手教你使用Git](http://blog.jobbole.com/78960/)；该篇文章讲解了日常需要用到的操作，特别是多人协作部分。  
 
 
-
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png)
 
 ## 几个常用命令
 > 更多命令见后面的： Git指令速查表
+>
+> 或
+>
+> [常用 Git 命令清单 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html "常用 Git 命令清单 - 阮一峰的网络日志")
 
 查看git的某个命令的帮助
 
@@ -132,8 +136,10 @@ git remote add origin http://127.0.0.1:8081/TestGroup/Test.git
 
 ### git push 推送到远程仓库  
 ```
-//在上一条命令的基础上
+//在上一条命令的基础上(第一次push)
 git push -u origin master
+//之后的push: 上传本地指定分支到远程仓库
+git push [remote] [branch]
 ```
 将当前分支内容推送给远程仓库origin的master分支。`-u`将origin仓库的master分支设置为本地仓库当前分支的upstream(上游)。
 
@@ -161,6 +167,10 @@ git checkout -b feature-D origin/feature-D
 //基于之前的命令
 git pull origin feature-D
 ```
+
+
+
+> [What is the difference between 'git pull' and 'git fetch'? - Stack Overflow](https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch "What is the difference between 'git pull' and 'git fetch'? - Stack Overflow")
 
 
 

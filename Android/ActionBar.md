@@ -82,3 +82,106 @@ ActionBar上除可以显示普通的Action Item之外，还可显示普通的UI�
 ActionBar与Fragment的结合使用
 
 
+
+
+
+# Toolbar
+
+toolbar位置可以随便放。
+
+
+
+## Toolbar显示问题
+使用下面的标签，Toolbar的字体颜色显示在深色主题下仍然显示为深色
+```
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/collection_toolbar"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:layout_height="?attr/actionBarSize"/>
+```
+
+将上面的 Toolbar 改为下面的形式，即可解决在application设置为`android:theme="@style/AppTheme.NoActionBar"`
+时，Toolbar的字体颜色显示正常。
+
+> 或者将 application 的主题设置为`android:theme="@style/AppTheme"` ，包含ActionBar。
+
+```
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">  <!-- 该主题含有 深色的 actionbar -->
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/collection_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+    </android.support.design.widget.AppBarLayout>
+```
+
+最后经过总结，测试得出：  
+
+一个能正常显示的单独使用的Toolbar示例： 单独使用时要想显示正确，只需将Toolbar的主题和背景色设置正确即可。
+
+[android - No ActionBar in PreferenceActivity after upgrade to Support Library v21 - Stack Overflow](https://stackoverflow.com/questions/26509180/no-actionbar-in-preferenceactivity-after-upgrade-to-support-library-v21)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    app:navigationContentDescription="@string/abc_action_bar_up_description"
+    app:navigationIcon="?attr/homeAsUpIndicator"
+    app:title="@string/action_settings">
+
+</android.support.v7.widget.Toolbar>
+```
+
+在代码中的处理：
+```
+//标题的设置必须在替换Action Bar之前设置
+mToolbar.setTitle("设置");
+//替换Action Bar，对toolbar的设置需在调用此方法之前弄好
+setSupportActionBar(mToolbar);
+if (getSupportActionBar() != null){
+	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+}
+//在这之后才有效
+toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		//可以这样finish掉？？
+		finish();
+	}
+});
+```
+
+简化版：
+
+```xml
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/collection_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+```
+
+```java
+Toolbar mToolbar = (Toolbar)findViewById(R.id.toolbar);
+//然后对toolbar做一些设置
+mToolbar.setTitle("标题");
+setSupportActionBar(mToolbar);
+if (getSupportActionBar() != null) {
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+}
+```
