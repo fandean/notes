@@ -5,7 +5,7 @@
 - 《第一行代码——Android》服务相关章节  
 - [Android 异步消息处理机制（Handler 、 Looper 、MessageQueue）源码解析](http://blog.csdn.net/amazing7/article/details/51424038)  
 - [Android 消息处理机制（Looper、Handler、MessageQueue,Message）](http://www.jianshu.com/p/02962454adf7)  
--
+  -
 
 
 ## 与服务的关系
@@ -15,7 +15,7 @@
 
 - 服务并不是运行在一个独立的**进程**中，而是依赖于创建服务时所在的应用程序中。
 - 实际上，服务并不会自动开启**线程**，所有的代码都是默认运行在主线程当中，（需要在服务内部手动创建子线程）。
--
+  -
 
 
 > 以上牵涉到了 多线程 问题
@@ -61,12 +61,31 @@ ThreadLocal并不是线程，它的作用是可以在每个线程中存储数据
 
 ## AsyncTask
 
-
+《Android权威编程指南》第23章
 
 
 
 
 > AsyncTask可能导致内存泄露的原因：[SafeAsyncTask](https://github.com/peerless2012/SafeAsyncTask)  
+
+
+## 异步装载器Loader
+
+[Android应用Loaders全面详解及源码浅析 - 工匠若水 - CSDN博客](http://blog.csdn.net/yanbober/article/details/48861457 "Android应用Loaders全面详解及源码浅析 - 工匠若水 - CSDN博客")
+
+[Android 深入理解Loader机制 让APP轻装上阵 - 简书](http://www.jianshu.com/p/385327e35711 "Android 深入理解Loader机制 让APP轻装上阵 - 简书")
+
+
+[Android 异步加载神器Loader全解析 - 希尔瓦娜斯女神 - 博客园](http://www.cnblogs.com/punkisnotdead/p/4861376.html "Android 异步加载神器Loader全解析 - 希尔瓦娜斯女神 - 博客园")
+
+
+
+
+> 官网文档：
+> http://developer.android.com/intl/zh-cn/reference/android/app/LoaderManager.html   
+http://developer.android.com/intl/zh-cn/reference/android/content/AsyncTaskLoader.html   
+http://developer.android.com/intl/zh-cn/guide/components/loaders.html   
+
 
 
 ## Android IPC机制

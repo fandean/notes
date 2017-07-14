@@ -377,7 +377,7 @@ Content Provider面试技巧
 
 
 
-### Butterknife
+### [Butter Knife](http://jakewharton.github.io/butterknife/ "Butter Knife")
 用于View注入的ButterKnife也是属于DI的一种。专业解决各种findViewById
 
 [Android Butter Knife 框架——最好用的View注入](http://www.jianshu.com/p/9ad21e548b69)
@@ -386,10 +386,18 @@ Content Provider面试技巧
 
  for binding fields and methods of Android views. 进行View注入
 
+
+
+ButterKnife不能在私有类或私有方法中使用
+
+
+
 Butterknife相关的Android Studio插件：  
 [ButterKnifeZelezny](https://github.com/avast/android-butterknife-zelezny) Android Studio plug-in for generating ButterKnife injections from selected layout XML.
 
 
+
+注意：必须将这同时添加下面的两个依赖
 
 ```
 compile 'com.jakewharton:butterknife:8.5.1'
@@ -475,19 +483,23 @@ Android推出了LruCache这个内存缓存类。Android提供的类。
 
 
 
-### Logger
+### [Logger](https://github.com/orhanobut/logger)  
 
 推荐
 
-
-
 [开源日志库Logger的使用 - 简书](http://www.jianshu.com/p/21902079e88f "开源日志库Logger的使用 - 简书")
 
+对于 android，做初始化的最佳地方是 [Application.onCreate()](https://link.juejin.im/?target=http%3A%2F%2Fdeveloper.android.com%2Freference%2Fandroid%2Fapp%2FApplication.html%23onCreate())。
+
+Logger: 2.1.1 发生了两处改动，见 [Logger](https://github.com/orhanobut/logger)  
+
+- Initialization is changed. No backward compatibility support. Use Logger.addLogAdapter
+- LogLevel is removed. Use the new isLoggable approach
 
 
 
-
-> android自带了一个Logger类
+> 新采用了构造器模式  
+> 另android自带了一个Logger类
 
 ### XLog
 
@@ -532,7 +544,9 @@ log4j这类的日志系统
 
 
 
+## Android 版 Google Analytics 
 
+[高级配置  - Android 版 Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/android/v4/advanced?hl=zh-cn )
 
 
 

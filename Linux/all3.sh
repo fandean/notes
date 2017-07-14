@@ -272,6 +272,9 @@ sudo apt-get install autojump -y
 sudo apt-get install colordiff -y
 
 
+# ASCII Art：纯文本流程图绘制
+# http://weishu.me/2016/01/03/use-pure-ascii-present-graph/
+
 ##################################################
 #
 #				第三方软件

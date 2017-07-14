@@ -46,5 +46,4 @@ onSaveInstanceState在onStop之前调用，但不一定在onPause之前或者之
 
 
 
-如果Activity是由用户关闭的（按下Back按钮），或是通过在代码中调用finish关闭，那么下次创建Activity时，实例状态Bundle不会被传递给onCreate或
-onRestoreInstanceState。应该使用 Shared Preference存储应在用户会话之间持久化的数据。《Android 4 高级编程》第7章
+如果Activity是由用户关闭的（按下Back按钮），或是通过在代码中调用finish关闭，那么下次创建Activity时，**实例状态Bundle不会被传递给onCreate或onRestoreInstanceState。(竟然是不会传递！不会传递！不会传递！)**应该使用 Shared Preference存储应在用户会话之间持久化的数据。《Android 4 高级编程》第7章

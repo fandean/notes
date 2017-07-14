@@ -1,4 +1,4 @@
-﻿# MSSQL DataBase
+# MSSQL DataBase
 
 标签（空格分隔）： DataBase
 
@@ -7,7 +7,7 @@
 SQL Server DataBase
 
  sql123$%^
- 
+
  192.168.56.1
 
 Sign up for **Visual Studio Dev Essentials** and download ?
@@ -69,7 +69,7 @@ Sqlcmd: Error: Microsoft ODBC Driver 13 for SQL Server : Cannot generate SSPI co
 5. Data Source: Microsoft SQL Server (SqlClient)
 6. Server name: (localdb)\MSSQLLocalDB
 7. Log on to the server: Use Windows Authentication
-Press "Test Connection", Then OK.
+  Press "Test Connection", Then OK.
 
 
 
@@ -88,28 +88,26 @@ MSDN | 服务器和企业开发 | SQL Server | SQL Server 2014 | 产品文档 | 
 
 
 > [适用于 SQL Server 的 Microsoft JDBC Drivers 6.0、4.2、4.1 和 4.0
-](https://www.microsoft.com/zh-CN/download/details.aspx?id=11774 "或使用Google搜索最新的驱动版本")；可查看下载的压缩包中各jar包对应的sqlServer版本。
-或见: [Microsoft JDBC Driver for SQL Server](https://msdn.microsoft.com/library/mt484311.aspx)
+> ](https://www.microsoft.com/zh-CN/download/details.aspx?id=11774 "或使用Google搜索最新的驱动版本")；可查看下载的压缩包中各jar包对应的sqlServer版本。
+> 或见: [Microsoft JDBC Driver for SQL Server](https://msdn.microsoft.com/library/mt484311.aspx)
 
 
 
 ## 行列转换
 >参考：
-[SQL Server 实现行列（纵横表）转换](http://www.codeceo.com/article/sql-server-row-column-change.html)
+>[SQL Server 实现行列（纵横表）转换](http://www.codeceo.com/article/sql-server-row-column-change.html)
 >
-[ SQL Server 行列转换示例](http://blog.csdn.net/tjvictor/article/details/5186360 "查看其Sql Server 2008系列文章")
-[SQL Server 批量插入数据的两种方法](http://blog.csdn.net/tjvictor/article/details/4360030)
-[SQL Server 中使用参数化Top语句](http://blog.csdn.net/tjvictor/article/details/4327382)
+>[ SQL Server 行列转换示例](http://blog.csdn.net/tjvictor/article/details/5186360 "查看其Sql Server 2008系列文章")
+>[SQL Server 批量插入数据的两种方法](http://blog.csdn.net/tjvictor/article/details/4360030)
+>[SQL Server 中使用参数化Top语句](http://blog.csdn.net/tjvictor/article/details/4327382)
 >
-[MySQL中行列转换的SQL技巧](http://cenalulu.github.io/mysql/column-row-reverse/)
+>[MySQL中行列转换的SQL技巧](http://cenalulu.github.io/mysql/column-row-reverse/)
 >
-[SQL Server 行列转换](http://codecloud.net/36646.html "排版不错")
-[15 个常用的 SQL Server 高级语法](http://codecloud.net/5279.html "不错，提前看")
+>[SQL Server 行列转换](http://codecloud.net/36646.html "排版不错")
+>[15 个常用的 SQL Server 高级语法](http://codecloud.net/5279.html "不错，提前看")
 >
-[重温SQL——行转列，列转行](http://www.cnblogs.com/kerrycode/archive/2010/07/28/1786547.html)
-[SQL行转列汇总](http://www.cnblogs.com/maanshancss/archive/2013/03/13/2957108.html)
-[]()
-[]()
+>[重温SQL——行转列，列转行](http://www.cnblogs.com/kerrycode/archive/2010/07/28/1786547.html)
+>[SQL行转列汇总](http://www.cnblogs.com/maanshancss/archive/2013/03/13/2957108.html)
 
 
 
@@ -137,12 +135,12 @@ Transact-SQL（又稱T-SQL）
 [SQL Server 2016 版本](https://www.microsoft.com/zh-cn/sql-server/sql-server-editions) 功能比较。
 
 
-|SQL Server 2016版本 | 适用于 | 许可模型 | 渠道可用性 | 价格 |
-|---------- |--------- |---------- |------------ |------- |
-|开发人员版|SQL Server 软件的全功能版本，允许开发人员经济高效地构建、测试和演示基于 SQL Server 软件的应用程序。|每用户|免费下载|免费|
-|Web版|面向公用网站的安全、经济高效且高度可扩展的数据平台。仅适用于第三方软件服务提供商。| - |仅托管|联系您的托管合作伙伴以了解定价|
-|Express版|免费的入门级数据库，非常适合学习以及构建桌面和小型服务器的数据驱动型应用程序（容量大小最多为 10 GB）。| - |免费下载|	免费版|
-||||||
+| SQL Server 2016版本 | 适用于                                      | 许可模型 | 渠道可用性 | 价格              |
+| ----------------- | ---------------------------------------- | ---- | ----- | --------------- |
+| 开发人员版             | SQL Server 软件的全功能版本，允许开发人员经济高效地构建、测试和演示基于 SQL Server 软件的应用程序。 | 每用户  | 免费下载  | 免费              |
+| Web版              | 面向公用网站的安全、经济高效且高度可扩展的数据平台。仅适用于第三方软件服务提供商。 | -    | 仅托管   | 联系您的托管合作伙伴以了解定价 |
+| Express版          | 免费的入门级数据库，非常适合学习以及构建桌面和小型服务器的数据驱动型应用程序（容量大小最多为 10 GB）。 | -    | 免费下载  | 免费版             |
+|                   |                                          |      |       |                 |
 
 
 
@@ -150,7 +148,7 @@ Transact-SQL（又稱T-SQL）
 
 - SQL Server 2016 Developer Edition Download
 - SQL Server Management Studio (SSMS) is a free integrated environment for working with SQL Server, and releases updated versions almost monthly, so visit the SSMS download page for the latest version. （由原本的170M变为900M）
-This release of SSMS can be installed in the following languages: 仔细查看，是可以选择语言版本的。
+  This release of SSMS can be installed in the following languages: 仔细查看，是可以选择语言版本的。
 - SQL Server Data Tools (SSDT) is also free, and works best with Visual Studio. Visit the SSDT download page for the latest version, where you can also get the free version of Visual Studio 2015 Community.
 
 
@@ -172,17 +170,17 @@ Community Technical Preview (**CTP**)  社区技术预览版（CTP）
 
 
 > 或者直接利用SQL Workbench/J 进行连接：
-连接字符串：URL=`jdbc:sqlserver://127.0.0.1:1433;` 省略了实例名或端口也是可以连接的。完整连接字符串为：`jdbc:sqlserver://serverName[\instanceName][:portNumber];property=value;property=value`
-驱动包选择了sqljdbc4.jar。
+> 连接字符串：URL=`jdbc:sqlserver://127.0.0.1:1433;` 省略了实例名或端口也是可以连接的。完整连接字符串为：`jdbc:sqlserver://serverName[\instanceName][:portNumber];property=value;property=value`
+> 驱动包选择了sqljdbc4.jar。
 
 
 ### 2. 安装 SQL Server tools on Linux
 [Install SQL Server tools on Linux](https://docs.microsoft.com/zh-cn/sql/linux/sql-server-linux-setup-tools)
 > 第一次安装tools时提示无法解决依赖项；时隔1~2个月后，第二次(2017.01)直接就可以安装了。
 >
-它包含了如下两个工具：
-sqlcmd: Command-line query utility.
-bcp: Bulk import-export utility.
+> 它包含了如下两个工具：
+> sqlcmd: Command-line query utility.
+> bcp: Bulk import-export utility.
 
 
 
@@ -244,9 +242,9 @@ The mssql-conf tool configures SQL Server on Linux. For more information, see Co
 安装示例数据库的方法见 ↑ 迁移 章节。
 
 > 新的示例数据库（可能版本太新不适合）
-[AdventureWorks Databases and Scripts for SQL Server 2016 CTP3
-](https://www.microsoft.com/en-us/download/details.aspx?id=49502) 
-[Microsoft SQL Server Samples(样品)](https://msdn.microsoft.com/library/mt748083\(v=sql.1\).aspx)
+> [AdventureWorks Databases and Scripts for SQL Server 2016 CTP3
+> ](https://www.microsoft.com/en-us/download/details.aspx?id=49502) 
+> [Microsoft SQL Server Samples(样品)](https://msdn.microsoft.com/library/mt748083\(v=sql.1\).aspx)
 
 
 Sample databases and sample code:
@@ -292,10 +290,10 @@ go
 ### SQL Server 主页
 而所有都来自 [SQL Server主页](https://www.microsoft.com/zh-cn/sql-server/)
 
-> 
-[SQL Server Blog](https://blogs.technet.microsoft.com/dataplatforminsider/) 
-[Microsoft SQL Server Support Blog](https://blogs.msdn.microsoft.com/sqlblog/) 
-**[SQL Forums](https://social.msdn.microsoft.com/Forums/sqlserver/) 是个好地方**
+>
+> [SQL Server Blog](https://blogs.technet.microsoft.com/dataplatforminsider/) 
+> [Microsoft SQL Server Support Blog](https://blogs.msdn.microsoft.com/sqlblog/) 
+> **[SQL Forums](https://social.msdn.microsoft.com/Forums/sqlserver/) 是个好地方**
 
 
 
@@ -373,9 +371,9 @@ SQL Server Database Engine，选择nt authority\system
 
 
 >### SSMS的單獨安裝
-[Microsoft SQL Server 2008 Management Studio Express  (SSMSE下載)](https://www.microsoft.com/zh-TW/download/details.aspx?id=7593 "請仔細查看安裝指示") 
-[Microsoft® SQL Server® 2008 R2 SP2 - Express Edition
-(Sql Server下載)](https://www.microsoft.com/zh-tw/download/details.aspx?id=30438)
+>[Microsoft SQL Server 2008 Management Studio Express  (SSMSE下載)](https://www.microsoft.com/zh-TW/download/details.aspx?id=7593 "請仔細查看安裝指示") 
+>[Microsoft® SQL Server® 2008 R2 SP2 - Express Edition
+>(Sql Server下載)](https://www.microsoft.com/zh-tw/download/details.aspx?id=30438)
 
 >[KB968930：Windows XP 更新](http://www.microsoft.com/zh-tw/download/details.aspx?id=16818&751be11f-ede8-5a0c-058c-2ee190a24fa6=True&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True)：利用該更新安裝Windows PowerShell 2.0, 由於1.0已經沒有地方下載了，可用2.0代替。
 >
@@ -499,7 +497,7 @@ SQL Server Database Engine，选择nt authority\system
 
 
 >标识列
-IDENTITY（属性）在表中创建一个标识列
+>IDENTITY（属性）在表中创建一个标识列
 
 ## SQL Server 数据库的备份和还原
 
@@ -510,13 +508,6 @@ SQL Server 备份和还原组件为保护存储在 SQL Server 数据库中的关
 
 差异备份 (differential backup)
 完整备份 (full backup)
-
-[]()
-[]()
-[]()
-[]()
-
-
 
 
 ### 大容量导入和导出数据 (SQL Server)

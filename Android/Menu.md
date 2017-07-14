@@ -88,6 +88,15 @@ item可指定如下常用属性：
 MenuInflater对象的inflate方法加载指定资源对应的菜单即可。
 
 
+
+### 为菜单项设置Intent
+
+当单击一个菜单项后，如果该单击事件既没有被MenuItemClickListener处理程序处理，也没有被Activity的onOptionsItemSelected处理程序处理，就会触发分配给这个菜单项的intent。
+
+menuItem.setIntent(new Intent(this,MyOtherActivity.class));
+
+
+
 ## 4.使用PopupMenu创建弹出式菜单
 
 ### 4.1 创建步骤
@@ -119,6 +128,12 @@ menu.clear();
 Declare that the options menu has changed, so should be recreated. The onCreateOptionsMenu(Menu) method will be called the next time it needs to be displayed.
 
 声明选项菜单已更改，因此应重新创建。 onCreateOptionsMenu（Menu）方法将在下次菜单需要显示时被调用。
+
+
+
+在Fragment中通过 getActivity().invalidateOptionsMenu()调用。
+
+
 
 
 ## 更新Menu

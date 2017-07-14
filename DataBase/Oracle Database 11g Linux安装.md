@@ -1,4 +1,4 @@
-﻿# Oracle Database 11g Linux安装
+# Oracle Database 11g Linux安装
 
 标签（空格分隔）： DataBase
 
@@ -12,20 +12,20 @@
 ## 1. 安装（Linux install Oracle Database 11g）
 ## Fedora and CentOS and ... Oracle Linux
 - [Oracle Database 11g Release 2 (11.2) Installation On Fedora 23 (F23)](https://oracle-base.com/articles/11g/oracle-db-11gr2-installation-on-fedora-23) 
-[Install Oracle 11G Release 2 (11.2) on Fedora 23](http://dbaora.com/install-oracle-11g-release-2-11-2-on-fedora-23/) 
+  [Install Oracle 11G Release 2 (11.2) on Fedora 23](http://dbaora.com/install-oracle-11g-release-2-11-2-on-fedora-23/) 
 - [参考1](https://oracle-base.com/articles/11g/oracle-db-11gr2-installation-on-oracle-linux-6)
 - [参考2](https://oracle-base.com/articles/11g/oracle-db-11gr2-installation-on-oracle-linux-7)
 - [Oracle Linux 6.3下安装Oracle 11g R2(11.2.0.3)](http://blog.csdn.net/leshami/article/details/26356115  "只是他有一系列文章") 
-[Oracle 11g在不同系统中的安装教程](http://dbaora.com/oracle-new-features-11g/  "值得一看，该网站还有12c的，和一些安装错误解决方法") 
+  [Oracle 11g在不同系统中的安装教程](http://dbaora.com/oracle-new-features-11g/  "值得一看，该网站还有12c的，和一些安装错误解决方法") 
 
 **注意事项：**
 
 1. 需要注意的是在安装之前的配置工作中，有几个操作可能是需要重启的(也可使用某个命令而不重启)：
-如：在/etc/selinux/config 中添加 SELINUX=permissive
-和 systemctl 。。。
+  如：在/etc/selinux/config 中添加 SELINUX=permissive
+  和 systemctl 。。。
 2. 选择安装并创建数据库到达Typical install configuration界面时，一定记得字符集选择为UTF-8相关的比如：AL32UTF8。另外OSDBA Group选择dba（win中选择ORA_DBA）详见下文的翻译。
-2. 最后使用root身份执行两条shell命令：需要两条都执行后在点击ok。
-3. 
+3. 最后使用root身份执行两条shell命令：需要两条都执行后在点击ok。
+4. ​
 
 [Oracle RAC 体验](http://wiki.jikexueyuan.com/project/oraclecluster/overview.html "某研究生在极客学院写的一篇wiki") 
 
@@ -56,12 +56,12 @@
 
 #### 安装和卸载
 
--  [Oracle Database Online Documentation 11g Release 2 (11.2)
-Installing and Upgrading](http://docs.oracle.com/cd/E11882_01/nav/portal_11.htm) 
+- [Oracle Database Online Documentation 11g Release 2 
+  Installing and Upgrading](http://docs.oracle.com/cd/E11882_01/nav/portal_11.htm) 
 -  [Removing Oracle Database Software](http://docs.oracle.com/cd/E11882_01/install.112/e47689/remove_oracle_sw.htm#LADBI1332) 
 
 官方教程：
-[Oracle Database Online Documentation 11g Release 2 (11.2)](http://docs.oracle.com/cd/E11882_01/index.htm) 
+[Oracle Database Online Documentation 11g Release 2 ](http://docs.oracle.com/cd/E11882_01/index.htm) 
 
 
 
@@ -78,17 +78,17 @@ Installing and Upgrading](http://docs.oracle.com/cd/E11882_01/nav/portal_11.htm)
 所有命令都需要使用 oracle 用户来执行：  
 
 - check status, start, stop dbconsole
-	
-	emctl status dbconsole
-	emctl start dbconsole
-	emctl stop dbconsole
+
+  emctl status dbconsole
+  emctl start dbconsole
+  emctl stop dbconsole
 
 - check status, start, stop listener
 
-	lsnrctl status LISTENER
-	lsnrctl start LISTENER
-	lsnrctl stop LISTENER
-	
+  lsnrctl status LISTENER
+  lsnrctl start LISTENER
+  lsnrctl stop LISTENER
+
 
 另可搜索 "Oracle 基本操作手册"
 
@@ -128,7 +128,6 @@ emctl 是关于 OEMweb管理方面的命令，可以暂不考虑它，它的启�
 	关闭：shutdown 命令，参数：normal(需要在所有用户断开连接后才)，Immediate ，...
 
 > 连接和启动时会花一些时间不要着急。
-
 
 
 
@@ -183,14 +182,14 @@ CONN[ECT] [logon] [AS {SYSOPER | SYSDBA}]
 
 语法中各语句的意义：
 
-| Sysntax Commponent | Description |
-|--------------------------| -----------------|
-| `/`   |  Calls for external authentication(外部身份验证) of the connection request。通常它是直接通过操作系统进行身份验证(只要该操作系统用户满足某种条件即可) |
-|`AS {SYSOPER \| SYSDBA}`| 只有事先添加的管理员用户才可选择使用 sysoper或 sysdba特权  |
-| username |  用户名 |
-| connect_identifier (1) | An Oracle Net connect identifier(网络连接标识符)，准确的语法由Oracle Net配置决定，省略即进行本地连接。一般为net service name；它是一个网络连接描述符的别名，它通常在 tnsnames.ora 文件中设定|
-| connect_identifier (2) | 它是一个可替代的 Easy connect syntax(更易于使用的语法?)，`"host[:port][/service_name][:server][/instance_name]"`，`service_name`如果默认的service没有配置，则必须提供service_name。每一个数据库通常都提供了一个标准的service，它的名字等于全局数据库名the global database name，它由DB_NAME和DB_DOMAIN一同构成，例如: `DB_NAME.DB_DOMAIN`如果没有DB_DOMAIN，则它就是`DB_NAME.`。 `server`是服务处理程序的类型，由监听器配置，一般为 shared类型否则就是dedicated类型。`instance_name`实例名，你可以同时指定服务名和实例名；在Oracle RAC或单一实例环境中，如果只指定了实例名，你可以连接默认的数据库服务(它定义在listener.ora文件，如果文件中没有指定，则会出现错误)，你可以通过初始化参数 instance_name中获取实例名称。|
-|`edition={edition_name \| DATABASE_DEFAULT}`|为此次数据库会话指定版本(edition)，指定的版本必须存在，且你必须对其有USE权限；如果未指定则使用默认版本 |
+| Sysntax Commponent                       | Description                              |
+| ---------------------------------------- | ---------------------------------------- |
+| `/`                                      | Calls for external authentication(外部身份验证) of the connection request。通常它是直接通过操作系统进行身份验证(只要该操作系统用户满足某种条件即可) |
+| `AS {SYSOPER \| SYSDBA}`                 | 只有事先添加的管理员用户才可选择使用 sysoper或 sysdba特权     |
+| username                                 | 用户名                                      |
+| connect_identifier (1)                   | An Oracle Net connect identifier(网络连接标识符)，准确的语法由Oracle Net配置决定，省略即进行本地连接。一般为net service name；它是一个网络连接描述符的别名，它通常在 tnsnames.ora 文件中设定 |
+| connect_identifier (2)                   | 它是一个可替代的 Easy connect syntax(更易于使用的语法?)，`"host[:port][/service_name][:server][/instance_name]"`，`service_name`如果默认的service没有配置，则必须提供service_name。每一个数据库通常都提供了一个标准的service，它的名字等于全局数据库名the global database name，它由DB_NAME和DB_DOMAIN一同构成，例如: `DB_NAME.DB_DOMAIN`如果没有DB_DOMAIN，则它就是`DB_NAME.`。 `server`是服务处理程序的类型，由监听器配置，一般为 shared类型否则就是dedicated类型。`instance_name`实例名，你可以同时指定服务名和实例名；在Oracle RAC或单一实例环境中，如果只指定了实例名，你可以连接默认的数据库服务(它定义在listener.ora文件，如果文件中没有指定，则会出现错误)，你可以通过初始化参数 instance_name中获取实例名称。 |
+| `edition={edition_name \| DATABASE_DEFAULT}` | 为此次数据库会话指定版本(edition)，指定的版本必须存在，且你必须对其有USE权限；如果未指定则使用默认版本 |
 
 
 >Oracle Real Application Clusters (Oracle RAC)：Oracle应用集群。
@@ -282,11 +281,11 @@ SYSOPER：
 两个特定的操作系统组的成员(用户)允许使用操作系统认证而不需要使用密码。
  这两个操作系统组的名称一般由OSDAB或OSOPER两个选项指定 。（比如在安装配置界面标签名`OSDAB Group`有一个下拉选项其中就有 dba）
  该组被创建和指定的特定名称作为数据库安装过程的一部分。**默认名称**取决于您的操作系统而有所不同，并在下表中列出：
- 
- |Operating System Group| UNIX User Group  | Windows User Group |
- | --- | --- | ------ |
- | OSDAB | dba | ORA_DBA |
- | OSOPER | oper | ORA_OPER |
+
+| Operating System Group | UNIX User Group | Windows User Group |
+| ---------------------- | --------------- | ------------------ |
+| OSDAB                  | dba             | ORA_DBA            |
+| OSOPER                 | oper            | ORA_OPER           |
 
 也可以在安装数据库程序时对其进行覆盖。
 
@@ -297,14 +296,14 @@ SYSOPER：
 **Using Password File Authentication**
 
 1. 准备工作：
-	1. 必须事先拥有password file，如果没有则需要使用 ORAPWD 进行创建，如：
-`ORAPWD  FILE=filename ENTRIES=max_users`
-另可通过Database Configuration Assistant (**DBCA**)创建该文件。
-	2. Set the REMOTE_LOGIN_PASSWORDFILE initialization parameter to EXCLUSIVE. (This is the default).它是静态的初始化参数，所以更改后必须重启数据库。
-	3. Connect to the database as user SYS (or as another user with the administrative privileges).
-	4. If the user does not already exist in the database, create the user and assign a password.如果用户不存在则创建用户，并设置密码。
-	5. Grant the SYSDBA or SYSOPER system privilege to the user:
-	`GRANT SYSDBA to oe;`该语句添加oe用户到password file, thereby(从而) enabling connection AS SYSDBA.（注意这里并没有指定SYSOPER特权，所以连接时不能使用 AS SYSOPER）
+  1. 必须事先拥有password file，如果没有则需要使用 ORAPWD 进行创建，如：
+    `ORAPWD  FILE=filename ENTRIES=max_users`
+    另可通过Database Configuration Assistant (**DBCA**)创建该文件。
+  2. Set the REMOTE_LOGIN_PASSWORDFILE initialization parameter to EXCLUSIVE. (This is the default).它是静态的初始化参数，所以更改后必须重启数据库。
+  3. Connect to the database as user SYS (or as another user with the administrative privileges).
+  4. If the user does not already exist in the database, create the user and assign a password.如果用户不存在则创建用户，并设置密码。
+  5. Grant the SYSDBA or SYSOPER system privilege to the user:
+    `GRANT SYSDBA to oe;`该语句添加oe用户到password file, thereby(从而) enabling connection AS SYSDBA.（注意这里并没有指定SYSOPER特权，所以连接时不能使用 AS SYSOPER）
 2. 连接示例（oe用户）： `CONNECT oe AS SYSDBA`
 
 #### 1.5 Creating and Maintaining a Password File创建和管理password file  
@@ -324,14 +323,14 @@ SYSOPER：
 **创建数据库时需要注意的事项：**（选择几个暂时需要的）
 
 - 选择数据库字符集
-	建议使用AL32UTF8作为数据库字符集，它指的就是UTF-8。
+  建议使用AL32UTF8作为数据库字符集，它指的就是UTF-8。
 
 
 #### 使用DBCA创建数据库
 术语： Oracle Universal Installer (OUI)
 
 1. 可以使用交互式(interactive)的DBAC
-	DBAC可以启动OUI进行交互操作。记得设置字符集。
+  DBAC可以启动OUI进行交互操作。记得设置字符集。
 2. 可以使用非交互式(Noninteractive/Silent)的DBAC
 
 使用非交互式(Noninteractive/Silent)的DBAC：
@@ -363,8 +362,8 @@ Copying database files
 在SQL Plus中执行
 
 >**单实例数据库single-instance database:**
-它并不是意为着一台主机只允许存在一个Oracle instance(实例)。
-A single-instance database is a database that is accessed(访问) by only one Oracle instance。只允许同时访问一个数据库？
+>它并不是意为着一台主机只允许存在一个Oracle instance(实例)。
+>A single-instance database is a database that is accessed(访问) by only one Oracle instance。只允许同时访问一个数据库？
 
 ### 3 Starting Up and Shutting Down
 

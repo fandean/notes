@@ -3,7 +3,7 @@
 
 两篇不错的文章，另还可参考《Android编程权威指南》
 
-[深入讲解WebView——上|开源实验室-张涛](https://www.kymjs.com/code/2015/05/03/01/ "深入讲解WebView——上|开源实验室-张涛")
+[深入讲解WebView——上-开源实验室-张涛](https://www.kymjs.com/code/2015/05/03/01/)
 
 [Android开发：最全面、最易懂的Webview使用详解 - 简书](http://www.jianshu.com/p/3c94ae673e2a# "Android开发：最全面、最易懂的Webview使用详解 - 简书")
 
@@ -36,7 +36,7 @@ webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 在项目中如果使用到 WebView 控件,当加载 html 页面时,会在/data/data/包名目录下生成 database 与 cache 两个文件夹（我的手机没有root，就不截图了）。
 请求的 url 记录是保存在 WebViewCache.db,而 url 的内容是保存在 WebViewCache 文件夹下.
 
-[android 读取WebView缓存及清理WebView缓存 - 毕业了，该找工作了 - 博客频道 - CSDN.NET](http://blog.csdn.net/wei_chong_chong/article/details/52189011 "android 读取WebView缓存及清理WebView缓存 - 毕业了，该找工作了 - 博客频道 - CSDN.NET")
+[android 读取WebView缓存及清理WebView缓存](http://blog.csdn.net/wei_chong_chong/article/details/52189011)
 
 
 

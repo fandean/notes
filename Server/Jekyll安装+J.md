@@ -73,6 +73,8 @@ $ jekyll serve
 - [Gridster](http://jekyllthemes.org/themes/gridster/ "Gridster")各终端的适配做的非常好的主题，可选择网格或列表形式的布局
 - [Jekyll Clean Dark](http://jekyllthemes.org/themes/jekyll-clean-dark/ "Jekyll Clean Dark")黑色主题，各终端适配的很好，很漂亮，RSS订阅。
 - [minimal mistakes - Jekyll Themes & Templates](https://jekyllthemes.io/theme/10267810/minimal-mistakes "minimal mistakes - Jekyll Themes & Templates")
+- [jekyll-now](https://github.com/barryclark/jekyll-now ) 
+- [pages · GitLab](https://gitlab.com/pages "pages · GitLab") 列出了众多的pages
 
 
 主题选取的原则：
@@ -82,7 +84,7 @@ $ jekyll serve
 - 具备一定的功能
 
 
->该主题还包含了很多jekyll的教程：[Getting started with the Documentation Theme for Jekyll | Jekyll theme for documentation](http://idratherbewriting.com/documentation-theme-jekyll/ "Getting started with the Documentation Theme for Jekyll | Jekyll theme for documentation")
+>该主题还包含了很多jekyll的教程：[Getting started with the Documentation Theme for Jekyll  ](http://idratherbewriting.com/documentation-theme-jekyll/ )
 
 
 复杂主题：
@@ -102,6 +104,16 @@ $ jekyll serve
 > 前提：需要GitHub账号和安装git
 
 如遇到问题，可先看下文，比如"jekyll插件"部分。
+
+**这里有个坑人的错误：**
+
+```
+jekyll 3.5.0 | Error:  (/home/fan/Downloads/jekyll_demo/jekyll-now-master/_config.yml): did not find expected key while parsing a block mapping at line 7 column 1
+```
+
+提示第7行第1列有问题，解决该问题的方法是：在该行前添加一个空格，如果已经有空格就删除这个空格。
+
+
 
 ## Ruby相关概念
 
@@ -460,5 +472,21 @@ sudo npm install gulp -g
 
 [Gulp折腾之路(III) | 晚晴幽草轩](http://jeffjade.com/2016/08/08/113-toss-gulp/ "Gulp折腾之路(III) | 晚晴幽草轩")
 
+
+>主题列表：  
+[Dr. Jekyll's Themes - 211 free open source static website jekyll themes](https://drjekyllthemes.github.io/)
+
+
+### Cayman Blog Theme
+[Cayman Blog Theme](https://lorepirri.github.io/cayman-blog/ "Cayman Blog Theme")
+
+
+
+### jekyll-theme-simple-texture
+
+
+[jekyll-theme-simple-texture: A gem-based responsive simple texture styled Jekyll theme.](https://github.com/yizeng/jekyll-theme-simple-texture)
+
+作者主页：<http://yizeng.me/>
 
 

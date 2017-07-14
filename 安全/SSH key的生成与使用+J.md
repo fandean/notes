@@ -53,7 +53,7 @@ ssh-rsa "公钥内容" your_email@example.com
 ```
 
 实际操作的一次示例：  
-```
+```shell
 [fan 16:10:57]~$ ssh-keygen -t rsa -C "Fan@outlook.com" -b 4096
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/fan/.ssh/id_rsa): /home/fan/.ssh/FDGitHub_rsa
@@ -106,7 +106,7 @@ Are you sure you want to continue connecting (yes/no)?
 在创建ssh key时自行输入路径和文件名称，而非使用默认路径和文件名即可。
 
 ```shell
-# 比如输入
+# 比如，输入绝对路径加文件名来指定
 /home/fan/.ssh/gitlab_rsa
 ```
 
@@ -120,7 +120,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 For `OpenSSH clients` this is configured in the `~/.ssh/config` file. Below are two example host configurations using their own key:
 
-```
+```shell
 # GitLab.com server
 Host gitlab.com
 RSAAuthentication yes
@@ -136,7 +136,7 @@ IdentityFile ~/.ssh/config/private-key-filename
 
 
 **GitHub使用非默认密钥对:**  
-```
+```shell
 Host github.com
 RSAAuthentication yes
 IdentityFile ~/.ssh/FDGitHub_rsa.pub
@@ -146,7 +146,7 @@ IdentityFile ~/.ssh/FDGitHub_rsa.pub
 ## SSH agent
 
 **如果您的私钥使用密码短语来加密了的话，每一次使用 SSH 密钥对进行登录的时候，您都必须输入正确的密码短语。**    
-而 SSH agent 程序能够将您的已解密的私钥缓存起来，在需要的时候提供给您的 SSH 客户端。这样子，您就只需要将私钥加入 SSH agent 缓存的时候输入一次密码短语就可以了。这为您经常使用 SSH 连接提供了不少便利。
+而 SSH agent 程序能够将您的已解密的私钥缓存起来，在需要的时候提供给您的 SSH 客户端。这样子，您就只需要将私钥加入 SSH agent 缓存的时候输入一次密码短语就可以了。这为您经常使用 SSH 连接提供了不少便利。   
 SSH agent 一般会设置成在登录会话的时候自动启动，并在整个会话中保持运行。有不少的 SSH agent 供您选择，我们将为您介绍几种常用的 SSH agent，您可以根据您的需要进行选择。
 
 
@@ -279,6 +279,6 @@ To http://127.0.0.1:8081/TestGroup/Test.git
 [remote rejected错误原因](https://github.com/gitlabhq/gitlabhq/issues/10405)
 
 
-**最终原因：** 是使用git协议有问题，而使用http则可以。（那么ssh key还有用吗？）
+**最终原因：** 是GitHub使用git协议有问题，而使用http则可以。（那么ssh key还有用吗？）
 
 

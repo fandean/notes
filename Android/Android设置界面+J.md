@@ -1,7 +1,7 @@
 # Android设置界面
 
 
-[设置 | Android Developers](https://developer.android.com/guide/topics/ui/settings.html "设置 | Android Developers")
+[设置 - Android Developers](https://developer.android.com/guide/topics/ui/settings.html "设置 - Android Developers")
 
 《Android 4 高级编程 第3版》第7章：文件保存状态和首选项
 
@@ -84,7 +84,7 @@ Preference Header描述了Preference Fragment在Preference Activity中如何分�
 PreferenceActivity用于包含由Preference Header资源定义的Preference Fragment层次结构。（Android 3.0之前Preference Activity直接包含Preference Screen）
 
 > 创建一个Preference Activity需继承PreferenceActivity类。
-当使用Preference Fragment和Preference Header时，需要重写oBuildHeaders处理程序，并在其中调用loadHeadersFromResource并指定一个Preference Header资源文件。
+> 当使用Preference Fragment和Preference Header时，需要重写oBuildHeaders处理程序，并在其中调用loadHeadersFromResource并指定一个Preference Header资源文件。
 
 
 ## 找到并使用Preference Screen设置的Shared Preference

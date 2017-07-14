@@ -5,7 +5,48 @@
 
 
 
+查看各顶级域名含义： [新顶级域名注册_xyz域名_wang域名_top域名_我爱你域名_ren域名_申请购买-万网-阿里云旗下品牌](https://wanwang.aliyun.com/domain/newgtld/?spm=5176.8034973.5.23.51f52a9biGa9N7#.men "新顶级域名注册_xyz域名_wang域名_top域名_我爱你域名_ren域名_申请购买-万网-阿里云旗下品牌")
+
 ## 域名购买
+
+搜索了一下之前看过得个人技术博客基本都是.me
+
+ccfan.me  
+
+fansblog.tech
+
+fansblog.me
+
+
+
+如果你想要一个com等众所周知的顶级域名的话，可以去西部或者godaddy。
+
+
+
+**域名后缀尽量用com**
+
+就选择域名后缀类型来说，比较推荐的还是.com、.cn和.net后缀的域名，一般商业网站用的最多的都是.com域名，比较大众化。
+
+**上线后避免更换**
+
+域名确定，网站一旦上线之后，就不要轻易地更改网站域名，特别是在做了一定的推广工作之后，更该域名会严重影响到网站的SEO，轻则降权，掉排名，重则直接会被搜索引擎拉黑。
+
+net和org后缀也可以的，也是国际性的。其他的后缀，推荐cc和me
+
+
+
+中国的有关部门对 .cn 这种国家域名的注册和备案信息的管控比其他类型域名后缀更加严格。
+
+
+
+只用 .com 类域名，绝不尝试非主流个性域名后缀
+
+
+
+
+
+
+
 
 
 .tech 科技、技术通用域名：  
@@ -19,6 +60,31 @@
 .bit 域名：  使用Namecoin加密货币的去中心化域名。
 
 .onion 域名：  
+
+.me 
+
+
+
+## 机构
+
+
+
+![](https://img1.wsimg.com/pc/img/1/trademark/nonregistered/godaddy-logo.png)  
+
+[GoDaddy](https://hk.godaddy.com/ "币种选择CNY")  
+支持支付宝付款，一般的域名：第一年每年 ¥5.86，兩年以上每年 ¥101.00
+
+[Namesilo](https://www.liaosam.com/goto/namesilo) 支持支付宝付款，免费赠送 WhoisPrivacy，性价比超高。
+
+
+
+[英文建站必备：Namesilo 购买注册流程](https://www.liaosam.com/namesilo-register.html )
+
+[万网域名转出到 Namesilo 图文流程 - 料网](https://www.liaosam.com/domain-transfer-namesilo.html )； 以后外国注册商注册的域名不能使用国内的主机空间。
+
+
+
+
 
 
 

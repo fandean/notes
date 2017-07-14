@@ -1,16 +1,12 @@
+
 # OkHttp3缓存控制
 
-也适用于Retrofit，最初也是来源于**Retrofit设置缓存**  
+> 也适用于Retrofit，最初也是来源于**Retrofit设置缓存**  
 
-baseUrl + EndPoint(端点) = 组合成 url  ？？？
+> baseUrl + EndPoint(端点) = 组合成 url  ？？？
 
-## 相关概念：   
+## 相关概念   
 
-[Retrofit2.0+Okhttp不依赖服务端的数据缓存](http://dandanlove.com/2016/09/18/retrofit-okhttp-cache-offline/)  
-[浏览器 HTTP 协议缓存机制详解](http://blog.csdn.net/stven_king/article/details/51899865)     
-[你应该了解的 一些web缓存相关的概念. - Franky - 博客园](http://www.cnblogs.com/_franky/archive/2011/11/23/2260109.html "你应该了解的 一些web缓存相关的概念. - Franky - 博客园")    
-
-[高效地配置OkHttp | 开发技术前线](http://www.devtf.cn/?p=1264 "高效地配置OkHttp | 开发技术前线")  
 
 浏览器缓存控制机制有两种：**HTML Meta标签** vs. **HTTP头信息**  
 浏览器缓存机制，其实主要就是HTTP协议定义的缓存机制（如： `Expires`； `Cache-control`等）。但是也有非HTTP协议定义的缓存机制，如使用HTML Meta 标签，Web开发者可以在HTML页面的`<head>`节点中加入`<meta>`标签，但只有部分浏览器可以支持。
@@ -52,14 +48,17 @@ baseUrl + EndPoint(端点) = 组合成 url  ？？？
 > min-fresh: 指示客户机可以接收响应时间小于当前时间加上指定时间的响应。   
 > max-stale: 指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。 
 
-Last-Modified/If-Modified-Since要配合Cache-Control使用     
-
-Etag/If-None-Match也要配合Cache-Control使用     
-
->  详见上面的参考。
+Last-Modified/If-Modified-Since要配合Cache-Control使用：     
+略
 
 
+Etag/If-None-Match也要配合Cache-Control使用：    
+略
 
+> 参考：[Retrofit2.0+Okhttp不依赖服务端的数据缓存](http://dandanlove.com/2016/09/18/retrofit-okhttp-cache-offline/)  
+[浏览器 HTTP 协议缓存机制详解](http://blog.csdn.net/stven_king/article/details/51899865)     
+[你应该了解的 一些web缓存相关的概念](http://www.cnblogs.com/_franky/archive/2011/11/23/2260109.html "你应该了解的 一些web缓存相关的概念. - Franky - 博客园")      
+[高效地配置OkHttp - 开发技术前线](http://www.devtf.cn/?p=1264 "高效地配置OkHttp - 开发技术前线")  
 
 
 
@@ -108,14 +107,12 @@ REWRITE_CACHE_CONTROL_INTERCEPTOR拦截器需要同时设置networkInterceptors�
 
 Jesse Wilson大神推荐，我们把缓存的数据存放在 `context.getCacheDir()`的子目录中。
 
-```
+```java
 String cachePath1 =  context.getExternalCacheDir().getPath();
 String cachePath2 =  context.getCacheDir().getPath();
 KLog.d( "cachePath1--" + cachePath1 ) ;
 KLog.d( "cachePath2--" + cachePath2 )
 ```
-
-
 
 结果：
 
@@ -163,7 +160,7 @@ Environment.getExternalStorageDirectory().getPath()
 ```
 当外置sd卡不存在的情况下，这条语句是获取的内置sd卡的路径。外置sd卡存在，获取是外置sd卡。获取出来的值是`/storage/sdcard0`
 
-```
+```java
 /**
   * 获取app缓存路径
   * @param context
@@ -186,8 +183,6 @@ Environment.getExternalStorageDirectory().getPath()
 
 
 getExternalCacheDir()方法使用的目录还对应 `设置->应用->应用详情`里面的`”清除缓存“`选项。
-
- 
 
 
 
@@ -231,7 +226,7 @@ One year: max-age=31536000
 
 对应的CacheControl类
 
-```
+```java
 final CacheControl.Builder builder = new CacheControl.Builder();
             builder.noCache();//不使用缓存，全部走网络
             builder.noStore();//不使用缓存，也不存储缓存
@@ -244,7 +239,7 @@ final CacheControl.Builder builder = new CacheControl.Builder();
 ```
 
 两个CacheControl常量介绍：
-```
+```java
 CacheControl.FORCE_CACHE; //仅仅使用缓存
 CacheControl.FORCE_NETWORK;// 仅仅使用网络
 ```
@@ -365,7 +360,7 @@ private static final Interceptor REWRITE_CACHE_CONTROL_INTERCEPTOR = new Interce
 ### 日志拦截器 LoggingInterceptor 
 
 用法：自定义日志拦截器(自定义日志打印的格式和信息)
-```
+```java
 // chain -> 这个语法为Lambda表达式，chain代表传入方法的参数
 private final Interceptor LoggingInterceptor = chain -> { 
     Request request = chain.request(); 
@@ -392,7 +387,7 @@ compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
 
 然后就可以使用如下代码使用相关过滤器
 
-```
+```java
 HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 // add your other interceptors …
@@ -412,7 +407,7 @@ httpClient.addInterceptor(logging);   // <-- this is the important line!
 
 OkHttp 提供了对用户认证的支持。当 HTTP 响应的状态代码是 401 时，OkHttp 会从设置的 Authenticator 对象中获取到新的 Request 对象并再次尝试发出请求。Authenticator 接口中的 authenticate 方法用来提供进行认证的 Request 对象.
 
-```
+```java
 OkHttpClient client = new OkHttpClient();
         client.newBuilder().authenticator(new Authenticator() {
             @Override

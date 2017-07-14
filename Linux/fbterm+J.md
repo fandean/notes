@@ -4,7 +4,7 @@
 Fbterm (Frame buffer terminal)是內核終端的直接替代：一個沒有Xorg也能使用的終端模擬器。
 
 更具體的介紹見：  
-	
+​	
 <https://wiki.archlinux.org/index.php/Fbterm_(简体中文)>  
 <http://bbs.chinaunix.net/thread-1921227-1-1.html>  
 <http://blog.csdn.net/xiajian2010/article/details/9625131>  
@@ -74,7 +74,7 @@ http://www.eclis.ch/fbv/
 
 
 建立脚本文件用于打开fbterm调用fbv图形查看器，显示背景图片。
-```
+```shell
 #!/bin/bash
 
 # fbterm-bi: a wrapper script to  enable  background image with fbterm
@@ -95,7 +95,7 @@ exec fbterm "$@"
 
 **实际的运行脚本:**
 
-```
+```shell
 #!/bin/bash
 
 # fbterm-bi: a wrapper script to  enable  background image with fbterm
@@ -119,6 +119,5 @@ EOF
 shift
 export FBTERM_BACKGROUND_IMAGE=1
 exec fbterm "$@"
-
 ```
 

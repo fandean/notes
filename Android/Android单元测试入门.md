@@ -7,13 +7,6 @@
 > 你要学习JUnit的使用，你要学习Mokito的使用，Robolectric的使用，依赖注入的概念和使用等等。
 
 
-参考：  
-[Android单元测试-Junit](http://blog.csdn.net/yaodong379/article/details/55113388)  
-[Android - 单元测试](https://juejin.im/post/58e97377ac502e4957c11a01)  
-[Android单元测试（四）：Mock以及Mockito的使用](http://chriszou.com/2016/04/29/android-unit-testing-mockito.html)  
-[Android测试官方教程翻译(三) -- 构建设备单元测试](http://blog.csdn.net/zhumenggaofei/article/details/54620385)  
-
-
 ## 相关概念
 Android单元测试有两种方式： **本地单元测试** 和 **设备单元测试**。  
 
@@ -30,7 +23,20 @@ Android单元测试有两种方式： **本地单元测试** 和 **设备单元�
 - `../app/src/androidTest/java/`是设备单元测试的文件目录
 
 
+Java单元测试框架：**Junit、Mockito、Powermockito**   等
+
+Android：**Robolectric、AndroidJUnitRunner、Espresso**等
+
+建议先学习**Junit & Mockito**。这两款框架是java领域应用非常普及，使用简单。junit运行在**jvm**上，所以只能测试纯java，若要测试依赖android库的代码，可以用mockito**隔离依赖**
+
+
+
+
+
+
+
 ## 本地单元测试
+
 ### JUnit测试简单操作示例
 新建测试用例：  
 在编辑器中打开该类，右击类名选择 "Go To" → "Test" → 在"Create Test"对话框中选择要测试的方法等 → 在"Choose Destination Directory"对话框中选择`.../app/src/test/java/...` 
@@ -63,5 +69,38 @@ Android单元测试有两种方式： **本地单元测试** 和 **设备单元�
         android:label="test"/>
 </manifest>
 ```
+
+
+
+
+
+## 参考：
+
+
+
+相关概念理解：必看
+
+[Android单元测试——初探 - 简书](http://www.jianshu.com/p/79addb29b06d "Android单元测试——初探 - 简书")   
+
+[Android单元测试 - 如何开始？ - 简书](http://www.jianshu.com/p/bc99678b1d6e "Android单元测试 - 如何开始？ - 简书")   
+
+
+
+
+
+
+
+
+[Android单元测试-Junit](http://blog.csdn.net/yaodong379/article/details/55113388)  
+[Android - 单元测试](https://juejin.im/post/58e97377ac502e4957c11a01)  
+[Android单元测试（四）：Mock以及Mockito的使用](http://chriszou.com/2016/04/29/android-unit-testing-mockito.html)  
+[Android测试官方教程翻译(三) -- 构建设备单元测试](http://blog.csdn.net/zhumenggaofei/article/details/54620385)     
+
+
+
+进阶：
+
+[解读Android官方MVP项目单元测试 - 简书](http://www.jianshu.com/p/cf446be43ae8 "解读Android官方MVP项目单元测试 - 简书")
+
 
 

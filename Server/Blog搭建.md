@@ -91,6 +91,8 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 
 
 
+### 图床和相关工具
+
 服务器提供商，相对来说会比较稳定靠谱，国内的UCloud、阿里云、腾讯云、七牛云，国外的有亚马逊。七牛云也可以作为Web服务器？？
 
 图床服务器：    
@@ -118,6 +120,25 @@ FarBox、Jekyll、Octopress、Ghost、marboo、Hexo、Medium、Logdown、Prose.i
 | 第 100 万次以上         | 0.001 元/千次                    |                    |
 
 [如何使用七牛云做为图床？ - 简书](http://www.jianshu.com/p/6dce6094bf61 "如何使用七牛云做为图床？ - 简书")
+
+
+
+相关工具：
+
+[简化markdown写作中的贴图流程 - Weishu's Notes](http://weishu.me/2015/10/16/simplify-the-img-upload-in-markdown/ "简化markdown写作中的贴图流程 - Weishu's Notes")
+
+
+
+
+**GitHub User Content：**
+
+另考虑如何利用Githab相关的：<https://camo.githubusercontent.com>保存图片，记得之前在GitHub中的Issue中上传图片时，上传的地址就是这里；另看到有些保存早GitHub上的md文章中的图片也是存储在这里。
+
+
+
+
+
+
 
 
 
@@ -281,6 +302,24 @@ Coding Pages 可自动构建 Jekyll 网站，目前支持 Jekyll 3.0。
 
 
 
+## 域名绑定
+
+
+
+[Github Page创建个人主页以及绑定域名 - 蛙牛的个人页面](https://my.oschina.net/lujianing/blog/178745 "Github Page创建个人主页以及绑定域名 - 蛙牛的个人页面")
+
+[我的博客是如何搭建的（github pages + HEXO + 域名绑定） - 简书](http://www.jianshu.com/p/834d7cc0668d "我的博客是如何搭建的（github pages + HEXO + 域名绑定） - 简书")
+
+[GitHub Pages 绑定来自阿里云的域名](http://quantumman.me/blog/setting-up-a-domain-with-gitHub-pages.html "GitHub Pages 绑定来自阿里云的域名")  推荐.
+
+
+
+绑定顶级域名和绑定二级域名。
+
+
+
+
+
 
 
 ## 让博客Docker化
@@ -323,19 +362,7 @@ Coding Pages 可自动构建 Jekyll 网站，目前支持 Jekyll 3.0。
 上面两个的应用见[此处](http://talentprince.github.io/blog/2015/01/04/android-yu-inject-yi-lai-zhu-ru-de-bu-jie-zhi-yuan/)   
 
 
-不知诚通网盘能否应用：
 
-免费用户基本功能
-
-- 400GB续期空间
-- 网页外链分享
-- 多线上传下载
-- webdav高速批量上传
-- 数据统计分析
-- 个性公告栏
-- 个性域名
-- 数据多点备份
-- 数据分发
 
 
 访问用户位置分析：  

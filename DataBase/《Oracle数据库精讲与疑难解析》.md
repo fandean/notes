@@ -1,11 +1,11 @@
-﻿# 《Oracle数据库精讲与疑难解析》
+# 《Oracle数据库精讲与疑难解析》
 
 标签（空格分隔）： DataBase
 
 ---
 
 >另參考：
-<http://blog.csdn.net/robertkun/article/details/17031281>
+><http://blog.csdn.net/robertkun/article/details/17031281>
 
 默認：
 SYSTEM    MANAGER
@@ -64,7 +64,7 @@ Listener Control Utility是一个命令行工具：
 #### 配置监听器
 1. 通过Net Manager。（最终目的也是修改listener.ora文件）命令是： netmgr    （不知为什么界面选项不全）
 2. 或通过网络配置助手，使用命令： netca
-2. 直接通过编辑 listener.ora文件
+3. 直接通过编辑 listener.ora文件
 
 配置好监听器后使用命令：lsnrctl start LISTENER 启动LISTENER这个监听器。由于LISTENER是默认监听器，所以可以直接lsnrctl start。
 
@@ -74,7 +74,7 @@ Listener Control Utility是一个命令行工具：
 
 
 	/ora01/app/oracle/product/11.2.0/db_1/network/admin/listener.ora
-	
+​	
 
 
 我出现的错误:
@@ -202,7 +202,7 @@ site profile ： glogin.sql文件
 命令：list  (显示行的内容)
 语法：L[IST] [n | n m | n * | * | * LAST]
 用法：显示指定行的内容
-```  
+```
 
 命令：del （删除）
 语法：与list类似
@@ -309,11 +309,11 @@ ORA11G:/u01/app/oracle/product/11.2.0/db_1:Y
 在sqlplus中：  
 
 	SQL> startup nomount
-	
+
 如果要从此状态进入mount状态使用： 
 
 	SQL> alter database mount
-	
+
 #### 将数据库启动到MOUNT状态
 
 	SQL> startup mount
@@ -322,13 +322,13 @@ ORA11G:/u01/app/oracle/product/11.2.0/db_1:Y
 如果要从此状态进入打开状态使用： 
 
 	SQL> alter database open
-	
-	
+
+​	
 #### 打开数据库
 
 	SQL> startup
-	
-	
+
+​	
 #### 如何判断数据库已经启动
 
 如果出现下面的一条语句就表示数据库**没有**启动；
@@ -425,20 +425,5 @@ sqlplus中
 #### 8.1.2.1 表空间
 
 逻辑单元，表空间：用于存储数据库对象（比如：表，索引等）【而这些对象实际存放在数据文件中】
-
-
-
-#### 8.1.2.2 数据块
-
-
-
-
-
-
-
-# 第10章 用户管理
-
-
-
 
 
