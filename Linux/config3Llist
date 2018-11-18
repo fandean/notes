@@ -1,0 +1,565 @@
+.config/
+├── abiword
+│   └── templates
+├── Android Open Source Project
+├── anoise
+├── autostart
+├── bcloud
+├── bleachbit
+├── calibre
+│   ├── conversion
+│   ├── fonts
+│   ├── metadata_sources
+│   └── plugins
+├── chromium
+│   ├── Avatars
+│   ├── Crash Reports
+│   ├── Default
+│   │   ├── Application Cache
+│   │   ├── Articles
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extensions
+│   │   ├── Extension State
+│   │   ├── Feedback Reports
+│   │   ├── File System
+│   │   ├── GCM Store
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local App Settings
+│   │   ├── Local Extension Settings
+│   │   ├── Local Storage
+│   │   ├── Managed Extension Settings
+│   │   ├── Pepper Data
+│   │   ├── Session Storage
+│   │   ├── Storage
+│   │   └── Thumbnails
+│   ├── Dictionaries
+│   ├── EVWhitelist
+│   │   └── 7
+│   ├── Guest Profile
+│   │   ├── GCM Store
+│   │   └── GPUCache
+│   ├── Profile 3
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension State
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local Extension Settings
+│   │   ├── Local Storage
+│   │   ├── Pepper Data
+│   │   └── Session Storage
+│   ├── ShaderCache
+│   │   └── GPUCache
+│   ├── System Profile
+│   │   ├── data_reduction_proxy_leveldb
+│   │   └── GCM Store
+│   └── Webstore Downloads
+├── Cmd Markdown
+│   ├── Application Cache
+│   │   └── Cache
+│   ├── Cache
+│   ├── databases
+│   ├── Downloads
+│   ├── GPUCache
+│   ├── IndexedDB
+│   │   └── https_www.zybuluo.com_0.indexeddb.leveldb
+│   └── Local Storage
+├── Code
+│   ├── Backups
+│   ├── Cache
+│   ├── CachedData
+│   │   ├── 376c52b955428d205459bea6619fc161fc8faacf
+│   │   ├── 379d2efb5539b09112c793d3d9a413017d736f89
+│   │   └── b8cd5b9556d8b70ea560d35b903422363f6c5c40
+│   ├── GPUCache
+│   ├── Local Storage
+│   └── User
+│       ├── snippets
+│       └── workspaceStorage
+├── Code Industry
+├── compiz-1
+│   └── compizconfig
+├── copyq
+│   └── themes
+├── dconf
+├── Empathy
+├── enchant
+├── eog
+├── evince
+├── evolution
+│   ├── mail
+│   │   ├── folders
+│   │   └── views
+│   └── sources
+├── fcitx
+│   ├── chewing
+│   ├── clipboard
+│   ├── conf
+│   ├── data
+│   ├── dbus
+│   ├── googlepinyin
+│   ├── log
+│   ├── pinyin
+│   └── rime
+│       └── sync
+├── fcitx-qimpanel
+│   └── skin
+├── Foxit Software
+├── freeplane
+│   └── 1.5.x
+│       ├── addons
+│       ├── .backup
+│       ├── icons
+│       ├── lib
+│       ├── logs
+│       ├── resources
+│       ├── scripts
+│       └── templates
+├── gedit
+│   └── tools
+├── Genymobile
+├── git
+├── gitbook-editor
+│   ├── GPUCache
+│   ├── Local Storage
+│   └── Partitions
+│       └── _
+├── git-cola
+├── GitKraken
+│   ├── Cache
+│   ├── extensions
+│   └── GPUCache
+├── gmusicbrowser
+├── gnome-control-center
+│   └── backgrounds
+├── gnome-mplayer
+│   ├── cover_art
+│   └── plugin
+├── gnome-session
+│   └── saved-session
+├── gnome-sudoku
+│   ├── finished
+│   ├── puzzles
+│   └── saved
+├── google-chrome
+│   ├── Avatars
+│   ├── CertificateTransparency
+│   │   ├── 451
+│   │   └── 452
+│   ├── Crash Reports
+│   ├── Default
+│   │   ├── Application Cache
+│   │   ├── Articles
+│   │   ├── blob_storage
+│   │   ├── BudgetDatabase
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension Rules
+│   │   ├── Extensions
+│   │   ├── Extension State
+│   │   ├── File System
+│   │   ├── GCM Store
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local App Settings
+│   │   ├── Local Extension Settings
+│   │   ├── Local Storage
+│   │   ├── Managed Extension Settings
+│   │   ├── Pepper Data
+│   │   ├── Platform Notifications
+│   │   ├── Service Worker
+│   │   ├── Session Storage
+│   │   ├── Storage
+│   │   ├── Sync App Settings
+│   │   ├── Sync Data
+│   │   └── Sync Extension Settings
+│   ├── Dictionaries
+│   ├── EVWhitelist
+│   │   └── 7
+│   ├── FileTypePolicies
+│   │   └── 11
+│   ├── OriginTrials
+│   ├── PepperFlash
+│   │   └── 26.0.0.137
+│   ├── pnacl
+│   │   └── 0.57.44.2492
+│   ├── Profile 1
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension Rules
+│   │   ├── Extensions
+│   │   ├── Extension State
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local Storage
+│   │   ├── Pepper Data
+│   │   ├── Service Worker
+│   │   ├── Session Storage
+│   │   └── Sync Extension Settings
+│   ├── Profile 2
+│   │   ├── Application Cache
+│   │   ├── blob_storage
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension Rules
+│   │   ├── Extensions
+│   │   ├── Extension State
+│   │   ├── File System
+│   │   ├── GCM Store
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local App Settings
+│   │   ├── Local Extension Settings
+│   │   ├── Local Storage
+│   │   ├── Managed Extension Settings
+│   │   ├── NTPSnippets
+│   │   ├── Pepper Data
+│   │   ├── Platform Notifications
+│   │   ├── Service Worker
+│   │   ├── Session Storage
+│   │   ├── Storage
+│   │   ├── Sync App Settings
+│   │   ├── Sync Extension Settings
+│   │   └── Thumbnails
+│   ├── Profile 3
+│   │   ├── Application Cache
+│   │   ├── blob_storage
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension Rules
+│   │   ├── Extensions
+│   │   ├── Extension State
+│   │   ├── File System
+│   │   ├── GPUCache
+│   │   ├── IndexedDB
+│   │   ├── Local Extension Settings
+│   │   ├── Local Storage
+│   │   ├── Pepper Data
+│   │   ├── Platform Notifications
+│   │   ├── Service Worker
+│   │   ├── Session Storage
+│   │   └── Sync Extension Settings
+│   ├── ShaderCache
+│   │   └── GPUCache
+│   ├── SSLErrorAssistant
+│   │   └── 3
+│   ├── Subresource Filter
+│   │   ├── Indexed Rules
+│   │   └── Unindexed Rules
+│   ├── System Profile
+│   │   ├── databases
+│   │   ├── data_reduction_proxy_leveldb
+│   │   ├── Extension Rules
+│   │   ├── Extension State
+│   │   └── Local Storage
+│   └── Webstore Downloads
+├── gpick
+├── gpicview
+├── gtk-2.0
+├── gtk-3.0
+├── Haroopad
+│   ├── Cache
+│   │   └── index-dir
+│   ├── Downloads
+│   ├── .error
+│   │   └── 2015
+│   ├── GPUCache
+│   ├── LevelDB
+│   ├── Local Storage
+│   ├── Themes
+│   │   ├── editor
+│   │   └── viewer
+│   └── .tmp
+├── ibus
+│   ├── bus
+│   ├── googlepinyin
+│   └── rime
+├── inkscape
+│   ├── extensions
+│   ├── icons
+│   ├── keys
+│   ├── palettes
+│   └── templates
+├── kazam
+├── kdeconnect
+│   └── 31a17db1062d3705
+│       ├── kdeconnect_notifications
+│       ├── kdeconnect_runcommand
+│       └── kdeconnect_share
+├── kingsoft
+│   └── office6
+│       └── OfficeSpace
+├── Kingsoft
+├── laverna
+│   ├── Application Cache
+│   │   └── Cache
+│   ├── Cache
+│   ├── databases
+│   ├── GPUCache
+│   ├── IndexedDB
+│   │   └── http_localhost_9000.indexeddb.leveldb
+│   └── Local Storage
+├── libaccounts-glib
+├── libreoffice
+│   └── 4
+│       ├── cache
+│       └── user
+├── liferea
+├── menus
+│   ├── applications-merged
+│   └── gnome-applications-merged -> applications-merged
+├── midori
+│   └── extensions
+│       ├── libabout.so
+│       ├── libadblock.so
+│       ├── libaddons.so
+│       ├── libapps.so
+│       ├── libcolorful-tabs.so
+│       ├── libcookie-manager.so
+│       ├── libcookie-permissions.so
+│       ├── libcopy-tabs.so
+│       ├── libdelayed-load.so
+│       ├── libdevpet.so
+│       ├── libdomain-keys.so
+│       ├── libexternal-download-manager.so
+│       ├── libfeed-panel.so
+│       ├── libflummi.so
+│       ├── libformhistory.so
+│       ├── libhistory-list.so
+│       ├── libmouse-gestures.so
+│       ├── libnojs.so
+│       ├── libnotes.so
+│       ├── libnsplugin-manager.so
+│       ├── libopen-with.so
+│       ├── libshortcuts.so
+│       ├── libstatusbar-features.so
+│       ├── libstatus-clock.so
+│       ├── libtabby.so
+│       ├── libtab-panel.so
+│       ├── libtabs-minimized.so
+│       ├── libtoolbar-editor.so
+│       ├── libtransfers.so
+│       └── libwebmedia-now-playing.so
+├── Mousepad
+├── mpv
+│   └── watch_later
+├── nautilus
+├── netease-cloud-music
+├── netsurf
+├── Nylas Mail
+│   ├── Cache
+│   ├── dictionaries
+│   ├── GPUCache
+│   └── Local Storage
+├── orage
+├── pulse
+├── QtProject
+│   └── qtcreator
+│       ├── generic-highlighter
+│       ├── json
+│       ├── macros
+│       ├── mimetypes
+│       ├── qnx
+│       └── styles
+├── qupzilla
+│   └── profiles
+│       └── default
+├── ReText project
+├── ristretto
+├── rox.sourceforge.net
+│   └── ROX-Filer
+├── screenruler
+├── shadowsocks-qt5
+├── signond
+├── Simplenote
+│   ├── Cache
+│   ├── databases
+│   ├── IndexedDB
+│   │   └── file__0.indexeddb.leveldb
+│   └── Local Storage
+├── smplayer
+│   └── file_settings
+│       ├── 0
+│       ├── 1
+│       ├── 3
+│       ├── 4
+│       ├── 5
+│       ├── 6
+│       ├── 8
+│       ├── 9
+│       ├── a
+│       ├── b
+│       ├── d
+│       ├── e
+│       └── f
+├── smtube
+├── software-center
+├── SogouPY
+│   ├── Backup
+│   └── scd
+├── SogouPY.users
+├── sogou-qimpanel
+│   └── skin
+│       ├── Alpha-红与黑
+│       ├── CC猫·快乐六一
+│       ├── Girl { love heart }
+│       ├── 【SUNDAY】秋意盎然
+│       ├── Tickle Black Ver
+│       ├── 被风吹过的夏天
+│       ├── 【初久】潘多拉
+│       ├── 【花花】cc猫爱学习
+│       ├── 【花花】小黄人美国队长
+│       ├── 【叫小兽】夏日风
+│       ├── 【叫小兽】折·卡
+│       ├── 【梦圆工作室】萌宝皮卡丘
+│       ├── 【喵鱼子】极简
+│       ├── 默认皮肤
+│       ├── 〖霓〗汪星人
+│       ├── 情-素
+│       ├── 【欣欣】时尚简约
+│       ├── 星空黑
+│       ├── 【一虫二】苹果
+│       ├── 【优客】简约
+│       ├── 【鱼】火影忍者 卡卡西
+│       ├── 【鱼】颜文字·小黄人
+│       ├── 【雨欣】回忆时光
+│       ├── 【雨欣】向阳花
+│       ├── 源计划·【风】
+│       ├── 倬彼昊天·东南枝
+│       └── 倬彼昊天·秋叶
+├── StarUML
+│   └── cef_data
+│       └── Local Storage
+├── sublime-text-2
+│   ├── Installed Packages
+│   ├── Packages
+│   │   ├── ActionScript
+│   │   ├── AppleScript
+│   │   ├── ASP
+│   │   ├── Batch File
+│   │   ├── C#
+│   │   ├── C++
+│   │   ├── Clojure
+│   │   ├── Color Scheme - Default
+│   │   ├── CSS
+│   │   ├── D
+│   │   ├── Default
+│   │   ├── Diff
+│   │   ├── Erlang
+│   │   ├── Go
+│   │   ├── Graphviz
+│   │   ├── Groovy
+│   │   ├── Haskell
+│   │   ├── HTML
+│   │   ├── Java
+│   │   ├── JavaScript
+│   │   ├── Language - English
+│   │   ├── LaTeX
+│   │   ├── Lisp
+│   │   ├── Lua
+│   │   ├── Makefile
+│   │   ├── Markdown
+│   │   ├── Matlab
+│   │   ├── Objective-C
+│   │   ├── OCaml
+│   │   ├── Perl
+│   │   ├── PHP
+│   │   ├── Python
+│   │   ├── R
+│   │   ├── Rails
+│   │   ├── Regular Expressions
+│   │   ├── RestructuredText
+│   │   ├── Ruby
+│   │   ├── Scala
+│   │   ├── ShellScript
+│   │   ├── SQL
+│   │   ├── TCL
+│   │   ├── Text
+│   │   ├── Textile
+│   │   ├── Theme - Default
+│   │   ├── User
+│   │   ├── Vintage
+│   │   ├── XML
+│   │   └── YAML
+│   ├── Pristine Packages
+│   └── Settings
+├── supertuxkart
+├── systemd
+│   └── user
+├── tasque
+├── teamviewer
+├── terminator
+├── Thunar
+├── tilda
+├── totem
+├── transmission
+│   ├── blocklists
+│   ├── resume
+│   └── torrents
+├── TUG
+├── Typora
+│   ├── Cache
+│   ├── draftsRecover
+│   ├── GPUCache
+│   └── themes
+│       ├── github
+│       ├── newsprint
+│       ├── night
+│       └── pixyll
+├── ubuntu-ui-toolkit
+├── uGet
+│   ├── attachment
+│   └── category
+├── Ulduzsoft
+├── unity
+├── unity-tweak-tool
+├── update-notifier
+├── upstart
+├── VirtualBox
+├── vlc
+├── webbrowser-app
+├── xarchiver
+├── xfce4
+│   ├── desktop
+│   ├── panel
+│   │   ├── launcher-1
+│   │   ├── launcher-10
+│   │   ├── launcher-11
+│   │   ├── launcher-12
+│   │   ├── launcher-14
+│   │   ├── launcher-16
+│   │   ├── launcher-18
+│   │   ├── launcher-19
+│   │   ├── launcher-20
+│   │   ├── launcher-21
+│   │   ├── launcher-26
+│   │   ├── launcher-29
+│   │   ├── launcher-34
+│   │   ├── launcher-37
+│   │   ├── launcher-38
+│   │   ├── launcher-39
+│   │   ├── launcher-43
+│   │   ├── launcher-44
+│   │   ├── launcher-45
+│   │   ├── launcher-46
+│   │   ├── launcher-47
+│   │   ├── launcher-5
+│   │   ├── launcher-7
+│   │   ├── launcher-8
+│   │   └── launcher-9
+│   ├── src
+│   │   └── misc
+│   ├── terminal
+│   ├── Verve
+│   ├── xfconf
+│   │   └── xfce-perchannel-xml
+│   └── xfwm4
+├── xfce4-dict
+├── xfce4-session
+├── xfe
+├── yelp
+└── youdao-dict
+
+562 directories

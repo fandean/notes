@@ -1,0 +1,56 @@
+name=opt-java-8-oracle
+alias=opt-java-8-oracle
+priority=300
+section=non-free
+
+jre ControlPanel  /opt/jdk1.8.0_91/jre/bin/ControlPanel
+jre java  /opt/jdk1.8.0_91/jre/bin/java
+jre javaws  /opt/jdk1.8.0_91/jre/bin/javaws
+jre jcontrol  /opt/jdk1.8.0_91/jre/bin/jcontrol
+jre jjs  /opt/jdk1.8.0_91/jre/bin/jjs
+jre keytool  /opt/jdk1.8.0_91/jre/bin/keytool
+jre orbd  /opt/jdk1.8.0_91/jre/bin/orbd
+jre pack200  /opt/jdk1.8.0_91/jre/bin/pack200
+jre policytool  /opt/jdk1.8.0_91/jre/bin/policytool
+jre rmid  /opt/jdk1.8.0_91/jre/bin/rmid
+jre rmiregistry  /opt/jdk1.8.0_91/jre/bin/rmiregistry
+jre servertool  /opt/jdk1.8.0_91/jre/bin/servertool
+jre tnameserv  /opt/jdk1.8.0_91/jre/bin/tnameserv
+jre unpack200  /opt/jdk1.8.0_91/jre/bin/unpack200
+jre jexec  /opt/jdk1.8.0_91/jre/lib/jexec
+
+jdk appletviewer  /opt/jdk1.8.0_91/bin/appletviewer
+jdk extcheck  /opt/jdk1.8.0_91/bin/extcheck
+jdk idlj  /opt/jdk1.8.0_91/bin/idlj
+jdk jar  /opt/jdk1.8.0_91/bin/jar
+jdk jarsigner  /opt/jdk1.8.0_91/bin/jarsigner
+jdk javac  /opt/jdk1.8.0_91/bin/javac
+jdk javadoc  /opt/jdk1.8.0_91/bin/javadoc
+jdk javafxpackager  /opt/jdk1.8.0_91/bin/javafxpackager
+jdk javah  /opt/jdk1.8.0_91/bin/javah
+jdk javap  /opt/jdk1.8.0_91/bin/javap
+jdk javapackager  /opt/jdk1.8.0_91/bin/javapackager
+jdk jcmd  /opt/jdk1.8.0_91/bin/jcmd
+jdk jconsole  /opt/jdk1.8.0_91/bin/jconsole
+jdk jdb  /opt/jdk1.8.0_91/bin/jdb
+jdk jdeps  /opt/jdk1.8.0_91/bin/jdeps
+jdk jhat  /opt/jdk1.8.0_91/bin/jhat
+jdk jinfo  /opt/jdk1.8.0_91/bin/jinfo
+jdk jmap  /opt/jdk1.8.0_91/bin/jmap
+jdk jmc  /opt/jdk1.8.0_91/bin/jmc
+jdk jps  /opt/jdk1.8.0_91/bin/jps
+jdk jrunscript  /opt/jdk1.8.0_91/bin/jrunscript
+jdk jsadebugd  /opt/jdk1.8.0_91/bin/jsadebugd
+jdk jstack  /opt/jdk1.8.0_91/bin/jstack
+jdk jstat  /opt/jdk1.8.0_91/bin/jstat
+jdk jstatd  /opt/jdk1.8.0_91/bin/jstatd
+jdk jvisualvm  /opt/jdk1.8.0_91/bin/jvisualvm
+jdk native2ascii  /opt/jdk1.8.0_91/bin/native2ascii
+jdk rmic  /opt/jdk1.8.0_91/bin/rmic
+jdk schemagen  /opt/jdk1.8.0_91/bin/schemagen
+jdk serialver  /opt/jdk1.8.0_91/bin/serialver
+jdk wsgen  /opt/jdk1.8.0_91/bin/wsgen
+jdk wsimport  /opt/jdk1.8.0_91/bin/wsimport
+jdk xjc  /opt/jdk1.8.0_91/bin/xjc
+
+plugin mozilla-javaplugin.so  /opt/jdk1.8.0_91/jre/lib/amd64/libnpjp2.so

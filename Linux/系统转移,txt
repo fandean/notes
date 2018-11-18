@@ -1,0 +1,57 @@
+需要排除的软件：
+
+fcitx    重装，  但保留基本设置，保留搜狗词汇记录，删除其他所有
+
+
+锁屏界面被变更。
+
+
+
+分区：  
+
+/tmp    3G 
+/var    3G
+/usr 
+/usr/local
+
+删除电源，网络，日期的面板设置
+
+node.js
+
+安装：google-chrome:
+```
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+```
+
+安装：vscode
+```
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get update
+sudo apt-get install code
+```
+
+
+/etc/apt/trusted.gpg.d
+/etc/apt/sources.list.d/vscode.list
+
+看来可以备份 /etc/apt/ 文件夹，
+
+如果在更新时出现：
+```
+W: GPG 错误：http://archive.ubuntukylin.com:10006/ubuntukylin xenial InRelease: 由于没有公钥，无法验证下列签名： NO_PUBKEY D259B7555E1D3C58
+E: 仓库 “http://archive.ubuntukylin.com:10006/ubuntukylin xenial InRelease” 没有数字签名。
+N: 无法安全地用该源进行更新，所以默认禁用该源。
+```
+可以通过软件更新器的设置打开软件和更新界面，在其它软件列表中取消勾选上面的软件源。
+
+
+软件源建议使用中科大的软件源，它使用https协议，更加安全。
+
+

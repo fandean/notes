@@ -1,0 +1,91 @@
+# fdisk  mkfs  swap
+
+## fdisk 分区
+fdisk:
+语法： sudo fdisk 设备
+如 sudo fdisk /dev/sda
+
+sudo fdisk -l 
+
+更改分区类型 ID
+t
+后还需用 mkfs 命令格式化
+
+保存分区表
+w
+
+
+
+## mkfs 创建文件系统
+
+mkfs 是几个特定命令的前端 可通过 ls /sbin/mk* 查看
+
+/sbin/mkdosfs	    /sbin/mke2fs     /sbin/mkfs		     /sbin/mkfs.bfs
+/sbin/mkfs.cramfs   /sbin/mkfs.ext2  /sbin/mkfs.ext3	     /sbin/mkfs.ext4
+/sbin/mkfs.ext4dev  /sbin/mkfs.fat   /sbin/mkfs.minix	     /sbin/mkfs.msdos
+/sbin/mkfs.ntfs     /sbin/mkfs.vfat  /sbin/mkhomedir_helper  /sbin/mkntfs
+/sbin/mkswap
+
+使用时用 mkfs -t type 效果一样如
+mkfs -t ext4 /dev/sda5		mkfs.ext4 /dev/sda5  一样
+
+-L 指定文件系统的 Label
+但使用命令 e2label 来指定更好
+
+
+
+## 添加 swap 
+### 添加文件，并挂载为swap
+[参考1](https://support.rackspace.com/how-to/create-a-linux-swap-file/)
+[参考2](http://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/)
+
+
+### 添加分区，作为swap
+[参考1](http://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/)
+
+1. 在fdisk中使用 n 创建分区(在此假设为/dev/sdb2)后，使用 p 查看，新的分区默认为linux类型；更改分区类型使用 t 命令，然后使用 L 命令列出各类型id，然后再输入你想要的id，比如swap类型为 82 。 使用 w 命令写入并退出fdisk。
+2. 然后格式化该分区： mkswap /dev/sdb2
+3. 之后在 /etc/fstab 中加入如下语句即可,每次开机自动挂载：  
+
+	/dev/sdb2 none swap sw 0 0
+
+其语法格式如下：
+```
+#device        mountpoint             fstype    options  dump   fsck
+
+/dev/sdb1    /home/yourname/mydata    ext4    defaults    0    1
+```
+
+
+
+## blkid  显示UUID
+
+示例： blkid /dev/sda1
+
+
+
+
+## 其它分区工具：
+cfdisk 图形化工具
+sfdisk 命令面向程序员，可被脚本化。
+
+处理分区表的另一个流行工具是 parted 
+该命令能对许多类型的分区执行大小重置、格式化、创建 等操作.
+但其不能重置ntfs分区大小， 而工具 ntfsresize 可以；qtpared 工具使用Qt工具提供一个图形界面，包含了以上两者的功能。
+
+gparted 是另一个图形分区工具，主要用在GNOME桌面，它使用GTK-GUI库
+
+--------------------------------------------------
+对于GPT 磁盘应该使用 gdisk 命令
+而对于 MBR 布局 ，应该使用 fdisk 命令
+
+转载：
+http://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-104-1/#ibm-pcon
+
+
+>亲历： 使用Linux的分区工具 在Windows的扩展分区 上建立逻辑分区后 无法正常挂载
+，挂载后只能用与root用户。然而安装Ubuntu时划分的逻辑分区却可使用。
+
+>可能是进行分区时还应该添加必要的参数，或者是fdisk对其不支持。
+
+

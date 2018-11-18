@@ -1,0 +1,61 @@
+# mount使用说明
+
+>[参考](http://www.cnblogs.com/52linux/archive/2012/03/07/2384400.html)
+
+
+语法： mount [-afFhnrvVw] [L] [-o options] [-t vfstype] device mount_point
+自动挂载配置文件： /etc/ftab
+已加载设备信息记录文件： /etc/mtab 
+mount 命令列出当前所有文件系统相关状态信息 (可能要用root权限)
+可能用到额外命令：blkid 打印块设备属性
+
+### 常用参数及选项：
+-a		加载文件/etc/fstab/中设置的所有设备
+-L		利用partition的表头名称(Lable)来进行挂载
+
+-o options	主要用来描述设备或档案的挂接方式，有些文件也可在 /etc/fstab 中使用；这些选项包括：
+auto 		在开机后自动挂载这个文件系统
+atime
+async		在写入数据时先写到数据缓冲区再写入硬盘，效率较高；异地同步asynchronously.
+defaults	使用默认选项 : rw suid dev exec auto nouser async
+dev		允许挂载的文件系统建立设备文件，如/dev/sda1。
+		可读文件系统上的字符设备或块设备；取消为nodev。
+exec		允许挂载文件系统挂载后可以执行其中的可执行文件，取消为noexec
+loop		用来挂载loopback的设备，如光驱；用来把一个文件当成硬盘分区挂接
+iocharset	指定访问文件系统所用字符集
+noatime		每次存取时不更新inode的存取时间
+ro		以只读模式加载
+rw		以可读模式加载
+suid		启动set-user-identifier(设置用户ID)与set-group-identifer(设置组ID)设置位，取消nosuid
+sync		以同步方式执行文件系统的输入输出动作
+user		可以让一般用户加载设备
+nousr		只允许超级用户挂载
+
+-r		以只读方式加载设备
+-w		以可读写模式加载设备
+
+-t vfstype	指定设备的文件系统类型；其常用的选项说明有：
+nfs		UNIX网络文件系统
+iso9660		CD-ROM光盘的标准文件系统
+auto		自动检测文件系统
+vfat		Windows 9x FAT32 文件系统
+
+
+## /etc/fstab 文件：
+应用1:	如文件中有  dev/hdc   /media/cdrom auto pamconsole,exec,noauto,managed 0 0	#用来挂载光盘
+	则在手动挂载时可简化命令 mount /dev/hdc 或 mount /media/cdrom 
+	系统会根据/etc/fstab 文件中的设定可以自动将这个命令转换成 mount /dev/hdc /media/cdrom
+
+修改完/etc/fstab文件后，执行 mount -a 的另一个用法是，可以变相模拟开机时的情况。
+
+
+
+## 挂载windows 的 NTFS 文件系统：
+
+1.NTFS-3G : 为Linux提供NTFS分区的驱动程序，能够安全快速的对NTFS文件系统进行读写。
+	参见：https://wiki.archlinux.org/index.php/NTFS-3G_(简体中文)
+
+Ubuntu系统默认安装了ntfs-3g 
+
+/dev/sdb1 /u01 ext4 rw,seclabel,relatime,data=ordered 0 0
+

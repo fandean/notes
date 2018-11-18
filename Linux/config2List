@@ -1,0 +1,606 @@
+.config/
+├── abiword
+│   ├── AbiCollab.Profile
+│   ├── profile
+│   └── templates
+├── Android Open Source Project
+│   └── Emulator.conf
+├── anoise
+│   └── anoise.cfg
+├── autostart
+│   ├── alarm-clock-applet.desktop
+│   ├── copyq.desktop
+│   ├── fluxgui.desktop
+│   ├── light-locker.desktop
+│   ├── shutter.desktop
+│   └── unity-fallback-mount-helper.desktop
+├── bcloud
+│   ├── bcloud.log
+│   ├── bcloud-stderr.log
+│   ├── conf.json
+│   └── xiaofan11151115@126.com
+├── bleachbit
+│   └── bleachbit.ini
+├── calibre
+│   ├── conversion
+│   ├── dynamic.pickle
+│   ├── fonts
+│   ├── global.py
+│   ├── gui.json
+│   ├── gui.py
+│   ├── history.plist
+│   ├── metadata_sources
+│   ├── plugins
+│   ├── tweak_book_gui.json
+│   ├── tweaks.py
+│   └── viewer.json
+├── chromium
+│   ├── Avatars
+│   ├── Certificate Revocation Lists
+│   ├── Channels
+│   ├── chrome_shutdown_ms.txt
+│   ├── Crash Reports
+│   ├── Default
+│   ├── Dictionaries
+│   ├── EVWhitelist
+│   ├── First Run
+│   ├── Guest Profile
+│   ├── Local State
+│   ├── Profile 3
+│   ├── Safe Browsing Bloom
+│   ├── Safe Browsing Bloom Prefix Set
+│   ├── Safe Browsing Cookies
+│   ├── Safe Browsing Cookies-journal
+│   ├── Safe Browsing Csd Whitelist
+│   ├── Safe Browsing Download
+│   ├── Safe Browsing Download Whitelist
+│   ├── Safe Browsing Extension Blacklist
+│   ├── Safe Browsing Inclusion Whitelist
+│   ├── Safe Browsing IP Blacklist
+│   ├── Safe Browsing Module Whitelist
+│   ├── Safe Browsing Resource Blacklist
+│   ├── Safe Browsing UwS List
+│   ├── Safe Browsing UwS List Prefix Set
+│   ├── ShaderCache
+│   ├── System Profile
+│   └── Webstore Downloads
+├── Cmd Markdown
+│   ├── Application Cache
+│   ├── Cache
+│   ├── cookies
+│   ├── cookies-journal
+│   ├── databases
+│   ├── Downloads
+│   ├── GPUCache
+│   ├── IndexedDB
+│   ├── Local Storage
+│   ├── QuotaManager
+│   ├── QuotaManager-journal
+│   ├── Web Data
+│   └── Web Data-journal
+├── Code
+│   ├── 1.10.2-shared.sock
+│   ├── 1.11.1-main.sock
+│   ├── 1.11.1-shared.sock
+│   ├── 1.13.0-main.sock
+│   ├── 1.13.0-shared.sock
+│   ├── 1.13.1-shared.sock
+│   ├── Backups
+│   ├── Cache
+│   ├── CachedData
+│   ├── Cookies
+│   ├── Cookies-journal
+│   ├── GPUCache
+│   ├── Local Storage
+│   ├── Preferences
+│   ├── storage.json
+│   └── User
+├── Code Industry
+│   └── Master PDF Editor.conf
+├── compiz-1
+│   └── compizconfig
+├── copyq
+│   ├── copyq-bak.conf
+│   ├── copyq.conf
+│   ├── copyq-filter.ini
+│   ├── copyq_geometry.ini
+│   ├── .copyq_m
+│   ├── .copyq_s
+│   ├── copyq_tab_JkNsaXBib2FyZA==.dat
+│   ├── copyq_tabs.ini
+│   └── themes
+├── dconf
+│   ├── user
+│   └── user.VC2B1Y
+├── Empathy
+│   └── geometry.ini
+├── enchant
+│   ├── en.dic
+│   ├── en.exc
+│   ├── en_GB.dic
+│   ├── en_GB.exc
+│   ├── en_US.dic
+│   └── en_US.exc
+├── eog
+│   ├── accels
+│   └── eog_toolbar.xml
+├── evince
+│   ├── accels
+│   └── print-settings
+├── evolution
+│   ├── accels
+│   ├── cert_trees.ini
+│   ├── mail
+│   └── sources
+├── fcitx
+│   ├── cached_layout
+│   ├── chewing
+│   ├── clipboard
+│   ├── conf
+│   ├── config
+│   ├── data
+│   ├── dbus
+│   ├── googlepinyin
+│   ├── log
+│   ├── pinyin
+│   ├── profile
+│   ├── profile_1R8KOS
+│   ├── profile_4xLAPl
+│   ├── profile_afGLCu
+│   ├── profile_amMvcd
+│   ├── profile_c5ua8H
+│   ├── profile_DdWIHq
+│   ├── profile_iyzxSx
+│   ├── profile_J1tiHu
+│   ├── profile_oBVZzO
+│   ├── profile_pBLwKd
+│   ├── profile_V4qo4W
+│   ├── profile_XIUUHj
+│   ├── profile_XNDfJz
+│   ├── profile_zNXQO4
+│   └── rime
+├── fcitx-qimpanel
+│   ├── main.conf
+│   └── skin
+├── Foxit Software
+│   └── Foxit Reader.conf
+├── freeplane
+│   └── 1.5.x
+├── gedit
+│   ├── accels
+│   ├── gedit-page-setup
+│   ├── gedit-print-settings
+│   └── tools
+├── Genymobile
+│   └── Genymotion.conf
+├── git
+│   └── gitk
+├── gitbook-editor
+│   ├── GPUCache
+│   ├── Local Storage
+│   ├── log-app.log
+│   ├── log-app.log.0
+│   └── Partitions
+├── git-cola
+│   └── settings
+├── GitKraken
+│   ├── Cache
+│   ├── Cookies
+│   ├── Cookies-journal
+│   ├── extensions
+│   └── GPUCache
+├── gmusicbrowser
+│   ├── gmbrc
+│   ├── gmbrc.bak.20160713.xz
+│   ├── gmbrc.bak.20160714.xz
+│   ├── gmbrc.bak.20160715.xz
+│   └── gmusicbrowser.fifo
+├── gnome-control-center
+│   └── backgrounds
+├── gnome-mplayer
+│   ├── cover_art
+│   ├── gnome-mplayer.db
+│   └── plugin
+├── gnome-session
+│   └── saved-session
+├── gnome-sudoku
+│   ├── finished
+│   ├── puzzles
+│   └── saved
+├── go-for-it.conf
+├── google-chrome
+│   ├── Avatars
+│   ├── Certificate Revocation Lists
+│   ├── CertificateTransparency
+│   ├── Channels
+│   ├── .com.google.Chrome.1XrkW0
+│   ├── .com.google.Chrome.bbldSa
+│   ├── .com.google.Chrome.FMys3p
+│   ├── Crash Reports
+│   ├── Default
+│   ├── Dictionaries
+│   ├── EVWhitelist
+│   ├── FileTypePolicies
+│   ├── First Run
+│   ├── Local State
+│   ├── OriginTrials
+│   ├── PepperFlash
+│   ├── pnacl
+│   ├── Profile 1
+│   ├── Profile 2
+│   ├── Profile 3
+│   ├── Safe Browsing Bloom
+│   ├── Safe Browsing Bloom Prefix Set
+│   ├── Safe Browsing Channel IDs
+│   ├── Safe Browsing Channel IDs-journal
+│   ├── Safe Browsing Cookies
+│   ├── Safe Browsing Cookies-journal
+│   ├── Safe Browsing Csd Whitelist
+│   ├── Safe Browsing Download
+│   ├── Safe Browsing Download Whitelist
+│   ├── Safe Browsing Extension Blacklist
+│   ├── Safe Browsing IP Blacklist
+│   ├── Safe Browsing Module Whitelist
+│   ├── Safe Browsing Resource Blacklist
+│   ├── Safe Browsing UwS List
+│   ├── Safe Browsing UwS List Prefix Set
+│   ├── ShaderCache
+│   ├── SingletonCookie -> 3801580069701176520
+│   ├── SingletonLock -> fan-X45VD-2988
+│   ├── SingletonSocket -> /tmp/.com.google.Chrome.iMMmp1/SingletonSocket
+│   ├── SSLErrorAssistant
+│   ├── Subresource Filter
+│   ├── System Profile
+│   └── Webstore Downloads
+├── gpick
+│   ├── autosave.gpa
+│   ├── settings.xml
+│   └── user_init.lua
+├── gpicview
+│   └── gpicview.conf
+├── gtk-2.0
+│   └── gtkfilechooser.ini
+├── gtk-3.0
+│   └── bookmarks
+├── Haroopad
+│   ├── Cache
+│   ├── cookies
+│   ├── cookies-journal
+│   ├── Downloads
+│   ├── .error
+│   ├── GPUCache
+│   ├── LevelDB
+│   ├── Local Storage
+│   ├── SingletonCookie -> 10925882699883907099
+│   ├── SingletonLock -> fan-X45VD-4957
+│   ├── SingletonSocket -> /tmp/.org.chromium.Chromium.8WIuvQ/SingletonSocket
+│   ├── Themes
+│   ├── .tmp
+│   ├── Web Data
+│   └── Web Data-journal
+├── ibus
+│   ├── bus
+│   ├── googlepinyin
+│   └── rime
+├── inkscape
+│   ├── extension-errors.log
+│   ├── extensions
+│   ├── icons
+│   ├── keys
+│   ├── palettes
+│   ├── preferences.xml
+│   └── templates
+├── jd-gui.cfg
+├── kactivitymanagerdrc
+├── kazam
+│   └── kazam.conf
+├── kdeconnect
+│   ├── 31a17db1062d3705
+│   ├── config
+│   └── privateKey.pem
+├── kingsoft
+│   └── office6
+├── Kingsoft
+│   └── Office.conf
+├── laverna
+│   ├── Application Cache
+│   ├── Cache
+│   ├── Cookies
+│   ├── Cookies-journal
+│   ├── databases
+│   ├── GPUCache
+│   ├── IndexedDB
+│   ├── Local Storage
+│   ├── QuotaManager
+│   ├── QuotaManager-journal
+│   └── window-state.json
+├── libaccounts-glib
+│   ├── accounts.db
+│   └── accounts.db-journal
+├── libreoffice
+│   └── 4
+├── liferea
+│   ├── accels
+│   ├── cookies.txt
+│   ├── feedlist.opml
+│   ├── feedlist.opml.backup
+│   └── liferea.css
+├── menus
+│   ├── applications-merged
+│   ├── gnome-applications-merged -> applications-merged
+│   └── xfce-applications.menu
+├── midori
+│   ├── accels
+│   ├── bookmarks.db
+│   ├── bookmarks.db-shm
+│   ├── bookmarks.db-wal
+│   ├── config
+│   ├── cookies.db
+│   ├── extensions
+│   ├── flummi.db
+│   ├── history.db-shm
+│   ├── history.db-wal
+│   ├── hsts
+│   ├── search
+│   ├── speeddial
+│   ├── tabby.db
+│   ├── tabby.db-shm
+│   └── tabby.db-wal
+├── mimeapps.list
+├── monitors.xml
+├── Mousepad
+│   ├── accels.scm
+│   └── mousepadrc
+├── mpv
+│   ├── input.conf
+│   ├── mpv.conf
+│   └── watch_later
+├── nautilus
+│   ├── accels
+│   ├── desktop-metadata
+│   ├── search-metadata
+│   └── servers
+├── netease-cloud-music
+│   ├── netease-cloud-music.ini
+│   ├── OfflineLibrary.db
+│   └── OnlineLibrary.db
+├── netsurf
+│   ├── Choices
+│   ├── Cookies
+│   ├── Hotlist
+│   └── URLs
+├── Nylas Mail
+│   ├── Cache
+│   ├── dictionaries
+│   ├── GPUCache
+│   ├── Local Storage
+│   └── Preferences
+├── orage
+│   └── oragerc
+├── pavucontrol.ini
+├── plasmawindowed-appletsrc
+├── plasmawindowedrc
+├── pulse
+│   ├── 1648124a7a5d5009ec2a00325542efb0-card-database.tdb
+│   ├── 1648124a7a5d5009ec2a00325542efb0-default-sink
+│   ├── 1648124a7a5d5009ec2a00325542efb0-default-source
+│   ├── 1648124a7a5d5009ec2a00325542efb0-device-volumes.tdb
+│   ├── 1648124a7a5d5009ec2a00325542efb0-runtime -> /tmp/pulse-PKdhtXMmr18n
+│   ├── 1648124a7a5d5009ec2a00325542efb0-stream-volumes.tdb
+│   ├── 6c19f30630bc44ab8ae661c120779e43-card-database.tdb
+│   ├── 6c19f30630bc44ab8ae661c120779e43-default-sink
+│   ├── 6c19f30630bc44ab8ae661c120779e43-default-source
+│   ├── 6c19f30630bc44ab8ae661c120779e43-device-volumes.tdb
+│   ├── 6c19f30630bc44ab8ae661c120779e43-runtime -> /tmp/pulse-PKdhtXMmr18n
+│   ├── 6c19f30630bc44ab8ae661c120779e43-stream-volumes.tdb
+│   ├── 6e1063eb0869c8764a94463e56514ee6-card-database.tdb
+│   ├── 6e1063eb0869c8764a94463e56514ee6-default-sink
+│   ├── 6e1063eb0869c8764a94463e56514ee6-default-source
+│   ├── 6e1063eb0869c8764a94463e56514ee6-device-volumes.tdb
+│   ├── 6e1063eb0869c8764a94463e56514ee6-stream-volumes.tdb
+│   └── cookie
+├── QtProject
+│   ├── qtcreator
+│   ├── QtCreator.conf
+│   ├── QtCreator.db
+│   └── QtCreator.ini
+├── QtProject.conf
+├── qupzilla
+│   └── profiles
+├── ReText project
+│   └── ReText.conf
+├── ristretto
+│   └── accels.scm
+├── rox.sourceforge.net
+│   └── ROX-Filer
+├── screenruler
+│   └── settings.yml
+├── shadowsocks-qt5
+│   └── config.ini
+├── signond
+│   └── signon.db
+├── Simplenote
+│   ├── Cache
+│   ├── Cookies
+│   ├── Cookies-journal
+│   ├── databases
+│   ├── IndexedDB
+│   ├── Local Storage
+│   ├── QuotaManager
+│   └── QuotaManager-journal
+├── smplayer
+│   ├── device_info.ini
+│   ├── favorites.m3u8
+│   ├── file_settings
+│   ├── player_info.ini
+│   ├── playlist.ini
+│   ├── radio.m3u8
+│   ├── smplayer.ini
+│   ├── styles.ass
+│   └── tv.m3u8
+├── smtube
+│   ├── cookies.ini
+│   └── smtube2.ini
+├── software-center
+│   └── softwarecenter.cfg
+├── SogouPY
+│   ├── Backup
+│   ├── Correction.ini
+│   ├── env.ini
+│   ├── envTemp.ini
+│   ├── Fuzzy.dat
+│   ├── InputStaticstics.dat
+│   ├── keyMapInfo.bin
+│   ├── MoHuYin.ini
+│   ├── pingback.time
+│   ├── scd
+│   ├── scdlist.ini
+│   ├── sgim_blackIfk.bin
+│   ├── sgim_del_word.bin
+│   ├── sgim_eng.bin
+│   ├── sgim_eng_usr.bin
+│   ├── sgim_ext.bin
+│   ├── sgim_fix_first.bin
+│   ├── sgim_fixFirst.bin
+│   ├── sgim_infokey.bin
+│   ├── sgim_keymap.bin
+│   ├── sgim_numFreqAdjust.bin
+│   ├── sgim_smartInfo.bin
+│   ├── sgim_url.bin
+│   ├── sgim_url_usr.bin
+│   ├── sgim_user_v1.bin
+│   ├── sgim_uspm.bin
+│   ├── sgim_usr_v3new.bin
+│   ├── sogouEnv.ini
+│   ├── sogou.version
+│   └── useSkin.txt
+├── SogouPY.users
+│   └── acc.dat
+├── sogou-qimpanel
+│   ├── main.conf
+│   └── skin
+├── StarUML
+│   ├── __backup.mdj
+│   ├── cef_data
+│   └── LICENSE
+├── sublime-text-2
+│   ├── Installed Packages
+│   ├── Packages
+│   ├── Pristine Packages
+│   └── Settings
+├── supertuxkart
+│   ├── challenges.xml
+│   ├── config.xml
+│   ├── highscore.xml
+│   ├── input.xml
+│   └── stdout.log
+├── systemd
+│   └── user
+├── tasque
+│   ├── preferences
+│   └── sqlitebackend.db
+├── teamviewer
+│   └── client.conf
+├── terminator
+│   └── config
+├── Thunar
+│   ├── accels.scm
+│   └── uca.xml
+├── tilda
+│   └── config_0
+├── totem
+│   └── state.ini
+├── transmission
+│   ├── blocklists
+│   ├── dht.dat
+│   ├── resume
+│   ├── settings.json
+│   ├── stats.json
+│   └── torrents
+├── Trolltech.conf
+├── TUG
+│   └── TeXworks.conf
+├── Typora
+│   ├── Cache
+│   ├── Cookies
+│   ├── Cookies-journal
+│   ├── draftsRecover
+│   ├── GPUCache
+│   ├── history.data
+│   ├── Preferences
+│   ├── profile.data
+│   ├── themes
+│   └── typora.log
+├── ubuntu-ui-toolkit
+│   └── theme.ini
+├── uGet
+│   ├── attachment
+│   ├── category
+│   ├── CategoryList.xml
+│   ├── DownloadList.xml
+│   ├── RSS-built-in.json
+│   ├── Setting.json
+│   └── Setting.xml
+├── Ulduzsoft
+│   └── kchmviewer.conf
+├── unity
+│   └── first_run.stamp
+├── unity-tweak-tool
+│   └── debug.log
+├── update-notifier
+│   └── hooks_seen
+├── upstart
+├── user-dirs.dirs
+├── VirtualBox
+│   ├── compreg.dat
+│   ├── selectorwindow.log
+│   ├── selectorwindow.log.1
+│   ├── vbox-ssl-cacertificate.crt
+│   ├── VBoxSVC.log
+│   ├── VBoxSVC.log.1
+│   ├── VBoxSVC.log.10
+│   ├── VBoxSVC.log.2
+│   ├── VBoxSVC.log.3
+│   ├── VBoxSVC.log.4
+│   ├── VBoxSVC.log.5
+│   ├── VBoxSVC.log.6
+│   ├── VBoxSVC.log.7
+│   ├── VBoxSVC.log.8
+│   ├── VBoxSVC.log.9
+│   ├── VirtualBox-1.12-linux.xml
+│   ├── VirtualBox.xml
+│   ├── VirtualBox.xml-prev
+│   └── xpti.dat
+├── vlc
+│   ├── vlc-qt-interface.conf
+│   └── vlcrc
+├── webbrowser-app
+│   └── webbrowser-app.conf
+├── xarchiver
+│   └── xarchiverrc
+├── xfce4
+│   ├── desktop
+│   ├── helpers.rc
+│   ├── help.rc
+│   ├── panel
+│   ├── src
+│   ├── terminal
+│   ├── Verve
+│   ├── xfce4-notes.gtkrc
+│   ├── xfce4-notes.gtkrc.V7PXXY
+│   ├── xfce4-screenshooter
+│   ├── xfce4-taskmanager.rc
+│   ├── xfconf
+│   └── xfwm4
+├── xfce4-dict
+│   └── xfce4-dict.rc
+├── xfce4-session
+├── xfe
+│   ├── xferc
+│   └── xfwrc
+├── yelp
+│   └── yelp.cfg
+└── youdao-dict
+    └── config.ini
+
+246 directories, 357 files
