@@ -46,6 +46,18 @@
 
 开放端口，需要在安全组中配置。
 
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20181118210053.png)
+
+可以选择使用现有的安全组，也可选择自己再重新创建一个安全组。
+
+选择使用现有的安全组时直接点击后面的**“配置规则”**就可设置要开放的端口。
+
+
+
+> 官方推荐创建安全组时选择 “专有网络”（即VPS），所以要先创建一个VPS，
+>
+> ![](https://raw.githubusercontent.com/fandean/images/master/PicGo/aliyun%E5%AE%89%E5%85%A8%E7%BB%8402.png)
+
 
 
 [云服务器 ECS](https://help.aliyun.com/product/25365.html) > [最佳实践](https://help.aliyun.com/document_detail/51170.html) > [安全](https://help.aliyun.com/document_detail/51170.html) > ECS安全组实践（一）
@@ -53,4 +65,8 @@
 
 
 > 优先考虑 VPC 网络
+
+
+
+在Docker中运行Mysql后再开放端口就可以访问了。
 

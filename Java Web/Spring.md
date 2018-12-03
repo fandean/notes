@@ -7,7 +7,7 @@
 - [Spring Tutorial](https://www.logicbig.com/tutorials/spring-framework.html "Spring Tutorial")
 - [Spring 快速上手](http://greycode.github.io/2016/01/spring-fast/ "Spring 快速上手")
 
-
+[Spring 教程_w3cschool](https://www.w3cschool.cn/wkspring/ "Spring 教程_w3cschool") 
 
 
 
@@ -114,6 +114,12 @@ bean装载到spring应用上下文中的典型生命周期：
 ![](assets/bean装载到spring应用上下文中的典型生命过程.png)
 
 
+
+
+
+
+
+另可见：Spring Bean生命周期，Spring Bean后置处理器。
 
 
 

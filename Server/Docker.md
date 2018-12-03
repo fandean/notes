@@ -1767,6 +1767,31 @@ $ docker run -it --rm --name busybox2 --network my-net busybox sh
 
 
 
+对过时的 `--link`参数的补充
+
+示例：
+
+```shell
+# 服务器
+$ docker run --rm --name some-redis -d redis
+
+# 客户端
+$ docker run -it --link some-redis:redis --rm redis redis-cli -h redis -p 6379
+
+# 使用network的方式代替 link
+# 见部署相关文章
+```
+
+
+
+在多容器应用程序里使用过运行时参数 `--link name：alias`来设定容器间关系。
+
+`--link`参数唯一多做的事情是会使用源容器的主机名和容器ID来更新新建目标容器（使用`--link`参数创建的容器）的/etc/hosts文件。
+
+
+
+
+
 ## 学习资料
 
 [Docker入门教程-慕课网](https://www.imooc.com/learn/867?mc_marking=40eb6678df9f85e7a854421cef4ba5e9&mc_channel=syb43 "Docker入门教程-慕课网")

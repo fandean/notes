@@ -182,3 +182,49 @@ Failed to start mysql.service: Unit not found.
 
 
 
+## MySQL乱码问题
+
+[原理](http://cenalulu.github.io/mysql/mysql-mojibake/)
+如果在创建数据库和表时没有指定字符集而出现乱码，解决办法就只有，如上链接中说的方法是正确的，乱码的原因有3个方面，必须同时解决。
+
+### 创建数据库,表，时提前指定字符集
+
+```
+mysql>CREATE DATABASE IF NOT EXISTS my_db default charset utf8 COLLATE utf8_general_ci;
+```
+
+注意后面这句话 "COLLATE utf8_general_ci",大致意思是在排序时根据utf8校验集来排序，那么在这个数据库下创建的所有数据表的默认字符集都会是utf8了
+
+```
+mysql>create table my_table (name varchar(20) not null default '')default charset=utf8;
+```
+
+这句话就是创建一个表了,制定默认字符集为utf8
+
+在客户端使用：  set names utf8;
+该语句同时设置了：
+
+```
+set character_set_client='utf8'
+set character_set_connection='utf8'
+set character_set_results='utf8'
+```
+
+
+
+在.my.cnf文件中配置。
+最后只有server端字符集不对，后来在 /etc/my.cnf文件中也进行了配置后就好了。
+
+比如在客户端的~/.my.cnf文件中的设置：
+
+```
+[client]
+host = 127.0.0.1
+port = 3306						#前面两项可以不设置
+default-character-set=utf8
+```
+
+在服务器端的~/.my.cnf文件中的设置(我也不知到它是不是有用)
+
+在服务器端的/etc/my.cnf中的设置(有作用)：
+

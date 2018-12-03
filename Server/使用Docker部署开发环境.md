@@ -37,6 +37,30 @@ tomcat容器的使用：
 
 
 
+## mysql
+
+
+
+对于mysql 5 ，设置字符集、排序方式和忽略大小写：
+
+```shell
+docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag --character-set-server=utf8 --collation-server=utf8_unicode_ci --lower-case-table-names=1
+```
+
+
+
+对于mysql 8 ，设置字符集和排序方式：
+
+```shell
+docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
+
+
+
+
+
+
 ## 安装CentOS
 
 **Tag的选择：**
@@ -147,6 +171,10 @@ extent management local autoallocate;
 
 
 
+> 创建表空间时，如果提示找不到目录，则需要进入容器创建对应的目录。
+
+
+
 创建用户：
 
 ```sql
@@ -163,6 +191,22 @@ grant connect, resource, dba to itheima;
 ```
 
 
+
+在容器中使用sqlplus：（参考了下文的Oracle 12c）
+
+```shell
+➜  ~ docker exec -it 5c02b9 bash
+root@5c02b9d9db8c:/# netstat -nlpt
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:1521            0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.11:36569        0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:34780           0.0.0.0:*               LISTEN      -
+root@5c02b9d9db8c:/# su oracle
+oracle@5c02b9d9db8c:/$ cd $ORACLE_HOME
+oracle@5c02b9d9db8c:~/product/11.2.0/xe$ bin/sqlplus / as sysdba
+```
 
 
 
@@ -901,7 +945,63 @@ webapps目录和 conf目录非原生，还需要更改
 
 
 
+**下面已经运行在阿里云主机上：**
 
+```shell
+docker network create -d bridge javaee
+
+docker run --name javaee-mysql5.5 -v /opt/docker/mysql5.5/data:/var/lib/mysql -p 3305:3306 -e MYSQL_ROOT_PASSWORD=R6943Vb7 --network javaee -d mysql:5.5.60 --character-set-server=utf8 --collation-server=utf8_unicode_ci --lower-case-table-names=1
+
+docker run --name javaee-redisServer --network javaee -d -p 63791:6379  redis
+
+
+docker run --name javaee-redis-commander -d  --network javaee \
+  --env REDIS_HOSTS=javaee-redisServer \
+  -p 8863:8081 \
+  rediscommander/redis-commander:latest
+
+docker run --name javaee-zookeeper  -p 21810:2181 --network javaee -d zookeeper:latest
+
+docker run --name javaee-dubbo-admin \
+-p 8826:8080 \
+-e dubbo.registry.address=zookeeper://javaee-zookeeper:2181 \
+-e dubbo.admin.root.password=fan123 \
+-e dubbo.admin.guest.password=guest \
+--network javaee -d \
+chenchuxin/dubbo-admin
+
+
+docker run --name javaee-oracle11g -d -p 41521:1521 -p 49163:8080 --network javaee -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
+```
+
+
+
+link转network示例：**阿里云主机地址需改为实际地址**
+
+```
+# 服务器
+$ docker run --rm --name some-redis -d redis
+
+# 客户端
+$ docker run -it --link some-redis:redis --rm redis redis-cli -h redis -p 6379
+
+################
+
+# 使用network的方式代替 link,并且更改了一下与主机（47.107.182.8）的映射端口
+docker run --name javaee-redisServer --network javaee -d -p 63791:6379  redis
+# 在同一主机内，由于他们属于同一docker网络所以，端口号使用 6379 而无需使用 63791
+docker run -it --network javaee --rm redis redis-cli -h javaee-redisServer -p 6379
+
+# 在其它主机，进行远程连接
+docker run -it --rm redis redis-cli -h 47.107.182.8 -p 63791
+
+
+# Zk
+docker run --name javaee-zookeeper  -p 21810:2181 --network javaee -d zookeeper:latest
+
+# zk-cli  （-it表示已交互式方式运行，zookeeper表示使用最新镜像 zkCli.sh表示运行该脚本 -server指定服务主机）
+docker run -it --rm --network javaee zookeeper zkCli.sh -server javaee-zookeeper
+```
 
 
 
@@ -988,6 +1088,16 @@ $ docker run \
 
 
 
+## grafana + influxdb + cadvisor监控容器资源使用
+
+
+
+
+
+
+
+
+
 ## CentOS7虚拟机中安装Docker
 
 
@@ -1066,5 +1176,15 @@ ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
 
 
 
+本地虚拟机中是：
 
+```
+192.168.25.129:2375
+```
+
+阿里云：
+
+```
+47.107.182.8:23751
+```
 
