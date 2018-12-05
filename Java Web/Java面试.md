@@ -1,3 +1,5 @@
+[TOC]
+
 
 
 线程和oracle问的都多
@@ -27,6 +29,14 @@ spring有什么模式
 [Java就业指导 - 萌小Q - 博客园](https://www.cnblogs.com/Qian123/articles/5671900.html#3681485 "Java就业指导 - 萌小Q - 博客园")
 
 
+
+
+
+**几份学习笔记：**
+
+- [CyC2018/CS-Notes: Computer Science Learning Notes](https://github.com/CyC2018/CS-Notes "CyC2018/CS-Notes: Computer Science Learning Notes")
+- [crossoverJie/JCSprout: 👨‍🎓 Java Core Sprout : basic, concurrent, algorithm](https://github.com/crossoverJie/JCSprout "crossoverJie/JCSprout: 👨‍🎓 Java Core Sprout : basic, concurrent, algorithm") 
+- [francistao/LearningNotes: Enjoy Learning.](https://github.com/francistao/LearningNotes "francistao/LearningNotes: Enjoy Learning.") 集合源码解析，JVM，Java并发
 
 
 
@@ -121,6 +131,22 @@ Java对象的eqauls方法和hashCode方法是这样规定的：
 
 
 
+String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。
+
+在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的
+
+
+
+String：适用于少量的字符串操作的情况
+
+StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况
+
+StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
+
+
+
+[Java中的String，StringBuilder，StringBuffer三者的区别 - 酥风 - 博客园](https://www.cnblogs.com/su-feng/p/6659064.html "Java中的String，StringBuilder，StringBuffer三者的区别 - 酥风 - 博客园")
+
 
 
 ### 内部类
@@ -163,11 +189,13 @@ Spring MVC异常处理器。
 
 
 
-
+[CS-Notes/Java IO.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md "CS-Notes/Java IO.md at master · CyC2018/CS-Notes")
 
 
 
 ### 集合
+
+[LearningNotes: JavaSE](https://github.com/francistao/LearningNotes "francistao/LearningNotes: Enjoy Learning.")  源码解析
 
 ![](https://images2015.cnblogs.com/blog/690102/201607/690102-20160729151056028-1786098224.jpg)
 
@@ -304,11 +332,11 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 
 
-### **线程停止的正确方法：**
+### **线程停止的正确方法**
 
 - stop方法：该方法使线程戛然而止（突然停止），完成了哪些工作，哪些工作还没有做都不清楚，且清理工作也没有做。所以不推荐。
 
-- 正确方法，使用volatile关键字设置退出标志，比如：
+- 正确方法，使用`volatile`关键字设置退出标志，比如：
 
   ```java
   /**
@@ -320,7 +348,7 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
       /* volatile关键字
        * volatile保证了线程可以正确的读取其他线程写入的值
        * 如果不写成volatile，由于可见性的问题，当前线程有可能不能读到这个值
-       * 关于可见性的问题可以参考JMM（Java内存模型），里面讲述了：happens-before原则、可见性
+       * 关于可见性的问题可以参考JVM（Java内存模型），里面讲述了：happens-before原则、可见性
        * 用volatile修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的值
        */
       volatile boolean keepRunning = true;
@@ -452,7 +480,7 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 
 
-### **死锁：**
+### **死锁**
 
 [死锁_百度百科](https://baike.baidu.com/item/%E6%AD%BB%E9%94%81 "死锁_百度百科")，
 
@@ -575,6 +603,12 @@ CyclicBarrier
 
 
 
+[常见的三种Java内存溢出详解 | java面试](http://www.jfox.info/2017/chang-jian-de-san-zhong-java-na-cun-yi-chu-xiang-jie.html "常见的三种Java内存溢出详解 | java面试")
+
+
+
+
+
 ### 垃圾回收
 
 
@@ -621,7 +655,25 @@ CyclicBarrier
 
 #### Get和Post方法比较
 
+**作用：**GET 用于获取资源，而 POST 用于传输实体主体。
 
+
+
+**参数：**
+
+GET 和 POST 的请求都能使用额外的参数，但是 GET 的参数是以查询字符串出现在 URL 中，而 POST 的参数存储在实体主体中。不能因为 POST 参数存储在实体主体中就认为它的安全性更高，因为照样可以通过一些抓包工具（Fiddler）查看。
+
+因为 URL 只支持 ASCII 码，因此 GET 的参数中如果存在中文等字符就需要先进行编码。例如 `中文` 会转换为 `%E4%B8%AD%E6%96%87`，而空格会转换为 `%20`。POST 参考支持标准字符集。
+
+
+
+**幂等性：**
+
+幂等的 HTTP 方法，同样的请求被执行一次与连续执行多次的效果是一样的，服务器的状态也是一样的。换句话说就是，幂等方法不应该具有副作用（统计用途除外）。
+
+所有的安全方法也都是幂等的。
+
+在正确实现的条件下，GET，HEAD，PUT 和 DELETE 等方法都是幂等的，而 POST 方法不是。
 
 
 
@@ -647,7 +699,7 @@ CyclicBarrier
 
 
 
-> [HTTP.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md "CS-Notes/HTTP.md at master · CyC2018/CS-Notes")
+> [CS-Notes/HTTP.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md "CS-Notes/HTTP.md at master · CyC2018/CS-Notes")
 
 ### cookie 和 session
 
@@ -736,6 +788,15 @@ Spring 中主要通过 HandlerInterceptor 接口来实现请求的拦截，实�
 
 
 
+数据类型：
+
+- 整数
+- 浮点数
+- 字符串
+- 时间和日期
+
+
+
 ### SQL语句
 
 
@@ -755,6 +816,18 @@ Spring 中主要通过 HandlerInterceptor 接口来实现请求的拦截，实�
 - 触发器：触发器会在某个表执行以下语句时而自动执行：DELETE、INSERT、UPDATE。
 
 
+
+存储过程可以看成是对一系列 SQL 操作的批处理。
+
+使用存储过程的好处：
+
+- 代码封装，保证了一定的安全性；
+- 代码复用；
+- 由于是预先编译，因此具有很高的性能。
+
+
+
+> [CS-Notes/SQL.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/SQL.md "CS-Notes/SQL.md at master · CyC2018/CS-Notes")
 
 
 
@@ -894,6 +967,15 @@ update user set age = 18, version = version + 1 where id = #{id} and version = #
 
 
 
+> 悲观锁和乐观锁：名为"锁"，其实不是锁，而是加锁的解决方案。
+>
+> 悲观锁：在`select`的时候加上排它锁，即在`select`的时候既不能读又不能写
+>
+> 乐观锁：通过版本号字段 `@javax.persist.Version`
+>
+
+
+
 [重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园](http://www.voidcn.com/article/p-yttjumru-bsg.html "重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园")
 
 [浅谈数据库乐观锁和悲观锁 - 简书](https://www.jianshu.com/p/39d8b7437b0b "浅谈数据库乐观锁和悲观锁 - 简书")
@@ -929,25 +1011,67 @@ update user set age = 18, version = version + 1 where id = #{id} and version = #
 
 
 
-mysql数据库引擎：
+mysql数据库引擎：这里只介绍 InnoDB和MyISAM引擎
 
 
 
+两者的比较：
 
+- 事务：InnoDB 是事务型的，可以使用 Commit 和 Rollback 语句。
+- 并发：MyISAM 只支持表级锁，而 InnoDB 还支持行级锁。
+- 外键：InnoDB 支持外键。
+- 备份：InnoDB 支持在线热备份。
+- 崩溃恢复：MyISAM 崩溃后发生损坏的概率比 InnoDB 高很多，而且恢复的速度也更慢。
+- 其它特性：MyISAM 支持压缩表和空间数据索引。
+
+
+
+另外InnoDB：
+
+主索引是聚簇索引，在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。
+
+内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够加快读操作并且自动创建的自适应哈希索引、能够加速插入操作的插入缓冲区等
+
+
+
+[CS-Notes/MySQL.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md "CS-Notes/MySQL.md at master · CyC2018/CS-Notes")
 
 
 
 ### SQL优化
 
+[20+条MySQL性能优化的最佳经验 | java面试](http://www.jfox.info/2017/20-tiao-mysql-xing-nen-you-hua-de-zui-jia-jing-yan.html "20+条MySQL性能优化的最佳经验 | java面试") 推荐
+
 [SQL调优 - 萌小Q - 博客园](https://www.cnblogs.com/Qian123/p/5666569.html "SQL调优 - 萌小Q - 博客园")
 
 [sql优化的几种方法 - 想念的专栏 - CSDN博客](https://blog.csdn.net/jie_liang/article/details/77340905 "sql优化的几种方法 - 想念的专栏 - CSDN博客")
+
+[CS-Notes/MySQL.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md "CS-Notes/MySQL.md at master · CyC2018/CS-Notes")
 
 
 
 做题
 
 sql级联删除
+
+
+
+- EXPLAIN 你的 SELECT 查询
+
+- 当只要一行数据时使用 `LIMIT 1`：在这种情况下，加上 `LIMIT 1` 可以增加性能。这样一样，MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查少下一条符合记录的数据。
+
+- 为搜索字段建索引
+
+- 在Join表的时候使用相当类型的列，并将其索引：如果你的应用程序有很多 JOIN 查询，你应该确认两个表中Join的字段是被建过索引的。这样，MySQL内部会启动为你优化Join的SQL语句的机制。而且，这些被用来Join的字段，应该是相同的类型的。例如：如果你要把 DECIMAL 字段和一个 INT 字段Join在一起，MySQL就无法使用它们的索引
+
+- 避免 `SELECT *`
+
+- 永远为每张表设置一个ID
+
+- 拆分大的 DELETE 或 INSERT 语句：如果你需要在一个在线的网站上去执行一个大的 DELETE 或 INSERT 查询，你需要非常小心，要避免你的操作让你的整个网站停止相应。因为这两个操作是会锁表的，表一锁住了，别的操作都进不来了。
+
+
+
 
 
 
@@ -967,6 +1091,8 @@ explain 显示了mysql **如何使用索引**来处理select语句以及连接�
 
 mysql执行计划：
 
+[MySQL 性能优化神器 Explain 使用分析 - 后台开发 - SegmentFault 思否](https://segmentfault.com/a/1190000008131735 "MySQL 性能优化神器 Explain 使用分析 - 后台开发 - SegmentFault 思否")
+
 [读懂 MySQL 执行计划 - 文章 - 伯乐在线](http://blog.jobbole.com/112877/ "读懂 MySQL 执行计划 - 文章 - 伯乐在线")
 
 
@@ -975,13 +1101,109 @@ mysql执行计划：
 
 #### **索引**
 
+问题：索引是什么？如何使用索引？索引的类型？索引的优缺点？
 
+> MySQL
+
+MySQL官方对索引的定义为：**索引（Index）是帮助MySQL高效获取数据的数据结构**。提取句子主干，就可以得到索引的本质：索引是数据结构。
+
+我们知道，数据库查询是数据库的最主要功能之一。我们都希望查询数据的速度能尽可能的快，因此数据库系统的设计者会从查询算法的角度进行优化。最基本的查询算法当然是[顺序查找](http://en.wikipedia.org/wiki/Linear_search)（linear search），这种复杂度为O(n)的算法在数据量很大时显然是糟糕的，好在计算机科学的发展提供了很多更优秀的查找算法，例如[二分查找](http://en.wikipedia.org/wiki/Binary_search_algorithm)（binary search）、[二叉树查找](http://en.wikipedia.org/wiki/Binary_search_tree)（binary tree search）等。如果稍微分析一下会发现，每种查找算法都只能应用于特定的数据结构之上，例如二分查找要求被检索数据有序，而二叉树查找只能应用于[二叉查找树](http://en.wikipedia.org/wiki/Binary_search_tree)上，但是数据本身的组织结构不可能完全满足各种数据结构（例如，理论上不可能同时将两列都按顺序进行组织），**所以，在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据**，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。
+
+
+
+索引是在存储引擎层实现的，而不是在服务器层实现的，所以不同存储引擎具有不同的索引类型和实现。
+
+
+
+**B+ Tree索引**
+
+- 主索引（是一种聚簇索引的索引方式，一个表只能有一个聚簇索引）
+- 辅助索引
+
+
+
+因为不再需要进行全表扫描，只需要对树进行搜索即可，所以查找速度快很多。
+
+除了用于查找，还可以用于排序和分组。
+
+
+
+>  插入删除操作会破坏平衡树的平衡性，因此在插入删除操作之后，需要对树进行一个分裂、合并、旋转等操作来维护平衡性。
+>
+> 而 B+ Tree也是基于平衡树(B Tree)来实现的。
+
+
+
+**索引优化：**
+
+1.独立的列
+
+在进行查询时，索引列**不能**是表达式的一部分，也**不能**是函数的参数，否则无法使用索引。
+
+例如下面的查询**不能使用** actor_id 列的索引：
+
+```sql
+SELECT actor_id FROM sakila.actor WHERE actor_id + 1 = 5;
+```
+
+2.多列索引
+
+在需要使用多个列作为条件进行查询时，使用多列索引比使用多个单列索引性能更好。例如下面的语句中，最好把 actor_id 和 film_id 设置为多列索引。
+
+```
+SELECT film_id, actor_ id FROM sakila.film_actor
+WHERE actor_id = 1 AND film_id = 1;
+```
+
+3.索引列的顺序
+
+
+
+
+
+**索引类型：**
+
+- 普通索引：仅加速查询
+- 唯一索引：加速查询 + 列值唯一（可以有null）
+- 主键索引：加速查询 + 列值唯一（不可以有null）+ 表中只有一个
+- 组合索引：多列值组成一个索引，专门用于组合搜索，其效率大于索引合并
+- 全文索引：对文本的内容进行分词，进行搜索
+
+
+
+创建普通索引`CREATE INDEX index_name ON table_name(col_name);`
+
+创建唯一索引`CREATE UNIQUE INDEX index_name ON table_name(col_name);`
+
+创建普通组合索引`CREATE INDEX index_name ON table_name(col_name_1,col_name_2);`
+
+创建唯一组合索引`CREATE UNIQUE INDEX index_name ON table_name(col_name_1,col_name_2);`
+
+
+
+**索引的优缺点：**
+
+- 创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。
+
+- 索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间就会更大。
+
+- 当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。
+
+
+
+[CS-Notes/MySQL.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md "CS-Notes/MySQL.md at master · CyC2018/CS-Notes")
+
+[MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html "CodingLabs - MySQL索引背后的数据结构及算法原理")
+
+[浅谈索引的优缺点和建立索引的原则 - 简书](https://www.jianshu.com/p/107e5bdf4148 "浅谈索引的优缺点和建立索引的原则 - 简书")
 
 
 
 #### **拆分表**
 
 表结构优化；大字段分离到单独的表中
+
+垂直分割
 
 
 
@@ -1020,6 +1242,12 @@ Mycat是数据库分库分表的中间件，Mycat使用最多的两个功能是�
 
 介绍spring
 
+[java面试](http://www.jfox.info/ "java面试")
+
+[Spring中常见面试题 | java面试](http://www.jfox.info/2018/120f4b3/ "Spring中常见面试题 | java面试")
+
+
+
 ### spring
 
 
@@ -1033,6 +1261,18 @@ Spring Bean生命周期：
 [Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园](https://www.cnblogs.com/yangang2013/p/5556049.html "Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园")  这里有个简单的一点的解释。
 
 ![](assets/bean装载到spring应用上下文中的典型生命过程.png)
+
+
+
+
+
+spring原理：
+
+
+
+spring中使用到的设计模式：
+
+
 
 
 
@@ -1062,6 +1302,10 @@ Spring Bean生命周期：
 
 
 
+
+
+
+
 ### Spring data
 
 
@@ -1081,6 +1325,18 @@ spring data 与 spring data jpa 的区别？
 项目中异常如何处理？
 
 Spring MVC异常处理器。
+
+
+
+
+
+
+
+### Spring boot
+
+
+
+
 
 
 
@@ -1132,11 +1388,11 @@ Spring MVC异常处理器。
 Redis的几个主要问题：
 
 - 类型和使用场景
-
 - **缓存和数据库双写一致性问题**
 - **缓存雪崩问题**
 - **缓存击穿问题**
 - **缓存的并发竞争问题**
+- Redis集群部署，（哈希一致性问题）
 
  
 
@@ -1167,43 +1423,6 @@ Redis的几个主要问题：
 
 
 
-## 消息队列
-
-JMS即 Java消息服务（Java Message Service），是规范。
-
-
-
-JMS 定义了五种不同的**消息正文格式**，以及调用的消息类型，允许你发送并接收以一些不同形式的数据，提供现有消息格式的一些级别的兼容性。
-
-- TextMessage--一个字符串对象
-- MapMessage--一套名称-值对
-- ObjectMessage--一个序列化的 Java 对象
-- BytesMessage--一个字节的数据流
-- StreamMessage -- Java 原始值的数据流 
-
-
-
-JMS消息传递类型：
-
-- 点对点
-- 发布/订阅模式
-
-
-
-**Queue 和 Topic对比：**
-
-注意
-
-![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20181011210259.png)
-
-
-
-**共同点：** 不管是消息在 Queue 中还是在 Topic 中，消费该消息的方法都是通过实现 MessageListener接口中的 onMessage方法来消费。
-
-
-
-与Spring整合，使用Spring提供的 JmsTemplate 类（模板类）
-
 
 
 
@@ -1228,7 +1447,7 @@ JMS消息传递类型：
 
 
 
-## 全文检索 solr
+## 全文检索 solr，ES
 
 
 
@@ -1280,7 +1499,74 @@ CAS Client：（另一台服务器）负责处理对客户端受保护资源的�
 
 
 
-#### 跨域
+### 跨域
+
+
+
+
+
+
+
+## 消息队列
+
+JMS即 Java消息服务（Java Message Service），是规范。
+
+
+
+JMS 定义了五种不同的**消息正文格式**，以及调用的消息类型，允许你发送并接收以一些不同形式的数据，提供现有消息格式的一些级别的兼容性。
+
+- TextMessage--一个字符串对象
+- MapMessage--一套名称-值对
+- ObjectMessage--一个序列化的 Java 对象
+- BytesMessage--一个字节的数据流
+- StreamMessage -- Java 原始值的数据流 
+
+
+
+JMS消息传递类型：
+
+- 点对点
+- 发布/订阅模式
+
+
+
+**Queue 和 Topic对比：**
+
+注意
+
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20181011210259.png)
+
+
+
+**共同点：** 不管是消息在 Queue 中还是在 Topic 中，消费该消息的方法都是通过实现 MessageListener接口中的 onMessage方法来消费。
+
+
+
+与Spring整合，使用Spring提供的 JmsTemplate 类（模板类）
+
+
+
+
+
+
+
+## 分布式锁
+
+
+
+
+
+
+
+## 分布式事务
+
+
+
+
+
+## 
+
+
 
 
 
