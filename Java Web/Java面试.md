@@ -213,6 +213,82 @@ main方法
 
 
 
+答：抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用。一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要被声明为抽象类。接口比抽象类更加抽象，因为抽象类中可以定义构造器，可以有抽象方法和具体方法，而接口中不能定义构造器而且其中的方法全部都是抽象方法。抽象类中的成员可以是private、默认、protected、public的，而接口中的成员全都是public的。抽象类中可以定义成员变量，而接口中定义的成员变量实际上都是常量。有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法。
+
+
+
+### Switch
+
+**switch 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？**
+答：在Java 5以前，switch(expr)中，expr只能是byte、short、char、int。从Java 5开始，Java中引入了枚举类型，expr也可以是enum类型，从Java 7开始，expr还可以是字符串（String），但是长整型（long）在目前所有的版本中都是不可以的。
+
+
+
+### 其它面试题
+
+
+
+**Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？**
+答：Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行下取整。
+
+
+
+**用最有效率的方法计算2乘以8？**
+答： 2 << 3（左移3位相当于乘以2的3次方，右移3位相当于除以2的3次方）。
+
+
+
+**数组有没有length()方法？String有没有length()方法？**
+答：数组没有length()方法，有length 的属性。String 有length()方法。JavaScript中，获得字符串的长度是通过length属性得到的，这一点容易和Java混淆。
+
+
+
+**两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？**
+答：不对，如果两个对象x和y满足x.equals(y) == true，它们的哈希码（hash code）应当相同。Java对于eqauls方法和hashCode方法是这样规定的：(1)如果两个对象相同（equals方法返回true），那么它们的hashCode值一定要相同；(2)如果两个对象的hashCode相同，它们并不一定相同。当然，你未必要按照要求去做，但是如果你违背了上述原则就会发现在使用容器时，相同的对象可以出现在Set集合中，同时增加新元素的效率会大大下降（对于使用哈希存储的系统，如果哈希码频繁的冲突将会造成存取性能急剧下降）。
+
+
+
+**数据类型之间的转换：**
+如何将字符串转换为基本数据类型？  
+如何将基本数据类型转换为字符串？  
+
+答：
+- 调用基本数据类型对应的包装类中的方法parseXXX(String)或valueOf(String)即可返回相应基本类型；
+- 一种方法是将基本数据类型与空字符串（”"）连接（+）即可获得其所对应的字符串；另一种方法是调用String 类中的valueOf()方法返回相应字符串
+
+
+
+**当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？**
+
+> 一度搞混，因为先接触C++；在牛客中收藏有相关题目。
+
+答：是值传递。Java语言的方法调用只支持参数的值传递。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。C++和C#中可以通过传引用或传输出参数来改变传入的参数的值。在C#中可以编写如下所示的代码，但是在Java中却做不到。
+
+```c++
+`using System;` `namespace CS01 {` `    ``class` `Program {``        ``public` `static` `void` `swap(ref ``int` `x, ref ``int` `y) {``            ``int` `temp = x;``            ``x = y;``            ``y = temp;``        ``}` `        ``public` `static` `void` `Main (string[] args) {``            ``int` `a = ``5``, b = ``10``;``            ``swap (ref a, ref b);``            ``// a = 10, b = 5;``            ``Console.WriteLine (``"a = {0}, b = {1}"``, a, b);``        ``}``    ``}``}`
+```
+
+> 说明：Java中没有传引用实在是非常的不方便，这一点在Java 8中仍然没有得到改进，正是如此在Java编写的代码中才会出现大量的Wrapper类（将需要通过方法调用修改的引用置于一个Wrapper类中，再将Wrapper对象传入方法），这样的做法只会让代码变得臃肿，尤其是让从C和C++转型为Java程序员的开发者无法容忍。
+
+
+
+**Object 类包含哪些方法？**
+
+- `protected Object clone() throws CloneNotSupportedException `创建并返回此对象的副本。
+- `public boolean equals(Object obj) `判断另一对象与此对象是否「相等」。
+- `protected void finalize() throws Throwable `当垃圾回收机制确定该对象不再被调用时，垃圾回收器会调用此方法。
+- `public final Class getClass() `返回此对象的运行时类。
+- `public int hashCode() `返回此对象的散列码值。
+- `public String toString() `返回此对象的字符串表示形式。
+
+`Object `类的 `notify`，`notifyAll `和 `wait `方法都在同步程序中独立运行线程的活动方面发挥了作用，这将在后面的课程中讨论，在此不做介绍。其中有五种方法:
+
+- `public final void notify()`
+- `public final void notifyAll()`
+- `public final void wait()`
+- `public final void wait(long timeout)`
+- `public final void wait(long timeout, int nanos)`
+
 
 
 ### 内部类
@@ -243,9 +319,15 @@ main方法
 
 
 
+
+
 #### 项目中异常如何处理？
 
 Spring MVC异常处理器。
+
+
+
+
 
 
 
@@ -682,11 +764,10 @@ volatile 关键字的应用：
 
 ### **start()和run()方法**
 
-启动一个线程是调用 `start()`方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由 JVM 调度并
-执行，*这并不意味着线程就会立即运行*。
-`run()`方法是线程启动后要进行回调（callback）的方法。 
 
 
+**启动一个线程是调用run()还是start()方法？**
+答：启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM 调度并执行，这并不意味着线程就会立即运行。run()方法是线程启动后要进行回调（callback）的方法。
 
 
 
@@ -1101,6 +1182,36 @@ JVM (JavaVirtualMachine，Java虚拟机) 是JRE的一部分。它是一个虚构
 
 
 
+### 相关面试题
+
+
+
+**解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法？**
+答：
+
+- 通常我们定义一个基本数据类型的变量，一个对象的引用，还有就是函数调用的现场保存都使用内存中的**栈空间**；
+- 而通过new关键字和构造器创建的对象放在**堆空间**；
+- 程序中的字面量（literal）如直接书写的100、”hello”和常量都是放在**静态区**中。栈空间操作起来最快但是栈很小，
+
+通常大量的对象都是放在堆空间，理论上整个内存没有被其他进程使用的空间甚至硬盘上的虚拟内存都可以被当成堆空间来使用。
+
+```java
+`String str = ``new` `String(``"hello"``);`
+```
+
+上面的语句中变量 `str` 放在栈上，用 `new` 创建出来的字符串对象放在堆上，而 `"hello"`这个字面量放在静态区。
+
+> **补充：**较新版本的Java（从Java 6的某个更新开始）中使用了一项叫”逃逸分析”的技术，可以将一些局部对象放在栈上以提升对象的操作性能。
+
+
+
+**String s = new String(“xyz”);创建了几个字符串对象？**
+答：两个对象，一个是静态区的”xyz”，一个是用new创建在堆上的对象。
+
+
+
+
+
 ## 设计模式
 
 [CS-Notes/设计模式.md ](https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md "CS-Notes/设计模式.md at master · CyC2018/CS-Notes") 23种设计模式
@@ -1453,6 +1564,14 @@ MySQL数据库为我们提供的四种隔离级别
 
 #### 乐观锁和悲观锁
 
+
+
+> **乐观锁：**总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号机制和CAS算法实现。**乐观锁适用于多读的应用类型，这样可以提高吞吐量**，像数据库提供的类似于**write_condition机制**，其实都是提供的乐观锁。在Java中`java.util.concurrent.atomic`包下面的原子变量类就是使用了乐观锁的一种实现方式**CAS**实现的。
+>
+>  **悲观锁：**总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻塞直到它拿到锁（**共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程**）。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁。Java中`synchronized`和`ReentrantLock`等独占锁就是悲观锁思想的实现。
+
+
+
 **乐观锁(Optimistic Lock)**，是指操作数据库时(更新操作)，总是认为这次的操作**不会**导致冲突，不到万不得已不去拿锁，在更新时采取判断是否冲突，*适用于读操作远多于更新操作的情况*。
 ***乐观锁并没有被数据库实现，需要自行实现***，通常的实现方式为在表中增加版本version字段，更新时判断库中version与取出时的version值是否相等，若相等则执行更新并将version加1，若不相等则说明数据被其他线程(进程)修改，放弃修改。
 
@@ -1497,6 +1616,8 @@ update user set age = 18, version = version + 1 where id = #{id} and version = #
 [重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园](http://www.voidcn.com/article/p-yttjumru-bsg.html "重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园") ⭐
 
 [浅谈数据库乐观锁和悲观锁 - 简书](https://www.jianshu.com/p/39d8b7437b0b "浅谈数据库乐观锁和悲观锁 - 简书")
+
+[JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide/blob/master/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87%E4%B9%8B%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.md "JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide")
 
 [事务隔离级别_百度百科](https://baike.baidu.com/item/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB "事务隔离级别_百度百科")
 
@@ -1822,6 +1943,10 @@ Mycat是数据库分库分表的中间件，Mycat使用最多的两个功能是�
 
 
 
+[Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客](https://blog.csdn.net/weixin_37020977/article/details/81007286 "Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客") ⭐
+
+
+
 Spring Bean生命周期：
 
 [Spring Bean的生命周期（非常详细）](https://www.cnblogs.com/zrtqsk/p/3735273.html "Spring Bean的生命周期（非常详细） - Chandler Qian - 博客园")
@@ -1836,19 +1961,164 @@ Spring Bean生命周期：
 
 
 
-spring原理：
+**spring原理：**
 
 
 
-spring中使用到的设计模式：
-
-
+**spring中使用到的设计模式：**
 
 
 
 
 
+**开发中主要使用 Spring 的什么技术 ?**
+  ①. IOC 容器管理各层的组件
+  ②. 使用 AOP 配置声明式事务
+  ③. 整合其他框架.
 
+
+
+**什么是Spring ，它有什么特点？** 
+
+Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。 
+
+ 
+
+◆轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并 且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。 
+
+◆控制反转——Spring通过一种称作控制反转（IoC）的技术促进了松耦 合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不 是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。 
+
+◆面向切面——Spring提供了面向切面编程的丰富支持，允许通过分离应用的 业务逻辑与系统级服务（例如审计（auditing）和事务（）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们 并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。 
+
+◆容器——Spring包含并管理应用对象的配置和生命周期，在这个意义上它是 一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生 成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。 
+
+◆框架——Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。 
+
+ 
+
+
+
+**你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？**
+
+
+
+**什么是IoC和DI？DI是如何实现的？**
+
+
+
+**解释一下什么叫AOP（面向切面编程）？**
+答：AOP（Aspect-Oriented Programming）指一种程序设计范型，该范型以一种称为切面（aspect）的语言构造为基础，切面是一种新的模块化机制，用来描述分散在对象、类或方法中的横切关注点（crosscutting concern）。
+
+
+
+**简述 AOP 和 IOC 概念**
+  AOP: Aspect Oriented Program, 面向(方面)切面的编程;Filter(过滤器)也是一种   AOP.  AOP  是一种新的方法论 ,  是对传统   OOP(Object-Oriented Programming, 面向对象编程) 的补充. AOP 的主要编程对像是切面(aspect), 而切面模块化横切关注点.可以举例通过事务说明. 
+  IOC: Invert Of Control, 控制反转. 也成为 DI(依赖注入)其思想是反转资源获取的方向. 传统的资源查找方式要求组件向容器发起请求查找资源.作为回应, 容器适时的返回资源. 而应用了 IOC 之后, 则是容器主动地将资源推送给它所管理的组件,组件所要做的仅是选择一种合适的方式来接受资源. 这种行为也被称为查找的被动形式.
+
+
+
+**IOC 容器对 Bean 的生命周期:**
+  ①. 通过构造器或工厂方法创建 Bean 实例
+  ②. 为 Bean 的属性设置值和对其他 Bean 的引用
+  ③. 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization 方法
+  ④. 调用 Bean 的初始化方法(init-method)
+  ⑤. 将Bean实例传递给Bean后置处理器的postProcessAfterInitialization 方法
+  ⑦. Bean 可以使用了
+  ⑧. 当容器关闭时, 调用 Bean 的销毁方法(destroy-method)
+
+
+
+**什么是JDBC驱动？**
+
+JDBC Driver 是一种实现 Java 应用与数据库交互的软件。JDBC 驱动有下面4种：
+
+1. JDBC-ODBC bridge 驱动
+2. Native-API 驱动（部分是 Java 驱动）
+3. 网络协议驱动（全部是 Java 驱动）
+4. Thin driver（全部是 Java 驱动）
+
+
+
+
+
+**使用 Java 连接数据库有哪几步？**
+
+- 注册驱动类
+- 新建数据库连接
+- 新建语句（statement）
+- 查询
+- 关闭连接
+
+
+
+**列举Spring配置中常用的重要注解**
+
+- @Autowired
+
+@Component ：标准一个普通的spring Bean类。 @Repository：标注一个DAO组件类。 @Service：标注一个业务逻辑组件类。 
+
+
+
+**SpringMVC 常用的注解**
+
+@controller
+
+@autowired
+
+@RequestMapping
+
+ 说出 Spring MVC 常用的 5 个注解:
+  @RequestMapping 、 @PathVariable 、 @RequestParam 、 @RequestBoy 、@ResponseBody
+
+
+
+**AOP里面重要的几个名词概念解释：** 
+
+切面（Aspect）： 一个关注点的模块化，这个关注点可能会横切多个对象。事务管理是J2EE应用中一个关于横切关注点的很好的例子。 在Spring AOP中，切面可以使用通用类（基于模式的风格） 或者在普通类中以 @Aspect 注解（@AspectJ风格）来实现。 
+
+
+
+连接点（Joinpoint）： 在程序执行过程中某个特定的点，比如某方法调用的时候或者处理异常的时候。 在Spring AOP中，一个连接点 总是 代表一个方法的执行。 通过声明一个org.aspectj.lang.JoinPoint类型的参数可以使通知（Advice）的主体部分获得连接点信息。 
+
+
+
+通知（Advice）： 在切面的某个特定的连接点（Joinpoint）上执行的动作。通知有各种类型，其中包括“around”、“before”和“after”等通知。 通知的类型将在后面部分进行讨论。许多AOP框架，包括Spring，都是以拦截器做通知模型， 并维护一个以连接点为中心的拦截器链。 
+
+
+
+切入点（Pointcut）： 匹配连接点（Joinpoint）的断言。通知和一个切入点表达式关联，并在满足这个切入点的连接点上运行（例如，当执行某个特定名称的方法时）。 切入点表达式如何和连接点匹配是AOP的核心：Spring缺省使用AspectJ切入点语法。 
+
+
+
+引入（Introduction）： （也被称为内部类型声明（inter-type declaration））。声明额外的方法或者某个类型的字段。 Spring允许引入新的接口（以及一个对应的实现）到任何被代理的对象。 例如，你可以使用一个引入来使bean实现 IsModified 接口，以便简化缓存机制。 
+
+
+
+目标对象（Target Object）： 被一个或者多个切面（aspect）所通知（advise）的对象。也有人把它叫做 被通知（advised） 对象。 既然Spring AOP是通过运行时代理实现的，这个对象永远是一个 被代理（proxied） 对象。 
+
+
+
+AOP代理（AOP Proxy）： AOP框架创建的对象，用来实现切面契约（aspect contract）（包括通知方法执行等功能）。 在Spring中，AOP代理可以是JDK动态代理或者CGLIB代理。 注意：Spring 2.0最新引入的基于模式（schema-based）风格和@AspectJ注解风格的切面声明，对于使用这些风格的用户来说，代理的创建是透明的。 
+
+织入（Weaving）： 把切面（aspect）连接到其它的应用程序类型或者对象上，并创建一个被通知（advised）的对象。 这些可以在编译时（例如使用AspectJ编译器），类加载时和运行时完成。 Spring和其他纯Java AOP框架一样，在运行时完成织入。 
+
+
+
+通知的类型： 
+
+前置通知（Before advice）： 在某连接点（join point）之前执行的通知，但这个通知不能阻止连接点前的执行（除非它抛出一个异常）。 
+
+返回后通知（After returning advice）： 在某连接点（join point）正常完成后执行的通知：例如，一个方法没有抛出任何异常，正常返回。 
+
+抛出异常后通知（After throwing advice）： 在方法抛出异常退出时执行的通知。 
+
+后通知（After (finally) advice）： 当某连接点退出的时候执行的通知（不论是正常返回还是异常退出）。 
+
+环绕通知（Around Advice）： 包围一个连接点（join point）的通知，如方法调用。这是最强大的一种通知类型。 环绕通知可以在方法调用前后完成自定义的行为。它也会选择是否继续执行连接点或直接返回它们自己的返回值或抛出异常来结束执行。 
+
+环绕通知是最常用的一种通知类型。大部分基于拦截的AOP框架，例如Nanning和JBoss4，都只提供环绕通知。 
+
+切入点（pointcut）和连接点（join point）匹配的概念是AOP的关键，这使得AOP不同于其它仅仅提供拦截功能的旧技术。 切入点使得定位通知（advice）可独立于OO层次。 例如，一个提供声明式事务管理的around通知可以被应用到一组横跨多个对象中的方法上（例如服务层的所有业务操作）。
 
 
 
@@ -1863,6 +2133,57 @@ spring中使用到的设计模式：
 
 
 
+
+[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
+
+
+
+**SpringMvc怎么和AJAX相互调用的**
+
+  通过Jackson框架就可以把Java里面的对象直接转化成Js可以识别的Json对象
+
+  具体步骤如下:
+
+1. 加入Jackson.jar
+
+2. 在配置文件中配置json的映射
+
+3. 在接受Ajax方法里面可以直接返回Object，List等，但方法前面要加上`@ResponseBody`注解
+
+
+
+**当一个方法向AJAX返回特殊对象,譬如Object,List等,需要做什么处理**
+
+要加上@ResponseBody注解
+
+
+
+如何使用 SpringMVC 完成 JSON 操作：
+  ①. 配置 MappingJacksonHttpMessageConverter
+  ②. 使用 @RequestBody 注解或 ResponseEntity 作为返回值
+
+
+
+请你谈谈SSM整合：
+
+
+
+
+
+**项目中异常如何处理**？
+
+Spring MVC异常处理器。
+
+- 在`controller`中统一处理异常，调用业务逻辑`service`时使用`try-catch`包围 （不推荐）
+- 基于异常类（自定义），即针对某类异常。(需要使用@ResponseState注解对自定义异常类进行标注)
+- 基于控制器（`controller`），即针对某个控制器。（在控制器中增加一个异常处理方法，并使用`@ExceptionHandler`标注）
+- 全局异常处理
+
+[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
+
+
+
+[SpringMvc面试题 - t0404的博客 - CSDN博客](https://blog.csdn.net/t0404/article/details/51945003 "SpringMvc面试题 - t0404的博客 - CSDN博客")
 
 
 
@@ -1890,13 +2211,13 @@ spring data 与 spring data jpa 的区别？
 
 
 
-项目中异常如何处理？
+[可能是最漂亮的Spring事务管理详解](https://juejin.im/post/5b00c52ef265da0b95276091)
 
-Spring MVC异常处理器。
+[Spring编程式和声明式事务实例讲解](https://juejin.im/post/5b010f27518825426539ba38)
 
+其中事务管理暂时不懂，当下记住如何使用即可，比如记住声明式事务方式之一的 **基于 @Transactional 的全注解方式：** 将声明式事务管理简化到了极致。开发人员只需在配置文件中加上一行启用相关后处理 Bean 的配置，然后在需要实施事务管理的方法或者类上使用 @Transactional 指定事务规则即可实现事务管理，而且功能也不必其他方式逊色。
 
-
-
+Transactional 的读法。
 
 
 
@@ -1924,6 +2245,47 @@ Spring MVC异常处理器。
 
 
 
+[Mybatis学习记录 - 掘金](https://juejin.im/post/5c12330a6fb9a04a016432e0?utm_source=gold_browser_extension "Mybatis学习记录 - 掘金")
+
+
+
+简单介绍下你对mybatis的理解
+
+MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。
+
+- 它是一个持久化框架
+- 它支持sql、存储过程、高级映射
+- 它支持手动设置参数并且分装结果集
+- 它支持xml和注解两种配置方式
+
+
+
+**MyBatis中使用#和$书写占位符有什么区别？**
+答：`#`将传入的数据都当成一个字符串，会对传入的数据自动加上引号；`$`将传入的数据直接显示生成在SQL中。注意：使用`$`占位符可能会导致SQL注射攻击，能用`#`的地方就不要使用`$`，写order by子句的时候应该用`$`而不是`#`。
+
+
+
+**MyBatis中的动态SQL是什么意思？**
+答：对于一些复杂的查询，我们可能会指定多个查询条件，但是这些条件可能存在也可能不存在，例如在58同城上面找房子，我们可能会指定面积、楼层和所在位置来查找房源，也可能会指定面积、价格、户型和所在位置来查找房源，此时就需要根据用户指定的条件动态生成SQL语句。如果不使用持久层框架我们可能需要自己拼装SQL语句，还好MyBatis提供了动态SQL的功能来解决这个问题。MyBatis中用于实现动态SQL的元素主要有：
+
+- if
+- choose / when / otherwise
+- trim
+- where
+- set
+- foreach
+
+
+
+**Mybatis 的编程步骤是什么样的？**
+1、创建 SqlSessionFactory
+2、通过 SqlSessionFactory 创建 SqlSession
+3、通过 sqlsession 执行数据库操作
+4、调用 session.commit()提交事务
+5、调用 session.close()关闭会话 
+
+
+
 
 
 ## Dubbo
@@ -1936,7 +2298,7 @@ Spring MVC异常处理器。
 
 
 
-![](assets/dubbo-architecture.jpg)
+![](assets/dubbo-architecture.jpg备用)
 
 [Dubbo 架构](http://dubbo.incubator.apache.org/zh-cn/docs/user/preface/architecture.html "architecture")
 
@@ -1959,7 +2321,7 @@ Dubbo是阿里巴巴开源的基于 Java 的高性能 RPC 分布式服务框架�
 
 
 
-> [官方介绍](http://dubbo.apache.org/zh-cn/ "home")：Apache Dubbo (incubating) |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。
+> [官方介绍](http://dubbo.apache.org/zh-cn/ "home")：Apache Dubbo (incubating) `|ˈdʌbəʊ|` 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。
 
 
 
@@ -2116,6 +2478,16 @@ Zookeeper的命名服务？
 
 
 
+数据类型：
+
+- String
+- List
+- Hash
+- Set
+- Sort Set （俗称 ZSet）
+
+
+
 单线程为什么这么快？
 
 1. 纯内存
@@ -2172,7 +2544,7 @@ Redis的几个主要问题：
 
 
 
-
+[qiurunze123/miaosha: 😮😮秒杀系统设计与实现.互联网工程师进阶与分析🙋🐓](https://github.com/qiurunze123/miaosha "qiurunze123/miaosha: 😮😮秒杀系统设计与实现.互联网工程师进阶与分析🙋🐓")  包含秒杀系统中各种问题的解决思路。
 
 
 
@@ -2184,7 +2556,11 @@ Redis的几个主要问题：
 
 
 
-
+**支付接口是怎么做的？**
+调用微信的支付接口，参考微信提供的 api
+使用了微信的统一下单接口和查询支付状态接口
+每个接口需要的参数放入到 map 中使用微信提供的 sdk 转成 XML 字符串， httpClient
+远程提交参数和接收结果。 
 
 
 
@@ -2192,9 +2568,44 @@ Redis的几个主要问题：
 
 
 
+- Lucene是apache下的一个子项目，是一个开放源代码的全文检索引擎工具包。（是一个索引与搜索类库）
+
+- Solr是一个高性能，使用Java开发，基于Lucene的全文搜索服务器。
+- Elasticsearch跟Solr一样，也是一个基于Lucene的搜索服务器，它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。
 
 
 
+Solr与Elasticsearch的优缺点：
+
+
+
+
+
+solr的索引查询为什么比数据库要快？
+
+Solr使用的是Lucene API实现的全文检索。全文检索本质上是查询的索引。而数据库中并不是所有的字段都建立的索引，更何况如果使用like查询时很大的可能是不使用索引，所以使用solr查询时要比查数据库快
+
+
+
+solr如何分词？
+
+schema.xml文件中配置一个IK分词器，然后域指定分词器为IK
+
+
+
+lucence 内部结构是什么？
+
+- 索引（Index）：
+- 段（Segment）：
+- 文档（Document）：
+- 域（Field）：
+- 词（Term）：
+
+
+
+
+
+[Lucene&amp;Solr&amp;ElasticSearch-面试题 - Ms_lang的博客 - CSDN博客](https://blog.csdn.net/Ms_lang/article/details/83215015 "Lucene&amp;Solr&amp;ElasticSearch-面试题 - Ms_lang的博客 - CSDN博客")
 
 
 
@@ -2345,9 +2756,15 @@ JMS消息传递类型：
 
 
 
-分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上
+分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。
+
+简单的说，就是一次大的操作由不同的小操作组成，这些小的操作分布在不同的服务器上，且属于不同的应用，分布式事务需要保证这些小操作要么全部成功，要么全部失败。
+
+本质上来说，分布式事务就是为了保证不同数据库的数据一致性。
 
 
+
+分布式事务的原理很简单，它的精华就是**冻结资源**和**幂等性**。
 
 
 
@@ -2380,9 +2797,13 @@ JMS消息传递类型：
 
 
 
-[深入理解分布式事务 – 码农网](http://www.codeceo.com/article/distributed-transaction.html "深入理解分布式事务 – 码农网")
 
-[终于有人把“TCC分布式事务”实现原理讲明白了！ - 51CTO.COM](http://developer.51cto.com/art/201811/587425.htm "终于有人把"TCC分布式事务"实现原理讲明白了！ - 51CTO.COM")
+
+[分布式的事务该怎么做？-码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665515414&idx=1&sn=0c468c090bfc563dbf6485be0c623157&chksm=80d671d5b7a1f8c3e483d1f63a117a640eda25332b8ed66d45c859c80149a7542e0612b37f8e&scene=0#rd "码农翻身") 清晰易懂的解释TCC
+
+[深入理解分布式事务 – 码农网](http://www.codeceo.com/article/distributed-transaction.html "深入理解分布式事务 – 码农网") 
+
+[终于有人把“TCC分布式事务”实现原理讲明白了！ - 51CTO.COM](http://developer.51cto.com/art/201811/587425.htm "终于有人把"TCC分布式事务"实现原理讲明白了！ - 51CTO.COM") 还讲到了最终一致性分布式事务
 
 
 
@@ -2440,6 +2861,81 @@ JMS消息传递类型：
 
 ## 项目
 
+### 介绍自己的项目
+
+在该网上商城中，商家可以申请入驻到平台进行商品的销售，并可以通过商家管理系统进行商
+品管理，内容发布等功能；运营商可以通过运营商管理系统对商家进行管理，对商品进行审核
+等。用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作，通过搜索系统搜
+索商品，并可以通过 订单系统，提供下单、查询订单、修改订单状态，以及参加秒杀团购等
+各种活动。
+
+
+
+在该网上商城中，实现了商品管理，商家管理，商品、搜索、购买、秒杀等功能。该系统后端使
+用 SSM 开发；前端主要使用 AngularJS+BootStrap 开发；使用 Dubbo 服务中间件来发布服
+务，并使用 Zookeeper 作为注册中心；使用 Redis 缓存减轻 MySQL 数据库压力；使用 solr
+实现商品的搜索；使用 Nginx 做负载均衡； 同时采用分布式系统架构来支持系统的高并发和
+高可用。 
+
+
+
+### 人员配置
+
+前端：2-3  angularjs   服务于整个部门
+
+后端：Java 8-10 1个主要负责品优购项目  1主负责测试人员  1项目经理(产品经理)  1个专业前端  1个UI设计师 为品优购服务器
+
+测试：服务于整个部门  3
+
+运维：服务于整个部门  2  网络、服务器   集群
+
+UI设计师 服务于整个部门 2
+
+架构师
+
+部门经理
+
+
+
+
+
+### 服务器配置
+
+
+
+**当初设计项目时预计的访问量计划是多少？**
+访问量计划是 2000—3000
+
+一个tomcat，大概200-300，所以需要大概10台tomcat
+
+
+
+项目中一共 15 台项目服务，那么为了每一台高可用一主一备，但首页项目高并发设为四台服
+务器，则一共 32 台项目服务器， 再加 redis 集群用了 3 台，为了每一台高可用一主一备一共 6 台，
+fastdfs 一个 trackerServer 一个 storageServer 搭建集群一共 6 台， solr 集群 7 台服务器， nginx 为了高
+可用一主一备一共 2 台， mysql 数据库集群 3 台！ activemq 消息中间件高可用 2 台；
+共计： 58 台服务器！
+
+
+
+
+
+
+
+### 开发周期
+
+
+
+### **你在项目开发中碰到过哪些重大且棘手的问题** 
+
+见面试200问
+
+- 需求不明确
+- solr 高亮不能显示的问题 ：前台使用 angularJS 加载搜索结果，但是发现高亮不能展示 
+- 使用 cas 单独登录不能很好实现想要的效果
+
+
+
 
 
 ### 参与项目的需求分析和项目构建
@@ -2450,29 +2946,164 @@ JMS消息传递类型：
 
 
 
-### 参与商品展示模块及搜索模块的开发
+### 参与商品展示模块及搜索模块的开发 day10-day11
+
+
+
+数据来源：tb_item
+
+域字段配置具体配置什么？ 是否索引（是否可以根据该字段进行搜索操作），是否存储（是否存储，基于页面是否需要展示决定的。需要展示时，存储。）
+
+field 标签中配置域
+
+
+
+在
 
 
 
 
 
+关键字搜索
 
+根据品牌 分类 价格 规格进行过滤**条件查询**。
 
-### 购物车模块和支付模块开发
+排序总共有： 综合、销量、新品、评价、价格 
 
-
-
-
-
-
-
-### 单点登录功能的开发
+分页
 
 
 
+IK分词器的配置：
+
+- 将jar包复制到solr/WEB-INF/lib下
+- 复制 ` cp ext_stopword.dic mydict.dic IKAnalyzer.cfg.xml /opt/pinyougou/apache-tomcat/webapps/solr/WEB-INF/classes/`
+- 在索引库下的 schema.xml 文件中配置 分词器
 
 
 
+使用**spring data solr** 来操作 solr，solrTemplate
+
+
+
+这里我们在一个单独的模块，并在该模块中导入数据
+
+
+
+#### 如何将数据库中表字段与索引库中域字段关联（映射）
+
+
+
+我们使用注解的方式来进行映射，spring-data-solr 提供了一个 `@field`注解，将该注解应用于对应的 pojo 上。
+
+
+
+先在pojo 模块中引入 spring-data-solr依赖（记得重新安装）
+
+如果相映射的**字段名不同**可以通过 `@field(value = "id")`，或者  `@field("id")
+
+
+
+#### 什么商品导入索引库
+
+- 已经上架的商品 ： tb_goods  is_marketable='1'
+- 商品状态为 1 的商品 ：正常状态 tb_item   status='1'
+
+
+
+对应的SQL语句
+
+```sql
+select item.* from tb_item item, tb_goods goods where item.goods_id=goods.id and item.status='1' and goods.is_marketable='1'
+```
+
+
+
+
+
+### 购物车模块和支付模块开发 day16
+
+购物车功能做了吗，实现原理说一下？ 
+
+购物车数据并不需要保存到数据库，订单数据需要保存到数据库；购物车明细对象与订单明细对象存储数据完全相同，但是购物车中还需要商家id和商家名称。
+
+
+
+购物车中需要为不同商家生成不同的订单
+
+**tb_order**：表示一个订单
+
+**tb_order_item**：表示一个订单中的订单明细（商品数据）
+
+
+
+实现方式之一： 不管用户是否登录，都保存在 Redis 中
+
+（1）当用户未登录的情况下，获取 SessionID，以 SessionID 作为 Redis 的 Key 保存；
+
+（2）如果用户登录了，根据用户名来保存到Redis；
+
+（3）如果用户登录时，把 SessionID 中的 Redis 数据和用户名获取的 Redis 数据合并
+
+
+
+Redis 中数据的保存形式：（重要）
+
+购物车以**字符串**的形式保存；且是以json字符串的形式（保存之前先使用fastjson将购物车列表转换为json字符串）
+
+
+
+判断添加的商品所属的商家是否存在于购物车列表：
+
+1. 如果商家存在
+   - 判断添加的商品是否存在于该商家在购物车对象的购物车明细列表中
+   - 如果商品不存在购物车明细列表
+   - 创建购物车明细列表对象，添加到购物车明细列表
+   - 如果商品存在购物车明细列表
+   - 在原有数量、小计的基础上，进行商品数据和小计金额累加
+2. 商家不存在
+   - 创建购物车对象
+   - 创建购物车明细列表对象，将其添加到购物车
+   - 再将购物车对象添加到购物车列表中
+
+
+
+**商品表中的数据是哪里来的不知道**
+商品表的数据是在商家管理后台中由商家录入的。 数据分别录入到商品表、商品描
+述表和商品项表
+
+
+
+相关模块：
+
+购物车模块
+
+订单模块
+
+支付模块
+
+
+
+### 单点登录功能的开发 day15
+
+
+
+单点登录的各种实现方式：
+
+- 分布式session
+- 服务端session同步（一般不用）
+- cas
+
+
+
+修改 cas_servlet.xml文件
+
+
+
+CAS与SpringSecurity整合，为什么需要整合？
+
+- 项目中我们主要使用 CAS 来实现单点登录问题。
+- CAS只能进行用户认证，并不能实现 访问权限控制
 
 
 
