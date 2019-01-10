@@ -46,7 +46,7 @@ spring有什么模式
 
 
 
-**几份学习笔记：** 优秀的人太多，该份笔记列表将会不断增加
+**优质文章来源：** 优秀的人太多，该份笔记列表将会不断增加
 
 - [CyC2018/CS-Notes: Computer Science Learning Notes](https://github.com/CyC2018/CS-Notes "CyC2018/CS-Notes: Computer Science Learning Notes")
 - [crossoverJie/JCSprout: 👨‍🎓 Java Core Sprout : basic, concurrent, algorithm](https://github.com/crossoverJie/JCSprout "crossoverJie/JCSprout: 👨‍🎓 Java Core Sprout : basic, concurrent, algorithm") 
@@ -56,6 +56,17 @@ spring有什么模式
 - [francistao/LearningNotes: Enjoy Learning.](https://github.com/francistao/LearningNotes "francistao/LearningNotes: Enjoy Learning.") 集合源码解析，JVM，Java并发
 - [CarpenterLee/JCFInternals: 深入理解Java集合框架](https://github.com/CarpenterLee/JCFInternals "CarpenterLee/JCFInternals: 深入理解Java集合框架")  配有大量图示，非常不错的讲解集合的资源
 - [doocs/advanced-java: 😮 互联网 Java 工程师进阶知识完全扫盲](https://github.com/doocs/advanced-java) ⭐
+- **码农翻身**公众号系列文章，文章列表目录可在公众号下方点击*目录* 获取。
+- **51CTO技术栈**公众号相关文章。
+- 一个找工作的少年：[我没有三颗心脏的主页 - 博客园](https://home.cnblogs.com/u/wmyskxz/) 几篇文章链接 （未看）对应的简书上的文章讨论的更激烈，勘误的机会多。
+  - [Java 面试知识点解析(一)——基础知识篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9016611.html)
+  - [Java 面试知识点解析(二)——高并发编程篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9021597.html) 即多线程面试题
+  - [Java 面试知识点解析(三)——JVM篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9045972.html)
+  - [Java 面试知识点解析(四)——版本特性篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9051955.html)
+  - [Java 面试知识点解析(五)——网络协议篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9056776.html)
+  - [Java 面试知识点解析(六)——数据库篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9067197.html)
+  - [Java 面试知识点解析(七)——Web篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9070737.html)
+- 。。
 
 
 
@@ -361,9 +372,9 @@ Spring MVC异常处理器。
 
 
 
-[CS-Notes/Java IO.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md "CS-Notes/Java IO.md at master · CyC2018/CS-Notes")
-
-
+> [CS-Notes/Java IO.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md "CS-Notes/Java IO.md at master · CyC2018/CS-Notes")
+>
+> [Java I/O不迷茫，一文为你导航！ - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9485251.html)
 
 
 
@@ -384,6 +395,12 @@ Json相关框架
 Google Protobuf框架
 
 
+
+> 序列化与Java RPC之间的关系，RPC与Dubbo之间的关系（最初关注序列化也是因为在Dubbo面试题中看到了序列化相关的问题）
+>
+> 序列化与 xml 、Json之间的关系。
+>
+> [序列化： 一个老家伙的咸鱼翻身 - 码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513589&idx=1&sn=d402d623d9121453f1e570395c7f99d7&chksm=80d67a36b7a1f32054d4c779dd26e8f97a075cf4d9ed1281f16d09f1df50a29319cd37520377&scene=21#wechat_redirect)
 
 
 
@@ -526,12 +543,11 @@ hashcode是否一样
 
 
 - 在Google Play中可以下载一个叫 `Algorithms` 的 app，该app主要展示了 算法动图图解，其中“哈希函数” 和 “哈希表” 部分进行了非常通俗易懂的演示，建议首先观看此演示，再看相关文章。
-
 - [HashMap实现原理及源码分析 - dreamcatcher-cx - 博客园](https://www.cnblogs.com/chengxiao/p/6059914.html "HashMap实现原理及源码分析 - dreamcatcher-cx - 博客园")
 - [HashMap 相关面试题及其解答 - 简书](https://www.jianshu.com/p/75adf47958a7 "HashMap 相关面试题及其解答 - 简书")
 - https://github.com/crossoverJie/JCSprout 
-
 - [HashMap 实现原理 - ImportNew](http://www.importnew.com/27043.html "HashMap 实现原理 - ImportNew")
+- [Java集合必会14问（精选面试题整理） - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9381848.html)
 
 
 
@@ -1104,6 +1120,8 @@ JVM (JavaVirtualMachine，Java虚拟机) 是JRE的一部分。它是一个虚构
 
 
 
+
+
 > 谈到常量池，在Java体系中，共用三种常量池。分别是字符串常量池、Class常量池和运行时常量池。
 >
 > [好好说说Java中的常量池之Class常量池](http://blog.51cto.com/13732225/2307459 "好好说说Java中的常量池之Class常量池-Java架构的博客-51CTO博客") 
@@ -1210,6 +1228,8 @@ JVM (JavaVirtualMachine，Java虚拟机) 是JRE的一部分。它是一个虚构
 答：两个对象，一个是静态区的”xyz”，一个是用new创建在堆上的对象。
 
 
+
+> [Java 面试知识点解析(三)——JVM篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9045972.html)
 
 
 
@@ -1403,6 +1423,367 @@ Response.setHeader("Refresh","1000;URL=http://localhost:8080/servlet/example.htm
 
 
 ### JSP和Servlet之间的关系
+
+
+
+
+
+
+
+
+
+## Spring全家桶
+
+介绍spring
+
+[java面试](http://www.jfox.info/ "java面试")
+
+[Spring中常见面试题 | java面试](http://www.jfox.info/2018/120f4b3/ "Spring中常见面试题 | java面试")
+
+
+
+### spring
+
+
+
+[Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客](https://blog.csdn.net/weixin_37020977/article/details/81007286 "Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客") ⭐
+
+
+
+Spring Bean生命周期：
+
+[Spring Bean的生命周期（非常详细）](https://www.cnblogs.com/zrtqsk/p/3735273.html "Spring Bean的生命周期（非常详细） - Chandler Qian - 博客园")
+
+[Spring Bean生命周期 - 简书](https://www.jianshu.com/p/3944792a5fff "Spring Bean生命周期 - 简书") 
+
+[Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园](https://www.cnblogs.com/yangang2013/p/5556049.html "Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园")  这里有个简单的一点的解释。
+
+![](D:/Fan%20Dean/Documents/notes/Java%20Web/assets/bean%E8%A3%85%E8%BD%BD%E5%88%B0spring%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%B8%E5%9E%8B%E7%94%9F%E5%91%BD%E8%BF%87%E7%A8%8B.png)
+
+
+
+
+
+**spring原理：**
+
+
+
+**spring中使用到的设计模式：**
+
+
+
+
+
+**开发中主要使用 Spring 的什么技术 ?**
+  ①. IOC 容器管理各层的组件
+  ②. 使用 AOP 配置声明式事务
+  ③. 整合其他框架.
+
+
+
+**什么是Spring ，它有什么特点？** 
+
+Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。 
+
+ 
+
+◆轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并 且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。 
+
+◆控制反转——Spring通过一种称作控制反转（IoC）的技术促进了松耦 合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不 是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。 
+
+◆面向切面——Spring提供了面向切面编程的丰富支持，允许通过分离应用的 业务逻辑与系统级服务（例如审计（auditing）和事务（）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们 并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。 
+
+◆容器——Spring包含并管理应用对象的配置和生命周期，在这个意义上它是 一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生 成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。 
+
+◆框架——Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。 
+
+ 
+
+
+
+**你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？**
+
+
+
+**什么是IoC和DI？DI是如何实现的？**
+
+
+
+**解释一下什么叫AOP（面向切面编程）？**
+答：AOP（Aspect-Oriented Programming）指一种程序设计范型，该范型以一种称为切面（aspect）的语言构造为基础，切面是一种新的模块化机制，用来描述分散在对象、类或方法中的横切关注点（crosscutting concern）。
+
+
+
+**简述 AOP 和 IOC 概念**
+  AOP: Aspect Oriented Program, 面向(方面)切面的编程;Filter(过滤器)也是一种   AOP.  AOP  是一种新的方法论 ,  是对传统   OOP(Object-Oriented Programming, 面向对象编程) 的补充. AOP 的主要编程对像是切面(aspect), 而切面模块化横切关注点.可以举例通过事务说明. 
+  IOC: Invert Of Control, 控制反转. 也成为 DI(依赖注入)其思想是反转资源获取的方向. 传统的资源查找方式要求组件向容器发起请求查找资源.作为回应, 容器适时的返回资源. 而应用了 IOC 之后, 则是容器主动地将资源推送给它所管理的组件,组件所要做的仅是选择一种合适的方式来接受资源. 这种行为也被称为查找的被动形式.
+
+
+
+**IOC 容器对 Bean 的生命周期:**
+  ①. 通过构造器或工厂方法创建 Bean 实例
+  ②. 为 Bean 的属性设置值和对其他 Bean 的引用
+  ③. 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization 方法
+  ④. 调用 Bean 的初始化方法(init-method)
+  ⑤. 将Bean实例传递给Bean后置处理器的postProcessAfterInitialization 方法
+  ⑦. Bean 可以使用了
+  ⑧. 当容器关闭时, 调用 Bean 的销毁方法(destroy-method)
+
+
+
+**什么是JDBC驱动？**
+
+JDBC Driver 是一种实现 Java 应用与数据库交互的软件。JDBC 驱动有下面4种：
+
+1. JDBC-ODBC bridge 驱动
+2. Native-API 驱动（部分是 Java 驱动）
+3. 网络协议驱动（全部是 Java 驱动）
+4. Thin driver（全部是 Java 驱动）
+
+
+
+
+
+**使用 Java 连接数据库有哪几步？**
+
+- 注册驱动类
+- 新建数据库连接
+- 新建语句（statement）
+- 查询
+- 关闭连接
+
+
+
+**列举Spring配置中常用的重要注解**
+
+- @Autowired
+
+@Component ：标准一个普通的spring Bean类。 @Repository：标注一个DAO组件类。 @Service：标注一个业务逻辑组件类。 
+
+
+
+**SpringMVC 常用的注解**
+
+@controller
+
+@autowired
+
+@RequestMapping
+
+ 说出 Spring MVC 常用的 5 个注解:
+  @RequestMapping 、 @PathVariable 、 @RequestParam 、 @RequestBoy 、@ResponseBody
+
+
+
+**AOP里面重要的几个名词概念解释：** 
+
+切面（Aspect）： 一个关注点的模块化，这个关注点可能会横切多个对象。事务管理是J2EE应用中一个关于横切关注点的很好的例子。 在Spring AOP中，切面可以使用通用类（基于模式的风格） 或者在普通类中以 @Aspect 注解（@AspectJ风格）来实现。 
+
+
+
+连接点（Joinpoint）： 在程序执行过程中某个特定的点，比如某方法调用的时候或者处理异常的时候。 在Spring AOP中，一个连接点 总是 代表一个方法的执行。 通过声明一个org.aspectj.lang.JoinPoint类型的参数可以使通知（Advice）的主体部分获得连接点信息。 
+
+
+
+通知（Advice）： 在切面的某个特定的连接点（Joinpoint）上执行的动作。通知有各种类型，其中包括“around”、“before”和“after”等通知。 通知的类型将在后面部分进行讨论。许多AOP框架，包括Spring，都是以拦截器做通知模型， 并维护一个以连接点为中心的拦截器链。 
+
+
+
+切入点（Pointcut）： 匹配连接点（Joinpoint）的断言。通知和一个切入点表达式关联，并在满足这个切入点的连接点上运行（例如，当执行某个特定名称的方法时）。 切入点表达式如何和连接点匹配是AOP的核心：Spring缺省使用AspectJ切入点语法。 
+
+
+
+引入（Introduction）： （也被称为内部类型声明（inter-type declaration））。声明额外的方法或者某个类型的字段。 Spring允许引入新的接口（以及一个对应的实现）到任何被代理的对象。 例如，你可以使用一个引入来使bean实现 IsModified 接口，以便简化缓存机制。 
+
+
+
+目标对象（Target Object）： 被一个或者多个切面（aspect）所通知（advise）的对象。也有人把它叫做 被通知（advised） 对象。 既然Spring AOP是通过运行时代理实现的，这个对象永远是一个 被代理（proxied） 对象。 
+
+
+
+AOP代理（AOP Proxy）： AOP框架创建的对象，用来实现切面契约（aspect contract）（包括通知方法执行等功能）。 在Spring中，AOP代理可以是JDK动态代理或者CGLIB代理。 注意：Spring 2.0最新引入的基于模式（schema-based）风格和@AspectJ注解风格的切面声明，对于使用这些风格的用户来说，代理的创建是透明的。 
+
+织入（Weaving）： 把切面（aspect）连接到其它的应用程序类型或者对象上，并创建一个被通知（advised）的对象。 这些可以在编译时（例如使用AspectJ编译器），类加载时和运行时完成。 Spring和其他纯Java AOP框架一样，在运行时完成织入。 
+
+
+
+通知的类型： 
+
+前置通知（Before advice）： 在某连接点（join point）之前执行的通知，但这个通知不能阻止连接点前的执行（除非它抛出一个异常）。 
+
+返回后通知（After returning advice）： 在某连接点（join point）正常完成后执行的通知：例如，一个方法没有抛出任何异常，正常返回。 
+
+抛出异常后通知（After throwing advice）： 在方法抛出异常退出时执行的通知。 
+
+后通知（After (finally) advice）： 当某连接点退出的时候执行的通知（不论是正常返回还是异常退出）。 
+
+环绕通知（Around Advice）： 包围一个连接点（join point）的通知，如方法调用。这是最强大的一种通知类型。 环绕通知可以在方法调用前后完成自定义的行为。它也会选择是否继续执行连接点或直接返回它们自己的返回值或抛出异常来结束执行。 
+
+环绕通知是最常用的一种通知类型。大部分基于拦截的AOP框架，例如Nanning和JBoss4，都只提供环绕通知。 
+
+切入点（pointcut）和连接点（join point）匹配的概念是AOP的关键，这使得AOP不同于其它仅仅提供拦截功能的旧技术。 切入点使得定位通知（advice）可独立于OO层次。 例如，一个提供声明式事务管理的around通知可以被应用到一组横跨多个对象中的方法上（例如服务层的所有业务操作）。
+
+
+
+### spring mvc
+
+原理，request流程，生命周期
+
+![](https://img-blog.csdn.net/20170109163524948?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXhmbG92ZWdzMjAxMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+
+[springMVC的生命周期](https://blog.csdn.net/l_blackeagle/article/details/61926695 "springMVC的生命周期 - l_blackeagle的博客 - CSDN博客") 相比于之前书上看到的多了 **处理器适配器 **
+
+
+
+
+
+[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
+
+
+
+**SpringMvc怎么和AJAX相互调用的**
+
+  通过Jackson框架就可以把Java里面的对象直接转化成Js可以识别的Json对象
+
+  具体步骤如下:
+
+1. 加入Jackson.jar
+2. 在配置文件中配置json的映射
+3. 在接受Ajax方法里面可以直接返回Object，List等，但方法前面要加上`@ResponseBody`注解
+
+
+
+**当一个方法向AJAX返回特殊对象,譬如Object,List等,需要做什么处理**
+
+要加上@ResponseBody注解
+
+
+
+如何使用 SpringMVC 完成 JSON 操作：
+  ①. 配置 MappingJacksonHttpMessageConverter
+  ②. 使用 @RequestBody 注解或 ResponseEntity 作为返回值
+
+
+
+请你谈谈SSM整合：
+
+
+
+
+
+**项目中异常如何处理**？
+
+Spring MVC异常处理器。
+
+- 在`controller`中统一处理异常，调用业务逻辑`service`时使用`try-catch`包围 （不推荐）
+- 基于异常类（自定义），即针对某类异常。(需要使用@ResponseState注解对自定义异常类进行标注)
+- 基于控制器（`controller`），即针对某个控制器。（在控制器中增加一个异常处理方法，并使用`@ExceptionHandler`标注）
+- 全局异常处理
+
+[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
+
+
+
+[SpringMvc面试题 - t0404的博客 - CSDN博客](https://blog.csdn.net/t0404/article/details/51945003 "SpringMvc面试题 - t0404的博客 - CSDN博客")
+
+
+
+### spring Security
+
+
+
+
+
+
+
+
+
+### Spring Data
+
+
+
+spring data 与 spring data jpa 的区别？
+
+
+
+
+
+### Spring事务
+
+
+
+[可能是最漂亮的Spring事务管理详解](https://juejin.im/post/5b00c52ef265da0b95276091)
+
+[Spring编程式和声明式事务实例讲解](https://juejin.im/post/5b010f27518825426539ba38)
+
+其中事务管理暂时不懂，当下记住如何使用即可，比如记住声明式事务方式之一的 **基于 @Transactional 的全注解方式：** 将声明式事务管理简化到了极致。开发人员只需在配置文件中加上一行启用相关后处理 Bean 的配置，然后在需要实施事务管理的方法或者类上使用 @Transactional 指定事务规则即可实现事务管理，而且功能也不必其他方式逊色。
+
+Transactional 的读法。
+
+
+
+### Spring Boot（重点）
+
+
+
+
+
+### Spring Cloud（重点）
+
+
+
+
+
+## Mybatis
+
+
+
+持久化
+
+分页
+
+批量处理
+
+
+
+[Mybatis学习记录 - 掘金](https://juejin.im/post/5c12330a6fb9a04a016432e0?utm_source=gold_browser_extension "Mybatis学习记录 - 掘金")
+
+
+
+简单介绍下你对mybatis的理解
+
+MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。
+
+- 它是一个持久化框架
+- 它支持sql、存储过程、高级映射
+- 它支持手动设置参数并且分装结果集
+- 它支持xml和注解两种配置方式
+
+
+
+**MyBatis中使用#和$书写占位符有什么区别？**
+答：`#`将传入的数据都当成一个字符串，会对传入的数据自动加上引号；`$`将传入的数据直接显示生成在SQL中。注意：使用`$`占位符可能会导致SQL注射攻击，能用`#`的地方就不要使用`$`，写order by子句的时候应该用`$`而不是`#`。
+
+
+
+**MyBatis中的动态SQL是什么意思？**
+答：对于一些复杂的查询，我们可能会指定多个查询条件，但是这些条件可能存在也可能不存在，例如在58同城上面找房子，我们可能会指定面积、楼层和所在位置来查找房源，也可能会指定面积、价格、户型和所在位置来查找房源，此时就需要根据用户指定的条件动态生成SQL语句。如果不使用持久层框架我们可能需要自己拼装SQL语句，还好MyBatis提供了动态SQL的功能来解决这个问题。MyBatis中用于实现动态SQL的元素主要有：
+
+- if
+- choose / when / otherwise
+- trim
+- where
+- set
+- foreach
+
+
+
+**Mybatis 的编程步骤是什么样的？**
+1、创建 SqlSessionFactory
+2、通过 SqlSessionFactory 创建 SqlSession
+3、通过 sqlsession 执行数据库操作
+4、调用 session.commit()提交事务
+5、调用 session.close()关闭会话 
 
 
 
@@ -1614,13 +1995,17 @@ update user set age = 18, version = version + 1 where id = #{id} and version = #
 
 
 
-[重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园](http://www.voidcn.com/article/p-yttjumru-bsg.html "重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园") ⭐
-
-[浅谈数据库乐观锁和悲观锁 - 简书](https://www.jianshu.com/p/39d8b7437b0b "浅谈数据库乐观锁和悲观锁 - 简书")
-
-[JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide/blob/master/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87%E4%B9%8B%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.md "JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide")
-
-[事务隔离级别_百度百科](https://baike.baidu.com/item/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB "事务隔离级别_百度百科")
+> 参考：
+>
+> [重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园](http://www.voidcn.com/article/p-yttjumru-bsg.html "重新理解mysql的锁、事务隔离级别及事务传播行为 - 程序园") ⭐
+>
+> [浅谈数据库乐观锁和悲观锁 - 简书](https://www.jianshu.com/p/39d8b7437b0b "浅谈数据库乐观锁和悲观锁 - 简书")
+>
+> [JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide/blob/master/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87%E4%B9%8B%E4%B9%90%E8%A7%82%E9%94%81%E4%B8%8E%E6%82%B2%E8%A7%82%E9%94%81.md "JavaGuide/面试必备之乐观锁与悲观锁.md at master · Snailclimb/JavaGuide")
+>
+> [事务隔离级别_百度百科](https://baike.baidu.com/item/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB "事务隔离级别_百度百科")
+>
+> [为什么开发人员必须要了解数据库锁？- 51CTO](https://mp.weixin.qq.com/s?__biz=MjM5ODI5Njc2MA==&mid=2655819140&idx=1&sn=b4c4e3f3681e5915b537f9485b27f733&chksm=bd74d8538a03514570c5d3ebcf02c2f084c227c0d9bfbf5534518615fd9752f63621c9d887a0&mpshare=1&scene=24&srcid=1028j4zeXeLyoCVs9d1pRn4m#rd) 
 
 > 详见各链接，更深入的解释这里没有摘抄。
 
@@ -1783,6 +2168,7 @@ MySQL 查询优化器根据统计信息, 估算 SQL 要查找到结果集需要�
 
 > - [MySQL 性能优化神器 Explain 使用分析 - 后台开发 - SegmentFault 思否](https://segmentfault.com/a/1190000008131735 "MySQL 性能优化神器 Explain 使用分析 - 后台开发 - SegmentFault 思否") ⭐
 > - [读懂 MySQL 执行计划 - 文章 - 伯乐在线](http://blog.jobbole.com/112877/ "读懂 MySQL 执行计划 - 文章 - 伯乐在线") 
+> - [老司机也必须掌握的MySQL优化指南 - 51CTO](https://mp.weixin.qq.com/s?__biz=MjM5ODI5Njc2MA==&mid=2655819377&idx=1&sn=bdb5a1c1dd757699c1e1b65c35c21d88&chksm=bd74dba68a0352b08f5fd158eaa4e0930c6dced7b8ba53cf2710e3d798fd0adc2cbe5ca62276&mpshare=1&scene=24&srcid=10287A7wmBPooxIQEaWqGASk#rd) 即讲到单表优化也讲了分库分表 ⭐
 
 
 
@@ -1954,6 +2340,11 @@ WHERE actor_id = 1 AND film_id = 1;
 
 - 第一天：搞清楚为什么要拆分，掌握拆分的原则和技巧，以及所带来的问题和解决方案。
 - 第二天：明确了数据一致性产生的原因。以及拆分后问题的**具体**解决方案。分库分表的具体解决方案。
+- 分布式系统 -> 分库 -> 分布式事务
+
+
+
+
 
 
 
@@ -2415,360 +2806,195 @@ Mycat 读写分离和自动切换机制，需要 mysql 的主从复制机制配�
 
 
 
-## Spring全家桶
 
-介绍spring
 
-[java面试](http://www.jfox.info/ "java面试")
+## 主键ID生成策略
 
-[Spring中常见面试题 | java面试](http://www.jfox.info/2018/120f4b3/ "Spring中常见面试题 | java面试")
+在分布式系统中
 
 
 
-### spring
+- UUID
+- 数据库自增
+- 雪花算法
+- 基于Redis自研
 
 
 
-[Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客](https://blog.csdn.net/weixin_37020977/article/details/81007286 "Spring 和 Spring MVC经典面试题及答案 - 林逗哥 - CSDN博客") ⭐
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/%E5%88%86%E5%B8%83%E5%BC%8Fid%E7%94%9F%E6%88%90.jpg)
 
 
 
-Spring Bean生命周期：
 
-[Spring Bean的生命周期（非常详细）](https://www.cnblogs.com/zrtqsk/p/3735273.html "Spring Bean的生命周期（非常详细） - Chandler Qian - 博客园")
 
-[Spring Bean生命周期 - 简书](https://www.jianshu.com/p/3944792a5fff "Spring Bean生命周期 - 简书") 
+## 消息队列MQ（重点）
 
-[Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园](https://www.cnblogs.com/yangang2013/p/5556049.html "Spring基础学习(三)—详解Bean(下) - ✈✈✈ - 博客园")  这里有个简单的一点的解释。
+JMS即 Java消息服务（Java Message Service），是规范。
 
-![](assets/bean装载到spring应用上下文中的典型生命过程.png)
 
 
+JMS 定义了五种不同的**消息正文格式**，以及调用的消息类型，允许你发送并接收以一些不同形式的数据，提供现有消息格式的一些级别的兼容性。
 
+- TextMessage--一个字符串对象
+- MapMessage--一套名称-值对
+- ObjectMessage--一个序列化的 Java 对象
+- BytesMessage--一个字节的数据流
+- StreamMessage -- Java 原始值的数据流 
 
 
-**spring原理：**
 
+JMS消息传递类型：
 
+- 点对点
+- 发布/订阅模式
 
-**spring中使用到的设计模式：**
 
 
+**Queue 和 Topic对比：**
 
+注意
 
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20181011210259.png)
 
-**开发中主要使用 Spring 的什么技术 ?**
-  ①. IOC 容器管理各层的组件
-  ②. 使用 AOP 配置声明式事务
-  ③. 整合其他框架.
 
 
+**共同点：** 不管是消息在 Queue 中还是在 Topic 中，消费该消息的方法都是通过实现 MessageListener接口中的 onMessage方法来消费。
 
-**什么是Spring ，它有什么特点？** 
 
-Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。 
 
- 
+与Spring整合，使用Spring提供的 JmsTemplate 类（模板类）
 
-◆轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并 且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。 
 
-◆控制反转——Spring通过一种称作控制反转（IoC）的技术促进了松耦 合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不 是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。 
 
-◆面向切面——Spring提供了面向切面编程的丰富支持，允许通过分离应用的 业务逻辑与系统级服务（例如审计（auditing）和事务（）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们 并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。 
 
-◆容器——Spring包含并管理应用对象的配置和生命周期，在这个意义上它是 一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生 成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。 
 
-◆框架——Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。 
+什么是死信？
 
- 
 
 
 
-**你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？**
 
+> [史上最透彻的 RabbitMQ 可靠消息传输实战 - 开源中国](https://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&mid=2650084014&idx=1&sn=13d7f8d1ece930b8b19c16c8bea8152d&chksm=bedac9c089ad40d61b7ce9ec21a8389cd41c34a51eb6a45c656d4d8ccf69727f18e833f8d527&mpshare=1&scene=24&srcid=0927vGaIKNHP9c5jN5gRInSh#rd)
 
 
-**什么是IoC和DI？DI是如何实现的？**
 
+## 分布式事务
 
 
-**解释一下什么叫AOP（面向切面编程）？**
-答：AOP（Aspect-Oriented Programming）指一种程序设计范型，该范型以一种称为切面（aspect）的语言构造为基础，切面是一种新的模块化机制，用来描述分散在对象、类或方法中的横切关注点（crosscutting concern）。
 
+>  存在的一些联系：分布式系统 -> 数据库分库分表 -> 分布式事务
+>
+> 描述：
+>
+> 在原来的单体应用中，订单模块想要调用库存和支付，只要调用相关的类或者接口就可以了，只有一个数据库，轻轻松松就可以把所有操作放到一个事务当中，保证不会出现扣了库存但是支付失败的情况。 
+>
+> 现在好了，系统成了分布式，原来的进程间调用变成了跨越网络的HTTP调用，这数据库也从单个数据库变成了多个独立的数据库，原来的事务肯定是不起作用了！
+>
+> 把大的业务系统查分成多个数据库势在必行， 当一个业务同时操作多个数据库的时候， 没有分布式事务是做不了的。
 
 
-**简述 AOP 和 IOC 概念**
-  AOP: Aspect Oriented Program, 面向(方面)切面的编程;Filter(过滤器)也是一种   AOP.  AOP  是一种新的方法论 ,  是对传统   OOP(Object-Oriented Programming, 面向对象编程) 的补充. AOP 的主要编程对像是切面(aspect), 而切面模块化横切关注点.可以举例通过事务说明. 
-  IOC: Invert Of Control, 控制反转. 也成为 DI(依赖注入)其思想是反转资源获取的方向. 传统的资源查找方式要求组件向容器发起请求查找资源.作为回应, 容器适时的返回资源. 而应用了 IOC 之后, 则是容器主动地将资源推送给它所管理的组件,组件所要做的仅是选择一种合适的方式来接受资源. 这种行为也被称为查找的被动形式.
 
+分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。
 
+简单的说，就是一次大的操作由不同的小操作组成，这些小的操作分布在不同的服务器上，且属于不同的应用，分布式事务需要保证这些小操作要么全部成功，要么全部失败。
 
-**IOC 容器对 Bean 的生命周期:**
-  ①. 通过构造器或工厂方法创建 Bean 实例
-  ②. 为 Bean 的属性设置值和对其他 Bean 的引用
-  ③. 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization 方法
-  ④. 调用 Bean 的初始化方法(init-method)
-  ⑤. 将Bean实例传递给Bean后置处理器的postProcessAfterInitialization 方法
-  ⑦. Bean 可以使用了
-  ⑧. 当容器关闭时, 调用 Bean 的销毁方法(destroy-method)
+本质上来说，分布式事务就是为了保证不同数据库的数据一致性。
 
 
 
-**什么是JDBC驱动？**
+分布式事务的原理很简单，它的精华就是**冻结资源**和**幂等性**。
 
-JDBC Driver 是一种实现 Java 应用与数据库交互的软件。JDBC 驱动有下面4种：
 
-1. JDBC-ODBC bridge 驱动
-2. Native-API 驱动（部分是 Java 驱动）
-3. 网络协议驱动（全部是 Java 驱动）
-4. Thin driver（全部是 Java 驱动）
 
+分布式事务涉及到的两个理论：（并明白它们之间的关系）
 
+- CAP理论：一个分布式系统不可能同时满足一致性(C:Consistency)、可用性(A: Availability)和分区容错性(P: Partition tolerance) 这三个基本要求，最多只能同时满足其中两项。
+- Base理论：是Basically Avalilable(基本可用)、Soft state(软状态)、Eventually consistent(最终一致性)三个短语的缩写；其核心思想是：即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到**最终一致性**。
+- 两者之间的关系：Base理论是对CAP中**一致性**和**可用性**权衡的结果。其来源于对大规模互联网系统和分布式**实践的总结**；是基于CAP演化而来。
 
 
 
-**使用 Java 连接数据库有哪几步？**
+> 这两个理论的相关参考：
+>
+> 阮一峰写的CAP相关文章
+>
+> 我的网易Java高级05课程笔记（详细）
 
-- 注册驱动类
-- 新建数据库连接
-- 新建语句（statement）
-- 查询
-- 关闭连接
 
 
 
-**列举Spring配置中常用的重要注解**
 
-- @Autowired
+3种柔性事务解决方案：
 
-@Component ：标准一个普通的spring Bean类。 @Repository：标注一个DAO组件类。 @Service：标注一个业务逻辑组件类。 
+- 可靠消息的最终一致性方案。特点：
+  - 可独立部署，独立伸缩（扩展性）
+  - 兼容所有实现JMS标准的MQ中间件
+  - 能降低业务系统与消息系统间的耦合性
+  - 可实现数据可靠性的前提下确保最终一致性 
+- TCC两阶段型方案。特点：
+  - 不与具体的服务框架耦合（在RPC架构中通用）
+  - 位于业务服务层，而非资源层
+  - 可以灵活选择业务资源的锁定粒度
+  - 适用于强隔离性、严格一致性要求的业务场景
+  - 适用于执行时间较短的业务
+- 最大努力通知型方案。
 
 
 
-**SpringMVC 常用的注解**
+![](http://static.roncoo.com/lecturer/e40c31c9e6a24e61806a4f3a18385b30.jpg)
 
-@controller
 
-@autowired
 
-@RequestMapping
+![](http://static.roncoo.com/lecturer/aac22af596fb4c3c8fb21f3aeba5aa17.jpg)
 
- 说出 Spring MVC 常用的 5 个注解:
-  @RequestMapping 、 @PathVariable 、 @RequestParam 、 @RequestBoy 、@ResponseBody
 
 
+![](http://static.roncoo.com/lecturer/920cf828fb644cc5854fa216b8b05c93.jpg)
 
-**AOP里面重要的几个名词概念解释：** 
 
-切面（Aspect）： 一个关注点的模块化，这个关注点可能会横切多个对象。事务管理是J2EE应用中一个关于横切关注点的很好的例子。 在Spring AOP中，切面可以使用通用类（基于模式的风格） 或者在普通类中以 @Aspect 注解（@AspectJ风格）来实现。 
 
+个人总结：
 
+- 可靠消息的最终一致性方案：利用的是Base理论，**实现方案中需要使用MQ** 
+- TCC两阶段型方案：有下面几种实现方案 
+  - 自习实现TCC
+  - 使用现有TCC框架：Atomikos，[TCC-Transaction](https://github.com/changmingxie/tcc-transaction)，Hmily等
+- 最大努力通知型方案：未知
 
-连接点（Joinpoint）： 在程序执行过程中某个特定的点，比如某方法调用的时候或者处理异常的时候。 在Spring AOP中，一个连接点 总是 代表一个方法的执行。 通过声明一个org.aspectj.lang.JoinPoint类型的参数可以使通知（Advice）的主体部分获得连接点信息。 
 
 
 
-通知（Advice）： 在切面的某个特定的连接点（Joinpoint）上执行的动作。通知有各种类型，其中包括“around”、“before”和“after”等通知。 通知的类型将在后面部分进行讨论。许多AOP框架，包括Spring，都是以拦截器做通知模型， 并维护一个以连接点为中心的拦截器链。 
 
 
 
-切入点（Pointcut）： 匹配连接点（Joinpoint）的断言。通知和一个切入点表达式关联，并在满足这个切入点的连接点上运行（例如，当执行某个特定名称的方法时）。 切入点表达式如何和连接点匹配是AOP的核心：Spring缺省使用AspectJ切入点语法。 
+> 系列文章：讲解了从序列化 -> 数据库 -> 分库分表 -> 分布式事务 的历史
+>
+> 1. [持久化：Java帝国反击战 - 码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513794&idx=1&sn=b157e7638f8601bd6d4d9c811fd8696d&chksm=80d67b01b7a1f217e6d6b5dd9a800d2b3631ab51f79453bdbdb623671df3bccd9e94b0a868c8&scene=21#wechat_redirect)
+> 2. [Java帝国之宫廷内斗 - 码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513810&idx=1&sn=bbdc5d1f91bc4be2e73de871f0679f90&chksm=80d67b11b7a1f207b5ab4db1e429a1eafb4efadf183bea636db59bc22d63ee005768b05b9368&scene=21#wechat_redirect)
+> 3. [Java帝国之宫廷内斗(2) - 码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513813&idx=1&sn=367c6fa224d2a82b721110611b62f5a6&chksm=80d67b16b7a1f200f48658c4f328125e86e7b4b66f5039dc334ee704a7c61242bfbf2c2e38ce&scene=21#wechat_redirect)
+> 4. [分布式的事务该怎么做？-码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665515414&idx=1&sn=0c468c090bfc563dbf6485be0c623157&chksm=80d671d5b7a1f8c3e483d1f63a117a640eda25332b8ed66d45c859c80149a7542e0612b37f8e&scene=0#rd "码农翻身") 清晰易懂的解释TCC
+>
+>
+>
+> 其它参考：
+>
+> [深入理解分布式事务 – 码农网](http://www.codeceo.com/article/distributed-transaction.html "深入理解分布式事务 – 码农网") 
+>
+> [终于有人把“TCC分布式事务”实现原理讲明白了！ - 51CTO.COM](http://developer.51cto.com/art/201811/587425.htm "终于有人把"TCC分布式事务"实现原理讲明白了！ - 51CTO.COM") 还讲到了最终一致性分布式事务
+>
+> [终于有人把“TCC分布式事务”实现原理讲明白了！ - JaJian - 博客园](http://www.cnblogs.com/jajian/p/10014145.html) 这里图片更清晰
+>
+> 未查看：
+>
+> [分布式系统事务一致性解决方案-丁浪](https://www.infoq.cn/article/solution-of-distributed-system-transaction-consistency)  他有几篇分库分表方面的好文，在上文中有引用。
 
 
 
-引入（Introduction）： （也被称为内部类型声明（inter-type declaration））。声明额外的方法或者某个类型的字段。 Spring允许引入新的接口（以及一个对应的实现）到任何被代理的对象。 例如，你可以使用一个引入来使bean实现 IsModified 接口，以便简化缓存机制。 
 
 
 
-目标对象（Target Object）： 被一个或者多个切面（aspect）所通知（advise）的对象。也有人把它叫做 被通知（advised） 对象。 既然Spring AOP是通过运行时代理实现的，这个对象永远是一个 被代理（proxied） 对象。 
 
 
-
-AOP代理（AOP Proxy）： AOP框架创建的对象，用来实现切面契约（aspect contract）（包括通知方法执行等功能）。 在Spring中，AOP代理可以是JDK动态代理或者CGLIB代理。 注意：Spring 2.0最新引入的基于模式（schema-based）风格和@AspectJ注解风格的切面声明，对于使用这些风格的用户来说，代理的创建是透明的。 
-
-织入（Weaving）： 把切面（aspect）连接到其它的应用程序类型或者对象上，并创建一个被通知（advised）的对象。 这些可以在编译时（例如使用AspectJ编译器），类加载时和运行时完成。 Spring和其他纯Java AOP框架一样，在运行时完成织入。 
-
-
-
-通知的类型： 
-
-前置通知（Before advice）： 在某连接点（join point）之前执行的通知，但这个通知不能阻止连接点前的执行（除非它抛出一个异常）。 
-
-返回后通知（After returning advice）： 在某连接点（join point）正常完成后执行的通知：例如，一个方法没有抛出任何异常，正常返回。 
-
-抛出异常后通知（After throwing advice）： 在方法抛出异常退出时执行的通知。 
-
-后通知（After (finally) advice）： 当某连接点退出的时候执行的通知（不论是正常返回还是异常退出）。 
-
-环绕通知（Around Advice）： 包围一个连接点（join point）的通知，如方法调用。这是最强大的一种通知类型。 环绕通知可以在方法调用前后完成自定义的行为。它也会选择是否继续执行连接点或直接返回它们自己的返回值或抛出异常来结束执行。 
-
-环绕通知是最常用的一种通知类型。大部分基于拦截的AOP框架，例如Nanning和JBoss4，都只提供环绕通知。 
-
-切入点（pointcut）和连接点（join point）匹配的概念是AOP的关键，这使得AOP不同于其它仅仅提供拦截功能的旧技术。 切入点使得定位通知（advice）可独立于OO层次。 例如，一个提供声明式事务管理的around通知可以被应用到一组横跨多个对象中的方法上（例如服务层的所有业务操作）。
-
-
-
-### spring mvc
-
-原理，request流程，生命周期
-
-![](https://img-blog.csdn.net/20170109163524948?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveXhmbG92ZWdzMjAxMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-
-[springMVC的生命周期](https://blog.csdn.net/l_blackeagle/article/details/61926695 "springMVC的生命周期 - l_blackeagle的博客 - CSDN博客") 相比于之前书上看到的多了 **处理器适配器 **
-
-
-
-
-
-[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
-
-
-
-**SpringMvc怎么和AJAX相互调用的**
-
-  通过Jackson框架就可以把Java里面的对象直接转化成Js可以识别的Json对象
-
-  具体步骤如下:
-
-1. 加入Jackson.jar
-
-2. 在配置文件中配置json的映射
-
-3. 在接受Ajax方法里面可以直接返回Object，List等，但方法前面要加上`@ResponseBody`注解
-
-
-
-**当一个方法向AJAX返回特殊对象,譬如Object,List等,需要做什么处理**
-
-要加上@ResponseBody注解
-
-
-
-如何使用 SpringMVC 完成 JSON 操作：
-  ①. 配置 MappingJacksonHttpMessageConverter
-  ②. 使用 @RequestBody 注解或 ResponseEntity 作为返回值
-
-
-
-请你谈谈SSM整合：
-
-
-
-
-
-**项目中异常如何处理**？
-
-Spring MVC异常处理器。
-
-- 在`controller`中统一处理异常，调用业务逻辑`service`时使用`try-catch`包围 （不推荐）
-- 基于异常类（自定义），即针对某类异常。(需要使用@ResponseState注解对自定义异常类进行标注)
-- 基于控制器（`controller`），即针对某个控制器。（在控制器中增加一个异常处理方法，并使用`@ExceptionHandler`标注）
-- 全局异常处理
-
-[Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园](https://www.cnblogs.com/zhaohongtian/p/6807100.html "Spring MVC 处理异常的3种方式 - 赵弘添 - 博客园")
-
-
-
-[SpringMvc面试题 - t0404的博客 - CSDN博客](https://blog.csdn.net/t0404/article/details/51945003 "SpringMvc面试题 - t0404的博客 - CSDN博客")
-
-
-
-### spring Security
-
-
-
-
-
-
-
-
-
-### Spring Data
-
-
-
-spring data 与 spring data jpa 的区别？
-
-
-
-
-
-### Spring事务
-
-
-
-[可能是最漂亮的Spring事务管理详解](https://juejin.im/post/5b00c52ef265da0b95276091)
-
-[Spring编程式和声明式事务实例讲解](https://juejin.im/post/5b010f27518825426539ba38)
-
-其中事务管理暂时不懂，当下记住如何使用即可，比如记住声明式事务方式之一的 **基于 @Transactional 的全注解方式：** 将声明式事务管理简化到了极致。开发人员只需在配置文件中加上一行启用相关后处理 Bean 的配置，然后在需要实施事务管理的方法或者类上使用 @Transactional 指定事务规则即可实现事务管理，而且功能也不必其他方式逊色。
-
-Transactional 的读法。
-
-
-
-### Spring Boot（重点）
-
-
-
-
-
-### Spring Cloud（重点）
-
-
-
-
-
-## Mybatis
-
-
-
-持久化
-
-分页
-
-批量处理
-
-
-
-[Mybatis学习记录 - 掘金](https://juejin.im/post/5c12330a6fb9a04a016432e0?utm_source=gold_browser_extension "Mybatis学习记录 - 掘金")
-
-
-
-简单介绍下你对mybatis的理解
-
-MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。
-
-- 它是一个持久化框架
-- 它支持sql、存储过程、高级映射
-- 它支持手动设置参数并且分装结果集
-- 它支持xml和注解两种配置方式
-
-
-
-**MyBatis中使用#和$书写占位符有什么区别？**
-答：`#`将传入的数据都当成一个字符串，会对传入的数据自动加上引号；`$`将传入的数据直接显示生成在SQL中。注意：使用`$`占位符可能会导致SQL注射攻击，能用`#`的地方就不要使用`$`，写order by子句的时候应该用`$`而不是`#`。
-
-
-
-**MyBatis中的动态SQL是什么意思？**
-答：对于一些复杂的查询，我们可能会指定多个查询条件，但是这些条件可能存在也可能不存在，例如在58同城上面找房子，我们可能会指定面积、楼层和所在位置来查找房源，也可能会指定面积、价格、户型和所在位置来查找房源，此时就需要根据用户指定的条件动态生成SQL语句。如果不使用持久层框架我们可能需要自己拼装SQL语句，还好MyBatis提供了动态SQL的功能来解决这个问题。MyBatis中用于实现动态SQL的元素主要有：
-
-- if
-- choose / when / otherwise
-- trim
-- where
-- set
-- foreach
-
-
-
-**Mybatis 的编程步骤是什么样的？**
-1、创建 SqlSessionFactory
-2、通过 SqlSessionFactory 创建 SqlSession
-3、通过 sqlsession 执行数据库操作
-4、调用 session.commit()提交事务
-5、调用 session.close()关闭会话 
 
 
 
@@ -2960,6 +3186,10 @@ Zookeeper的命名服务？
 
 [ZooKeeper学习第一期---Zookeeper简单介绍 - 开源中国](https://my.oschina.net/u/4008390/blog/2963092?nocache=1544075487274 "ZooKeeper学习第一期---Zookeeper简单介绍 - watermelon11的个人空间 - 开源中国") ⭐ 已经出到第9期，
 
+[这可能是把ZooKeeper概念讲的最清楚的一篇文章 - 51CTO.COM](http://developer.51cto.com/art/201809/583184.htm)
+
+
+
 
 
 ## Redis（重点）
@@ -3033,6 +3263,34 @@ Redis的几个主要问题：
 > [如何提高缓存命中率 - 丁浪 - 博客园](https://www.cnblogs.com/dinglang/p/6117309.html)
 >
 > [缓存在大型网站架构中的应用 - 丁浪 - 博客园](https://www.cnblogs.com/dinglang/p/6108185.html)
+
+
+
+
+
+## 分布式锁
+
+
+
+利用排他性实现，具有排他性的地方：
+
+- 文件系统：文件名必须唯一
+- 数据库： 主键，唯一约束 ，for update（数据库中也利用了锁）
+- 缓存 redis： 利用 setnx 命令
+- zookeeper：每个节点的名称必须唯一
+
+
+
+排除前两种，分布式锁主要使用下面两种方式实现：
+
+- Redis
+- Zookeeper
+
+
+
+[分布式锁概念及实现方式 - 掘金](https://juejin.im/post/5c31d4276fb9a049aa6f3b1d?utm_source=gold_browser_extension)
+
+
 
 
 
@@ -3157,162 +3415,6 @@ CAS Client：（另一台服务器）负责处理对客户端受保护资源的�
 
 
 
-## 主键ID生成策略
-
-在分布式系统中
-
-
-
-- UUID
-- 数据库自增
-- 雪花算法
-- 基于Redis自研
-
-
-
-![](https://raw.githubusercontent.com/fandean/images/master/PicGo/%E5%88%86%E5%B8%83%E5%BC%8Fid%E7%94%9F%E6%88%90.jpg)
-
-
-
-
-
-## 消息队列MQ（重点）
-
-JMS即 Java消息服务（Java Message Service），是规范。
-
-
-
-JMS 定义了五种不同的**消息正文格式**，以及调用的消息类型，允许你发送并接收以一些不同形式的数据，提供现有消息格式的一些级别的兼容性。
-
-- TextMessage--一个字符串对象
-- MapMessage--一套名称-值对
-- ObjectMessage--一个序列化的 Java 对象
-- BytesMessage--一个字节的数据流
-- StreamMessage -- Java 原始值的数据流 
-
-
-
-JMS消息传递类型：
-
-- 点对点
-- 发布/订阅模式
-
-
-
-**Queue 和 Topic对比：**
-
-注意
-
-![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20181011210259.png)
-
-
-
-**共同点：** 不管是消息在 Queue 中还是在 Topic 中，消费该消息的方法都是通过实现 MessageListener接口中的 onMessage方法来消费。
-
-
-
-与Spring整合，使用Spring提供的 JmsTemplate 类（模板类）
-
-
-
-
-
-什么是死信？
-
-
-
-
-
-
-
-## 分布式锁
-
-
-
-利用排他性实现，具有排他性的地方：
-
-- 文件系统：文件名必须唯一
-
-- 数据库： 主键，唯一约束 ，for update（数据库中也利用了锁）
-- 缓存 redis： 利用 setnx 命令
-- zookeeper：每个节点的名称必须唯一
-
-
-
-排除前两种，分布式锁主要使用下面两种方式实现：
-
-- Redis
-- Zookeeper
-
-
-
-
-
-
-
-## 分布式事务
-
-
-
-分布式事务就是指事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。
-
-简单的说，就是一次大的操作由不同的小操作组成，这些小的操作分布在不同的服务器上，且属于不同的应用，分布式事务需要保证这些小操作要么全部成功，要么全部失败。
-
-本质上来说，分布式事务就是为了保证不同数据库的数据一致性。
-
-
-
-分布式事务的原理很简单，它的精华就是**冻结资源**和**幂等性**。
-
-
-
-3种柔性事务解决方案：
-
-- 可靠消息的最终一致性方案。特点：
-  - 可独立部署，独立伸缩（扩展性）
-  - 兼容所有实现JMS标准的MQ中间件
-  - 能降低业务系统与消息系统间的耦合性
-  - 可实现数据可靠性的前提下确保最终一致性 
-- TCC两阶段型方案。特点：
-  - 不与具体的服务框架耦合（在RPC架构中通用）
-  - 位于业务服务层，而非资源层
-  - 可以灵活选择业务资源的锁定粒度
-  - 适用于强隔离性、严格一致性要求的业务场景
-  - 适用于执行时间较短的业务
-- 最大努力通知型方案。
-
-
-
-![](http://static.roncoo.com/lecturer/e40c31c9e6a24e61806a4f3a18385b30.jpg)
-
-
-
-![](http://static.roncoo.com/lecturer/aac22af596fb4c3c8fb21f3aeba5aa17.jpg)
-
-
-
-![](http://static.roncoo.com/lecturer/920cf828fb644cc5854fa216b8b05c93.jpg)
-
-
-
-
-
-> 参考：
->
-> [分布式的事务该怎么做？-码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665515414&idx=1&sn=0c468c090bfc563dbf6485be0c623157&chksm=80d671d5b7a1f8c3e483d1f63a117a640eda25332b8ed66d45c859c80149a7542e0612b37f8e&scene=0#rd "码农翻身") 清晰易懂的解释TCC
->
-> [深入理解分布式事务 – 码农网](http://www.codeceo.com/article/distributed-transaction.html "深入理解分布式事务 – 码农网") 
->
-> [终于有人把“TCC分布式事务”实现原理讲明白了！ - 51CTO.COM](http://developer.51cto.com/art/201811/587425.htm "终于有人把"TCC分布式事务"实现原理讲明白了！ - 51CTO.COM") 还讲到了最终一致性分布式事务
->
-> 未查看：
->
-> [分布式系统事务一致性解决方案](https://www.infoq.cn/article/solution-of-distributed-system-transaction-consistency)
-
-
-
-
-
 ## Nginx
 
 
@@ -3332,6 +3434,10 @@ JMS消息传递类型：
 
 
 ### 负载均衡
+
+
+
+参考：[仅需这一篇，妥妥的吃透”负载均衡” - 51CTO.COM](http://developer.51cto.com/art/201810/585029.htm)
 
 
 
