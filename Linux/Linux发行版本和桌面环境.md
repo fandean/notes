@@ -421,9 +421,9 @@ xfce有一个电源管理器，可以装上，允许您快速的控制您的屏�
 [Ubuntu下安装使用Xfce4](http://forum.ubuntu.com.cn/viewtopic.php?t=1160)
 
 1. 方式1：  
-  `sudo  apt-get  install  xfce4`  
+    `sudo  apt-get  install  xfce4`  
 2. 方式2 会多一些软件： 
-  `sudo apt-get install xubuntu-desktop`
+    `sudo apt-get install xubuntu-desktop`
 
 **Ubuntu 14.4请注意**：由于默认安装的是xfce 4.10，若想安装 xfce 4.12 
 则参考[ubuntu14.04LTS命令行安装xfce4桌面](http://blog.csdn.net/zhaihaifei/article/details/50562748)
@@ -436,8 +436,6 @@ xfce有一个电源管理器，可以装上，允许您快速的控制您的屏�
 
 
 > xfce4设置：见 xfce4设置.md 
-
-
 
 
 

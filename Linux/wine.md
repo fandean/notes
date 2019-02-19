@@ -18,7 +18,7 @@ sudo apt-get install wine1.7
 2.wine配置
 ---------------------
 
-###配置1
+### 配置1
 
 
 * 终端输入命令 ` $ winetricks`      
@@ -67,16 +67,14 @@ sudo apt-get --purge remove wine*
 在网上查找相关 问题，看不懂，后自己决定重装 ubuntu-desktop
 sudo apt-get --reinstall install ubuntu-desktop 
 重装后 谁知 与其相关的(系统自带的除外) 软件全部被卸载了。   
- 
+
 之后重装 VirtualBox 后无需其它配置就可以直接使用之前安装的Windows看来这就是保存有配置文件的好处。
 
 
 
+### 配置2 
 
-###配置2 
-
-
-####安装wine支持包  
+#### 安装wine支持包  
 
 现在，我们安装非开源（但免费）的支持包。包括微软Core Fonts、Visual C++ 运行时环境等软件包。    
 
@@ -100,14 +98,13 @@ sudo apt-get --reinstall install ubuntu-desktop
 
 
 
-
-####安装微软Office  
+#### 安装微软Office  
 
 右键点击Office 2007 的` setup.exe` 选择`Open With Windows Program Loader` 启动office安装程序。  
 
 
 
-####建立库
+#### 建立库
 
 Wine 以自己的方法实施了各种 Windows 库，但我们可以直接使用的原生 Windows 库，确保应用程序的最大的兼容性。  
 Wine 的配置工具：`winecfg`。除了其他功能外，该工具还可让我们在内置版本的库与原生版本的库之间切换。   
@@ -130,8 +127,7 @@ wine会把~/.wine/driver_c 当做C盘来使用。
 
 
 
-
-###配置3
+### 配置3
 
 * 执行winecfg 
 * 设置函式库，添加 riched20 和 riched30 
@@ -151,7 +147,7 @@ wine会把~/.wine/driver_c 当做C盘来使用。
 
 
 
-###wine 问题解决
+### wine 问题解决
 
 <http://shaoyaoju2001.blog.163.com/blog/static/136336031201042052353695/>
 

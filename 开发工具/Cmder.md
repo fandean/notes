@@ -16,9 +16,9 @@ Cmder是一个用于替换windows自带的cmd的，包含各种软件包（比�
 
 - 添加环境变量：
 
-  新建环境变量`%cmder_root%` 将其值设置为 `cmder.exe`所在路径，再将`%cmder_root%`添加到系统的`PATH`环境变量中。
+  新建环境变量`cmder_root` 将其值设置为 `cmder.exe`所在路径，再将`%cmder_root%`添加到系统的`PATH`环境变量中。
 
-- 将cmder添加到文件夹右键菜单：
+- 将cmder添加到文件夹右键菜单（即添加Cmder here）：
 
   以管理员权限打开 cmd ；切换到 cmder 的解压路径；执行 `.\cmder.exe /REGISTER ALL`，即可添加。
 
@@ -68,7 +68,7 @@ set LANG=zh_CN.UTF-8
 
 ### cmd模式和bash模式
 
-主要是经常再cmd模式下输入bash相关的命令格式，导致相关错误。
+新手可能会经常在cmd模式下输入bash相关的命令格式，导致相关错误；所以注意一下你当前在哪个模式。
 
 
 
