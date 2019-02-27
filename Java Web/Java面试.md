@@ -173,13 +173,13 @@ final 值的初始化
 
 
 
-[JavaGuide/static](https://github.com/Snailclimb/JavaGuide/blob/master/Java%E7%9B%B8%E5%85%B3/static.md "JavaGuide/static.md at master · Snailclimb/JavaGuide")
+[JavaGuide/static](https://github.com/Snailclimb/JavaGuide/blob/master/Java%E7%9B%B8%E5%85%B3/static.md "JavaGuide/static.md at master · Snailclimb/JavaGuide") 
 
 
 
 ### 创建对象有几种方式
 
-创建对象有几种方式：5种  [Java中创建对象的几种方式 ](https://blog.csdn.net/hustzw07/article/details/72518298 )
+创建对象有几种方式：5种  [Java中创建对象的几种方式](https://blog.csdn.net/hustzw07/article/details/72518298) 
 
 使用 new关键字、使用Clone方法、使用反序列化、使用Class类的newInstance方法、使用Constructor类的newInstance方法 （使用反射）。
 
@@ -216,7 +216,7 @@ StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
 
 
 - final：用于声明属性,方法和类, 分别表示属性不可变, 方法不可覆盖, 类不可继承.
-- 是异常处理语句结构的一部分，表示总是执行.
+- finally 是异常处理语句结构的一部分，表示总是执行.
 - finalize：是Object类的一个**方法**，在垃圾收集器执行的时候**会调用被回收对象的finalize方法**，可以覆盖此方法提供垃圾收集时的其他资源回收，例如关闭文件等， JVM不保证此方法总被调用。
 
 
@@ -253,7 +253,7 @@ main方法
 
 
 **Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？**
-答：Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行下取整。
+答：Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行*向下*取整。
 
 
 
@@ -278,7 +278,7 @@ main方法
 
 答：
 - 调用基本数据类型对应的包装类中的方法parseXXX(String)或valueOf(String)即可返回相应基本类型；
-- 一种方法是将基本数据类型与空字符串（”"）连接（+）即可获得其所对应的字符串；另一种方法是调用String 类中的valueOf()方法返回相应字符串
+- 一种方法是将基本数据类型与空字符串（""）连接（+）即可获得其所对应的字符串；另一种方法是调用String 类中的valueOf()方法返回相应字符串
 
 
 
@@ -286,13 +286,30 @@ main方法
 
 > 一度搞混，因为先接触C++；在牛客中收藏有相关题目。
 
-答：是值传递。Java语言的方法调用只支持参数的值传递。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。C++和C#中可以通过传引用或传输出参数来改变传入的参数的值。在C#中可以编写如下所示的代码，但是在Java中却做不到。
+答：是**值传递**。Java语言的方法调用只支持参数的值传递。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。C++和C#中可以通过传引用或传输出参数来改变传入的参数的值。在C#中可以编写如下所示的代码，但是在Java中却做不到。
 
 ```c++
-`using System;` `namespace CS01 {` `    ``class` `Program {``        ``public` `static` `void` `swap(ref ``int` `x, ref ``int` `y) {``            ``int` `temp = x;``            ``x = y;``            ``y = temp;``        ``}` `        ``public` `static` `void` `Main (string[] args) {``            ``int` `a = ``5``, b = ``10``;``            ``swap (ref a, ref b);``            ``// a = 10, b = 5;``            ``Console.WriteLine (``"a = {0}, b = {1}"``, a, b);``        ``}``    ``}``}`
+using System;
+namespace CS01 {
+    class Program {
+        public static void swap(ref int x, ref int y) {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+        public static void Main(string[] args) {
+            int a = 5,
+            b = 10;
+            swap(ref a, ref b); // a = 10, b = 5;            
+            Console.WriteLine("a = {0}, b = {1}", a, b);
+        }
+    }
+}
 ```
 
 > 说明：Java中没有传引用实在是非常的不方便，这一点在Java 8中仍然没有得到改进，正是如此在Java编写的代码中才会出现大量的Wrapper类（将需要通过方法调用修改的引用置于一个Wrapper类中，再将Wrapper对象传入方法），这样的做法只会让代码变得臃肿，尤其是让从C和C++转型为Java程序员的开发者无法容忍。
+>
+> 按照上面的说法，**发现一个问题**：上面只是说明了基本类型无法进行引用传递，而Java中对象是支持引用传递的吗？并且上面的C#代码中明明还有 `ref`字样，虽然具体不明白其含义。
 
 
 
@@ -521,7 +538,7 @@ HashMap的整体结构如下:
 
 
 
- HashMap是基于哈希表实现的，每一个元素都是一个key-value对，其内部通过单链表解决冲突问题，容量不足（超过了阈值）时，同样会自动增长。
+ HashMap是基于哈希表实现的，每一个元素都是一个key-value 对，其内部通过单链表解决冲突问题，容量不足（超过了阈值）时，同样会自动增长。
 
 HashMap是非线程安全的，只是用于单线程环境下，多线程环境下可以采用concurrent并发包下的concurrentHashMap。
 
@@ -715,79 +732,315 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 
 
-### 线程的状态（待补充）
-
-待补充：需要参考此文 [CS-Notes/Java 并发.md at master · CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E5%B9%B6%E5%8F%91.md)
+### Java中线程的状态
 
 
 
-- 新建 ：new一个线程对象t1
-- 就绪：调用 t1.start() 方法后
-- 运行：获取了CPU后，开始回调 run()
-- 阻塞：调用 wait()，join()，sleep()，yield()
-- 死亡：run() 运行结束
+>  参考此文 [CS-Notes/Java 并发.md at master · CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E5%B9%B6%E5%8F%91.md)
 
 
 
+- **新建**（New） ：创建后尚未启动（new一个线程对象t1）
 
+- **可运行**（Runnable）：可能正在运行，也可能正在等待 CPU 时间片。包含了**操作系统线程**状态中的 Running 和 Ready。即调用 `t1.start()` 方法后会出现两种情况；其中正在运行表示正在回调`run()`
 
-![](https://images2015.cnblogs.com/blog/690102/201607/690102-20160729173428903-1601306354.jpg)
+- **阻塞**（Blocking）：等待获取一个排它锁，如果其线程释放了锁就会结束此状态。（又叫锁阻塞）
 
+- **无限期等待**（Waiting）：等待其它线程显式地唤醒，否则不会被分配 CPU 时间片。
 
+  | 进入方法                                     | 退出方法                                 |
+  | -------------------------------------------- | ---------------------------------------- |
+  | 没有设置 Timeout 参数的 `Object.wait()` 方法 | `Object.notify()` / `Object.notifyAll()` |
+  | 没有设置 Timeout 参数的 `Thread.join()` 方法 | 被调用的线程执行完毕                     |
 
+- **计时等待**（Timed Waiting）：无需等待其它线程显式地唤醒，在一定时间之后会被系统自动唤醒。
 
+  | 进入方法                                   | 退出方法                                        |
+  | ------------------------------------------ | ----------------------------------------------- |
+  | `Thread.sleep()` 方法                      | 时间结束                                        |
+  | 设置了 Timeout 参数的 `Object.wait()` 方法 | 时间结束 / Object.notify() / Object.notifyAll() |
+  | 设置了 Timeout 参数的 `Thread.join()` 方法 | 时间结束 / 被调用的线程执行完毕                 |
+  调用 Thread.sleep() 方法使线程进入限期等待状态时，常常用“使一个线程睡眠”进行描述。
 
-> Object类的方法（只有**获得锁的线程**通过**同步锁对象**调用这些方法）： 
->
-> - wait() 线程等待：Object类中的wait()方法，导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 唤醒方法。
-> - notify()，notifyAll() 线程唤醒：Object类中的notify()方法，唤醒在此对象监视器上（唤醒wait set中的一条线程）等待的单个线程。如果所有线程都在此对象上等待，则会选择唤醒其中一个线程。
-> - 与每个对象具有锁一样，每个对象可以有一个线程列表，他们等待来自该信号（通知）。线程通过执行(同步锁)对象上的`wait()`方法获得这个等待列表。从那时候起，它不再执行任何其他指令，直到调用对象的notify()方法为止。
->
-> Thread中的静态方法： 
->
-> - sleep() 线程休眠：使线程转到阻塞状态，当睡眠结束后，就转为就绪（Runnable）状态。sleep()平台移植性好。
-> - Thread.yield() 线程让步：暂停当前正在执行的线程对象，把执行机会让给相同或者更高优先级的线程。
->
-> Thread类中的方法： 
->
-> - join()：使其它线程等待当前线程终止
->
->
+  调用 Object.wait() 方法使线程进入限期等待或者无限期等待时，常常用“挂起一个线程”进行描述。
 
+  睡眠和挂起是用来描述行为，而阻塞和等待用来描述状态。
 
+  **阻塞和等待的区别在于**，阻塞是被动的，它是在等待获取一个排它锁。而等待是主动的，通过调用 Thread.sleep() 和 Object.wait() 等方法进入。
 
-
-
-1、每个线程都将启动，每个线程都将运行直到完成。一系列线程以某种顺序启动并不意味着将按该顺序执行。对于任何一组启动的线程来说，调度程序不能保证其执行次序，持续时间也无法保证。
-
-2、当线程目标`run()`方法结束时该线程完成。
-
-3、一旦线程启动，它就永远不能再重新启动。只有一个新的线程可以被启动，并且只能一次。一个可运行的线程或死线程可以被重新启动。
+- **死亡**（Terminated）：可以是线程结束任务之后自己结束（`run()` 运行结束），或者产生了**异常**而结束。
 
 
 
+> #### 线程状态转换
 
+结合下面两张图进行学习
 
-**sleep() :**
+> （网上有些图感觉不好理解，经常被糊弄，比如类似`![](https://images2015.cnblogs.com/blog/690102/201607/690102-20160729173428903-1601306354.jpg)`）
 
-1. 为了让其他线程有机会执行，可以将Thread.sleep()的调用**放线程run()之内**。这样才能保证该线程执行过程中会睡眠。
-2. sleep与锁无关，线程睡眠到期自动苏醒，并返回到Runnable（可运行）状态。
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A220190227141214.png)
+
+> 注意上图中的单向箭头和双向箭头
 
 ![](https://raw.githubusercontent.com/fandean/images/master/PicGo/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png)
 
-> 小提示：sleep()中指定的时间是线程不会运行的最短时间。因此，sleep()方法不能保证该线程睡眠到期后就开始立刻执行。
+> 下面是要明白的一些方法或概念：
+>
+> **Object**的方法（只有**获得锁的线程**通过**同步锁对象**调用这些方法）： （**锁对象**的方法）
+>
+> - `wait()` 线程等待：Object类中的 wait() 方法，导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 唤醒方法（如果调用wait()方法时设置了 Timeout则时间到期也将唤醒 ）。
+> - `notify()`，notifyAll() 线程唤醒：Object类中的notify()方法，唤醒在**此对象**监视器上（唤醒`wait set`中的一条线程）等待的单个线程。如果所有线程都在此对象上等待，则会选择唤醒其中一个线程。
+> - 与每个对象具有锁一样，每个对象可以有一个线程列表，他们等待来自该信号（通知）。线程通过执行(同步锁)对象上的`wait()`方法获得这个等待列表。从那时候起，它不再执行任何其他指令，直到调用对象的notify()方法为止。
+>
+> **Thread**中的**静态方法**： 用于正在执行的线程，所以他不能是只属于某个Thread对象
+>
+> - `Thread.sleep()` 休眠当前正在执行的线程：使线程转到计时阻塞状态，当睡眠结束后，就转为可运行（Runnable）状态。`sleep()`平台移植性好。（sleep的使用详见下文）
+> - `Thread.yield()` 线程让步：暂停当前正在执行的线程对象，把执行机会让给相同或者更高优先级的线程。（yield的使用详见下文，其说法有所不同）
+>
+> **Thread对象**中的方法： 
+>
+> - `join()`：使其它线程等待当前线程终止（这样解释不好，详见下文 join详解）
+>
+> 
+>
+> 补充：
+>
+> 1、每个线程都将启动，每个线程都将运行直到完成。一系列线程以某种顺序启动并不意味着将按该顺序执行。对于任何一组启动的线程来说，调度程序不能保证其执行次序，持续时间也无法保证。
+>
+> 2、当线程目标`run()`方法结束时该线程完成。
+>
+> 3、一旦线程启动，它就永远不能再重新启动。只有一个新的线程可以被启动，并且只能一次。一个可运行的线程或死线程可以被重新启动。（不知这里是指`start()`方法还是`run()`方法，还是其它，有待确认）
 
 
 
 
 
-### 线程之间的协作
+
+
+> #### Thread.sleep() :
+
+`Thread.sleep(millisec)` 方法会休眠**当前正在执行的线程**(所以他不能是只属于某个Thread对象)，millisec 单位为毫秒。
 
 
 
-- join()
-- wait() notify() notifyAll()
-- await() signal() signalAll()
+**`sleep()` 的使用技巧：**
+
+为了让其他线程有机会执行（为什么这么说呢？），可以将`Thread.sleep()`的调用**放线程`run()`之内**。这样才能**保证该线程执行过程中会睡眠**。
+
+`sleep()` 可能会抛出 InterruptedException，因为异常不能跨线程传播回 main() 中，因此必须在本地进行处理。线程中抛出的其它异常也同样需要在本地进行处理。
+
+```java
+public void run() {
+    try {
+        Thread.sleep(3000);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+
+> **小提示**：sleep()中指定的时间是线程不是运行的最短时间。因此，sleep()方法不能保证该线程睡眠到期后就开始立刻执行。
+
+
+
+> #### yield() 
+
+对静态方法 Thread.yield() 的调用声明了当前线程已经完成了生命周期中最重要的部分，可以切换给其它线程来执行。**该方法只是对线程调度器的一个建议**，而且也只是建议具有相同优先级的其它线程可以运行。
+
+```java
+public void run() {
+    Thread.yield();
+}
+```
+
+
+
+
+
+### 线程之间的协作(摘抄)
+
+> 摘抄于：  [CS-Notes/Java 并发.md at master · CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E5%B9%B6%E5%8F%91.md)
+
+当多个线程可以一起工作去解决某个问题时，如果某些部分必须在其它部分之前完成，那么就需要对线程进行协调。（理解这句话）
+
+
+
+> #### join()
+
+**`join()`的解释和用法：**在线程中调用另一个线程的` join() `方法，会将当前线程挂起，而不是忙等待，直到目标线程结束。
+
+对于以下代码，虽然 b 线程先启动，但是因为在 b 线程中调用了 a 线程的 join() 方法，b 线程会等待 a 线程结束才继续执行，**因此最后能够保证 a 线程的输出先于 b 线程的输出**。
+
+```java
+public class JoinExample {
+
+    private class A extends Thread {
+        @Override
+        public void run() {
+            System.out.println("A");
+        }
+    }
+
+    private class B extends Thread {
+
+        private A a;
+
+        B(A a) {
+            this.a = a;
+        }
+
+        @Override
+        public void run() {
+            try {
+                a.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("B");
+        }
+    }
+
+    public void test() {
+        A a = new A();
+        B b = new B(a);
+        b.start();
+        a.start();
+    }
+    
+    public static void main(String[] args) {
+    	JoinExample example = new JoinExample();
+    	example.test();
+	}
+}
+```
+
+输出结果：
+
+```java
+A
+B
+```
+
+
+
+> #### wait() notify() notifyAll()
+
+调用 wait() 使得线程等待某个条件满足，线程在等待时会被挂起，当其他线程的运行使得这个条件满足时，其它线程会调用 notify() 或者 notifyAll() 来唤醒挂起的线程。
+
+它们都属于 Object 的一部分，而不属于 Thread。
+
+只能用在同步方法或者同步控制块中使用，否则会在运行时抛出 IllegalMonitorStateException。
+
+使用 wait() 挂起期间，线程会释放锁。这是因为，如果没有释放锁，那么其它线程就无法进入对象的同步方法或者同步控制块中，那么就无法执行 notify() 或者 notifyAll() 来唤醒挂起的线程，造成死锁。
+
+```java
+public class WaitNotifyExample {
+
+    public synchronized void before() {
+        System.out.println("before");
+        //唤醒
+        notifyAll();
+    }
+
+    public synchronized void after() {
+        try {
+            //等待
+            wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("after");
+    }
+    
+    public static void main(String[] args) {
+    	ExecutorService executorService = Executors.newCachedThreadPool();
+    	WaitNotifyExample example = new WaitNotifyExample();
+    	executorService.execute(() -> example.after());
+    	executorService.execute(() -> example.before());
+	}
+}
+```
+
+输出结果：
+
+```
+before
+after
+```
+
+
+
+> 补充一道面试题：
+>
+> #### 你是如何调用 wait（）方法的？使用 if 块还是循环？为什么？
+>
+> 答：wait() 方法应该在循环调用，因为当线程获取到 CPU 开始执行的时候，其他条件可能还没有满足，所以在处理前，循环检测条件是否满足会更好。下面是一段标准的使用 wait 和 notify 方法的代码：
+>
+> ```java
+> // The standard idiom for using the wait method
+> synchronized (obj) {
+> while (condition does not hold)//条件不满足则循环
+> obj.wait(); // (Releases lock, and reacquires on wakeup)
+> ... // Perform action appropriate to condition
+> }
+> ```
+
+
+
+**wait() 和 sleep() 的区别**
+
+- wait() 是 Object 的方法，而 sleep() 是 Thread 的静态方法；
+- wait() 会释放锁，sleep() 不会。
+
+
+
+> #### await() signal() signalAll()
+
+java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，可以在 Condition 上调用 await() 方法使线程等待，其它线程调用 signal() 或 signalAll() 方法唤醒等待的线程。
+
+相比于 wait() 这种等待方式，await() 可以指定等待的条件，因此更加灵活。
+
+使用 Lock 来获取一个 Condition 对象。
+
+```java
+public class AwaitSignalExample {
+
+    private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
+
+    public void before() {
+        lock.lock();
+        try {
+            System.out.println("before");
+            condition.signalAll();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void after() {
+        lock.lock();
+        try {
+            condition.await();
+            System.out.println("after");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+public static void main(String[] args) {
+    ExecutorService executorService = Executors.newCachedThreadPool();
+    AwaitSignalExample example = new AwaitSignalExample();
+    executorService.execute(() -> example.after());
+    executorService.execute(() -> example.before());
+}
+```
 
 
 
@@ -857,13 +1110,19 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 
 
-### volatile关键字（与某三大特性）
+
+
+
+
+### volatile关键字与Java内存模型
+
+> #### volatile关键字（与某三大特性）
 
 > volatile `['vɑːlətl] ` ：易变的；可变的；不稳定的
 
 讲解volatile关键字前先了解多线程的三大核心：（而CS-Notes中称这是内存模型的三大特性，见链接）
 
-我觉得可以这样称呼：Java内存模型在多线程下的三个特性。
+> 我觉得可以这样称呼：Java内存模型在多线程下的三个特性。
 
 **意味着**只有在多线程并发情况下才会出现
 
@@ -900,8 +1159,6 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 **顺序性：**
 
-
-
 > 这样看来，volatile和加锁都可以保证 可见性和顺序性
 
 
@@ -910,7 +1167,7 @@ SAX方式解析：**通过Handler处理类逐个依次顺序解析每个节点**
 
 
 
-volatile 关键字的应用：
+volatile关键字的示例：
 
 - 内存可见性方面的应用：控制停止线程的标记
 - 顺序性方面的应用：双重检查锁的单例模式
@@ -922,10 +1179,6 @@ volatile 关键字的应用：
 > [CS-Notes/Java 并发.md at master · CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E5%B9%B6%E5%8F%91.md) 而这里作者称这是“内存模型三大特性”
 >
 > [一篇文章看懂Java并发和线程安全（一）-技术开发专区](http://tech.it168.com/a2018/0709/3213/000003213573.shtml "一篇文章看懂Java并发和线程安全（一）-技术开发专区")
-
-
-
-### Java内存模型
 
 
 
@@ -1141,8 +1394,6 @@ volatile典型的应用场景：
 
 > 此章来源：网易云课堂：带你搞定多线程-并发编程之volatile关键字
 
-
-
 > 而在此文中：对主内存与工作内存的描述与网易老师讲的不一样，但和另一文章中讲的相同。
 
 
@@ -1208,7 +1459,7 @@ volatile典型的应用场景：
 
 
 
-### 线程同步机制
+### 线程同步机制(锁)
 
 
 
@@ -1300,6 +1551,24 @@ Java 提供了**两种锁机制**来控制多个线程对共享资源的互斥�
 
 
 
+> ### 锁是如何实现的
+
+最初设计的锁非常简单， 类似于一个boolean 变量， `boolean lock = false`。谁能抢先把这个变量改成true, 就意味着获取了这把锁。
+
+> 再后面我们会看到，redis也是使用这种方式来实现分布式锁的
+
+我运行的时候， 就去检查lock这个变量是否可以设置为true, 如果被别的家伙给抢到了（已经变成true了）， 我就在这里无限循环，拼命的抢， 除非我的时间片到了，被迫让出CPU, 但是我不会阻塞， 还是就绪状态，等待下一次的调度， 进入CPU继续抢。
+
+看到某人把它变成false, 我眼疾手快迅速出手， 终于抢到了，赶紧把lock改成true, 这把锁现在属于我了， 赶快去干活，干完活要记住把lock 改成false,  让别的家伙们去抢。
+
+我想正是由于这种无限循环的特点， 元老院把他命名为“自旋锁”吧！
+
+列位看官，可能你已经想到了， 假设有两个线程，都读到了lock == false,  都把lock 改成true, 那这个锁算谁的？
+
+这个问题元老院的大佬们早就考虑到了， 他们和操作系统（我听说还有硬件）都商量好了， 这个检测lock是否为false, 以及设置lock 为true 的操作 其实被合并了， 叫做test_and_set(lock),  操作系统郑重承诺，这是一个不可分割的原子操作， 在这个test_and_set执行的时候，总线都被锁住了， 别人不能访问内存， 即使有多个CPU在执行也不会乱掉。（也就是说，操作系统或者硬件提供了支持）
+
+
+
 
 
 ### **死锁**
@@ -1371,8 +1640,147 @@ ThreadLocal，很多地方叫做线程本地变量，也有些地方叫做线程
 
 面试问题：
 
-- 线程池的任务拒绝策略
 - 创建线程池的几个参数（手写）
+
+- 线程池的任务拒绝策略：
+
+
+
+
+
+```java
+// ThreadPoolExecutor 构造函数
+ThreadPoolExecutor(int corePoolSize, 	//线程池维护线程的最少数量
+                   int maximumPoolSize,	//线程池维护线程的最大数量
+                   long keepAliveTime, 	//线程池维护线程所允许的空闲时间
+                   TimeUnit unit,		//线程池维护线程所允许的空闲时间的单位
+                   BlockingQueue<Runnable> workQueue,	//线程池所使用的缓冲队列
+                   RejectedExecutionHandler handler		//线程池对拒绝任务的处理策略
+                   )
+```
+
+
+
+当一个任务通过execute(Runnable)方法欲添加到线程池时:
+
+1. 如果此时线程池中的数量小于corePoolSize，即使线程池中的线程都处于空闲状态，也要创建新的线程来处理被添加的任务。
+
+2. 如果此时线程池中的数量等于 corePoolSize，但是缓冲队列 workQueue未满，那么任务被放入缓冲队列。
+
+3. 如果此时线程池中的数量大于corePoolSize，缓冲队列workQueue满，并且线程池中的数量小于maximumPoolSize，建新的线程来处理被添加的任务。
+
+4. 如果此时线程池中的数量大于corePoolSize，缓冲队列workQueue满，并且线程池中的数量等于maximumPoolSize，那么通过 handler 所指定的策略来处理此任务。也就是：
+
+   处理任务的优先级为：核心线程corePoolSize、任务队列workQueue、最大线程maximumPoolSize，如果三者都满了，使用handler处理被拒绝的任务(**线程池的任务拒绝策略**)。  
+
+另外：当线程池中的线程数量大于 corePoolSize 时，如果某线程空闲时间超过 keepAliveTime，线程将被终止。这样，线程池可以动态的调整池中的线程数。
+
+
+
+> 线程池中存放的是**线程**；缓存队列中存放的是**任务**。
+
+
+
+```java
+private static class Worker implements Runnable {
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is running");
+    }
+}
+
+public static void main(String[] args) {
+    int corePoolSize = 5;
+    int maxPoolSize = 10;
+    long keepAliveTime = 5;
+    BlockingQueue < Runnable > queue = new LinkedBlockingQueue < Runnable > (10);
+
+    //拒绝策略：将抛出 RejectedExecutionException.
+    RejectedExecutionHandler handler = new ThreadPoolExecutor.AbortPolicy();
+    ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maxPoolSize, keepAliveTime, TimeUnit.SECONDS, queue, handler);
+
+    for (int i = 0; i < 100; i++) {
+        executor.execute(new Worker());
+    }
+
+    executor.shutdown();
+}
+```
+
+
+
+```java
+public class DiscardPolicyDemo {  
+
+    private static final int THREADS_SIZE = 1;  
+    private static final int CAPACITY = 1;  
+
+    public static void main(String[] args) throws Exception {  
+
+        // 创建线程池。线程池的"最大池大小"和"核心池大小"都为1(THREADS_SIZE)，"线程池"的阻塞队列容量为1(CAPACITY)。  
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(THREADS_SIZE, THREADS_SIZE, 0, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(CAPACITY)); 
+        
+        //也可这样设置拒绝策略
+        // 设置线程池的拒绝策略为"丢弃"  
+        pool.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());  
+
+        // 新建10个任务，并将它们添加到线程池中。
+        for (int i = 0; i < 10; i++) {
+            // MyRunnable 未给出
+            Runnable myrun = new MyRunnable("task-"+i);  
+            pool.execute(myrun);  
+        }
+        // 关闭线程池
+        pool.shutdown();  
+    }  
+}  
+```
+
+
+
+
+
+
+
+**线程池的任务拒绝策略**
+
+为什么有任务拒绝的情况发生？
+
+
+
+线程池有一个**任务队列**，用于缓存所有待处理的任务，正在处理的任务将从任务队列中移除。因此在任务队列长度有限的情况下就会出现新任务的拒绝处理问题，需要有一种策略来处理应该加入任务队列却因为队列已满无法加入的情况。另外在线程池关闭的时候也需要对任务加入队列操作进行额外的协调处理。
+
+RejectedExecutionHandler提供了四种方式来处理任务拒绝策略
+
+1. 直接丢弃（DiscardPolicy）
+
+   用于被拒绝任务的处理程序，默认情况下它将丢弃被拒绝的任务。
+
+2. 丢弃队列中最老的任务(DiscardOldestPolicy)。
+
+3. 抛异常(AbortPolicy)
+
+   `new ThreadPoolExecutor.AbortPolicy()`
+
+   抛出java.util.concurrent.RejectedExecutionException异常
+
+4. 将任务分给调用线程来执行(CallerRunsPolicy)。
+
+   `new ThreadPoolExecutor.CallerRunsPolicy();`
+
+   用于被拒绝任务的处理程序，它直接在 execute 方法的调用线程中运行被拒绝的任务；如果执行程序已关闭，则会丢弃该任务。
+
+
+
+创建一个Handler的示例：
+
+```java
+RejectedExecutionHandler handler = new ThreadPoolExecutor.AbortPolicy();
+```
+
+
+
+这四种策略是独立无关的，是对任务拒绝处理的四中表现形式。最简单的方式就是直接丢弃任务。但是却有两种方式，到底是该丢弃哪一个任务，比如可以丢弃当前将要加入队列的任务本身（DiscardPolicy）或者丢弃任务队列中最旧任务（DiscardOldestPolicy）。丢弃最旧任务也不是简单的丢弃最旧的任务，而是有一些额外的处理。除了丢弃任务还可以直接抛出一个异常（RejectedExecutionException），这是比较简单的方式。抛出异常的方式（AbortPolicy）尽管实现方式比较简单，但是由于抛出一个RuntimeException，因此会中断调用者的处理过程。除了抛出异常以外还可以不进入线程池执行，在这种方式（CallerRunsPolicy）中任务将由调用者线程去执行。
+
 
 
 
@@ -1381,10 +1789,14 @@ ThreadLocal，很多地方叫做线程本地变量，也有些地方叫做线程
 > [线程池  并发编程网 – ifeve.com](http://ifeve.com/thread-pools/ "线程池  并发编程网 – ifeve.com") 这里有一个更简单的实现。
 >
 > [Java ThreadPoolExecutor 线程池源码分析 - 简书](https://www.jianshu.com/p/8c772124f17e?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation "Java ThreadPoolExecutor 线程池源码分析 - 简书")
+>
+> [《Java线程池》：任务拒绝策略](https://blog.csdn.net/u010412719/article/details/52132613)
+>
+> [ThreadPoolExecutor里面4种拒绝策略（详细）](https://blog.csdn.net/pozmckaoddb/article/details/51478017)  ⭐
+>
+> [CarpenterLee/JCRecipes: Java Concurrency Recipes, 介绍Java并发相关的常见工具类。](https://github.com/CarpenterLee/JCRecipes "CarpenterLee/JCRecipes: Java Concurrency Recipes, 介绍Java并发相关的常见工具类。")
 
 
-
-[CarpenterLee/JCRecipes: Java Concurrency Recipes, 介绍Java并发相关的常见工具类。](https://github.com/CarpenterLee/JCRecipes "CarpenterLee/JCRecipes: Java Concurrency Recipes, 介绍Java并发相关的常见工具类。")
 
 
 
@@ -1467,20 +1879,28 @@ CAS算法中也涉及到自旋锁。
 
 ### 可重入锁
 
+> entrant ['entrənt] :n，新成员；adj，进入的
+>
+> Reentrant  [rɪ'entrənt] ：adj，重新进入的
 
-
+> 在线程这块知识中，可重入性常常和线程安全进行对比。所以了解一下**什么是可重入？**
+>
 > [**可重入** - 维基百科](https://zh.wikipedia.org/wiki/%E5%8F%AF%E9%87%8D%E5%85%A5)：
 >
-> 若一个程序或子程序可以“在任意时刻被中断，然后操作系统调度执行另外一段代码，这段代码又调用了该子程序不会出错”，则称其为可重入（reentrant或re-entrant）的。即当该子程序正在运行时，执行线程可以再次进入并执行它，仍然获得符合设计时预期的结果。与多线程并发执行的线程安全不同，可重入强调对单个线程执行时重新进入同一个子程序仍然是安全的。
+> 若一个程序或子程序可以“在任意时刻被中断，然后操作系统调度执行另外一段代码，这段代码又调用了该子程序不会出错”，则称其为可重入（reentrant或re-entrant）的。即当该子程序正在运行时，执行线程可以再次进入并执行它，仍然获得符合设计时预期的结果。与多线程并发执行的线程安全不同，可重入强调对**单个线程**执行时重新进入同一个子程序仍然是安全的。
 >
 > **函数可重入的条件：** （必须要了解）
 >
-> - 不在函数内使用静态或全局数据。
+> - **不在函数内使用静态或全局数据**。
 > - 不返回静态或全局数据，所有数据都由函数的调用者提供。
 > - 使用本地数据（工作内存），或者通过制作全局数据的本地拷贝来保护全局数据。
 > - 不调用不可重入函数。
 >
-> 可重入函数未必是（一般都是）线程安全的；线程安全函数未必是可重入的。详见“可重入函数 - 百科”
+> **可重入函数和线程安全之间的关系**：
+>
+> 可重入函数一定是线程安全的；线程安全函数未必是可重入的。
+>
+> 比如当一个函数使用了全局数据，此时它不是可重入函数，但是我们可以通过加锁的方式来让其达到线程安全的目的，**但是它是不可重入的**。
 
 
 
@@ -1506,15 +1926,21 @@ synchronized void setB() throws Exception{
 }
 ```
 
-上面的代码就是一个可重入锁的一个特点，如果不是可重入锁的话，setB可能不会被当前线程执行，可能造成死锁
+上面的代码就是一个可重入锁的一个特点，**如果不是可重入锁的话**，`setB()`可能不会被当前线程执行，可能造成死锁。
+
+> 这也是**为什么需要可重入锁的原因**。如果这是一个自旋锁，那么在调用`setA()`时已经获取了自旋锁，那么在其内部调用`setB()`时还要去获取自旋锁，可是这个锁已经被占用了，那么现在只能无限等待了，所以这就造成了死锁的出现。
 
 
 
-**可重入锁的底层实现原理：**
+**可重入锁的实现原理：** 
 
- 每次成功的申请锁以后，要记录下到底是谁申请的， 还要用一个**计数器**记录重入的次数， 下一次持有锁的家伙再次申请锁只是给计数器加一而已。
+每次成功的申请锁以后，要记录下到底**是谁申请的**，还要用一个**计数器**记录重入的次数，下一次**持有锁**的家伙再次申请锁只是给计数器加一而已。
 
-释放的时候也是一样， 把计数器减一， 如果等于0了才真正的释放锁。
+释放的时候也是一样，把计数器减一， 如果等于0了才真正的释放锁。
+
+> 以上因该是在原有自旋锁的实现基础上进行的解释的。我们需要知道它是让线程通过改变一个Boolean值的状态来完成释放和锁定（一个boolean值和一系列规范实现锁这个概念）。
+>
+> 可重入锁只要在这个基础上确保，只有已经获取锁的线程可以再次获取该锁并正确的释放锁（现在再理解上面的内容就明白了）
 
 可重入性就这么解决了， **但是这么多线程都在那里拼命的抢也不是办法**， 空耗CPU也是巨大的浪费啊。
 
@@ -1522,23 +1948,23 @@ synchronized void setB() throws Exception{
 
 
 
+> **理解的不够透彻**：这里是否需要先满足 函数可重入的条件呢？
+
 > 这里又联系到了之间总结的 循环与阻塞的关系。避免循环重试的方案之一是进行阻塞之后再通知
 
 
 
 `ReentrantLock`附加的其它功能：
 
-很快就有线程还抱怨说， 明明是我先发出获得锁的申请啊， 为什么隔壁老王却先拿到了锁？ 这不公平啊，不行，以后得排队， 先来先得。   好吧， 只好加上一个是否公平的参数。
+- 很快就有线程还抱怨说， 明明是我先发出获得锁的申请啊， 为什么隔壁老王却先拿到了锁？ 这不公平啊，不行，以后得排队， 先来先得。好吧， 只好加上一个是否公平的参数。
 
-还有线程说， 我是个急性子，申请锁的时候只想等待5秒钟， 5秒之内得不到锁我就放弃了， 能不能支持？  那就再加上一个参数：等待时间。
+- 还有线程说， 我是个急性子，申请锁的时候只想等待5秒钟， 5秒之内得不到锁我就放弃了， 能不能支持？  那就再加上一个参数：等待时间。
 
 
 
 **如何使用？**
 
 在JAVA环境下`ReentrantLock`和`synchronized`都是可重入锁。
-
-
 
 > 补充：
 >
@@ -1548,11 +1974,7 @@ synchronized void setB() throws Exception{
 >
 > Java 提供了两种锁机制来控制多个线程对共享资源的互斥访问，第一个是 JVM 实现的 synchronized，而另一个是 JDK 实现的 ReentrantLock。
 >
-> ReentrantLock 是 `java.util.concurrent`（J.U.C）包中的锁
-
-
-
-
+> ReentrantLock 位于 `java.util.concurrent`（J.U.C）包中
 
 
 
@@ -1564,7 +1986,7 @@ synchronized void setB() throws Exception{
 >
 > [Java多线程：synchronized的可重入性 - CieloSun - 博客园](https://www.cnblogs.com/cielosun/p/6684775.html)
 >
-> [[Java 中15种锁的介绍：公平锁，可重入锁，独享锁，互斥锁，乐观锁，分段锁，自旋锁等等 - 搜云库技术团队 - SegmentFault 思否](https://segmentfault.com/a/1190000017766364)](https://www.ctolib.com/topics-137596.html) 
+> [Java 中15种锁的介绍：公平锁，可重入锁，独享锁，互斥锁，乐观锁，分段锁，自旋锁等等 - 搜云库技术团队 - SegmentFault 思否](https://segmentfault.com/a/1190000017766364)
 >
 > [非阻塞同步算法与CAS(Compare and Swap)无锁算法 - Mainz - 博客园](https://www.cnblogs.com/Mainz/p/3546347.html)
 >
@@ -1761,7 +2183,7 @@ Synchronized关键字会让没有得到锁资源的线程进入**BLOCKED**状态
 
 **2. 什么是ABA问题？怎么解决？**
 
-当一个值从A更新成B，又更新会A，普通CAS机制会误判通过检测。
+当一个值从A更新成B，又更新回A，普通CAS机制会误判通过检测。
 
 利用版本号比较可以有效解决ABA问题。
 
@@ -1830,7 +2252,7 @@ Synchronized关键字会让没有得到锁资源的线程进入**BLOCKED**状态
 
 
 
-> 摘抄：编程世界的那把锁
+> 摘抄：[编程世界的那把锁-码农翻身](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513653&idx=1&sn=e30c18c0c1780fb3ef0cdb858ee5201e&chksm=80d67af6b7a1f3e059466302c2c04c14d097c1a5de01cf986df84d4677299542f12b974dfde3#rd)
 
 
 
@@ -1937,7 +2359,11 @@ CAS和Synchronized的区别是什么？适合什么样的场景？有什么样�
 
 
 
+Java 中能创建volatile数组吗？（为什么会有这个问题？为什么会想到要创建一个volatile数组？）
 
+
+
+>  [Java 面试知识点解析(二)——高并发编程篇 - 我没有三颗心脏 - 博客园](https://www.cnblogs.com/wmyskxz/p/9021597.html) 即多线程面试题
 
 ## 反射
 
@@ -1960,7 +2386,7 @@ Java 反射机制是一个非常强大的功能，在很多的项目比如 Sprin
 
 ## JVM
 
-[CS-Notes/Java 虚拟机.md](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E8%99%9A%E6%8B%9F%E6%9C%BA.md "CS-Notes/Java 虚拟机.md at master · CyC2018/CS-Notes") ⭐
+[CS-Notes/Java 虚拟机](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/Java%20%E8%99%9A%E6%8B%9F%E6%9C%BA.md) ⭐
 
 [fullstack-tutorial/05 Java 虚拟机.md](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/JavaArchitecture/05%20Java%20%E8%99%9A%E6%8B%9F%E6%9C%BA.md "fullstack-tutorial/05 Java 虚拟机.md at master · frank-lam/fullstack-tutorial") ⭐
 
@@ -2024,18 +2450,22 @@ JVM (JavaVirtualMachine，Java虚拟机) 是JRE的一部分。它是一个虚构
 
 
 
+![](https://raw.githubusercontent.com/fandean/images/master/PicGo/20190221114029.png)
+
+
+
 **运行时数据区域主要包括：**
 
-- 程序计数器(Program Counter)
-- Java虚拟机栈(Stack)
-- 本地方法栈(Native Stack)：与Stack类似，只不过其为Native方法服务（JNI相关）
-- Java堆(Heap)
-- 方法区(Method Area)
-  - 运行时常量池：其空间从方法区中分配，存放的为类中固定的常量信息、方法和域的引用信息。
+- **程序计数器(Program Counter)**：记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）
+- **Java虚拟机栈(Stack)**：每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，就对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。
+- **本地方法栈(Native Stack)**：与Stack类似，只不过其为Native方法服务（JNI相关）
+- **Java堆(Heap)**：所有对象都在这里分配内存，是垃圾收集的主要区域。现代的垃圾收集器基本都是采用分代收集算法，其主要的思想是针对不同类型的对象采取不同的垃圾回收算法。可以将堆分成两块：
+  - 新生代（Young Generation）
+  - 老年代（Old Generation）
+- **方法区(Method Area)**：用于存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。
+  - **运行时常量池**：其空间从方法区中分配，存放的为类中固定的常量信息、方法和域的引用信息。Class 文件中的常量池（编译器生成的字面量和符号引用）会在类加载后被放入这个区域。
 
 
-
-![](https://github.com/CyC2018/CS-Notes/raw/master/pics/85370d54-40d1-4912-bcbe-37a2481c861d.png)
 
 
 
@@ -2138,6 +2568,16 @@ JVM (JavaVirtualMachine，Java虚拟机) 是JRE的一部分。它是一个虚构
 
 
 ### 相关面试题
+
+
+
+**JRE、JDK、JVM 及 JIT 之间有什么不同？**
+
+- JRE 代表 Java 运行时（Java run-time），是运行 Java 引用所必须的。
+- JDK 代表 Java 开发工具（Java development kit），是 Java 程序的开发工具，如 Java 编译器，它也包含 JRE。JVM 代表 Java 虚拟机（Java virtual machine），它的责任是运行 Java 应用。
+- **JIT 代表即时编译**（Just In Time compilation），当代码执行的次数超过一定的阈值时，会将 Java 字节码转换为**本地代码**，如，主要的热点代码会被准换为本地代码，这样有利大幅度提高 Java 应用的性能。
+
+> 主要理解什么是 JIT
 
 
 
@@ -2449,9 +2889,33 @@ Spring Bean生命周期：
 
 
 
+
+
 **spring中使用到的设计模式：**
 
+1. 简单工厂模式: 简单工厂模式的实质是由一个工厂类根据传入的参数，动态决定应该创建哪一个产品类。 
 
+   spring中的BeanFactory就是简单工厂模式的体现，根据传入一个唯一的标识来获得bean对象
+
+2. 工厂方法模式: 通常由应用程序直接使用new创建新的对象，为了将对象的创建和使用相分离，采用工厂模式,即应用程序将对象的创建及初始化职责交给工厂对象。
+
+3. 单例模式：Spring下默认的bean均为singleton（可通过设置进行更改）
+
+4. 适配器模式：
+
+5. 包装模式
+
+6. 代理模式：spring的Proxy模式在aop中有体现
+
+7. 观察者模式：spring中Observer模式常用的地方是listener的实现。如ApplicationListener
+
+8. 策略模式
+
+9. 模板方法模式：spring中的JdbcTemplatemplate
+
+
+
+> [面试官：来给我说一下 Spring 中使用了哪些设计模式？](https://mp.weixin.qq.com/s?__biz=MzI1NDQ3MjQxNA==&mid=2247488369&idx=1&sn=cadd3d7ce84d9793dfdd26eb2d16faaa&chksm=e9c5eac0deb263d6eb53355a0d861194394d6f4250879bb129c087f0a7badefc4ff2bd5edb7c&scene=0&subscene=131&clicktime=1551234930&ascene=7&devicetype=android-27&version=2700033a&nettype=3gnet&abtest_cookie=BAABAAgACgALABMABACdhh4AI5ceAFqZHgDMmR4AAAA%3D&lang=zh_CN&pass_ticket=QZi4UhjKByXeBFpFXlp30c7wwBIHRA2AIvMN7eEuhY37fmZ31MtUB8z0CwHF6uAo&wx_header=1)
 
 
 
@@ -2809,6 +3273,12 @@ MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过�
 
 
 
+MySQL查询过程
+
+![MySQL查询过程](https://upload-images.jianshu.io/upload_images/11561958-eb2f1d7f7ea99fdc?imageMogr2/auto-orient/strip%7CimageView2/2/w/682/format/webp)
+
+
+
 存储过程可以看成是对一系列 SQL 操作的批处理。
 
 使用存储过程的好处：
@@ -2846,7 +3316,7 @@ select...distinct...order by...limit
 
 ### 事务的特性
 
-什么是事务？ACID之间的关系？并发一致性问题，导致的脏读、幻读...？详见： [CS-Notes/数据库系统原理](https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md "CS-Notes/数据库系统原理.md at master · CyC2018/CS-Notes")  
+什么是事务？ACID之间的关系？并发一致性问题，导致的脏读、幻读...？详见： [CS-Notes/数据库系统原理](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md) 
 
 **事务**指的是满足 ACID 特性的**一组操作**，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。
 
@@ -2854,20 +3324,29 @@ select...distinct...order by...limit
 
 **ACID：**具体解释见链接。
 
-- 原子性
-- 一致性
-- 隔离性
-- 持久性
+- 原子性：事务被视为不可分割的最小单元，事务的所有操作要么全部提交成功，要么全部失败回滚。
+
+  回滚可以用回滚日志来实现，回滚日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。
+
+- 一致性：数据库在事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。
+
+- 隔离性：一个事务所做的修改在最终提交以前，对其它事务是不可见的。
+
+- 持久性：一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失。
+
+  使用重做日志来保证持久性。
 
 
 
 ![](https://github.com/CyC2018/CS-Notes/raw/master/pics/6675d713-8b59-4067-ad16-fdd538d4bb43.png)
 
+![](https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8036ba3d-8de9-44aa-bf5d-1f8ca18ae89b.jpg)
+
 由上图可知，*一致性需要通过原子性和隔离性来保证*。但在**并发**情况下，**隔离性**很难保证，所以会出现并发**一致性**问题。
 
 
 
-并发一致性问题，导致的脏读、幻读...？**详见**  [CS-Notes/数据库系统原理](https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md "CS-Notes/数据库系统原理.md at master · CyC2018/CS-Notes")  
+并发一致性问题，导致的脏读、幻读...？**详见** [CS-Notes/数据库系统原理](https://github.com/CyC2018/CS-Notes/blob/master/docs/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md) 
 
 **并发一致性问题：**
 

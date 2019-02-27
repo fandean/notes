@@ -42,9 +42,20 @@ typora-root-url: ..\..\..\..\Pictures\Git-Pictures\markdown
 
    方法二：`Edit`–>`ImageTools`–>`When Insert Local Images`–> `Use Image Root Path`
 
-3. 问题场景：轻松发布到别的地方，比如CSDN博客？
+3. 问题场景：轻松发布到别的地方，比如简书？使用工具软件：PicGo
 
-   > 没有很好的方法，有人推荐用MWeb+一系列工具，但是MWeb收费。我就先上传到GitHub，然后就手动给图片加上路径。
+   > 之前的做法：有人推荐用MWeb+一系列工具，但是MWeb收费。我就先上传到GitHub，然后就手动给图片加上路径。
+
+
+
+图片上传有了新工具软件：**PicGo**
+
+PicGo使用技巧：
+
+- 可以直接将图片拖动到迷你窗口上传图片（也可尝试拖动到任务栏中的小图标）
+- 直接引用的外链图片其地址可能失效，所以建议直接**复制该图片到剪贴板**再通过PicGo上传，而非复制该图片的url地址粘贴到文章中。
+
+
 
 
 

@@ -333,7 +333,7 @@ Go to File->Settings and expand Code Style, selectJava, and add your prefixes/su
 
 高亮匹配的各种配对符号的设置路径：  
 
-​`Setting --> Editor --> Colors & Fonts（或者Color Scheme） --> General --> Code --> Matched brace`
+`Setting --> Editor --> Colors & Fonts（或者Color Scheme） --> General --> Code --> Matched brace`
 ​    
 推荐勾选 Effects --> Bordered 效果， 一个矩形框框，再为其选择一个颜色。还有就是设置背景色，也可不弄，自己摸索。
 
@@ -862,8 +862,6 @@ Facets中则可以设置当前项目所用的框架，如Hibernate和Spring，�
 - Native Terminal Plugin  :  安装后工具栏多一个图标，点击就可在当前工程目录下打开系统默认终端；还可以通过设置为其它终端，比如 git-bash，但是为啥 指定为 cmder 不行。
 - 热部署插件Jerbel：JRebel是一套JavaEE开发工具。 Jrebel 可快速实现热部署，节省了大量重启时间，提高了个人开发效率。 但是他是收费的。
 
-
-
 > 搜索：IDEA热部署
 >
 > [intelliJ Idea自带热部署和Jrebel实现热部署 - CSDN博客](https://blog.csdn.net/wei19880402/article/details/75529231 "intelliJ Idea自带热部署和Jrebel实现热部署 - CSDN博客")
@@ -875,12 +873,14 @@ Facets中则可以设置当前项目所用的框架，如Hibernate和Spring，�
 
 
 - grep console：可以方便的查找日志（在控制台右键选择带grep的项），并且可以设置不同的日志级别的显示样式（`other setting>grep console`中点击右侧的 Add 添加一个配置，调整后再将其 set as Default）。
-
 - Lombok：[☆十分钟搞懂Lombok使用与原理 - 简书](https://www.jianshu.com/p/63038c7c515a "☆十分钟搞懂Lombok使用与原理 - 简书") 
 - AceJump：快速定位光标位置
   - 第1步：`Ctrl+;` 快捷键，激活插件。此时，IDE代码编辑区会出现一个蓝色光标，然后输入你要跳转的标签。
   - 第2步，这是，IDE全屏所有你刚才输入的标签都会被高亮显示，并且在这个高亮的标签前面会出现相应的键盘字母，你按照相应提示的字母去敲击键盘就可以自动跳转了。
 - redis 插件（名字叫ledis）
+- Cloud Toolkit：（阿里云官方插件）本地应用一键部署到任何机器上，IDE 内置的命令行终端，文件上传到服务器。[Cloud Toolkit插件](https://mp.weixin.qq.com/s?__biz=MzI1NDQ3MjQxNA==&mid=2247488184&idx=1&sn=ff7c040e3759c7f3f3043fd41f2773d3&chksm=e9c5eb09deb2621fa592fc15603423c1ca93f07ddcc1dd8b1148768e8a20c27f744552c6f5c2&scene=0&subscene=131&clicktime=1551233969&ascene=7&devicetype=android-27&version=2700033a&nettype=3gnet&abtest_cookie=BAABAAgACgALABMABACdhh4AI5ceAFqZHgDMmR4AAAA%3D&lang=zh_CN&pass_ticket=QZi4UhjKByXeBFpFXlp30c7wwBIHRA2AIvMN7eEuhY37fmZ31MtUB8z0CwHF6uAo&wx_header=1)
+
+
 
 
 
