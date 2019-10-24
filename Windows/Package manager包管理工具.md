@@ -19,13 +19,35 @@
 
 之前我一直使用PortableApp来安装一些简单的程序，主要优势是可以 
 
-- 自动更新。
+- 更新方便（指需动动鼠标）
+- **操作简单**
 - 可以自定义安装路径（安装到C盘之外）。
 - 绿色软件，当重装系统后可以更方便的迁移。
 
 
 
-现在有了cmder、WSL、Docker
+安装列表：
+
+```
+GeekUninstaller
+Potplayer
+Sumatra PDF
+7-Zip
+GIMP
+LiberOffice
+Notepad2
+WinMerge
+ZoomIt
+Foxit Reader
+Rufus
+TeamViewer
+```
+
+
+
+
+
+>  现在有了cmder、WSL、Docker又多了更多选择
 
 
 
@@ -35,11 +57,7 @@
 
 Chocolatey有 Open Source、Pro(Personal)和Business(C4B)三个版本，其中Open Source是免费的。
 
-
-
-另外需要说明的是， Chocolatey 只是把官方下载路径封装到了 Chocolatey 中，所以下载源都是其官方路径 。
-
-
+另外需要说明的是， Chocolatey 只是把官方下载路径封装到了 Chocolatey 中，所以下载源都是其官方路径（这个可能会变更） 。
 
 [Installation](https://chocolatey.org/install "Installation") Chocolatey自身安装在默认位置即可。
 
@@ -53,14 +71,11 @@ Chocolatey有 Open Source、Pro(Personal)和Business(C4B)三个版本，其中Op
 choco install jdk10 -ia "INSTALLDIR=""D:\DevPrograms\Java\JDK\jdk10.0.1-x64"""
 ```
 
-
 参考官方文档：
 <https://chocolatey.org/docs/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts>
 
 如果是pro或business版本，可以使用`--install-directory`参数，参见文档：<https://chocolatey.org/docs/commands-install#installarguments>
 `--dir, --directory, --installdir, --installdirectory, --install-dir, --install-directory=VALUE`
-
-
 
 
 
@@ -70,25 +85,27 @@ choco install jdk10 -ia "INSTALLDIR=""D:\DevPrograms\Java\JDK\jdk10.0.1-x64"""
 
 ## Scoop
 
-运行于 PowerShell  之中。在 cmder 中运行没有问题。
+使用Scoop安装最佳的应用程序通常称为“便携式”应用程序：即在解压缩时独立运行的压缩程序文件，不存在更改注册表或将文件放在程序目录之外的副作用。 
 
-Github页面： [lscoop: A command-line installer for Windows.](https://github.com/lukesampson/scoop "lukesampson/scoop: A command-line installer for Windows.")
+
+
+运行于 PowerShell（命令行）  之中。在 cmder（一个命令行终端） 中运行没有问题。
+
+Github页面： [scoop: A command-line installer for Windows.](https://github.com/lukesampson/scoop "lukesampson/scoop: A command-line installer for Windows.")
 
 Scoop更专注于开源的命令行开发人员工具 。
 
 
 
-
-
-Scoop支持的软件：[scoop/bucket](https://github.com/lukesampson/scoop/tree/master/bucket "scoop/bucket at master · lukesampson/scoop")
+可以通过Scoop安装的软件：[scoop/bucket](https://github.com/lukesampson/scoop/tree/master/bucket "scoop/bucket at master · lukesampson/scoop")
 
 虽然 Scoop 的作者在项目的 GitHub Wiki 中谈到， Scoop 只是一个安装工具（installer），不应该被称为包管理器（package manager）。但是对于使用者而言，它与我们一般认为的软件包管理工具其实很是相似。 
 
 总的来说， Chocolatey 能更加全面地包办绝大多数的软件安装，适应重度需求；而 Scoop 则更加简单利落，容易自定义软件包，适应中低需求。而我恰是后者，对于像 VirtualBox、Docker for Windows 这些需要高权限的软件还是会用安装包在用户界面下自定义安装。更特殊的用户倒是更可以将 Chocolatey 和 Scoop 结合使用。 
 
-Chocolatey 的安装脚本默认要求管理员权限安装，同时非管理员安装默认路径是 `C:\ProgramData\chocoportable`，这对于非高权限用户来说不太友好（比如没有管理员权限的工作机安装会比较折腾），而 Scoop 默认仅需普通用户权限，安装路径是 `%USERPROFILE%\scoop` 则显得比较清新，不过这都是可以根据需求修改的了。 
+Chocolatey 的安装脚本默认要求管理员权限安装，同时非管理员安装默认路径是 `C:\ProgramData\chocoportable`，这对于非高权限用户来说不太友好（比如没有管理员权限的工作机安装会比较折腾），而 Scoop 默认仅需普通用户权限，安装路径是 `%USERPROFILE%\scoop` 则显得比较清新，不过这都是**可以根据需求修改**的了。 
 
-其实如果你是偏重度的用户，想尽量多的软件可以用命令行管理，又不在乎我前文说的 Chocolatey 的软件包描述文件相对复杂等缺点的话，其实可以去试试使用 Chocolatey。而如果你没那么强烈的需求，只是像我一样有一点点 “绿色软件洁癖”，同时想用命令行管理部分软件包，并且以此构建一个相对轻量的命令行环境的话，不妨可以尝试一下 PowerShell + Scoop + Cmder 这套组合。或者，Chocolatey 和 Scoop 二者一起用也是可以的。 
+其实如果你是偏重度的用户，想尽量多的软件可以用命令行管理，又不在乎我前文说的 Chocolatey 的软件包描述文件相对复杂等缺点的话，其实可以去试试使用 Chocolatey。而如果你没那么强烈的需求，只是像我一样有一点点 “**绿色软件洁癖**”，同时想用命令行管理部分软件包，并且以此构建一个**相对轻量的命令行环境**的话，不妨可以尝试一下 PowerShell + Scoop + Cmder 这套组合。或者，Chocolatey 和 Scoop 二者一起用也是可以的。 
 
 
 
@@ -98,19 +115,19 @@ Chocolatey 的安装脚本默认要求管理员权限安装，同时非管理员
 
 
 
+由于Scoop更容易配置（相比于Chocolatey），这里选择 Scoop
 
 
-由于Scoop更容易配置，这里选择 Scoop
 
-
+### 安装配置Scoop
 
 默认设置已配置为用户级别**安装的程序**和Scoop本身都位于 `C:\Users\<user>\scoop `
 
 全局安装的程序（所有用户可用）（`--global`）位于`C\ProgramData\scoop`中。可以通过环境变量更改这些设置 。
 
+所以安装时先通过配置环境变量来配置其安装路径；然后在PowerShell运行命令下载。
 
-
-#### Install Scoop to a Custom Directory
+**Install Scoop to a Custom Directory**
 
 ```
 [environment]::setEnvironmentVariable('SCOOP','D:\Scoop','User')
@@ -119,8 +136,10 @@ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 ```
 
 > 相当于在用户变量中设置  `SCOOP=D:\Scoop`
+>
+> 具体安装方法见其Github
 
-#### Configure Scoop to install global programs to a Custom Directory
+**Configure Scoop to install global programs to a Custom Directory**
 
 ```
 [environment]::setEnvironmentVariable('SCOOP_GLOBAL','D:\Scoop\GlobalScoopApps','Machine')
@@ -131,15 +150,17 @@ $env:SCOOP_GLOBAL='D:\Scoop\GlobalScoopApps'
 
 
 
+**Multi-connection downloads with aria2**
+
+scoop可通过aria2来进行多任务下载：
+
+```shell
+scoop install aria2
+```
 
 
-Scoop可以安装哪些应用程序？ 
 
-使用Scoop安装最佳的应用程序通常称为“便携式”应用程序：即在解压缩时独立运行的压缩程序文件，不存在更改注册表或将文件放在程序目录之外的副作用。 
-
-
-
-常用命令：
+### Scoop常用命令
 
 ```shell
 scoop help #查看帮助
@@ -150,13 +171,16 @@ scoop search #搜索 APP
 scoop update #更新 Scoop 自身
 scoop update appName # 更新某app
 scoop update *  # 更新所有 app （前提是需要在apps目录下操作）
+scoop status # 检查哪些软件有更新
+scoop bucket known #通过此命令列出已知所有 bucket
+scoop bucket add bucketName #添加某个 bucket
 ```
 
 
 
-对于GUI程序，scoop会自动为其在开始菜单中添加快捷方式 ，路径： `C:\Users\Fan Dean\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps`
+- **对于GUI程序**，scoop会自动为其在开始菜单中添加快捷方式 ，路径： `C:\Users\Fan Dean\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps`
 
-对于命令行程序，scoop会自动在 scoop应用安装路径下的 shims 文件夹下为其添加对应的exe程序，而shims文件夹是被添加到 PATH 变量中，所以可以直接在命令行中运行刚安装的程序。
+- **对于命令行程序**，scoop会自动在 scoop应用安装路径下的 shims 文件夹下为其添加对应的exe程序，而shims文件夹是被添加到 PATH 变量中，所以可以直接在命令行中运行刚安装的程序。
 
 
 
@@ -167,8 +191,6 @@ scoop install curl grep
 ```
 
 我们发现，下载的过程中自动下载了依赖7zip。这说明scoop会帮助我们管理程序之间的依赖。不仅如此，**下载之后的内容会自动将加入到（Path）环境变量中**。十分方便！
-
-
 
 
 
@@ -198,6 +220,31 @@ scoop install dorado/<app_name>
 
 
 
+使用时遇到的问题：
+
+由于extras bucket更新时遇到问题，我将其删除后再添加提示成功，但是它却把 main bucket及默认的bucket给删除了。通过"scoop status"检查状态时出现"These app manifests have been removed"并且下面列出了已被移除的软件名单。**那么如何将 main bucket重新添加进来？**
+
+```shell
+scoop bucket known #通过此命令列出已知所有 bucket
+
+$ scoop bucket known # 示列
+main
+extras
+versions
+nightlies
+nirsoft
+php
+nerd-fonts
+nonportable
+java
+games
+jetbrains
+
+scoop bucket add main #添加 main bucket
+```
+
+
+
 
 
 ### 已安装软件列表
@@ -210,25 +257,11 @@ scoop install dorado/<app_name>
 scoop bucket add extras
 ```
 
-
-
 ```shell
 λ scoop bucket add extras
 Checking repo... ok
 The extras bucket was added successfully.
 ```
-
-
-
-
-
-scoop可通过aria2来进行多任务下载：
-
-```shell
-scoop install aria2
-```
-
-
 
 
 
@@ -406,4 +439,43 @@ Notes
 -----
 Please restart your command line for changes to take effect.
 ```
+
+
+
+
+
+## 推荐的软件
+
+按安装方式进行分类
+
+
+
+下载exe安装包安装：
+
+- Firefox：使用scoop下载的话会出现无法更改语言和添加插件；使用PortableApp下载速度又贼慢
+
+  Firefox最新版本下载：根据此处（[latest Firefox release](https://ftp.mozilla.org/pub/firefox/releases/latest/README.txt)）说明，拼出下面的下载地址（Win64，简体中文）
+
+  ```
+  https://download.mozilla.org/?product=firefox-latest&os=win64&lang=zh-CN
+  ```
+
+- Chrome浏览器：直接在官网下载（是一个安装器），通过安装器安装的Chrome在之后更新时无需翻墙
+
+下载压缩包解压运行：
+
+- Cmder：Windows下替代cmd的字符终端
+
+- uGet：简洁无广告的下载工具（Linux上可用）
+
+通过PortableApp安装：
+
+
+
+通过Scoop安装：
+
+- geekuninstaller：著名的卸载工具，能够完全清理卸载残留
+- 
+
+
 
