@@ -22,6 +22,10 @@
 
   
 
+[5 款 Notion 模板推荐 &amp; Notion 团队专访 - 少数派](https://sspai.com/post/57092)
+
+[三个场景，带你学会使用 Notion 分栏 - 少数派](https://sspai.com/post/57110) 免费
+
 
 
 > [Notion会员 无限Block 个人 团队 制定-淘宝网](https://item.taobao.com/item.htm?id=585421128964)

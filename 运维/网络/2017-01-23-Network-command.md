@@ -84,6 +84,18 @@ Ping
 
 
 
+```bash
+# 查看帮助
+ipconfig /?
+# 查看ip地址
+ipconfig
+ipconfig /all
+# 清除系统的DNS缓存
+ipconfig /flushdns
+```
+
+
+
 
 
 ## telnet

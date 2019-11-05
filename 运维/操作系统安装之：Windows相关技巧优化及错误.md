@@ -1,5 +1,78 @@
 
 
+进入Windows安全模式的方法：
+
+- 按住Shift 点击重启（能够开机的情况）
+- 如果无法开机，则需要
+
+
+
+
+
+### 修改默认程序
+
+**避免这种情况再次发生的方法：**
+
+当你卸载一个默认程序时，在卸载之前先将其更改为非默认程序，更改成功后再卸载。
+
+
+
+[在Windows 10中通过命令行更改默认应用程序，浏览器或文件关联»Winhelponline](https://www.winhelponline.com/blog/set-default-browser-file-associations-command-line-windows-10/) 下载并使用SetuserFTA这个工具，**其他尝试了都解决不了**。问题原因该文章中也有说明。
+
+ 要将Chrome设置为默认浏览器，请运行以下命令： 
+
+```powershell
+SetuserFTA http ChromeHTML
+SetuserFTA https ChromeHTML
+SetuserFTA .htm ChromeHTML
+SetuserFTA .html ChromeHTML
+```
+
+
+
+这是一个与其相关联的文章 ：[设置文件类型关联默认应用程序命令行Windows 10 UserChoice哈希内部方法-Danysys](https://danysys.com/set-file-type-association-default-application-command-line-windows-10-userchoice-hash-internal-method/) 
+
+
+
+
+
+> ### 这是我自己的一个处理思路（但失败了）
+>
+> 
+>
+> **首先**在注册表的这里查看，当手动更改默认浏览器后的变化：
+>
+> ```
+> 计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.htm\UserChoice
+> ```
+>
+> 选择火狐后：progid=FirefoxHTML-CDFCF4B7528A39A6
+>
+> 选择Edge后：progid=AppX4hxtad77fbk3jkkeerkrm0ze94wjf3s9
+>
+> 选择无效Chrome图标后： progid=ChromeHTML.WDZD4U7YTUMULAWW5RUPFXZKXM
+>
+> **然后**我们分别导出 
+>
+> - `HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\Google Chrome.WDZD4U7YTUMULAWW5RUPFXZKXM` 下的部分注册表，命名为 hkcu_chrome_WDZD.reg。（如果发现它是错误的，则将其从注册表中删除）
+> - `HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\Google Chrome` 下的部分注册表，命名为 命名为 hkcu_chrome.reg
+>
+> **然后**分别用文本编辑器打开后发现，第一个ChromeHTML.WDZD4U7YTUMULAWW5RUPFXZKXM中指定的chrome.exe路径是错误的。
+>
+> 从注册表中删除错误的部分。
+>
+> 接着复制一份hklm_chrome.reg文件，并命名为hkcu_chrome.reg，然后将此文件中的 `HKEY_LOCAL_MACHINE`全部替换为`HKEY_CURRENT_USER`，保存文件，再双击此文件导入注册表。
+>
+> 
+>
+> > 提示导入失败：“该文件不是注册表文件”，用的是HBuilder X编辑器（用它修改后code提示编码不支持或为二进制文件）。**改用VS Code就行**。
+>
+> [如何通过修改注册表来修改默认浏览器？](https://www.iteye.com/blog/kanglecjr-2153445)
+>
+> [从根源上解决Win10修改默认应用打开方式——注册表 - 简书](https://www.jianshu.com/p/7b5a7b304c2c?isappinstalled=0)
+
+
+
 ## 常見錯誤
 
 ### coms checksum error-defaults loaded

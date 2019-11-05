@@ -300,6 +300,48 @@ clear
 
 
 
+### 正确退出
+
+我们一直是习惯于直接点击右上角的 × 来关闭程序，但是正确的退出方法应该是在cmder中输入 `exit` 来进行退出，只有这样退出历史记录才会保留，你在下次打开cmder时才可向上翻看上次历史。
+
+
+
+
+
+### 配置powershell和cmd的prompt
+
+
+
+cmd的配置见：
+
+- 方式一：
+  - 原仓库介绍  [AmrEldib/cmder-powerline-prompt: Custom prompt for Cmder on Windows](https://github.com/AmrEldib/cmder-powerline-prompt) 
+  - [Changing your command prompt to display node module and Git information like the SharePoint Conference presenters – Tahoe Ninjas](https://tahoeninjas.blog/2018/05/27/changing-your-command-prompt-to-display-node-module-and-git-information-like-the-sharepoint-conference-presenters/)  但这里介绍的更加通俗
+- 方式二：（不够健壮）
+  - [cmder-powerline-prompt](https://freesoft.dev/program/131516534) 
+- 方式三： 适用于WSL
+  - [WSL + zsh + oh-my-zsh + powerlevel9k + cmder :: William's blog](https://twasa.ml/post/wsl/)
+
+[Using cmder as integrated shell in VSCode - Winsmarts.com](https://winsmarts.com/using-cmder-as-integrated-shell-in-vscode-c3340714fe3c) 与code的结合还是建议使用插件来完成。
+
+powershell的配置见另一篇文章。
+
+
+
+
+
+### 相关图片
+
+
+
+
+
+
+
+---
+
+
+
 
 
 ### cmder无法切换路径?
@@ -355,26 +397,6 @@ cd /?
 - wiki：[Home · cmderdev/cmder Wiki](https://github.com/cmderdev/cmder/wiki "Home · cmderdev/cmder Wiki")
 
 
-
-
-
-### 智能路径切换？
-
-看下面的操作：
-
-```shell
-# 再当前路径输入 git status， 发现没有 git 仓库
-D:\Portable Software\cmder
-λ git status
-fatal: not a git repository (or any of the parent directories): .git
-
-# 切换到 c 盘
-D:\Portable Software\cmder
-λ C:
-# 然后自动就给我切换到了包含git仓库的路径？？
-C:\Users\Fan Dean\Documents\fandean.github.io (master -> origin)
-λ 
-```
 
 
 
