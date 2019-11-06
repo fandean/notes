@@ -8,7 +8,10 @@
 
 ```shell
 scoop install Ash258/WindowsTerminal
+scoop install dorado/WindowsTerminal
 ```
+
+> 使用scoop安装后，打开WT提示找不到 VCRUNTIME140_1.dll 无法继续执行代码。搜索后发现该dll位于 `C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.27629.0_x64__8wekyb3d8bbwe` 下，
 
 > 微软新推出的一个编程字体：[microsoft/cascadia-code](https://github.com/microsoft/cascadia-code)
 
@@ -71,10 +74,6 @@ scoop install Ash258/WindowsTerminal
 ```
 C:\Users\Fan Dean\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
 ```
-
-
-
-
 
  使用ColorTool可以轻松地将Windows控制台更改为所需的方案。包括对iTerm主题的支持！ 安装：
 
@@ -438,7 +437,7 @@ Colors               : {AdminIconForegroundColor, PromptBackgroundColor, PromptH
 >
 > 还可以使用 Get-ChildItemColor 模块来更改 ls 输出格式（和bash中的ls相似的格式）并上色，但Get-ChildItemColor我这直接安装不了，可以尝试去PowershellGet库中手动下载，然后放入正确的模块路径。
 >
-> 如果安装好后还需进行配置，（加入配置文件）：
+> 安装好后还需进行配置，（加入配置文件）：
 >
 > ```
 > Import-Module Get-ChildItemColor
@@ -472,7 +471,7 @@ sudo scoop install FantasqueSansMono-NF --global
 查看现有主题
 
 ```
-Set-Theme SpencerTechy  #该主题是作者定制的
+Set-Theme SpencerTechy  #该主题是个人定制的
 Set-Theme Paradox
 Set-Theme Sorin
 Set-Theme Agnoster
@@ -483,6 +482,8 @@ Set-Theme 按Tab
 ```
 
 
+
+## cmder配置
 
 
 
@@ -613,23 +614,23 @@ PowerShell -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-E
 
 
 
+可选：
+
+**cmder从顶部滑动开启：**您可能要自定义的另一件事是将Cmder置于Quake样式中，您可以使用`Ctrl +〜`键显示和隐藏它。为此，请将“ Quake”模式设置为如下所示： 勾选了 Quake Style 向下滑动 
+
+> 喜欢将动画速度设置为150毫秒，因为它比默认的300毫秒要快。
+
+为cmder配置背景图片：
+
+选定了背景图片后，如果为cmder设置了Power line，则会发现显示有些问题（蓝色部分没有显示）；（通过鼠标悬停，看到提示）此时我们需要在“背景”处修改"替换颜色索引" 值为 `#0` （默认为`*`，它会把蓝色替换掉，而我们的背景是黑色，`#0`表示的就是黑色）
 
 
 
-
-cmder配置：
-
-> 可选：
->
-> 请注意，我还突出显示了“存储”字段中的ConEmu.xml位置。稍后我们自定义ConEmu主题时，将需要此位置 。
->
->  顶部滑动开启：您可能要自定义的另一件事是将Cmder置于Quake样式中，您可以使用`Ctrl +〜`键显示和隐藏它。为此，请将“ Quake”模式设置为如下所示： 勾选了 Quake Style 向下滑动 
->
-> > ：喜欢将动画速度设置为150毫秒，因为它比默认的300毫秒要快。
+## PowerShell 的完整配置
 
 
 
-完整的 PowerShell配置文件：通过 `ise $PROFILE` 打开文件并粘贴下面的内容
+用于 PowerShell 的完整配置文件：通过 `ise $PROFILE` 打开文件并粘贴下面的内容
 
 ```powershell
 # Remove trailing '\'
