@@ -175,7 +175,7 @@ Jeklly基于Ruby，所以需要先下载安装一大堆Ruby相关的东西。
 - Github Pages：国内访问有时抽风，示例< https://fandean.github.io/ >
 - GitLab Pages：国内访问有时抽风，示例< https://faner.gitlab.io/ >
 - 码云、coding 的 pages：[Coding Pages](https://coding.net/help/doc/pages) 的文档，这是我找的一个示例 <http://liangjingkanji.coding.me/>
-- Netlify：官网在国内基本无法访问
+- Netlify：官网在国内基本无法访问。[使用 netlify 部署你的前端应用 - 掘金](https://juejin.im/post/5dc360205188255f6d42bd6f)
 - Render：国内访问缓慢
 - OpenShift
 

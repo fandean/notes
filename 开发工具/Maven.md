@@ -1,6 +1,3 @@
----
-typora-root-url: ..\..\..\..\Pictures\Git-Pictures\typora
----
 
 # Maven
 
@@ -354,7 +351,7 @@ mvn help:system
 
 比如我只在 pom.xml 文件中添加 spring-jdbc 依赖，但是我查看项目依赖时发现已经包含了其它几个必要依赖。
 
-![maven repository dependencies](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/maven repository dependencies.png)
+![maven repository dependencies](./assets/maven repository dependencies.png)
 
 
 
@@ -636,7 +633,7 @@ Error:(18, 13) java: -source 1.5 中不支持 try-with-resources
 
 
 
-![idea Java Compiler](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea Java Compiler.png)
+![idea Java Compiler](./assets/idea Java Compiler.png)
 
 > 每次新建maven项目后 target bytecode version 都会变成 1.5，如何修改该默认值？
 
@@ -770,7 +767,7 @@ Intellij idea 下使用maven管理web项目，部署运行时发现并没有将l
 
 另见图：
 
-![](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea-maven-tomcat-web_inf_lib.png)
+![](./assets/idea-maven-tomcat-web_inf_lib.png)
 
 
 
@@ -821,11 +818,11 @@ Intellij idea 下使用maven管理web项目，部署运行时发现并没有将l
 
 选择`maven-archetype-quickstart`原型。
 
-![idea-maven-java](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea-maven-java.png)
+![idea-maven-java](./assets/idea-maven-java.png)
 
 创建之后会缺少`resources`目录，需要手动创建该目录，并将其添加为资源的根目录: `右键目录 > Mark Directory as > Resources Root`。
 
-![idea-maven-add-resources](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea-maven-add-resources.png)
+![idea-maven-add-resources](./assets/idea-maven-add-resources.png)
 
 
 
@@ -874,11 +871,11 @@ pom.xml 文件中部分内容：
 
 在Idea中搜索依赖：
 
-![idea-maven-search-dependency](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea-maven-search-dependency.png)
+![idea-maven-search-dependency](./assets/idea-maven-search-dependency.png)
 
 如果搜索不到任何结果，则需要更新一下仓库索引：
 
-![](/../../../Documents/fandean.github.io/_drafts/开发工具/assets/idea-maven-update-index.png)
+![](./assets/idea-maven-update-index.png)
 
 
 
