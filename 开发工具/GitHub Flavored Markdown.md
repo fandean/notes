@@ -11,10 +11,6 @@ share: true
 
 
 
-* Kramdown table of contents
-{:toc .toc}
-
-
 
 GitHub Flavored Markdown
 ===========================
@@ -26,6 +22,7 @@ GitHub Flavored Markdown
 该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为`GitHub Flavored Markdown`。简称`GFM`，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
 
 ## 目录
+
 > markdown中生成的目录。（下面只是部分目录）
 
 * [文本](#文本)
@@ -171,6 +168,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 - 第二部分标记实际URL。
 
 >使用URL标识符能达到复用的目的，一般把全文所有的URL标识符统一放在文章末尾，这样看起来比较干净。
+>
 >>URL标识符是我起的名字，不知道是否准确。囧。。
 
 ### 链接本仓库里的URL
@@ -253,6 +251,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 
 您可以使用这个功能来标注某个项目各项任务的完成情况。
 > Tip:
+>
 > > 在GitHub的**issue**中使用该语法是可以实时点击复选框来勾选或解除勾选的，而无需修改issue原文。
 
 ## 块引用
@@ -269,6 +268,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 > > 树
 > > > 二叉树
 > > > > 平衡二叉树
+> > > >
 > > > > > 满二叉树
 
 代码高亮
@@ -381,8 +381,6 @@ GitHub中各级标题前的 `#` 与标题文字之间需要有空格，否则语
 
 
 
-
-
 ### SHA references
 
 Any reference to a commit’s [SHA-1 hash](http://en.wikipedia.org/wiki/SHA-1) will be automatically converted into a link to that commit on GitHub.
@@ -444,7 +442,6 @@ git commit -m ':toilet:'
 - [Markdown Here](http://markdown-here.com/index.html "Markdown Here")
 - [Haroopad](http://pad.haroopress.com/page.html?f=syntax)
 - [Classeur ](https://app.classeur.io/#!/)
-
 
 ***
 

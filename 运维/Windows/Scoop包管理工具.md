@@ -165,15 +165,13 @@ scoop search trash
 推荐的Bucket：
 
 - `extras`：Scoop 官方维护的一个仓库，涵盖了大部分因为种种原因不能被收录进主仓库的常用软件。地址：[lukesampson/scoop-extras](https://github.com/lukesampson/scoop-extras/tree/master/bucket)
-
 - `nirsoft`：是一个 NirSoft 开发的小工具的安装合集。NirSoft 制作了大量的（dozens and dozens）小工具，包括系统工具、网络工具、密码恢复等等，孜孜不倦、持续更新。
-
-- - Bucket 地址：[kodybrown/scoop-nirsoft](https://github.com/kodybrown/scoop-nirsoft)
+  - Bucket 地址：[kodybrown/scoop-nirsoft](https://github.com/kodybrown/scoop-nirsoft)
   - NirSoft 官网地址：[NirSoft](http://www.nirsoft.net/)
-
 - dorado（对中文支持更好）[h404bi/dorado: 🐟 A bucket of Scoop, for h404bi](https://github.com/h404bi/dorado)
-- ash258：[Ash258/scoop-Ash258: Personal bucket with wide variety of applications of all kind.](https://github.com/Ash258/scoop-Ash258)
+- ash258：[Ash258/scoop-Ash258: Personal bucket with wide variety of applications of all kind.](https://github.com/Ash258/scoop-Ash258) 
 - java：
+- nerd-fonts ：包含各种字体
 
 ```shell
 # 先添加bucket
@@ -181,6 +179,7 @@ scoop bucket add extras
 scoop bucket add nirsoft
 scoop bucket add dorado https://github.com/h404bi/dorado
 scoop bucket add Ash258 'https://github.com/Ash258/Scoop-Ash258.git'
+scoop bucket add nerd-fonts
 # 对Java开发
 scoop bucket add java
 ```
@@ -262,9 +261,9 @@ scoop bucket add extras
 λ scoop install syncthing
 ```
 
-**ImageMagick 看图软件**:
+**ImageMagick 看图软件**可以安装其替代品 GraphicsMagick
 
-
+SVN
 
 ```
 scoop install sliksvn
@@ -342,6 +341,6 @@ scoop install idea-ultimate
 
 
 ```
-
+scoop install sumatrapdf
 ```
 

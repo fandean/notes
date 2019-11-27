@@ -912,7 +912,7 @@ docker exec -t -i deamon_dave /bin/bash
 
 
 
-**注意：**如果从这个stdin中 exit，容器不会停止运行（因为它是新开一个进程）。
+**注意：**如果从这个stdin中 exit，容器不会停止运行（因为docker exec是新开了一个进程）。
 
 这也是`docker exec` 和 `docker attach` 的区别。
 
@@ -937,10 +937,6 @@ $ docker attach 243c
 ```
 
 **注意：**如果从这个stdin中 exit，会导致容器的停止。
-
-
-
-
 
 
 
@@ -1256,7 +1252,7 @@ $ docker rm -v
 
 
 
-在容器中安装程序时出现下面的问题：
+在容器`中`安装程序时出现下面的问题：
 
 ```shell
 root@31b393be04b1:/# apt-get install vi

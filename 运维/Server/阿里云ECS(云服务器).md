@@ -18,7 +18,15 @@
 
 
 
-> 2018.11.11阿里云10周年，新用户优惠， ECS 3年只需 298元
+> 2018.11.11阿里云10周年，新用户优惠， ECS 3年只需 298元。看了一下续费 80 一月。
+>
+> 所以要好好利用。
+>
+> 磁盘40GB，1核，内存2GB，1Mbps宽带，宽带计费方式 按固定宽带（感觉就是不限制流量)
+>
+> 一个公网IP一个私网IP？
+
+
 
 
 
@@ -37,6 +45,28 @@
 找到公网 ip ，使用新密码连接。
 
 
+
+> 填入密码后还是各种出错？
+>
+> 使用 Bitvise SSH Client 连接出错，但使用putty可以，然后尝试下载了mRemoteNG发现也可以，但是用习惯了 Bitvise SSH Client ，所以到其官网下载最新版本，安装后问题解决。最初的错误提示为：
+>
+> ```
+> The SSH2 session has terminated with error. Reason: Error in component
+> session/transport/kexHandler. Error class: Flow, code: ComponentException,
+> message: Exception in component: Windows CNG (x86) with additions: AsymKey:
+> CngAgree: unexpected secretData->cbStruct.
+> 
+> SSH2会话已因错误而终止。原因：组件错误
+> 会话/传输/kexHandler。错误类：流，代码：组件异常，
+> 消息：组件中出现异常：Windows CNG（x86），添加：AsymKey:
+> CngAgree:意外的secretData->cbStruct。
+> ```
+>
+> 
+>
+> **Bitvise SSH Client** 的介绍： 我们的免费，灵活的Windows SSH客户端包括最先进的终端仿真，图形以及命令行SFTP支持，FTP到SFTP桥接，强大的隧道功能，包括通过集成代理进行动态端口转发以及对我们的远程管理SSH服务器。 如果要启动连接或到他人计算机的文件传输，正在寻找SSH客户端。则可以在任何类型的环境中免费使用Bitvise SSH客户端。 
+>
+> mRemoteNG：里面包含了一个putty，进行ssh连接时调用的是putty。注意只有新建的连接才能保存密码。
 
 
 
@@ -69,4 +99,17 @@
 
 
 在Docker中运行Mysql后再开放端口就可以访问了。
+
+
+
+## 云安全中心
+
+
+
+威胁检测 ：
+
+- 防暴力破解：
+- Web目录定义
+
+
 

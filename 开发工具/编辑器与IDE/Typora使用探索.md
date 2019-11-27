@@ -1,7 +1,3 @@
-[Typora Support ](http://support.typora.io/) 有详细的说明。查看此文会有意想不到的收获
-
-> 随着 Typora功能不断完善，部分操作可能需要更新。当前时间2019.11.08
-
 ## 基本设置
 
 我的个人设置： 文件👉偏好设置
@@ -19,12 +15,10 @@
 - markdown：
   - 语法偏好：勾选 严格模式
   - 语法扩展：勾选 高亮、图表
-  - 智能标点：输入时转换；勾选 **智能破折号** 
+  - 智能标点：输入时转换；勾选 **智能破折号** 、智能引号（双引号和单引号）
   - 代码块：勾选 显示行号、代码块自动换行
 
 
-
-设置：无论在何种输入法状态下，输入的 `` 都是英文字符。
 
 
 
@@ -40,28 +34,22 @@
 
 ## 图片
 
-
-
-相对路径的设置：
-
-```
----
-typora-root-url: ..\..\..\..\Pictures\Git-Pictures\markdown
----
-/../../../Documents/notes/开发工具/编辑器与IDE/assets/image-20191107210106946.png
-```
-
-
-
 ### 图片插入
 
-- 支持剪贴板图片插入：一个建议是，通过剪贴板插入图片时能弹出一个窗口来修改图片名称
+- 支持剪贴板图片插入：
 - 直接拖拽插入
 - 常规插入
 - 对于插入的图片，我们可以右键该图片选择：
   - 在浏览器中打开（如果该图片是非本地图片）
   - 复制到`<你在全局图片设置中指定的文件夹>`
   - 将图片复制到...
+
+
+
+> 对Typora的两个建议：
+>
+> - 在智能标点中加入 <code>`</code> 。
+> - 一个建议是，通过剪贴板插入图片时能弹出一个窗口来修改图片名称
 
 
 
@@ -406,5 +394,11 @@ body {
 
 
 
-> 空格和换行符：[Whitespace and Line Breaks](http://support.typora.io/Line-Break/)
+> 空格和换行符：[Whitespace and Line Breaks](http://support.typora.io/Line-Break/) 
+>
+> [Typora Support ](http://support.typora.io/) 有详细的说明。查看此文会有意想不到的收获
+>
+> 随着 Typora功能不断完善，部分操作可能需要更新。当前时间2019.11.08
+>
+> 👍👍👍Typora的作者是中国人 [Acknowledgement](http://support.typora.io/Acknowledgement/)
 

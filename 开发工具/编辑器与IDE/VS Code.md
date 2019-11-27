@@ -10,30 +10,56 @@ comments: true
 chare: true
 ---
 
-* Kramdown table of contents
-{:toc .toc}
+
+
 
 
 # VS Code使用笔记
 
+[Documentation for Visual Studio Code](https://code.visualstudio.com/docs) 
 
-> 在我的XUbuntu 16.04中VS Code在使用过程中会出现光标乱跳的情况。
->
-> 但在禁用所有vs code 的插件的时候，又没有发现问题。
+## First Steps
+
+To get the most out of Visual Studio Code, start by reviewing a few introductory topics:
+
+[Intro Videos](https://code.visualstudio.com/docs/getstarted/introvideos) - Begin your journey with VS Code through these introductory videos.
+
+[Setup](https://code.visualstudio.com/docs/setup/setup-overview) - Install VS Code for your platform and configure the tool set for your development needs.
+
+[User Interface](https://code.visualstudio.com/docs/getstarted/userinterface) - Introduction to the basic UI, commands, and features of the VS Code editor.
+
+[Settings](https://code.visualstudio.com/docs/getstarted/settings) - Customize VS Code for how you like to work.
+
+[Languages](https://code.visualstudio.com/docs/languages/overview) - Learn about VS Code's support for your favorite programming languages.
+
+[Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) - This tutorial gets you quickly running and debugging a Node.js web app.
+
+[Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) - Jump right in with Tips and Tricks to become a VS Code power user.
+
+[Azure](https://code.visualstudio.com/docs/azure/extensions) - VS Code is great for deploying your web applications to the cloud.
+
+[Extension API](https://code.visualstudio.com/api) - Learn how to write a VS Code extension.
+
+[Why VS Code?](https://code.visualstudio.com/docs/editor/whyvscode) - Read about the design philosophy and architecture of VS Code
 
 
 
-## User Guide  
+[Writing Java with Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial) ，**Code为Java等各种语言提供了详细的文档**
 
 
 
-1. 代码行缩进 `Ctrl+[` 、 `Ctrl+]`
-2. `Ctrl+C` 、 `Ctrl+V` 复制或剪切当前行/当前选中内容
-3. 代码格式化： `Shift+Alt+F`，或 `Ctrl+Shift+P` 后输入 `format code`
-4. **上下移动一行**： `Alt+Up` 或 `Alt+Down`
-5. **向上向下复制一行**： `Shift+Alt+Up` 或 `Shift+Alt+Down`
-6. 在当前行下边插入一行 `Ctrl+Enter`
-7. 在当前行上方插入一行 `Ctrl+Shift+Enter`
+## User Guide
+
+[Basic Editing in Visual Studio Code](https://code.visualstudio.com/docs/editor/codebasics) 
+
+1.  **触发提示** 代码补全（Ctrl + Space） ：即显示 Snippet 。（也可在设置中开启tab补全）
+2. 代码行缩进 `Ctrl+[` 、 `Ctrl+]`
+3. `Ctrl+C` 、 `Ctrl+V` 复制或剪切当前行/当前选中内容
+4. 代码格式化： `Shift+Alt+F`，或 `Ctrl+Shift+P` 后输入 `format code`
+5. **上下移动一行**： `Alt+Up` 或 `Alt+Down`
+6. **向上向下复制一行**： `Shift+Alt+Up` 或 `Shift+Alt+Down`
+7. 在当前行下边插入一行 `Ctrl+Enter`
+8. 在当前行上方插入一行 `Ctrl+Shift+Enter`
 
 
 
@@ -56,14 +82,7 @@ chare: true
 
 
 
-
-
-
-
-
-
 [Basic Editing in Visual Studio Code](https://code.visualstudio.com/docs/editor/codebasics "Basic Editing in Visual Studio Code")
-
 
 
 
@@ -127,6 +146,27 @@ chare: true
 
 
 
+### 打开文件
+
+打开文件的方式：
+
+- 单击文件，进入预览模式，此时标签页中的名字显示为 *斜体*
+- 双击文件，直接进入编辑模式，此时标签页中的名字正常显示
+
+现代编辑器默认都有一个预览模式。在预览标签页中，如果继续单击其他文件，则其他文件内容会覆盖当前预览标签页窗口中的内容；如果在预览标签页中编辑文件，则该标签页自动变为编辑模式。
+
+预览模式也可以设置中通过下面的方式关闭：
+
+```json
+"workbench.editor.enablePreview": false,
+```
+
+
+
+[ vs Code打开新的文件会覆盖窗口中的,怎么改 - SegmentFault 思否](https://segmentfault.com/q/1010000006131199)
+
+
+
 ## 设置
 
 ### 保存/自动保存
@@ -140,13 +180,177 @@ files.autoSaveDelay ： files.autoSave 的值是 afterDelay 时，就可以设�
 
 
 
+## Task 任务
+
+> [Visual Studio Code中的任务](https://code.visualstudio.com/Docs/editor/tasks#_processing-task-output-with-problem-matchers)
+
+> 看起来就像是为了更方便的让我们执行需要在终端运行的命令，你看它位于 菜单 👉终端下
+
+许多插件可以自动执行诸如整理，构建，打包，测试或部署软件系统之类的任务 ，但安装这些插件后，在对应的工程中，它们会提供一些默认的任务。（对于maven的任务现在正在开发中）。我们可以通过快捷键` Ctrl + Shift + B `或终端菜单来列出这些任务。
+
+任务有全局的也有仅用于当前工作空间的（它在项目的.vscode目录下）
+
+当然你可以自定义任务（为该工程手动创建一个任务）：
+
+菜单 👉 终端 👉 配置任务 👉 选择创建task.json文件 👉 它会提供几个模板，如果模板中没有则选择 Others。
+
+```json
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run tests",  //任务名称
+      "type": "shell",		//任务类型：shell（命令）或process
+      "command": "./scripts/test.sh",	//实际要执行的命令
+      "windows": {	//如果在win中则优先使用下面的内容
+        "command": ".\\scripts\\test.cmd"
+      },
+      "group": "test", //任务所属的 组
+      "presentation": { //定义如何在用户界面中处理输出
+         //下面表示每次执行任务都让其创建一个新的终端
+        "reveal": "always",
+        "panel": "new"
+      }
+        "options":
+        "runOptions":
+    },
+    {
+      	"label": "Client Build",
+        "type":"shell",
+      	"command": "gulp",
+      	"args": ["build"], //参数
+      	"options": { //覆盖 cwd(当前工作目录)、env(环境变量)、shell(默认shell)的值
+        "cwd": "${workspaceRoot}/client"
+      }
+    }
+  ]
+}
+```
+
+另外还有：(使用ctrl+space触发提示)
+
+- options：覆盖 cwd(当前工作目录)、env(环境变量)、shell(默认shell)的值
+- runOptions： 定义何时以及如何运行任务 
+- args：命令的参数 示例 `”args”:["folder"]`
+
+ 对于包含空格或其他特殊字符的命令和参数，Shell命令需要特殊对待 
+
+- 如果提供单个命令，那么任务系统会将命令原样传递给底层shell。如果命令需要加引号或转义才能正常运行，则该命令需要包含正确的引号或转义字符。例如，要列出包含空格的名称中的文件夹的目录，命令在bash执行应该是这样的：`ls 'folder with spaces'`。 
+
+  ```json
+  {
+    "label": "dir",
+    "type": "shell",
+    "command": "dir 'folder with spaces'"
+  }
+  ```
+
+-  如果提供了命令和参数，则如果命令或参数包含空格，则任务系统将使用单引号。对于`cmd.exe`，使用双引号。如下所示的shell命令将在PowerShell中以方式执行`dir 'folder with spaces'`。 
+
+  ```json
+  {
+    "label": "dir",
+    "type": "shell",
+    "command": "dir",
+    "args": ["folder with spaces"]
+  }
+  ```
+
+-  如果要控制如何对参数加引号，则参数可以是指定值和引用样式的文字。下面的示例使用转义而不是使用空格引号。 
+
+  ```json
+  {
+    "label": "dir",
+    "type": "shell",
+    "command": "dir",
+    "args": [
+      {
+        "value": "folder with spaces",
+        "quoting": "escape"
+      }
+    ]
+  }
+  ```
+
+> 可更改默认终端为 cmd 、bash等
+
+**控制输出行为：**
+
+同设置 ` presentation ` 的属性来控制终端行为，有如下属性：
+
+-  **reveal** ：控制是否将集成终端面板置于前面。有效值为：
+  - always - 面板总是放在最前面。这是默认值。
+  - *never* - 用户必须使用“ **视图”** >“ **终端”**命令（Ctrl +`）将终端面板显式显示在最前面 。
+  - *silent* - 仅在不扫描输出中是否有错误和警告的情况下，才将终端面板置于前面。
+- **focus**：控制终端是否获取输入焦点。默认值为`false`。
+- **echo**：控制是否在终端中回显执行的命令。默认值为`true`。
+- **showReuseMessage**：控制是否显示“终端将被任务重用，请按任意键将其关闭”消息。
+- panel：控制是否在任务运行之间共享终端实例。可能的值为：
+  - *shared*：*共享*终端，并将其他任务运行的输出添加到同一终端。
+  - *dedicated*：终端专用于特定任务。如果再次执行该任务，则将重新使用终端。但是，不同任务的输出将显示在不同终端中。
+  - *new*：该任务的每次执行都使用新的干净终端。
+- **clear**：控制在运行此任务之前是否清除终端。默认值为`false`。
+- **group**：控制是否使用拆分窗格在特定的终端组中执行任务。同一组中的任务（由字符串值指定）将使用拆分终端显示，而不是新的终端面板。
+
+
+
+## Snippets
+
+> [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
+**触发提示** 代码补全（Ctrl + Space） ：即显示 Snippet 。（也可在设置中开启tab补全）
+
+可以从 Marketplace 安装扩展从而来提供 snippets。
+
+- vscode-sinppet ：适用于多种语言。才知道还有这么个**作弊网站** [cheat.sh](https://cht.sh/)  
+- snippet-creator  ：简化 snippet的创建。 Select the code you want to create snippet from and use command `Create Snippet` from the command palette 
+
+
+
+**创建自己的 Snippets：**
+
+文件👉首选项👉用户代码片段👉选择该snippet用于哪种类型的文件或选择Global Snippets文件
+
+
+
+
 
 ## VS Code插件
+
+> 值得欣慰的时 VS Code发展速度非常快，所以...
+
+ [ Marketplace](https://marketplace.visualstudio.com/vscode) 中有大量流行插件，可以在这里搜索。但有必要记录一下插件的类型：
+
+- 代码格式：Prettier  支持多种前端语言，也包括md
+- 各种Lint，提示代码语法错误
+- 代码补全：completion 
+- Git： 补充 Git Emoji Commit 中文版
+- 文本处理、编辑增强
+- 正则表达式： **any-rule**  你要的"正则"都在这!  提供了各种现成的正则表达式
+- Java语言： 阅读code doc中对 java 支持相关的文章
+- markdown：  Markdown All in One （多观察他的Github仓库才能更多的了解到它的功能）
+- 主题： One Dark Pro（Atom）、Material Theme 就这两个，浪费时间。其他看着可以，但 md 文档达不到想要的配色，这两个是最好的。
+- snippet：相关插件
+- task：任务相关插件， Quick Task
+- 项目管理：projects manager
+- Make Hidden：可以用来隐藏项目中暂时不需要的文件夹，当然之后也可以将其显示出来。
+- Sass(scss) ： SCSS IntelliSense 
+
+
+
+
+
+
+
+- Prettier - Code formatter ：代码格式化（前端代码最好用？）
+
+
+
 [Visual Studio Code的C/C++扩展功能](https://blogs.msdn.microsoft.com/c/2016/04/18/visual-studio-code%E7%9A%84cc%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD/)  
 
 
-
-> 值得欣慰的时 VS Code发展速度非常快，所以...
 
 
 
@@ -163,17 +367,9 @@ Shows image preview in the gutter and on hover.
 
 
 
-#### TranslationToolbox
+#### Google Translator
 
-翻译
-
-使用快捷键 ctrl+alt+t or cmd+alt+t 启用TranslationToolbox扩展
-选中想要翻译的文本，并将鼠标移至其上，即可显示翻译结果
-
-#### Translator Plus
-使用Google翻译，在状态栏显示翻译结果。很棒
-
-但由于网络时好时坏，可能会显示"Waiting..."
+使用Google cn 翻译，可以在状态栏显示翻译结果，可以悬停翻译，可以…
 
 #### Google Complete Me
 
@@ -188,11 +384,22 @@ word completion
 
 Enabled for Markdown and LaTeX. 但是需要先配置以支持markdown等，见插件主页。
 
+- Path Autocomplete 、：路径、文件自动补全code或某些扩展在特定文件中已经支持
 
+  
 
 
 
 ### 文件头
+
+发现了微软退出的 docs-metadata 文档元数据 导出编辑工具
+
+Front Matter：能够快速创建和导入tag和category，更新所有文章中的tag，自动生成 slug，
+
+
+
+
+
 #### header source
 
 
@@ -251,7 +458,7 @@ Insert File-Header-Comment
 
 #### Path Intellisense
 
-自动补全路径。(必装)
+自动补全路径。
 
 
 
@@ -275,7 +482,6 @@ Insert File-Header-Comment
 #### vscode-youcompleteme
 
 与VIM中的类似。
-
 
 #### amVim
 
@@ -311,13 +517,36 @@ Open the file to view the history, and then Press F1 and select/type "Git: View 
 
 #### Git Lens
 
+好牛🐂 ， GitLens 10
 
+时间格式配置：
+
+默认： 
+
+```
+MMMM Do, YYYY h:mma		July 26th, 2018 7:18am
+MMM D, YYYY			    Jul 26, 2018
+```
+
+中国格式： 年YYYY ，月M，日D，时H，分m，秒ss
 
 
 
 ### Markdown相关插件
 
-VS Code貌似默认就带有markdown的预览功能；按`ctrl + shift + v`即可进行预览。
+VS Code默认就带有markdown的预览功能；按`ctrl + shift + v` 或 `Ctrl + K + V` 即可进行预览。
+
+关于预览，只要选对主题，基本不需要再进行渲染预览。
+
+可以自定义code的markdown主题，通过 ` "markdown.styles": [] ` 具体做法见 [editor - How can I use an online style.css on the visual studio code markdown preview? - Stack Overflow](https://stackoverflow.com/questions/32410064/how-can-i-use-an-online-style-css-on-the-visual-studio-code-markdown-preview)
+
+
+
+#### Markdown All in One
+
+自动列表，图片提示等
+
+
 
 #### Markdown Preview Enhanced
 预览效果不错，功能强。若无法预览可选择先将VC code关闭，再重新打开。
@@ -329,13 +558,13 @@ VS Code貌似默认就带有markdown的预览功能；按`ctrl + shift + v`即�
 添加图片链接： `ctrl + shift + l`    
 可先选中文字。  
 
-#### preview
-预览
+
 
 #### markdown Shortcuts
+
 功能很强的编辑markdown文件的辅助工具。
 
-
+对创建表格很有帮助
 
 
 #### Paste Image
@@ -346,7 +575,6 @@ Paste image directly from clipboard to markdown(or other file)!
 使用方法：   
 先将图片保存到剪切板    
 F1  然后输入  paste image   
-
 
 [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image "Paste Image - Visual Studio Marketplace")
 
@@ -370,8 +598,8 @@ Config Example见插件的示例。
 图片命名规范，避免日后出现重复名称： `日期-图片相关信息`
 
 #### paste image to qiniu
-截图上传七牛云插件
 
+截图上传七牛云插件
 
 #### Jekyll Snippets
 
@@ -520,7 +748,7 @@ vue tooling for vscode
 
 ### Java相关插件
 
-
+[Writing Java with Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial) ，code为Java等各种语言提供了详细的文档
 
 #### Java Extension Pack
 
@@ -557,26 +785,18 @@ vue tooling for vscode
 **颜色主题：**
 
 * One Dark Pro ：Atom's iconic One Dark theme, and one of the most downloaded themes for VS Code.
-* rocket-ui
-* Material Theme
-* Material Syntax - Dark
-* Dark+ Material
-* Material Dark Soda
-* Fresh Material
-* Solarized Dark (推荐，与VS code最配)
+
+  
 
 
-
-
-推荐： Material Theme
-
-> 搜索 "Material"  (材料)相关的主题
 
 **主题图标：**
 
-VS code默认为 "seti"
+VS code默认为 "seti"，推荐 vscode-icons
 
-可以考虑：Material Icon Theme
+
+
+
 
 
 

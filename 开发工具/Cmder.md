@@ -218,8 +218,11 @@ Windows系统的分区全部挂载于Linux子系统的 `/mnt` 目录
 $ ls /mnt
 c  d  e  f  g
 ```
+这表示可用`/mnt/c` 来访问 C: 盘；这里可能还需要进行一些微调（例如创建从`/c`到的符号链接`/mnt/c`）
 
 > WSL的安装见： [Install the Linux Subsystem on Windows 10 -  Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10 "Install the Linux Subsystem on Windows 10 - Microsoft Docs")
+>
+> [How to install and run (Oh-My-) zsh on Windows - Gingter Ale](https://gingter.org/2016/08/17/install-and-run-zsh-on-windows/)
 
 
 

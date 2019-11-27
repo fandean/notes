@@ -89,7 +89,7 @@ h1选择器 { /*声明块*/
 
 
 * 按元素名称选择
-* 按类 `.className` 或ID `#idValue` 选择
+* 按类 `.className` 或 ID `#idValue` 选择
 * 按祖先元素选择：`祖先 后代`   (使用**空格**)
 * 按父元素选择其**直接后代**(子元素)：`父 > 直接后代` (使用**>**) 
 * 按**相邻**同胞元素选择：`哥哥 + 弟弟` (使用 **+** )，同胞之间必须直接相邻。
@@ -200,29 +200,230 @@ HSL和HSLA：色相hue、饱和度saturation、亮度lightness
 
 
 
-
-
 ## 字体
 
+并非所有的系统都支持相同的默认字体，因此，应该定义替代字体作为备选。开发人员可以指定自己想要设置的任何字体，不过**访问者**只会看到他们的系统里安装的字体（一种特殊情况是加载Web字体)
 
+```css
+body {
+font-family: Geneva, Tahoma, sans-serif;
+}
+```
+
+
+
+字体列表称为**字体栈**（font stack）。通常，**字体栈至少包含三个字体**：希望使用的字体、一个或几个替代字体；以及一个表示类属的标准字体，表示“如果其他的字体都不可用，就用这个”，它们代表首选字体最为接近的风格。
+
+表示类属的标准字体：
+
+- serif ：衬线字体 
+- sans-serif ：非衬线字体 
+- cursive：手写字体
+- fantasy：装饰字体
+- monospace：等宽字体
+
+> 对于包含多个单词的字体名称，应该用引号（单引号或双引号）包围起来。
+
+可以在同一个 `font-family` 规则中为不同的字母表指定字体（如日语和英语），从而对包含不同语言和书写体系的文本进行格式化。
+
+> 浏览器字体设置：浏览器设置的是各种标准字体
+>
+> 比如网页中设置的字体为： `'Merriweather', serif` 在该字体栈中 Merriweather 只能应用于英文字体，那么对于中文字体它就会使用最后的 serif **标准字体**，此时中文显示用何种字体就看你浏览器的字体设置中为 serif 选择的是哪种字体。
+>
+> 这样设置的一个好处是可以由用户决定使用哪种字体，但是一般用户都不会去设置。
+
+
+
+> OS X 和 Windows 上默认都有的字体是非常有限的，它们仅包括 Arial、Comic Sans MS、Courier New、Georgia、Impact、Trebuchet MS、Times New Roman和Verdana。结果，绝大多数网站使用的字体都无外乎这些。
+>
+> 常见网站字体设置：
+>
+> ```
+> "'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft Yahei',sans-serif"
+> ```
+>
+> Segoe UI 是一款西文无衬线，不等宽字体 ，提高字体可读性，微软从Windows Vista开始使用在诸多新产品中用户界面的字体。
+>
+> 冬青黑体 (Hiragino Sans GB)，Mac预装， 是大日本网屏和北京汉仪合作开发的中文简体字体， 2008年发布， 从设计风格上，这个字体继承了 Hiragino 系列的简洁大方的风格，中宫较大，和西文、假名的字形非常协调，屏幕显示和印刷两方面都非常出色。 （需要购买）
+
+
+
+> ios 系统
+>
+> 默认中文字体是Heiti SC   
+> 默认英文字体是Helvetica   
+> 默认数字字体是HelveticaNeue   
+> 无微软雅黑字体   
+>
+> android 系统
+>
+> 默认中文字体是Droidsansfallback   
+> 默认英文和数字字体是Droid Sans   
+> 无微软雅黑字体   
+
+
+
+中文字体下载：站酷字库，有几款免费字体
+
+
+
+
+
+**web字体：**
+
+使用CSS规则 `@font-face` 
+
+对于所有这些字体而言，在它们显示到页面上之前，都需要下载到用户的计算机上。这会减慢网站的加载速度，尤其对移动用户来说。
+
+在网站使用Web字体的两种方式：
+
+- 自托管Web字体：来源于你自己的服务器
+- Web字体服务：比如  Google Fonts
+
+web字体格式：
+
+- TrueType (.ttf) 和 OpenType (.otf) 台式机使用的标准字体文件类型。
+- Web 开放字体格式（Web Open Font Format，.woff）。这种较新的标准是
+  专为 Web 字体设计的。Web 开放字体格式的字体是经压缩的 TrueType 字体或 OpenType 字体。WOFF 格式还允许在文件上附加额外的元数据。
+- 内嵌 OpenType（Embedded OpenType，.eot）是 Microsoft 的一项专有格式，也不建议用。
+- 可缩放矢量图形（Scalable VectorGraphics，.svg）。简言之，应避免对Web 字体文件使用 SVG。
+
+> 图标字体以及如何获取：
+>
+> 图标字体指的是包含图标而非字母、数字和标点符号的字体。你可以像对待文字那样对它们添加样式，如设置颜色。
+> 图标字体最棒的一点是，无论使用什么样的字体大小，它们都会平滑缩放边缘总是很锐利。
+>
+> 可以使用 Fontfabric（www.fontfabric.com）提供的 Socialico 创建社交网站图标。通过将其上传到 Font Squirrel 的 Webfont Generator 创建页面所需的 Web 字体格式。
+> Chris Coyier 收集了大量获取图标字体的资源（参见 http://css-tricks.com/flat-icons-icon-fonts/），还演示了如何使用 IcoMoon（http://icomoon.io）创建开发人员自己的图标字体（参见 http://css-tricks.com/video-screencasts/113-creating-and-using-a-custom-icon-font/）。
+
+
+
+```css
+@font-face {
+    /* font-family 为特定web字体创建名称 */
+    font-family: 'pt_sansregular';
+    /* 指定字体文件的位置：包括为不同浏览器指定的字体文件格式  */
+    src: url('PTS55F-webfont.eot');
+    src: url('PTS55F-webfont.eot?#iefix')
+        	format('embedded-opentype'),
+    	url('PTS55F-webfont.woff')
+        	format('woff'),
+    	url('PTS55F-webfont.ttf')
+        	format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sansitalic';
+    src: url('PTS56F-webfont.eot');
+    src: url('PTS56F-webfont.eot?#iefix')
+        	format('embedded-opentype'),
+    	url('PTS56F-webfont.woff')
+        	format('woff'),
+    	url('PTS56F-webfont.ttf')
+        	format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+ `@font-face` 部分并不是你要添加样式的元素的选择器。因此，这段样式不会影响任何元素的样式，而是**让样式表知道 Web字体的存在**，从而可以在其他的样式规则中用它对文本设置样式。
 
 
 
 ## 文本属性
 
+## 为文本添加样式
+
+创建斜体：
+
+```css
+/* 
+italic 创建斜体文本 （当某个字体没有设计斜体时会使用模拟出来的假斜体）
+oblique 创建倾斜文本 
+normal 取消斜体
+真斜体、假斜体、倾斜版
+某个字体本身的设计中可能会包含 斜体和倾斜版
+*/
+font-style: italic
+```
 
 
 
+粗体格式：
+
+```css
+/*
+lighter 更细
+normal 正常  (值为 400)
+bold 粗体  (值为 700) ，如果某些字体没有设计粗体，那么将显示伪粗体
+bolder 更粗
+或者输入 ： 100~900 之间的100的倍数
+这些值在不同字体上的表现形式并不相同；
+如果字体的粗细少于9种，那么有些值看起来相同
+*/
+font-weight: bold
+```
+
+**设置字体大小：**
+
+几种方式：
+
+- 直接使用像素指定要使用的特定字号 `font-size: 18px;`
+- 使用百分数、**em** 指定相对于**父元素**文本的大小
+- 或者 rem ，相对于根元素`html`来指定字体大小
+- 或者使用关键字指定字体大小： xx-small、x-small、small、medium、large、x-large、xx-large
+
+```css
+body {
+    font-family: Geneva, Tahoma, Verdana,
+        sans-serif;
+    /* （在body元素）该声明为直接子元素em字体大小设置了参考的基准，100%被翻译为默认字体大小，一般为16px */
+    font-size: 100%; 
+}
+
+.intro p {
+    /* 该段落的字体大小为 17px */
+    font-size: 1.0625em; /* 17px/16px */
+}
+/* 
+现在假设在上述段落p中包含了一个链接a，两者是父子关系。
+现在你想让链接a的字体大小显示为 16px ，你可能这么想之前有在body中设置过基准
+那么现在自己只需让其等于 1em 即可。但是这样做是错误的，记住这些值是相对于父元素的。
+应该像下面这样设置
+*/
+.intro a {
+	fontsize: 0.941176em;  /* 16px/17px */
+} 
+
+.project p {
+    font-size: .9375em; /* 15px/16px */
+}
+```
+
+
+
+>  可以使用 font **简写**属性，同时设置字体样式、粗细、变体、大小、行高、字体系列。
 
 
 
 ## 盒模型
 
+CSS 处理网页时，它认为**每个元素**都包含在一个不可见的盒子里。这就是众所周知的**盒模型**。
+
+这里的盒子包含：
+
+- 内容区域：CSS 中的宽度(width)指示的是内容区域的宽度
+- 内边距：padding
+- 边框：border
+- 外边距： margin
+
+
+
+
+
 `box-sizing:border-box` 的作用
-
-
-
-
 
 
 
@@ -242,7 +443,7 @@ HSL和HSLA：色相hue、饱和度saturation、亮度lightness
 
 
 
-可以为很多元素设置高度和宽度，**同时， 可以为短语内容元素**( 默 认 以行 内 方 式 显 示 ) 设 置 `display: block;` 或`display: inline-block;`，再对它们设置宽度或高度。
+可以为很多元素设置高度和宽度，**同时， 可以为短语内容元素**( 默认以行内方式显示 ) 设 置 `display: block;` 或`display: inline-block;`，再对它们设置宽度或高度。
 
 
 
@@ -257,14 +458,9 @@ HSL和HSLA：色相hue、饱和度saturation、亮度lightness
 
 
 
-
 **max-width** 属性是为流式布局(下一章会讲到一个流式布局的例子)设置宽度限制的绝佳工具。
 
 **min-height** 通常比 height 更适用。除非你确定元素的内容不会变得更高，最好避免在样式表中指定高度。在大多数情况下，可以让内容和浏览器自动控制高度。这可以让内容在浏览器和设备中根据需要进行流动。如果设置了高度，随着内容变多，它们有可能**撑破元素的盒子**，这可能是你预期之外的。（记住内容的增长大多情况下并不是由你自己控制）
-
-
-
-
 
 
 
@@ -282,7 +478,7 @@ HSL和HSLA：色相hue、饱和度saturation、亮度lightness
 
 
 
-## 为文本添加样式
+
 
 
 
@@ -295,7 +491,7 @@ HSL和HSLA：色相hue、饱和度saturation、亮度lightness
 
 对于大多数默认显示为**块级元素**的元素，width 的 auto 值是由包含块的宽度减去元素的内边距、边框和外边距计算出来的。
 
- 行 内 元 素 会 完 全 忽 略 width 属性。
+行内元素会完全忽略 width 属性。
 
 如果手动设置 width，但将某个**外边距margin**设为 auto，那么这个外边距将进行伸缩以弥补不足的部分。
 

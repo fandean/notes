@@ -2,20 +2,31 @@
 
 
 
-VMware Workstation Pro 14.1.0 注册码：
+VMware Workstation Pro 各版本注册码：
+
+15.x
+
+```js
+FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6
+GA70H-8TYE2-H886P-04YZC-YVA84
+
+UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA
+VF750-4MX5Q-488DQ-9WZE9-ZY2D6
+UU54R-FVD91-488PP-7NNGC-ZFAX6
+YC74H-FGF92-081VZ-R5QNG-P6RY4
+YC34H-6WWDK-085MQ-JYPNX-NZRA2 
+```
+
+14.x
 
 ```
 激活密钥：
 AU5WA-0EF9M-0811P-REP5X-ZFK9A
 ZV382-6VX96-H81LP-1ZZG9-PVKF4
 GU34A-41G4Q-H88CY-3WPNT-XUK8F
-
-CG54H-D8D0H-H8DHY-C6X7X-N2KG6
-ZC3WK-AFXEK-488JP-A7MQX-XL8YF
-AC5XK-0ZD4H-088HP-9NQZV-ZG2R4
-ZC5XK-A6E0M-080XQ-04ZZG-YF08D
-ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8
 ```
+
+
 
 
 
@@ -230,8 +241,6 @@ systemctl restart network.service  # centos 7
 
 
 
-
-
 在每次登录进虚拟机后会提示：
 
 ```
@@ -239,3 +248,32 @@ Last login: Thu Nov  1 08:44:51 2018 from 192.168.25.1
 ```
 
 而 `192.168.25.1` 是 VMnet8的ip地址
+
+
+
+## 从U盘启动
+
+ 先在主机中 使用如下命令查看U盘的 `DeviceID`
+
+```shell
+wmic diskdrive list brief
+```
+
+
+
+选择你要操作的虚拟机，或新建一个虚拟机，虚拟机设置👉选择添加一个硬盘，点下一步 
+
+选择直接**添加一个物理磁盘** ，磁盘类型选择 IDE
+
+然后选择之前查看过的U盘的 `DeviceID`，并选择使用整个磁盘 
+
+通过下拉框中的 “打开电源时进入固件” 的选项开启此虚拟机，从而进入bios，我们要设置的就不是U盘启动了，而是设置我们新添加的硬盘启动。 如果是新建的虚拟机则只保留刚才添加的磁盘即可，无需设置bios。
+
+特别提醒：在设置U盘从虚拟机启动的时候，确保U盘连接的是主机，不是虚拟机。要不然即使设置正确，也无法正常从U盘启动的。 
+
+
+
+
+
+
+

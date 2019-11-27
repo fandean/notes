@@ -12,7 +12,7 @@ HTTPS  https://gitlab.com/faner/test01.git
 ```
 
 
-当你选择HTTPS时，会看到它有下面的一段提示"Create a personal access token on your account to pull or push via Https"简单的翻译一下就是"在您的帐户上**创建个人访问令牌**，以通过Https进行pull或push"，并且在你第一次将本地仓库push到远程仓库时会要求你输入gitlab的用户名和密码。
+当你选择HTTPS时，会看到它有下面的一段提示"Create a personal access token on your account to pull or push via Https" 简单的翻译一下就是"在您的帐户上**创建个人访问令牌**，以通过Https进行pull或push"，并且在你第一次将本地仓库push到远程仓库时会要求你输入gitlab的用户名和密码。
 
 在一次错误中发现了这个问题：由于我的ssh的config文件出现配置错误，当我选择`git@gitlab.com:faner/test01.git`时提示有有误，我就尝试使用了https的`https://gitlab.com/faner/test01.git`路径，之后就让我输入密码并成功连接。
 

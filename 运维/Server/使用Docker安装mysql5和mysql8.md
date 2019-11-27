@@ -55,7 +55,7 @@ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=fan123 -d mysql:5.5.
 > - **-v $PWD/logs:/logs**：将主机当前目录下的 logs 目录挂载到容器的 /logs。
 > - **-v $PWD/data:/var/lib/mysql** ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 
 >
-> 可以看到`-v`用于将主机目录挂载（mount，会屏蔽原目录中的文件）在容器的某个目录（使用`:`分隔），`$PWD`是一个表示当前目录的一个环境变量。
+> 可以看到`-v`用于将主机目录挂载（mount，会屏蔽原目录中的文件）到容器的某个目录（使用`:`分隔），`$PWD`是一个表示当前目录的一个环境变量。
 
 
 
@@ -152,7 +152,7 @@ docker container prune
 
   意为，将本机G盘下的 ... date目录挂载到容器的`/var/lib/mysql`目录上
 
-- 默认配置文件目录位于 `/etc/mysql/my.cnf`对于该配置文件我们可以直接覆盖，如果在Dockerfile中还看到`!includedir /etc/mysql/conf.d/`，那么说明mysql会先加载 my.cnf 中的配置，再加载  conf.d 文件夹中配置文件的的配置，利用这一点我们可以保留 my.cnf 中的配置，而将自定义的配置文件放在 conf.d 目录下。
+- 默认配置文件目录位于 `/etc/mysql/my.cnf`对于该配置文件我们可以直接覆盖，如果在Dockerfile中还看到`!includedir /etc/mysql/conf.d/`，那么说明mysql会先加载 my.cnf 中的配置，再加载  conf.d 文件夹中配置文件的配置，利用这一点我们可以保留 my.cnf 中的配置，而将自定义的配置文件放在 conf.d 目录下。
 
   所以我们可以在`docker run` 命令中添加下面的选项来覆盖该目录：
 

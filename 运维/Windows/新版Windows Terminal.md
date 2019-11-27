@@ -626,6 +626,16 @@ PowerShell -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-E
 
 
 
+> cmder中的 cmd 和 vs code的配置：
+>
+> [AmrEldib/cmder-powerline-prompt: Custom prompt for Cmder on Windows](https://github.com/AmrEldib/cmder-powerline-prompt)
+>
+> [Using cmder as integrated shell in VSCode - Winsmarts.com](https://winsmarts.com/using-cmder-as-integrated-shell-in-vscode-c3340714fe3c?gi=8eae2a6d80b)
+
+
+
+
+
 ## PowerShell 的完整配置
 
 
@@ -835,3 +845,20 @@ Set-Theme Paradox
 
 
 > Windows PowerShell ISE ：在命令行中对应 ise ，通常使用此工具来编辑 .ps1文件
+
+
+
+## cmd
+
+只在 cmder 中记录了链接
+
+
+
+## Bitvise SSH Client
+
+远程主机设置了vim配色方案，但在这边看不到明显变化，可能需要在 Terminal下的Protocol中选择 xterm-256color。
+
+
+
+
+

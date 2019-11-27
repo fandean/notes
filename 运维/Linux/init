@@ -6,7 +6,6 @@ centos 7 中编辑： /boot/grub2/gurb.cfg；设置(第一个)timeout的值，�
 
 
 
-
 # 各系统开机进入字符界面的方法
 
 	Ubuntu 无 /etc/inittab 文件的原因另行查找
@@ -15,7 +14,7 @@ centos 7 中编辑： /boot/grub2/gurb.cfg；设置(第一个)timeout的值，�
 	转载： ://blog.csdn.net/heqiyu34/article/details/18793885
 
 	第一种方法：(内核级别的)
-
+	
 	Sudo vi /etc/default/grub
 	修改GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
 	为：GRUB_CMDLINE_LINUX_DEFAULT=” text”
@@ -47,5 +46,6 @@ xxx	另参考：
 
 
 ## Fedora 开机进入字符界面
+
 进入字符界面： systemctl set-default multi-user.target
 进入桌面环境： systemctl set-default graphical.target

@@ -8,10 +8,6 @@ CSS预处理器
 
 
 
-在写Less的时候要注意技巧，不然生成的CSS将会有大量的冗余代码。所以只建议CSS高手进阶用，初级CSSer最好还是先把CSS写熟了再说吧！
-
-
-
 
 ## Less的使用
 
@@ -28,7 +24,7 @@ Less只有在被编译后才能被浏览器识别使用。
 - 在命令行编译less：先通过`npm install less -g`进行安装；再通过`lessc`命令进行编译。
 
 
-- [Koala](http://koala-app.com/index-zh.html)，国人开发的**全平台**的Less编译工具
+- [Koala](http://koala-app.com/index-zh.html)，国人开发的**全平台**的Less编译工具(并且还支持Sass)
 - [WinLess - Windows GUI for less.js](http://winless.org/ "WinLess - Windows GUI for less.js") 
 - [CodeKit - THE Mac App for Web Developers](https://codekitapp.com/index.html "CodeKit - THE Mac App for Web Developers") 收费
 
@@ -56,8 +52,6 @@ lessc styles.less styles.css
 
 
 
-
-
 ### 使用less.js
 
 > 尝试几次都失败。
@@ -71,10 +65,6 @@ lessc styles.less styles.css
 
 - 首先引用`.less`文件(该文件就是你自己编写的less文件)。注意引用时使用`link`引入，然后将`rel`属性设置为`rel="stylesheet/less"`
 - 然后引入`less.js`文件。注意：与引入普通js方式一样，但是一定要放置在less样式文件之后。
-
-
-
-
 
 
 

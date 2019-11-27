@@ -347,7 +347,9 @@ n use 6.9.5 script.js
 
 > n 不支持在Windows上使用：“Unfortunately `n` is not supported on Windows yet”。
 >
-> [GNVM](https://github.com/kenshin/gnvm)   是一个简单的 `Windows` 下 Node.js 多版本管理器。
+> [GNVM](https://github.com/kenshin/gnvm)   是一个简单的 `Windows` 下 Node.js 多版本管理器。下面还有一个
+>
+> [nvm-windows: A node.js version management utility for Windows.](https://github.com/coreybutler/nvm-windows) （可以使用scoop安装）
 
 
 

@@ -71,7 +71,7 @@
 手机翻墙App：
 
 - 小明VPN：免费
-- 云帆VPN：付费（一般都可以免费体验2天）
+- 云帆VPN：付费（一般都可以免费体验2天）每天可领1小时
 - 快速VPN：付费
 
 
@@ -102,7 +102,7 @@
 
 
 - [IPLC - 极致专线](https://lciplc.com/)：￥418/每年/4终端
-- [这是一个卖墨镜的网站](https://www.4kvpn.com/home/signup) （一直没有开放注册）
+- [这是一个卖墨镜的网站](https://www.4kvpn.com/home/signup) （一直没有开放注册，假的）
 - SetupVPN
 
 
@@ -252,7 +252,8 @@ WireGuard®是一种极其简单而又快速又现代化的VPN，它利用了最
 
 ## Shadowsocks深入了解
 
+SSR能够被GWF针对性的屏蔽。
 
 
 
-
+貌似谷歌工程师有开发过一个服务叫n…

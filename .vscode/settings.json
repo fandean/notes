@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "微服务架构相关技术": true,
+    "其它": true,
+    "C&C++": true,
+    "C#": true,
+    "Python": true
+  }
+}

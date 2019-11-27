@@ -152,15 +152,13 @@ Jeklly基于Ruby，所以需要先下载安装一大堆Ruby相关的东西。
 
 
 
+推荐 ：
+
+-  [搭建个人博客，你需要知道这些](http://www.jianshu.com/p/0c3663c4f0ef)  
+- [关于 · wu-kan](https://wu-kan.github.io/about)
 
 
-推荐 ： [搭建个人博客，你需要知道这些](http://www.jianshu.com/p/0c3663c4f0ef)  
 
-
-[如何拥有一个完全免费的博客？](https://www.zhihu.com/question/20688782)  
-
-
-[有哪些便宜稳定，速度也不错的Linux VPS 推荐？](https://www.zhihu.com/question/20800554)
 
 
 
@@ -303,8 +301,9 @@ tags:
 
 ### Hexo
 
+[Yelee 主题使用说明 · GitBook](http://moxfive.coding.me/yelee/) 非常详细
 
-[Hexo建站](http://liangjingkanji.coding.me/2016/12/11/HexoBuild/)    
+[NexT 使用文档](http://theme-next.iissnan.com/) 用的最多的一个主题
 
 
 
@@ -320,10 +319,6 @@ tags:
 
 
 
-
-
-## 
-
 ## Netlify
 
  [Netlify](https://www.netlify.com/) 是什么？它是一家云计算公司，为静态网站提供托管和 serverless 后端服务。 
@@ -334,7 +329,8 @@ tags:
 
 有人部署在Netlify比Github Pages上的博客在国内访问更快，可是我连Netlify官网都进不去，对此表示怀疑。
 
-
+- VS Code搭建在 Netlify 上的一个站点，看你能打开不： [vscode-issue-tracker.netlify.com](https://vscode-issue-tracker.netlify.com/) 
+- learn.netlify.com 可以打开
 
 > 类似的还有一个Render，此网站可以访问
 
@@ -445,6 +441,7 @@ KeyCDN
 
 - Netlify CMS： 将Netlify CMS与任何静态站点生成器一起使用可实现更快，更灵活的Web项目 
 - Prose
+- **vs code** 加 Hugofy 和 Hugo snippets 插件
 
 参考：
 
@@ -460,7 +457,8 @@ KeyCDN
 服务器提供商，相对来说会比较稳定靠谱，国内的UCloud、阿里云、腾讯云、七牛云，国外的有亚马逊。
 
 图床服务器：    
-将网页和多媒体资源分开存储，可以让Web服务器的访问宽带不至于很快被占用完。
+
+**将网页和多媒体资源分开存储**，可以让Web服务器的访问宽带不至于很快被占用完。
 
 七牛云存储的免费用户拥有10G的存储空间，和每月10W次的put/delete请求，100万次get请求。
 
@@ -485,6 +483,14 @@ KeyCDN
 
 [如何使用七牛云做为图床？ - 简书](http://www.jianshu.com/p/6dce6094bf61 "如何使用七牛云做为图床？ - 简书")
 
+ 七牛中的产品“融合CDN”，是可以绑定自己的二级域名，作为自己的私有 CDN 服务器来使用的。在绑定了自己的二级域名之后，可以依靠 WordPress 插件或者使用静态化插件来设置 CDN 加速，这里的加速，其实效果就是全站中的图片和 CSS 、JS 文件都会被自动存放到七牛中，且网页中的对应链接都会被改变。也就是在启用了七牛 CDN 加速之后，你的网页托管主机只负责数据库的查询和页面的输出，而其他的一切图片和引用资源都将从 CDN 服务器中取，极大的减轻了自己主机的工作负荷。 
+
+ 至于数据安全方面，如果出现情况或者不想使用七牛，则只需要在后台去除对应设置，则资源链接会回复到原始状态，数据不会丢失，也不会对自己的网站产生影响。 
+
+
+
+尝试一下  WordPress  ，
+
 
 
 相关工具：
@@ -503,6 +509,8 @@ KeyCDN
 
 
 ---
+
+我们也可以在 WIX.com 制作免费或者付费的专业网站。
 
 
 
