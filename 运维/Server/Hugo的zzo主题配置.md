@@ -503,6 +503,12 @@ themeOptions = ["custom", "dark", ...]
 
 
 
+> [HSL（色彩模式）_百度百科](https://baike.baidu.com/item/HSL/1443144) 
+>
+> 在线转换：[Colors HSL](https://www.w3schools.com/colors/colors_hsl.asp) ，[Colors RGB](https://www.w3schools.com/colors/colors_rgb.asp)
+
+
+
 ## 代码高亮
 
 在zzo的代码注释中我看到了 Highlight.js 于是我搜索了一下发现  [highlight.js](https://highlightjs.org/) 是用于代码高亮的，所以我以为 zzo使用了它进行代码高亮。但是我去查看了readme.md，发现上面介绍说 ” Prism.js for highlight code ” ，那么它用的是 Prism.js ，此时才明白为什么会有 prism  文件夹的存在。
@@ -664,6 +670,7 @@ zzo用到的库：
 - mermaid.js ：用于生成各种图形，比如流程图 。[mermaid - Markdownish syntax for generating flowcharts, sequence diagrams, class diagrams, gantt charts and git graphs.](https://mermaidjs.github.io/#/) 
 - [PhotoSwipe](https://photoswipe.com/) ： PhotoSwipe兼容大量的移动设备以及所有流行的JavaScript类库/开发框架. 既有基于jQuery的版本,也有不依赖jQuery的版本，还有兼容jQuery Mobile的版本。当然，All In One，全在源码示例包里。
 - [Masonry](https://masonry.desandro.com/)  ： Masonry是一个轻量级的布局框架 
+- [clipboard.js — Copy to clipboard without Flash](https://clipboardjs.com/)  文本复制
 
 
 

@@ -337,6 +337,7 @@ files.autoSaveDelay ： files.autoSave 的值是 afterDelay 时，就可以设�
 - 项目管理：projects manager
 - Make Hidden：可以用来隐藏项目中暂时不需要的文件夹，当然之后也可以将其显示出来。
 - Sass(scss) ： SCSS IntelliSense 
+- psioniq File Header 强悍
 
 
 
@@ -392,57 +393,111 @@ Enabled for Markdown and LaTeX. 但是需要先配置以支持markdown等，见�
 
 ### 文件头
 
-发现了微软退出的 docs-metadata 文档元数据 导出编辑工具
+发现了微软推出的 docs-metadata 文档元数据 导出编辑工具
 
 Front Matter：能够快速创建和导入tag和category，更新所有文章中的tag，自动生成 slug，
 
 
 
-
-
-#### header source
-
-
-
-#### File-Header-Comment Helper for Visual Studio Code
-
-Insert File-Header-Comment
-
-```json
-    "fileHeaderCommentHelper.languageConfigs": {
-        "language_markdown": { //指定语言比如 language_javascript
-            "template": [
-                "---",
-                "layout: post",
-                "title: \"$(currentFile)\"",
-                "description: \"$(currentFile)\"",
-                "date: 2017-",
-                "tags: []",
-                "category: ",
-                "comments: true",
-                "share: true",
-                "---",
-                "\n\n\n",
-                "* Kramdown table of contents",
-                "{:toc .toc}"
-            ]
-        }
-    }
-```
-
-
-
-#### vscode fileheader
-
-添加文件头，自动更新文件修改时间。
-
-
 #### psioniq File Header
-添加文件头，自动更新文件修改时间。
+
+添加文件头，自动更新文件修改时间。**没有做不到，只有想不到** 
 
 很棒的插件
 
 [psioniq File Header - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=psioniq.psi-header "psioniq File Header - Visual Studio Marketplace")
+
+
+
+```json
+  // 添加文档头部注释模板。记得添加逗号,
+  // 更多配置见官方说明 ，有非常完整的示例
+  //全局配置
+  "psi-header.config": {
+    // 忽略光标位置，总是在文档最前插入
+    "forceToTop": true,
+    // 指定在标题注释块之后插入多少空白行
+    "blankLinesAfter": 1
+  },
+
+  "psi-header.changes-tracking": {
+    // 开启 更改追踪（即记录更改日期等）
+    "isActive": true,
+    //更改者名称填入的位置(这两个是默认值可以不填)
+    "modAuthor": "Modified By: ",
+    //更改日期填入的位置
+		"modDate": "Last Modified: ",
+    "modDateFormat": "YYYY-MM-DD h:mm:ss",
+    //自动为新建的文件添加头部
+    "autoHeader": "manualSave",
+
+    //在保存文件时如果没有头部则自动添加
+    //注意：建议将其关闭，并将 include 清空
+    "enforceHeader": true,
+
+    //在保存文件时则需要替换行的前缀（比如文件名被更改）
+    "replace": ["title:"],
+    // 要追踪的语言列表（如果为空表示所有语言）
+    "include": ["markdown"],
+    // 需要排除的语言
+    "exclude": [
+			"json", 
+      "yaml",
+      "toml"
+		],
+    //再次见到 Glob，它表示bash所使用的那种通配符规则
+		"excludeGlob": [
+			"out/**",
+			"src/**/*.xyz"
+		],
+  },
+
+  //特定语言的配置
+  "psi-header.lang-config": [
+    {
+      "language": "markdown",
+      "begin": "---",
+      "prefix": "",
+      "end": "---",
+      "blankLinesAfter": 2,
+      // 忽略光标位置，总是在文档最前插入
+      "forceToTop": true,
+    }
+  ],
+
+  //这里是自定义的变量和对应的值
+  "psi-header.variables": [
+    ["projectCreationYear","2019"],
+    //自定义的变量，可以覆盖全局变量
+    ["author","Felix"],
+    ["authoremail", "fandean@outlook.com"],
+    ["company", "Felix"]
+  ],
+
+  // 模板 : 变量使用<< >> 包围
+  "psi-header.templates": [
+    {
+      //用于 markdown 的模板
+      "language": "markdown",
+      "template": [
+        "title: <<filenamebase>>",
+        "date: <<filecreated('YYYY-MM-DD')>>",
+        "description: <<filenamebase>>",
+        "toc: true",
+        "draft: true",
+        "comments: true",
+        "keywords:",
+        "- ",
+        "tags:",
+        "- ",
+        "series:",
+        "- ",
+        "categories:",
+        "- ",
+      ]
+    }
+]
+```
 
 
 
@@ -456,10 +511,6 @@ Insert File-Header-Comment
 
 
 
-#### Path Intellisense
-
-自动补全路径。
-
 
 
 
@@ -469,7 +520,7 @@ Insert File-Header-Comment
 
 先将当前打开的文件夹以工程保存，之后就可以在命令面板中列出并打开。
 
-> code 似乎已自带此功能
+> 推荐
 
 
 
@@ -478,6 +529,8 @@ Insert File-Header-Comment
 ~~为文件和文件夹添加图标~~。vs code已经自带
 
 > NOTE 微软官方已经集成了图表,使用”File Icon Theme”就可更改.
+
+
 
 #### vscode-youcompleteme
 
@@ -529,6 +582,12 @@ MMM D, YYYY			    Jul 26, 2018
 ```
 
 中国格式： 年YYYY ，月M，日D，时H，分m，秒ss
+
+通用格式：YYYY-MM-DD
+
+### Git File History 
+
+这种查看方式不错
 
 
 
